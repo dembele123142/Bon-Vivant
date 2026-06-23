@@ -719,6 +719,104 @@
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
 
+    /* ══════════════════════════════════════════
+       MÓDULOS INTERATIVOS — estilos compartilhados
+       ══════════════════════════════════════════ */
+
+    /* Calculadora */
+    .calc-opt {
+      padding: 0.6rem 0.9rem; font-size: 11px; font-family: var(--font-body);
+      letter-spacing: 0.08em; background: var(--color-cream-300); border: 0.5px solid rgba(0,0,0,0.08);
+      cursor: pointer; text-align: left; transition: all 0.2s; color: var(--dark);
+    }
+    .calc-opt:hover { border-color: var(--gold); }
+    .calc-opt.active { background: var(--dark); color: #fff; border-color: var(--dark); }
+
+    .calc-opt-check {
+      display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1rem;
+      font-size: 11px; font-family: var(--font-body); letter-spacing: 0.07em;
+      background: var(--color-cream-300); border: 0.5px solid rgba(0,0,0,0.08);
+      cursor: pointer; transition: all 0.2s; color: #777;
+    }
+    .calc-opt-check.selected { background: rgba(184,150,62,0.1); border-color: var(--gold); color: var(--dark); }
+    .check-price { color: var(--gold); margin-left: auto; font-weight: 600; }
+
+    .waba-big {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: #25D366; color: #fff; padding: 0.9rem 1.6rem;
+      font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+      font-family: var(--font-body); text-decoration: none; transition: opacity 0.2s;
+    }
+    .waba-big:hover { opacity: 0.88; }
+
+    /* Formulário multi-step */
+    .form-step { display: none; }
+    .form-step.active { display: block; }
+
+    .form-label {
+      display: block; font-size: 9px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: #aaa; margin-bottom: 0.5rem;
+    }
+    .form-input {
+      width: 100%; padding: 0.8rem 1rem; font-size: 13px;
+      font-family: var(--font-body); border: 0.5px solid rgba(0,0,0,0.15);
+      background: #fff; color: var(--dark); outline: none;
+      transition: border-color 0.2s; box-sizing: border-box;
+    }
+    .form-input:focus { border-color: var(--gold); }
+    .form-input.error { border-color: #e05252; }
+    textarea.form-input { resize: vertical; }
+    select.form-input { appearance: none; cursor: pointer; }
+
+    .form-error {
+      font-size: 10px; color: #e05252; margin-top: 0.4rem;
+      display: none; letter-spacing: 0.05em;
+    }
+    .form-error.show { display: block; }
+
+    .interest-card {
+      display: flex; align-items: center; gap: 0.7rem;
+      padding: 0.9rem 1rem; border: 0.5px solid rgba(0,0,0,0.1);
+      cursor: pointer; font-size: 12px; font-family: var(--font-body);
+      color: #777; transition: all 0.2s; background: var(--color-cream-300);
+    }
+    .interest-card input { display: none; }
+    .interest-card.checked { border-color: var(--gold); background: rgba(184,150,62,0.06); color: var(--dark); }
+    .interest-card i { font-size: 18px; color: var(--gold); }
+
+    .form-next, .form-submit {
+      flex: 1; padding: 0.9rem 1.5rem; background: var(--dark); color: #fff;
+      border: none; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+      font-family: var(--font-body); cursor: pointer; display: flex;
+      align-items: center; justify-content: center; gap: 0.5rem; transition: opacity 0.2s;
+    }
+    .form-next:hover, .form-submit:hover { opacity: 0.85; }
+    .form-back {
+      padding: 0.9rem 1.2rem; background: none; border: 0.5px solid rgba(0,0,0,0.2);
+      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+      font-family: var(--font-body); cursor: pointer; display: flex;
+      align-items: center; gap: 0.5rem; color: #888; transition: border-color 0.2s;
+    }
+    .form-back:hover { border-color: var(--dark); color: var(--dark); }
+
+    .step-dot {
+      width: 24px; height: 24px; border-radius: 50%; background: rgba(0,0,0,0.07);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; color: #aaa; transition: all 0.3s;
+    }
+    .step-dot.active { background: var(--gold); color: #fff; }
+    .step-dot.done { background: var(--dark); color: #fff; }
+
+    .summary-row {
+      display: flex; justify-content: space-between; font-size: 12px;
+    }
+    .summary-row span:first-child { color: #aaa; }
+    .summary-row span:last-child { color: var(--dark); font-weight: 500; }
+
+    --color-success: #27ae60;
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
       .products-grid { grid-template-columns: 1fr 1fr; }
@@ -1383,6 +1481,219 @@
     </div>
   </section>
 
+  <!-- ══════════════════════════════════════════
+       MÓDULO 1 — CALCULADORA DE ORÇAMENTO
+       State machine: idle → selecting → computing → result → reset
+       Data flow: inputs → priceEngine() → display
+       Edge cases: combinações inválidas, preço zero
+       ══════════════════════════════════════════ -->
+  <section id="calculadora" style="background:var(--color-cream-300);padding:7rem 3.5rem" aria-label="Calculadora de orçamento">
+    <div style="max-width:860px;margin:0 auto">
+      <div class="reveal" style="text-align:center;margin-bottom:3.5rem">
+        <span class="label" style="display:block;text-align:center">Orçamento instantâneo</span>
+        <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:400;font-style:italic;color:var(--dark);line-height:1.2">Monte sua joia.<br>Veja o preço agora.</h2>
+        <p style="font-size:13px;color:#999;margin-top:0.8rem">Selecione as opções abaixo para calcular o valor estimado da sua peça personalizada.</p>
+      </div>
+
+      <div id="calcWidget" style="background:#fff;padding:2.5rem;border:0.5px solid rgba(0,0,0,0.06)">
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2rem">
+
+          <!-- Tipo de peça -->
+          <div>
+            <label style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#aaa;display:block;margin-bottom:0.8rem">Tipo de peça</label>
+            <div id="calc-tipo" style="display:flex;flex-direction:column;gap:0.5rem">
+              <button class="calc-opt active" data-group="tipo" data-val="anel" data-base="800" onclick="calcSelect(this)">Anel</button>
+              <button class="calc-opt" data-group="tipo" data-val="colar" data-base="1200" onclick="calcSelect(this)">Colar</button>
+              <button class="calc-opt" data-group="tipo" data-val="brinco" data-base="900" onclick="calcSelect(this)">Brinco</button>
+              <button class="calc-opt" data-group="tipo" data-val="pulseira" data-base="1100" onclick="calcSelect(this)">Pulseira</button>
+            </div>
+          </div>
+
+          <!-- Material -->
+          <div>
+            <label style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#aaa;display:block;margin-bottom:0.8rem">Material</label>
+            <div id="calc-material" style="display:flex;flex-direction:column;gap:0.5rem">
+              <button class="calc-opt active" data-group="material" data-val="prata" data-mult="1.0" onclick="calcSelect(this)">Prata 925</button>
+              <button class="calc-opt" data-group="material" data-val="ouro18" data-mult="2.8" onclick="calcSelect(this)">Ouro 18k</button>
+              <button class="calc-opt" data-group="material" data-val="ouro24" data-mult="4.2" onclick="calcSelect(this)">Ouro 24k</button>
+            </div>
+          </div>
+
+          <!-- Pedra -->
+          <div>
+            <label style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#aaa;display:block;margin-bottom:0.8rem">Pedra preciosa</label>
+            <div id="calc-pedra" style="display:flex;flex-direction:column;gap:0.5rem">
+              <button class="calc-opt active" data-group="pedra" data-val="sem" data-add="0" onclick="calcSelect(this)">Sem pedra</button>
+              <button class="calc-opt" data-group="pedra" data-val="zirconia" data-add="150" onclick="calcSelect(this)">Zircônia</button>
+              <button class="calc-opt" data-group="pedra" data-val="natural" data-add="600" onclick="calcSelect(this)">Pedra natural</button>
+              <button class="calc-opt" data-group="pedra" data-val="diamante" data-add="2200" onclick="calcSelect(this)">Diamante</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Personalização -->
+        <div style="border-top:0.5px solid rgba(0,0,0,0.06);padding-top:1.5rem;margin-bottom:2rem">
+          <label style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#aaa;display:block;margin-bottom:0.8rem">Personalização</label>
+          <div style="display:flex;gap:0.8rem;flex-wrap:wrap">
+            <button class="calc-opt-check" data-add="180" onclick="calcToggle(this)">
+              <i class="ti ti-text-size" style="font-size:14px" aria-hidden="true"></i> Gravação de texto <span class="check-price">+R$ 180</span>
+            </button>
+            <button class="calc-opt-check" data-add="250" onclick="calcToggle(this)">
+              <i class="ti ti-resize" style="font-size:14px" aria-hidden="true"></i> Tamanho especial <span class="check-price">+R$ 250</span>
+            </button>
+            <button class="calc-opt-check" data-add="120" onclick="calcToggle(this)">
+              <i class="ti ti-package" style="font-size:14px" aria-hidden="true"></i> Embalagem premium <span class="check-price">+R$ 120</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Resultado -->
+        <div style="background:var(--dark);padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
+          <div>
+            <p style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:0.3rem">Estimativa de orçamento</p>
+            <div style="display:flex;align-items:baseline;gap:0.5rem">
+              <span id="calcResult" style="font-size:2rem;font-weight:700;color:var(--color-gold-300);transition:all 0.3s">R$ 800</span>
+              <span style="font-size:11px;color:rgba(255,255,255,0.3)">à vista · Pix com 5% OFF</span>
+            </div>
+            <p id="calcParcel" style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:0.2rem">ou 12× de R$ 73,33</p>
+          </div>
+          <a id="calcWaba" class="waba-big" href="#" target="_blank" rel="noopener" style="white-space:nowrap">
+            <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Pedir orçamento
+          </a>
+        </div>
+
+        <!-- Estado vazio / aviso -->
+        <p id="calcNote" style="font-size:11px;color:#bbb;margin-top:0.8rem;text-align:center;display:none">
+          ⚠️ Esta é uma estimativa. O valor final é confirmado pelo nosso especialista.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       MÓDULO 2 — FORMULÁRIO MULTI-STEP (Consultoria)
+       State machine: step1 → step2 → step3 → sending → success | error
+       Steps: (1) Tipo de interesse → (2) Dados pessoais → (3) Confirmação
+       Validation: campo a campo, inline, em tempo real
+       Edge cases: campos vazios, telefone inválido, envio duplicado
+       ══════════════════════════════════════════ -->
+  <section id="consultoria" style="background:#fff;padding:7rem 3.5rem" aria-label="Formulário de consultoria">
+    <div style="max-width:640px;margin:0 auto">
+      <div class="reveal" style="text-align:center;margin-bottom:3rem">
+        <span class="label" style="display:block;text-align:center">Consultoria gratuita</span>
+        <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:400;font-style:italic;color:var(--dark);line-height:1.2">Encontre a joia<br>perfeita para você.</h2>
+        <p style="font-size:13px;color:#999;margin-top:0.8rem">Nosso especialista entra em contato em até 2h. Sem compromisso.</p>
+      </div>
+
+      <!-- Progress bar -->
+      <div style="margin-bottom:2.5rem">
+        <div style="display:flex;justify-content:space-between;margin-bottom:0.8rem">
+          <span id="stepLabel" style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold)">Passo 1 de 3 — Interesse</span>
+          <span id="stepPct" style="font-size:10px;letter-spacing:0.12em;color:#bbb">33%</span>
+        </div>
+        <div style="height:2px;background:rgba(0,0,0,0.06);position:relative">
+          <div id="stepBar" style="height:2px;background:var(--gold);width:33%;transition:width 0.5s var(--ease-out)"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-top:0.6rem">
+          <span class="step-dot active" data-step="1">1</span>
+          <span class="step-dot" data-step="2">2</span>
+          <span class="step-dot" data-step="3">3</span>
+        </div>
+      </div>
+
+      <form id="consultForm" novalidate>
+
+        <!-- STEP 1: Interesse -->
+        <div id="step1" class="form-step active">
+          <fieldset style="border:none;padding:0;margin:0">
+            <legend style="font-size:12px;color:#888;margin-bottom:1.5rem;line-height:1.7">O que você está buscando? (pode selecionar mais de um)</legend>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem">
+              <label class="interest-card"><input type="checkbox" name="interest" value="presente"><i class="ti ti-gift" aria-hidden="true"></i> Presente especial</label>
+              <label class="interest-card"><input type="checkbox" name="interest" value="casamento"><i class="ti ti-rings-wedding" aria-hidden="true"></i> Casamento / noivado</label>
+              <label class="interest-card"><input type="checkbox" name="interest" value="personalizada"><i class="ti ti-pencil" aria-hidden="true"></i> Joia personalizada</label>
+              <label class="interest-card"><input type="checkbox" name="interest" value="colecao"><i class="ti ti-diamond" aria-hidden="true"></i> Nova coleção</label>
+            </div>
+            <div id="err-interest" class="form-error">Selecione ao menos uma opção.</div>
+          </fieldset>
+
+          <div style="margin-top:1.5rem">
+            <label class="form-label" for="orcamento">Faixa de orçamento</label>
+            <select id="orcamento" name="orcamento" class="form-input">
+              <option value="">Selecione...</option>
+              <option value="ate1k">Até R$ 1.000</option>
+              <option value="1k3k">R$ 1.000 – R$ 3.000</option>
+              <option value="3k8k">R$ 3.000 – R$ 8.000</option>
+              <option value="acima8k">Acima de R$ 8.000</option>
+            </select>
+            <div id="err-orcamento" class="form-error">Informe sua faixa de orçamento.</div>
+          </div>
+
+          <button type="button" class="form-next" onclick="goStep(2)">Próximo <i class="ti ti-arrow-right" aria-hidden="true"></i></button>
+        </div>
+
+        <!-- STEP 2: Dados pessoais -->
+        <div id="step2" class="form-step">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:1.2rem">
+            <div>
+              <label class="form-label" for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" class="form-input" placeholder="Seu nome" autocomplete="given-name" />
+              <div id="err-nome" class="form-error">Informe seu nome.</div>
+            </div>
+            <div>
+              <label class="form-label" for="telefone">WhatsApp</label>
+              <input type="tel" id="telefone" name="telefone" class="form-input" placeholder="(11) 99999-0000" autocomplete="tel" oninput="maskPhone(this)" />
+              <div id="err-telefone" class="form-error">Informe um número válido.</div>
+            </div>
+          </div>
+          <div>
+            <label class="form-label" for="email2">E-mail</label>
+            <input type="email" id="email2" name="email" class="form-input" placeholder="seu@email.com" autocomplete="email" />
+            <div id="err-email2" class="form-error">Informe um e-mail válido.</div>
+          </div>
+          <div style="margin-top:1.2rem">
+            <label class="form-label" for="mensagem">Mensagem (opcional)</label>
+            <textarea id="mensagem" name="mensagem" class="form-input" rows="3" placeholder="Conte mais sobre o que você procura..."></textarea>
+          </div>
+          <div style="display:flex;gap:1rem;margin-top:1.5rem">
+            <button type="button" class="form-back" onclick="goStep(1)"><i class="ti ti-arrow-left" aria-hidden="true"></i> Voltar</button>
+            <button type="button" class="form-next" onclick="goStep(3)">Revisar pedido <i class="ti ti-arrow-right" aria-hidden="true"></i></button>
+          </div>
+        </div>
+
+        <!-- STEP 3: Confirmação -->
+        <div id="step3" class="form-step">
+          <div style="background:var(--color-cream-300);padding:1.5rem;margin-bottom:1.5rem">
+            <p style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#aaa;margin-bottom:1rem">Resumo da sua solicitação</p>
+            <div id="summaryContent" style="display:flex;flex-direction:column;gap:0.6rem"></div>
+          </div>
+          <label style="display:flex;align-items:flex-start;gap:0.7rem;cursor:pointer;margin-bottom:1.5rem">
+            <input type="checkbox" id="lgpdCheck" style="margin-top:2px;accent-color:var(--gold)" />
+            <span style="font-size:11px;color:#888;line-height:1.7">Concordo com a <a href="#" style="color:var(--gold)">política de privacidade</a> e autorizo o contato da Bon Vivant pelo WhatsApp e e-mail.</span>
+          </label>
+          <div id="err-lgpd" class="form-error">Aceite os termos para continuar.</div>
+          <div style="display:flex;gap:1rem">
+            <button type="button" class="form-back" onclick="goStep(2)"><i class="ti ti-arrow-left" aria-hidden="true"></i> Voltar</button>
+            <button type="button" id="submitBtn" class="form-submit" onclick="submitForm()">
+              <span id="submitText"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Enviar via WhatsApp</span>
+              <span id="submitLoading" style="display:none"><i class="ti ti-loader-2" style="animation:spin 1s linear infinite" aria-hidden="true"></i> Enviando...</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- SUCCESS STATE -->
+        <div id="stepSuccess" class="form-step" style="text-align:center;padding:3rem 0">
+          <div style="width:56px;height:56px;background:var(--color-success);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem">
+            <i class="ti ti-check" style="font-size:24px;color:#fff" aria-hidden="true"></i>
+          </div>
+          <h3 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;font-style:italic;color:var(--dark);margin-bottom:0.8rem">Solicitação enviada!</h3>
+          <p style="font-size:13px;color:#888;line-height:1.8;max-width:380px;margin:0 auto 2rem">Nossa equipe entrará em contato pelo WhatsApp em até 2 horas. Obrigada pela preferência.</p>
+          <button type="button" onclick="resetForm()" style="background:none;border:0.5px solid rgba(0,0,0,0.2);padding:0.75rem 1.5rem;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;cursor:pointer;font-family:var(--font-body)">Nova solicitação</button>
+        </div>
+
+      </form>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer>
     <div class="footer-brand">
@@ -1523,6 +1834,171 @@
         icon.style.transform = 'rotate(45deg)';
       }
     }
+
+    /* ══════════════════════════════════════════
+       MÓDULO 1 — CALCULADORA DE ORÇAMENTO
+       State machine: idle → selecting → computing → result
+       ══════════════════════════════════════════ */
+    const calcState = { base: 800, mult: 1.0, add: 0, extras: 0 };
+
+    function calcSelect(btn) {
+      const group = btn.dataset.group;
+      document.querySelectorAll(`.calc-opt[data-group="${group}"]`).forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      if (group === 'tipo') calcState.base = +btn.dataset.base;
+      if (group === 'material') calcState.mult = +btn.dataset.mult;
+      if (group === 'pedra') calcState.add = +btn.dataset.add;
+      renderCalc();
+    }
+
+    function calcToggle(btn) {
+      btn.classList.toggle('selected');
+      calcState.extras = Array.from(document.querySelectorAll('.calc-opt-check.selected'))
+        .reduce((sum, b) => sum + +b.dataset.add, 0);
+      renderCalc();
+    }
+
+    function renderCalc() {
+      const total = Math.round(calcState.base * calcState.mult + calcState.add + calcState.extras);
+      const parcel = (total / 12).toFixed(2).replace('.', ',');
+      const pix = Math.round(total * 0.95);
+      document.getElementById('calcResult').textContent = `R$ ${total.toLocaleString('pt-BR')}`;
+      document.getElementById('calcParcel').textContent = `ou 12× de R$ ${parcel} · Pix: R$ ${pix.toLocaleString('pt-BR')}`;
+      const tipo  = document.querySelector('.calc-opt[data-group="tipo"].active')?.textContent || '';
+      const mat   = document.querySelector('.calc-opt[data-group="material"].active')?.textContent || '';
+      const pedra = document.querySelector('.calc-opt[data-group="pedra"].active')?.textContent || '';
+      const msg = encodeURIComponent(`Olá! Tenho interesse em um(a) ${tipo} em ${mat} com ${pedra}. Orçamento estimado: R$ ${total.toLocaleString('pt-BR')}. Poderia confirmar o valor?`);
+      document.getElementById('calcWaba').href = `https://wa.me/5511999990000?text=${msg}`;
+      document.getElementById('calcNote').style.display = 'block';
+    }
+
+    /* ══════════════════════════════════════════
+       MÓDULO 2 — FORMULÁRIO MULTI-STEP
+       State machine: step1 → step2 → step3 → success | error
+       ══════════════════════════════════════════ */
+    let currentStep = 1;
+    const stepMeta = {
+      1: { label: 'Passo 1 de 3 — Interesse', pct: '33%', width: '33%' },
+      2: { label: 'Passo 2 de 3 — Seus dados', pct: '66%', width: '66%' },
+      3: { label: 'Passo 3 de 3 — Confirmação', pct: '100%', width: '100%' },
+    };
+
+    function goStep(n) {
+      if (n > currentStep && !validateStep(currentStep)) return;
+      if (n === 3) buildSummary();
+      document.querySelector(`#step${currentStep}`)?.classList.remove('active');
+      currentStep = n;
+      document.querySelector(`#step${n}`)?.classList.add('active');
+      const meta = stepMeta[n];
+      document.getElementById('stepLabel').textContent = meta.label;
+      document.getElementById('stepPct').textContent = meta.pct;
+      document.getElementById('stepBar').style.width = meta.width;
+      document.querySelectorAll('.step-dot').forEach(dot => {
+        const s = +dot.dataset.step;
+        dot.classList.toggle('active', s === n);
+        dot.classList.toggle('done', s < n);
+      });
+    }
+
+    function validateStep(step) {
+      let valid = true;
+      if (step === 1) {
+        const checked = document.querySelectorAll('input[name="interest"]:checked').length > 0;
+        const orc = document.getElementById('orcamento').value;
+        showErr('err-interest', !checked);
+        showErr('err-orcamento', !orc);
+        valid = checked && !!orc;
+      }
+      if (step === 2) {
+        const nome = document.getElementById('nome').value.trim();
+        const tel  = document.getElementById('telefone').value.replace(/\D/g,'');
+        const email = document.getElementById('email2').value.trim();
+        const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        showErr('err-nome', !nome);
+        showErr('err-telefone', tel.length < 10);
+        showErr('err-email2', !emailOk);
+        setInputError('nome', !nome);
+        setInputError('telefone', tel.length < 10);
+        setInputError('email2', !emailOk);
+        valid = !!nome && tel.length >= 10 && emailOk;
+      }
+      return valid;
+    }
+
+    function showErr(id, show) { document.getElementById(id)?.classList.toggle('show', show); }
+    function setInputError(id, has) { document.getElementById(id)?.classList.toggle('error', has); }
+
+    function buildSummary() {
+      const interests = Array.from(document.querySelectorAll('input[name="interest"]:checked'))
+        .map(i => i.parentElement.textContent.trim()).join(', ');
+      const orcMap = { ate1k:'Até R$ 1.000','1k3k':'R$ 1.000–3.000','3k8k':'R$ 3.000–8.000',acima8k:'Acima de R$ 8.000' };
+      const orc = orcMap[document.getElementById('orcamento').value] || '—';
+      const nome  = document.getElementById('nome').value.trim();
+      const tel   = document.getElementById('telefone').value.trim();
+      const email = document.getElementById('email2').value.trim();
+      const msg   = document.getElementById('mensagem').value.trim();
+      document.getElementById('summaryContent').innerHTML = `
+        <div class="summary-row"><span>Interesse</span><span>${interests||'—'}</span></div>
+        <div class="summary-row"><span>Orçamento</span><span>${orc}</span></div>
+        <div class="summary-row"><span>Nome</span><span>${nome}</span></div>
+        <div class="summary-row"><span>WhatsApp</span><span>${tel}</span></div>
+        <div class="summary-row"><span>E-mail</span><span>${email}</span></div>
+        ${msg?`<div class="summary-row"><span>Mensagem</span><span style="max-width:240px;text-align:right">${msg}</span></div>`:''}
+      `;
+    }
+
+    function maskPhone(input) {
+      let v = input.value.replace(/\D/g,'').slice(0,11);
+      if (v.length > 10) v = v.replace(/^(\d{2})(\d{5})(\d{4})$/,'($1) $2-$3');
+      else if (v.length > 6) v = v.replace(/^(\d{2})(\d{4})(\d*)$/,'($1) $2-$3');
+      else if (v.length > 2) v = v.replace(/^(\d{2})(\d*)$/,'($1) $2');
+      input.value = v;
+    }
+
+    function submitForm() {
+      if (!document.getElementById('lgpdCheck').checked) { showErr('err-lgpd', true); return; }
+      showErr('err-lgpd', false);
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      document.getElementById('submitText').style.display = 'none';
+      document.getElementById('submitLoading').style.display = 'inline-flex';
+      const nome = document.getElementById('nome').value.trim();
+      const tel  = document.getElementById('telefone').value.trim();
+      const interests = Array.from(document.querySelectorAll('input[name="interest"]:checked'))
+        .map(i => i.parentElement.textContent.trim()).join(', ');
+      const orcMap = { ate1k:'Até R$ 1.000','1k3k':'R$ 1.000–3.000','3k8k':'R$ 3.000–8.000',acima8k:'Acima de R$ 8.000' };
+      const orc   = orcMap[document.getElementById('orcamento').value] || '';
+      const extra = document.getElementById('mensagem').value.trim();
+      const waMsg = encodeURIComponent(`Olá! Me chamo ${nome} (${tel}).\nInteresse: ${interests}.\nOrçamento: ${orc}.\n${extra?'Obs: '+extra+'\n':''}Gostaria de uma consultoria gratuita.`);
+      setTimeout(() => {
+        window.open(`https://wa.me/5511999990000?text=${waMsg}`, '_blank');
+        document.getElementById('step3').classList.remove('active');
+        document.getElementById('stepSuccess').classList.add('active');
+        document.getElementById('stepLabel').textContent = 'Solicitação enviada!';
+      }, 1200);
+    }
+
+    function resetForm() {
+      document.getElementById('consultForm').reset();
+      document.querySelectorAll('.interest-card').forEach(c => c.classList.remove('checked'));
+      document.getElementById('stepSuccess').classList.remove('active');
+      currentStep = 1;
+      document.getElementById('step1').classList.add('active');
+      document.getElementById('stepLabel').textContent = stepMeta[1].label;
+      document.getElementById('stepPct').textContent = stepMeta[1].pct;
+      document.getElementById('stepBar').style.width = stepMeta[1].width;
+      document.querySelectorAll('.step-dot').forEach(dot => {
+        dot.classList.toggle('active', +dot.dataset.step === 1);
+        dot.classList.remove('done');
+      });
+      document.getElementById('submitBtn').disabled = false;
+      document.getElementById('submitText').style.display = 'inline-flex';
+      document.getElementById('submitLoading').style.display = 'none';
+    }
+
+    document.querySelectorAll('.interest-card').forEach(card => {
+      card.addEventListener('click', () => card.classList.toggle('checked', card.querySelector('input').checked));
+    });
 
     /* ── SCROLL REVEAL ── */
     const observer = new IntersectionObserver((entries) => {
