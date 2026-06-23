@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bon Vivant — Joias</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #b8963e;
+      --gold-light: #d4b060;
+      --dark: #111010;
+      --cream: #f5f0e8;
+      --warm: #ede8de;
+      --rust: #8b4a2b;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      color: var(--dark);
+      background: var(--cream);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* grain overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.032;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.4rem 3.5rem;
+      border-bottom: 0.5px solid rgba(0,0,0,0.07);
+      background: var(--cream);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--dark);
+    }
+    .logo span {
+      font-style: italic;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #888;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--dark); }
+    .nav-icons { display: flex; gap: 1.3rem; }
+    .nav-icons i { font-size: 19px; color: #777; cursor: pointer; transition: color 0.2s; }
+    .nav-icons i:hover { color: var(--dark); }
+
+    /* HERO — layout completamente quebrado */
+    .hero {
+      min-height: 92vh;
+      display: grid;
+      grid-template-columns: 58px 1fr 1fr;
+      grid-template-rows: 1fr auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-sidebar {
+      background: var(--dark);
+      grid-column: 1;
+      grid-row: 1 / 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding-bottom: 2.5rem;
+      gap: 1.5rem;
+    }
+
+    .hero-sidebar-text {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      margin-bottom: auto;
+      margin-top: 2rem;
+    }
+
+    .hero-sidebar i { font-size: 16px; color: rgba(255,255,255,0.2); }
+
+    .hero-main {
+      grid-column: 2;
+      grid-row: 1;
+      background: var(--dark);
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 4rem 3.5rem;
+      overflow: hidden;
+    }
+
+    /* large background number */
+    .hero-main::before {
+      content: '01';
+      position: absolute;
+      top: -0.1em;
+      right: -0.05em;
+      font-family: 'Inter', sans-serif;
+      font-size: 22rem;
+      font-weight: 900;
+      color: rgba(255,255,255,0.025);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .hero-eyebrow {
+      font-size: 9px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+
+    .hero-h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 5vw, 5.5rem);
+      font-weight: 400;
+      line-height: 1.0;
+      color: var(--cream);
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+
+    /* mixed weight trick */
+    .hero-h1 .thin {
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.52em;
+      letter-spacing: 0.06em;
+      display: block;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 0.15em;
+    }
+
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    /* element escaping the column */
+    .hero-tag {
+      position: absolute;
+      top: 2.5rem;
+      left: -1px;
+      background: var(--gold);
+      color: var(--dark);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+    }
+
+    .hero-right {
+      grid-column: 3;
+      grid-row: 1;
+      background: var(--warm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* rotated text element */
+    .hero-rotated {
+      position: absolute;
+      bottom: 5rem;
+      right: -3.5rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 6rem;
+      font-weight: 900;
+      font-style: italic;
+      color: rgba(0,0,0,0.04);
+      white-space: nowrap;
+      transform: rotate(-90deg);
+      transform-origin: right center;
+      pointer-events: none;
+      user-select: none;
+      line-height: 1;
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .hero-stat {
+      border-left: 0.5px solid var(--gold);
+      padding-left: 1.2rem;
+    }
+    .hero-stat span {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 0.3rem;
+    }
+    .hero-stat strong { font-size: 12px; font-weight: 400; color: var(--dark); }
+
+    .hero-bottom {
+      grid-column: 2 / 4;
+      grid-row: 2;
+      background: var(--gold);
+      padding: 1.2rem 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hero-bottom p {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--dark);
+      font-weight: 500;
+    }
+
+    .hero-bottom .scroll-hint {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.45);
+    }
+
+    /* BUTTONS */
+    .btn-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0.85rem 2rem;
+      background: var(--cream);
+      color: var(--dark);
+      font-size: 10px;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-dark:hover { background: #e0dbd2; }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0.85rem 2rem;
+      background: transparent;
+      color: var(--dark);
+      font-size: 10px;
+      font-weight: 400;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border: 0.5px solid rgba(0,0,0,0.25);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--dark); }
+
+    /* FEATURED — mixed grid layout */
+    .featured {
+      padding: 6rem 0;
+      background: #fff;
+    }
+
+    .featured-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 0 3.5rem;
+      margin-bottom: 3rem;
+    }
+
+    /* headline with extreme weight mix */
+    .section-headline {
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      line-height: 1.05;
+      color: var(--dark);
+    }
+
+    .section-headline .weight-black {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      display: block;
+    }
+
+    .section-headline .weight-thin {
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.55em;
+      letter-spacing: 0.1em;
+      color: #aaa;
+      display: block;
+      margin-bottom: 0.1em;
+    }
+
+    .section-headline .weight-italic {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--gold);
+    }
+
+    /* asymmetric product grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+      grid-template-rows: auto auto;
+      gap: 2px;
+    }
+
+    .product-card { cursor: pointer; position: relative; }
+    .product-card:hover .product-img-inner { transform: scale(1.02); }
+
+    /* first card spans 2 rows */
+    .product-card:first-child { grid-row: 1 / 3; }
+
+    .product-img {
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      background: var(--warm);
+      position: relative;
+    }
+    .product-card:first-child .product-img { aspect-ratio: unset; height: 100%; }
+
+    .product-img-inner {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .product-img-inner svg { opacity: 0.28; }
+
+    .product-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      font-size: 8px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      background: var(--dark);
+      color: var(--cream);
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      z-index: 2;
+    }
+    .product-badge.gold { background: var(--gold); color: var(--dark); }
+
+    .product-info { padding: 1.2rem 1.2rem 1.6rem; }
+    .product-name { font-size: 12px; font-weight: 400; color: var(--dark); letter-spacing: 0.05em; margin-bottom: 0.3rem; }
+    .product-meta { font-size: 10px; color: #bbb; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+    .product-price { font-size: 14px; font-weight: 500; color: var(--dark); }
+
+    /* card with dark bg — breaking pattern */
+    .product-card.dark-card .product-img { background: var(--dark); }
+    .product-card.dark-card .product-info { background: var(--dark); }
+    .product-card.dark-card .product-name { color: var(--cream); }
+    .product-card.dark-card .product-meta { color: rgba(255,255,255,0.3); }
+    .product-card.dark-card .product-price { color: var(--gold-light); }
+
+    /* ABOUT — off-grid layout */
+    .about {
+      padding: 8rem 3.5rem;
+      display: grid;
+      grid-template-columns: 1fr 72px 1fr;
+      gap: 0;
+      align-items: start;
+      position: relative;
+    }
+
+    .about-left { padding-right: 4rem; }
+
+    .about-number {
+      font-family: 'Inter', sans-serif;
+      font-size: 9rem;
+      font-weight: 900;
+      color: rgba(0,0,0,0.04);
+      line-height: 1;
+      margin-bottom: -2rem;
+      display: block;
+    }
+
+    .about-visual {
+      aspect-ratio: 3/4;
+      background: var(--dark);
+      position: relative;
+      overflow: hidden;
+      /* escaping the grid */
+      margin-top: -4rem;
+      margin-bottom: -4rem;
+    }
+
+    .about-visual::after {
+      content: '';
+      position: absolute;
+      inset: 2rem;
+      border: 0.5px solid rgba(201,168,76,0.18);
+    }
+
+    .about-visual-inner {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 2.5rem;
+      right: 2.5rem;
+    }
+
+    .about-visual-inner p {
+      font-size: 9px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .about-visual-inner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--cream);
+      line-height: 1.25;
+    }
+
+    .about-center-line {
+      width: 0.5px;
+      background: rgba(0,0,0,0.08);
+      align-self: stretch;
+      margin: 0 auto;
+    }
+
+    .about-right { padding-left: 4rem; padding-top: 2rem; }
+
+    .label {
+      font-size: 9px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+
+    .title {
+      font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+      font-weight: 300;
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+
+    .body-text { font-size: 13px; color: #888; line-height: 1.9; max-width: 400px; }
+
+    .divider { width: 36px; height: 0.5px; background: var(--gold); margin: 1.8rem 0; }
+
+    .features { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; margin-top: 2rem; }
+    .feature { display: flex; gap: 0.9rem; align-items: flex-start; }
+    .feature-icon {
+      width: 34px; height: 34px;
+      border: 0.5px solid var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; color: var(--gold); font-size: 15px;
+    }
+    .feature-title { font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dark); margin-bottom: 0.25rem; }
+    .feature-desc { font-size: 11px; color: #aaa; line-height: 1.65; }
+
+    /* CATALOG */
+    .catalog { padding: 7rem 3.5rem; background: var(--cream); }
+
+    .catalog-top {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 3.5rem;
+    }
+
+    .filters { display: flex; gap: 0; border-bottom: 0.5px solid rgba(0,0,0,0.07); }
+    .filter-btn {
+      padding: 0.7rem 1.4rem;
+      font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+      background: transparent; border: none; border-bottom: 1.5px solid transparent;
+      margin-bottom: -0.5px; color: #bbb; cursor: pointer; transition: all 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+    .filter-btn.active { color: var(--dark); border-bottom-color: var(--gold); }
+    .filter-btn:hover { color: var(--dark); }
+
+    /* catalog: mixed sizes */
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 2.5rem;
+    }
+
+    .cat-card { cursor: pointer; }
+    .cat-card:hover .cat-img { opacity: 0.8; }
+    .cat-card:hover .cat-name { color: var(--gold); }
+
+    /* second item — bigger, spans rows */
+    .cat-card:nth-child(2) { grid-row: 1 / 3; }
+    .cat-card:nth-child(2) .cat-img { aspect-ratio: 2/3; }
+
+    .cat-img {
+      background: var(--warm);
+      aspect-ratio: 1;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem; transition: opacity 0.3s;
+    }
+    .cat-img svg { opacity: 0.25; }
+    .cat-name { font-size: 13px; font-weight: 400; color: var(--dark); letter-spacing: 0.04em; margin-bottom: 0.3rem; transition: color 0.25s; }
+    .cat-detail { font-size: 10px; color: #ccc; letter-spacing: 0.07em; }
+    .cat-price { font-size: 14px; font-weight: 500; color: var(--dark); margin-top: 0.5rem; }
+
+    /* MARQUEE — editorial detail */
+    .marquee-strip {
+      background: var(--dark);
+      padding: 1rem 0;
+      overflow: hidden;
+      white-space: nowrap;
+      border-top: 0.5px solid rgba(255,255,255,0.04);
+    }
+
+    .marquee-inner {
+      display: inline-flex;
+      gap: 3rem;
+      animation: marquee 18s linear infinite;
+    }
+
+    .marquee-inner span {
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+    }
+
+    .marquee-inner .dot {
+      color: var(--gold);
+      font-size: 6px;
+      vertical-align: middle;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* TESTIMONIALS */
+    .testimonials {
+      background: var(--dark);
+      padding: 7rem 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* large italic bg text */
+    .testimonials::before {
+      content: '"';
+      position: absolute;
+      top: -0.2em;
+      left: -0.05em;
+      font-family: 'Playfair Display', serif;
+      font-size: 30rem;
+      font-weight: 900;
+      color: rgba(255,255,255,0.018);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .testimonials .label { color: var(--gold); margin-bottom: 0.5rem; }
+    .testi-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 4rem; }
+
+    .testi-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--cream);
+      line-height: 1.2;
+    }
+
+    .testi-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 3rem; }
+
+    .testi-card {
+      border-top: 0.5px solid rgba(255,255,255,0.07);
+      padding-top: 2rem;
+    }
+
+    /* first testimonial — larger treatment */
+    .testi-card:first-child .testi-text { font-size: 16px; }
+
+    .testi-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 13px;
+      font-style: italic;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .testi-author { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+    .testi-location { font-size: 9px; color: rgba(255,255,255,0.18); margin-top: 0.15rem; }
+
+    /* NEWSLETTER */
+    .newsletter {
+      background: var(--warm);
+      padding: 6rem 3.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .newsletter-left .nl-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--dark);
+    }
+    .newsletter-left .nl-title em { font-style: italic; color: var(--gold); }
+    .newsletter-left .nl-sub { font-size: 12px; color: #aaa; margin-top: 0.8rem; line-height: 1.8; }
+
+    .nl-form { display: flex; margin-top: 2rem; }
+    .nl-form input {
+      flex: 1;
+      padding: 0.95rem 1.2rem;
+      font-size: 12px; font-family: 'Inter', sans-serif; font-weight: 300;
+      border: 0.5px solid rgba(0,0,0,0.15); border-right: none;
+      background: #fff; color: var(--dark); outline: none;
+    }
+    .nl-form input::placeholder { color: #ccc; }
+    .nl-form button {
+      padding: 0.95rem 1.8rem;
+      background: var(--dark); color: var(--cream);
+      border: none; font-size: 10px; font-family: 'Inter', sans-serif;
+      font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+      cursor: pointer; transition: background 0.2s;
+    }
+    .nl-form button:hover { background: #2a2a2a; }
+
+    .newsletter-right {
+      position: relative;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* decorative geometric element */
+    .geo-deco {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .geo-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 0.5px solid rgba(184,150,62,0.25);
+    }
+
+    .geo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.5rem;
+      font-weight: 900;
+      font-style: italic;
+      color: rgba(0,0,0,0.06);
+      text-align: center;
+      line-height: 1;
+      z-index: 2;
+      position: relative;
+    }
+
+    /* CONTACT */
+    .contact-strip {
+      padding: 5rem 3.5rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      border-top: 0.5px solid rgba(0,0,0,0.06);
+      background: var(--cream);
+    }
+    .contact-item { display: flex; flex-direction: column; gap: 0.5rem; }
+    .contact-item i { font-size: 20px; color: var(--gold); margin-bottom: 0.5rem; }
+    .contact-label { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: #bbb; }
+    .contact-value { font-size: 12px; color: var(--dark); line-height: 1.6; }
+
+    /* FOOTER */
+    footer {
+      background: #0e0e0e;
+      padding: 5rem 3.5rem 3.5rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 4rem;
+    }
+    .footer-brand .f-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+    .footer-brand .f-logo em { font-style: italic; color: var(--gold); }
+    .footer-brand p { font-size: 11px; color: rgba(255,255,255,0.25); line-height: 1.8; max-width: 220px; }
+    .footer-social { display: flex; gap: 1rem; margin-top: 1.5rem; }
+    .footer-social i { font-size: 17px; color: rgba(255,255,255,0.25); cursor: pointer; transition: color 0.2s; }
+    .footer-social i:hover { color: var(--gold); }
+    .footer-col h4 { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 1.2rem; font-weight: 400; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+    .footer-col ul a { font-size: 11px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+    .footer-col ul a:hover { color: var(--gold); }
+    .footer-bottom {
+      background: #090909;
+      padding: 1.4rem 3.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 0.8rem;
+    }
+    .footer-bottom span { font-size: 10px; color: rgba(255,255,255,0.15); }
+
+    /* WHATSAPP FAB */
+    .wa-fab {
+      position: fixed;
+      bottom: 2rem; right: 2rem;
+      width: 48px; height: 48px;
+      background: var(--dark);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; z-index: 999;
+      border: 0.5px solid rgba(255,255,255,0.06);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+      text-decoration: none;
+      transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .wa-fab:hover { transform: scale(1.1); }
+    .wa-fab i { font-size: 21px; color: var(--gold); }
+
+    /* SCROLL ANIMATIONS */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Bon <span>Vivant</span></div>
+    <ul class="nav-links">
+      <li><a href="#colecoes">Coleções</a></li>
+      <li><a href="#catalogo">Catálogo</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <div class="nav-icons">
+      <i class="ti ti-search" title="Buscar"></i>
+      <i class="ti ti-heart" title="Favoritos"></i>
+      <i class="ti ti-shopping-bag" title="Carrinho"></i>
+    </div>
+  </nav>
+
+  <!-- HERO — layout de 3 colunas com sidebar vertical -->
+  <section class="hero" id="colecoes">
+    <div class="hero-sidebar">
+      <span class="hero-sidebar-text">Bon Vivant — Coleção 2025</span>
+      <i class="ti ti-brand-instagram"></i>
+      <i class="ti ti-brand-pinterest"></i>
+    </div>
+
+    <div class="hero-main">
+      <div class="hero-tag">Nova coleção</div>
+      <div class="reveal">
+        <span class="hero-eyebrow">Outono · 2025</span>
+        <h1 class="hero-h1">
+          <span class="thin">o luxo de existir</span>
+          com <em>arte.</em>
+        </h1>
+        <a class="btn-dark" href="#colecoes">
+          Ver coleção <i class="ti ti-arrow-right" style="font-size:13px"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-rotated">Joias</div>
+      <div class="hero-stats reveal">
+        <div class="hero-stat">
+          <span>Materiais</span>
+          <strong>Ouro 18k · Prata 925 · Pedras naturais</strong>
+        </div>
+        <div class="hero-stat">
+          <span>Garantia</span>
+          <strong>2 anos em todas as peças</strong>
+        </div>
+        <div class="hero-stat">
+          <span>Entrega</span>
+          <strong>Para todo o Brasil · Embalagem exclusiva</strong>
+        </div>
+      </div>
+      <div class="reveal">
+        <a class="btn-ghost" href="#contato">Agendar consultoria <i class="ti ti-arrow-right" style="font-size:12px"></i></a>
+      </div>
+    </div>
+
+    <div class="hero-bottom">
+      <p>Joias com história. Design com propósito.</p>
+      <div class="scroll-hint">
+        <i class="ti ti-arrow-down" style="font-size:13px"></i>
+        Explorar
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-strip">
+    <div class="marquee-inner">
+      <span>Ouro 18k</span><span class="dot">◆</span>
+      <span>Prata 925</span><span class="dot">◆</span>
+      <span>Design autoral</span><span class="dot">◆</span>
+      <span>Pedras certificadas</span><span class="dot">◆</span>
+      <span>Garantia 2 anos</span><span class="dot">◆</span>
+      <span>Feito no Brasil</span><span class="dot">◆</span>
+      <span>Embalagem exclusiva</span><span class="dot">◆</span>
+      <span>Atendimento personalizado</span><span class="dot">◆</span>
+      <!-- repeat for seamless loop -->
+      <span>Ouro 18k</span><span class="dot">◆</span>
+      <span>Prata 925</span><span class="dot">◆</span>
+      <span>Design autoral</span><span class="dot">◆</span>
+      <span>Pedras certificadas</span><span class="dot">◆</span>
+      <span>Garantia 2 anos</span><span class="dot">◆</span>
+      <span>Feito no Brasil</span><span class="dot">◆</span>
+      <span>Embalagem exclusiva</span><span class="dot">◆</span>
+      <span>Atendimento personalizado</span><span class="dot">◆</span>
+    </div>
+  </div>
+
+  <!-- FEATURED — grid assimétrico -->
+  <section class="featured">
+    <div class="featured-header reveal">
+      <div>
+        <span class="label">Em destaque</span>
+        <h2 class="section-headline">
+          <span class="weight-thin">seleção especial</span>
+          <span class="weight-black">Peças <span class="weight-italic">únicas.</span></span>
+        </h2>
+      </div>
+      <a class="btn-ghost" href="#catalogo">Ver catálogo completo <i class="ti ti-arrow-right" style="font-size:12px"></i></a>
+    </div>
+
+    <div class="products-grid">
+      <!-- first card spans 2 rows — large -->
+      <div class="product-card">
+        <div class="product-img" style="height:100%">
+          <span class="product-badge gold">Exclusivo</span>
+          <div class="product-img-inner">
+            <svg width="90" height="90" viewBox="0 0 90 90" fill="none">
+              <circle cx="45" cy="34" r="24" stroke="#8a7040" stroke-width="1.2"/>
+              <circle cx="45" cy="34" r="14" stroke="#8a7040" stroke-width="0.6"/>
+              <line x1="45" y1="10" x2="45" y2="5" stroke="#8a7040" stroke-width="1.4"/>
+              <line x1="45" y1="5" x2="45" y2="80" stroke="#8a7040" stroke-width="0.6"/>
+              <ellipse cx="45" cy="78" rx="7" ry="3.5" stroke="#8a7040" stroke-width="0.7"/>
+            </svg>
+          </div>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Colar Lumière</p>
+          <p class="product-meta">Ouro 18k · Ametista natural</p>
+          <p class="product-price">R$ 3.890</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <span class="product-badge">Novo</span>
+          <div class="product-img-inner">
+            <svg width="70" height="70" viewBox="0 0 70 70" fill="none">
+              <rect x="10" y="10" width="50" height="50" rx="25" stroke="#8a7040" stroke-width="1"/>
+              <rect x="22" y="22" width="26" height="26" rx="13" stroke="#8a7040" stroke-width="0.5"/>
+              <circle cx="35" cy="35" r="5" fill="#8a7040" opacity="0.35"/>
+            </svg>
+          </div>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Anel Solstice</p>
+          <p class="product-meta">Prata 925 · Safira azul</p>
+          <p class="product-price">R$ 1.290</p>
+        </div>
+      </div>
+
+      <div class="product-card dark-card">
+        <div class="product-img">
+          <div class="product-img-inner">
+            <svg width="70" height="70" viewBox="0 0 70 70" fill="none">
+              <path d="M35 8 L38 28 L58 28 L43 40 L48 60 L35 48 L22 60 L27 40 L12 28 L32 28 Z" stroke="#c9a84c" stroke-width="1" fill="none"/>
+            </svg>
+          </div>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Brinco Étoile</p>
+          <p class="product-meta">Ouro 18k · Diamante</p>
+          <p class="product-price">R$ 5.200</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <span class="product-badge">Promoção</span>
+          <div class="product-img-inner">
+            <svg width="70" height="70" viewBox="0 0 70 70" fill="none">
+              <ellipse cx="35" cy="35" rx="28" ry="18" stroke="#8a7040" stroke-width="1"/>
+              <ellipse cx="35" cy="35" rx="18" ry="10" stroke="#8a7040" stroke-width="0.5"/>
+              <line x1="7" y1="35" x2="63" y2="35" stroke="#8a7040" stroke-width="0.4"/>
+            </svg>
+          </div>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Pulseira Arc</p>
+          <p class="product-meta">Ouro 18k · Rubi natural</p>
+          <p class="product-price">R$ 2.680</p>
+        </div>
+      </div>
+
+      <div class="product-card dark-card">
+        <div class="product-img">
+          <div class="product-img-inner">
+            <svg width="70" height="70" viewBox="0 0 70 70" fill="none">
+              <path d="M12 35 Q24 20 35 35 Q46 50 58 35" stroke="#c9a84c" stroke-width="1" fill="none"/>
+              <circle cx="12" cy="35" r="4" stroke="#c9a84c" stroke-width="0.6"/>
+              <circle cx="58" cy="35" r="4" stroke="#c9a84c" stroke-width="0.6"/>
+            </svg>
+          </div>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Pulseira Vague</p>
+          <p class="product-meta">Prata 925 · Madre pérola</p>
+          <p class="product-price">R$ 1.580</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT — layout off-grid -->
+  <section class="about" id="sobre">
+    <div class="about-left reveal">
+      <span class="about-number">02</span>
+      <span class="label">Sobre a Bon Vivant</span>
+      <h2 class="title" style="font-size:clamp(1.8rem,2.5vw,2.8rem)">Mais do que<br>uma joia.<br>Uma escolha.</h2>
+      <div class="divider"></div>
+      <p class="body-text">Nascemos da crença de que beleza e substância andam juntas. Cada peça é projetada para ser única — não apenas um adorno, mas uma extensão de quem você é.</p>
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon"><i class="ti ti-diamond"></i></div>
+          <div>
+            <p class="feature-title">Materiais nobres</p>
+            <p class="feature-desc">Ouro 18k, prata 925 e pedras certificadas</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon"><i class="ti ti-pencil"></i></div>
+          <div>
+            <p class="feature-title">Design autoral</p>
+            <p class="feature-desc">Criação própria, sem cópias</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon"><i class="ti ti-shield-check"></i></div>
+          <div>
+            <p class="feature-title">Garantia real</p>
+            <p class="feature-desc">2 anos com suporte completo</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon"><i class="ti ti-package"></i></div>
+          <div>
+            <p class="feature-title">Embalagem exclusiva</p>
+            <p class="feature-desc">Apresentação digna de cada momento</p>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:2.5rem">
+        <a class="btn-ghost" href="#">Nossa história <i class="ti ti-arrow-right" style="font-size:12px"></i></a>
+      </div>
+    </div>
+
+    <div class="about-center-line"></div>
+
+    <div style="padding-left:4rem; padding-top:4rem; padding-bottom:4rem">
+      <div class="about-visual reveal">
+        <div class="about-visual-inner">
+          <p>Depuis 2008</p>
+          <h2>Joias que<br>contam histórias</h2>
+        </div>
+        <div class="about-visual-year" style="position:absolute;bottom:2rem;right:2rem;font-size:9px;letter-spacing:0.18em;color:rgba(255,255,255,0.2)">São Paulo · Brasil</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATALOG -->
+  <section class="catalog" id="catalogo">
+    <div class="catalog-top reveal">
+      <div>
+        <span class="label">Catálogo</span>
+        <h2 class="section-headline" style="font-size:clamp(1.8rem,3vw,3rem)">
+          <span class="weight-thin">explore todas as</span>
+          <span class="weight-black"><span class="weight-italic">coleções.</span></span>
+        </h2>
+      </div>
+      <div class="filters">
+        <button class="filter-btn active" onclick="setFilter(this)">Todos</button>
+        <button class="filter-btn" onclick="setFilter(this)">Anéis</button>
+        <button class="filter-btn" onclick="setFilter(this)">Colares</button>
+        <button class="filter-btn" onclick="setFilter(this)">Brincos</button>
+        <button class="filter-btn" onclick="setFilter(this)">Pulseiras</button>
+      </div>
+    </div>
+
+    <div class="catalog-grid">
+      <div class="cat-card reveal">
+        <div class="cat-img">
+          <svg width="55" height="55" viewBox="0 0 55 55" fill="none">
+            <path d="M27 5 C33 5 45 13 45 27 C45 41 33 50 27 50 C21 50 9 41 9 27 C9 13 21 5 27 5Z" stroke="#8a7040" stroke-width="0.8" fill="none"/>
+            <circle cx="27" cy="27" r="7" stroke="#8a7040" stroke-width="0.5"/>
+          </svg>
+        </div>
+        <p class="cat-name">Colar Sirocco</p>
+        <p class="cat-detail">Ouro 18k · Topázio branco</p>
+        <p class="cat-price">R$ 4.100</p>
+      </div>
+
+      <!-- center item — larger -->
+      <div class="cat-card reveal reveal-delay-1">
+        <div class="cat-img">
+          <svg width="55" height="55" viewBox="0 0 55 55" fill="none">
+            <circle cx="27" cy="27" r="20" stroke="#8a7040" stroke-width="0.8"/>
+            <circle cx="27" cy="27" r="10" stroke="#8a7040" stroke-width="0.5"/>
+            <circle cx="27" cy="27" r="3" fill="#8a7040" opacity="0.4"/>
+          </svg>
+        </div>
+        <p class="cat-name">Anel Cosmos</p>
+        <p class="cat-detail">Prata 925 · Zircônia</p>
+        <p class="cat-price">R$ 890</p>
+      </div>
+
+      <div class="cat-card reveal reveal-delay-2">
+        <div class="cat-img">
+          <svg width="55" height="55" viewBox="0 0 55 55" fill="none">
+            <path d="M20 8 L27 19 L34 8" stroke="#8a7040" stroke-width="0.8" fill="none"/>
+            <line x1="20" y1="8" x2="20" y2="46" stroke="#8a7040" stroke-width="0.5"/>
+            <line x1="34" y1="8" x2="34" y2="46" stroke="#8a7040" stroke-width="0.5"/>
+            <ellipse cx="20" cy="48" rx="3" ry="2" stroke="#8a7040" stroke-width="0.5"/>
+            <ellipse cx="34" cy="48" rx="3" ry="2" stroke="#8a7040" stroke-width="0.5"/>
+          </svg>
+        </div>
+        <p class="cat-name">Brinco Cascade</p>
+        <p class="cat-detail">Ouro 18k · Esmeralda</p>
+        <p class="cat-price">R$ 6.350</p>
+      </div>
+
+      <div class="cat-card reveal reveal-delay-3">
+        <div class="cat-img">
+          <svg width="55" height="55" viewBox="0 0 55 55" fill="none">
+            <polygon points="27,5 31,20 46,20 35,29 39,44 27,35 15,44 19,29 8,20 23,20" stroke="#8a7040" stroke-width="0.8" fill="none"/>
+          </svg>
+        </div>
+        <p class="cat-name">Pingente Stella</p>
+        <p class="cat-detail">Ouro 18k · Diamante</p>
+        <p class="cat-price">R$ 7.900</p>
+      </div>
+
+      <div class="cat-card reveal">
+        <div class="cat-img">
+          <svg width="55" height="55" viewBox="0 0 55 55" fill="none">
+            <rect x="14" y="14" width="27" height="27" stroke="#8a7040" stroke-width="0.8" fill="none"/>
+            <rect x="20" y="20" width="15" height="15" stroke="#8a7040" stroke-width="0.5" fill="none"/>
+          </svg>
+        </div>
+        <p class="cat-name">Anel Lattice</p>
+        <p class="cat-detail">Ouro 18k · Safira rosa</p>
+        <p class="cat-price">R$ 3.200</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="testi-header reveal">
+      <div>
+        <span class="label">Depoimentos</span>
+        <h2 class="testi-title">O que dizem<br>nossas clientes.</h2>
+      </div>
+      <a class="btn-ghost-light" href="#" style="color:rgba(255,255,255,0.4);border-color:rgba(255,255,255,0.1);font-size:10px;padding:0.75rem 1.6rem">
+        Ver todos <i class="ti ti-arrow-right" style="font-size:12px"></i>
+      </a>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <p class="testi-text">"Cada detalhe foi pensado. A joia chegou numa embalagem que parecia um presente do futuro — e a peça em si é simplesmente perfeita."</p>
+        <p class="testi-author">Mariana V.</p>
+        <p class="testi-location">São Paulo</p>
+      </div>
+      <div class="testi-card reveal reveal-delay-1">
+        <p class="testi-text">"Comprei o Anel Solstice para o meu aniversário. Dois anos depois, ainda recebo elogios toda semana. Qualidade que dura."</p>
+        <p class="testi-author">Fernanda R.</p>
+        <p class="testi-location">Rio de Janeiro</p>
+      </div>
+      <div class="testi-card reveal reveal-delay-2">
+        <p class="testi-text">"O atendimento via WhatsApp foi impecável. Me ajudaram a escolher o tamanho certo e a peça chegou antes do prazo."</p>
+        <p class="testi-author">Ana C.</p>
+        <p class="testi-location">Curitiba</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="newsletter-left reveal">
+      <span class="label">Novidades em primeira mão</span>
+      <h2 class="nl-title">Antes<br>de <em>todos.</em></h2>
+      <p class="nl-sub">Lançamentos exclusivos, eventos e ofertas direto para você. Sem spam — apenas o essencial.</p>
+      <div class="nl-form">
+        <input type="email" placeholder="seu@email.com" />
+        <button type="button">Inscrever</button>
+      </div>
+    </div>
+    <div class="newsletter-right reveal">
+      <div class="geo-deco">
+        <div class="geo-ring" style="width:260px;height:260px;"></div>
+        <div class="geo-ring" style="width:190px;height:190px;"></div>
+        <div class="geo-ring" style="width:120px;height:120px;"></div>
+      </div>
+      <div class="geo-text">BV</div>
+    </div>
+  </section>
+
+  <!-- CONTACT STRIP -->
+  <section class="contact-strip" id="contato">
+    <div class="contact-item reveal">
+      <i class="ti ti-map-pin"></i>
+      <span class="contact-label">Loja física</span>
+      <span class="contact-value">Rua Oscar Freire, 852<br>Jardins · São Paulo</span>
+    </div>
+    <div class="contact-item reveal reveal-delay-1">
+      <i class="ti ti-brand-whatsapp"></i>
+      <span class="contact-label">WhatsApp</span>
+      <span class="contact-value">(11) 99999-0000<br>Seg–Sáb, 9h–19h</span>
+    </div>
+    <div class="contact-item reveal reveal-delay-2">
+      <i class="ti ti-mail"></i>
+      <span class="contact-label">E-mail</span>
+      <span class="contact-value">contato@bonvivant.com.br</span>
+    </div>
+    <div class="contact-item reveal reveal-delay-3">
+      <i class="ti ti-clock"></i>
+      <span class="contact-label">Horário</span>
+      <span class="contact-value">Seg–Sex: 9h–19h<br>Sábado: 10h–16h</span>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">
+      <span class="f-logo">Bon <em>Vivant</em></span>
+      <p>Joias com história. Design com propósito. Qualidade sem concessão.</p>
+      <div class="footer-social">
+        <i class="ti ti-brand-instagram" title="Instagram"></i>
+        <i class="ti ti-brand-facebook" title="Facebook"></i>
+        <i class="ti ti-brand-pinterest" title="Pinterest"></i>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Comprar</h4>
+      <ul>
+        <li><a href="#">Anéis</a></li>
+        <li><a href="#">Colares</a></li>
+        <li><a href="#">Brincos</a></li>
+        <li><a href="#">Pulseiras</a></li>
+        <li><a href="#">Kits &amp; presentes</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>A marca</h4>
+      <ul>
+        <li><a href="#">Nossa história</a></li>
+        <li><a href="#">Processos</a></li>
+        <li><a href="#">Sustentabilidade</a></li>
+        <li><a href="#">Imprensa</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Suporte</h4>
+      <ul>
+        <li><a href="#">Perguntas frequentes</a></li>
+        <li><a href="#">Trocas &amp; devoluções</a></li>
+        <li><a href="#">Cuidados com a joia</a></li>
+        <li><a href="#">Privacidade</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div class="footer-bottom">
+    <span>© 2025 Bon Vivant Joias. Todos os direitos reservados.</span>
+    <span>Visa · Mastercard · Pix · Boleto</span>
+  </div>
+
+  <a class="wa-fab" href="https://wa.me/5511999990000" target="_blank" title="WhatsApp">
+    <i class="ti ti-brand-whatsapp"></i>
+  </a>
+
+  <script>
+    function setFilter(btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
