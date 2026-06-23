@@ -56,23 +56,201 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    /* ════════════════════════════════════════════
+       BON VIVANT — DESIGN SYSTEM v1.0
+       Personality: Luxury · Minimal
+       ════════════════════════════════════════════
+
+       1. COLOR TOKENS
+       2. TYPOGRAPHY SCALE
+       3. SPATIAL / SPACING TOKENS
+       4. MOTION TOKENS
+       5. SHADOW & BORDER TOKENS
+       6. BREAKPOINT REFERENCE
+    ════════════════════════════════════════════ */
+
     :root {
-      --gold: #b8963e;
-      --gold-light: #d4b060;
-      --dark: #111010;
-      --cream: #f5f0e8;
-      --warm: #ede8de;
+
+      /* ── 1. COLOR SYSTEM ──────────────────────── */
+
+      /* Gold — primary brand accent */
+      --color-gold-50:  #fdf8ee;
+      --color-gold-100: #f5e9c8;
+      --color-gold-200: #ead498;
+      --color-gold-300: #d4b060;   /* gold-light */
+      --color-gold-400: #b8963e;   /* gold — main */
+      --color-gold-500: #9a7b2f;
+      --color-gold-600: #7a6024;
+      --color-gold-700: #5a4618;
+
+      /* Neutral Dark */
+      --color-dark-50:  #f5f5f5;
+      --color-dark-100: #e0e0e0;
+      --color-dark-200: #bdbdbd;
+      --color-dark-300: #8a8a8a;
+      --color-dark-400: #5a5a5a;
+      --color-dark-500: #333333;
+      --color-dark-600: #1e1e1e;
+      --color-dark-700: #111010;   /* dark — main */
+      --color-dark-800: #0a0a0a;
+
+      /* Cream — background family */
+      --color-cream-50:  #ffffff;
+      --color-cream-100: #faf9f7;
+      --color-cream-200: #f5f0e8;  /* cream — main */
+      --color-cream-300: #ede8de;  /* warm */
+      --color-cream-400: #e4ddd0;
+      --color-cream-500: #d8d0c0;
+
+      /* Semantic */
+      --color-success:  #25D366;
+      --color-success-dark: #1ebe5c;
+      --color-error:    #e24b4a;
+      --color-warning:  #f5a623;
+      --color-info:     #4a90e2;
+
+      /* Aliases — light mode */
+      --color-bg-primary:    var(--color-cream-200);
+      --color-bg-secondary:  var(--color-cream-50);
+      --color-bg-tertiary:   var(--color-cream-300);
+      --color-bg-inverse:    var(--color-dark-700);
+      --color-text-primary:  var(--color-dark-700);
+      --color-text-secondary:var(--color-dark-300);
+      --color-text-muted:    var(--color-dark-200);
+      --color-text-inverse:  var(--color-cream-200);
+      --color-accent:        var(--color-gold-400);
+      --color-accent-light:  var(--color-gold-300);
+      --color-border:        rgba(17,16,16,0.08);
+      --color-border-strong: rgba(17,16,16,0.20);
+
+      /* Backwards compat */
+      --gold:       var(--color-gold-400);
+      --gold-light: var(--color-gold-300);
+      --dark:       var(--color-dark-700);
+      --cream:      var(--color-cream-200);
+      --warm:       var(--color-cream-300);
+
+      /* ── 2. TYPOGRAPHY SCALE ─────────────────── */
+      /* Font families */
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'Inter', system-ui, sans-serif;
+
+      /* 9-step type scale (1.25 ratio — Major Third) */
+      --text-2xs:  0.64rem;    /* 10.24px — labels, badges */
+      --text-xs:   0.75rem;    /* 12px    — captions, meta */
+      --text-sm:   0.875rem;   /* 14px    — body small */
+      --text-base: 1rem;       /* 16px    — body */
+      --text-lg:   1.125rem;   /* 18px    — body large */
+      --text-xl:   1.25rem;    /* 20px    — subheading */
+      --text-2xl:  1.563rem;   /* 25px    — heading sm */
+      --text-3xl:  1.953rem;   /* 31px    — heading md */
+      --text-4xl:  2.441rem;   /* 39px    — heading lg */
+      --text-5xl:  3.052rem;   /* 49px    — display sm */
+      --text-6xl:  3.815rem;   /* 61px    — display md */
+      --text-7xl:  4.768rem;   /* 76px    — display lg */
+
+      /* Font weights */
+      --weight-thin:      200;
+      --weight-light:     300;
+      --weight-regular:   400;
+      --weight-medium:    500;
+      --weight-bold:      700;
+      --weight-black:     900;
+
+      /* Line heights */
+      --leading-tight:  1.1;
+      --leading-snug:   1.25;
+      --leading-normal: 1.5;
+      --leading-relaxed:1.75;
+      --leading-loose:  2.0;
+
+      /* Letter spacing */
+      --tracking-tightest: -0.02em;
+      --tracking-tight:    -0.01em;
+      --tracking-normal:    0em;
+      --tracking-wide:      0.06em;
+      --tracking-wider:     0.12em;
+      --tracking-widest:    0.22em;
+      --tracking-ultra:     0.30em;
+
+      /* ── 3. SPATIAL / SPACING TOKENS ─────────── */
+      /* 8px grid foundation */
+      --space-0:   0px;
+      --space-1:   4px;    /* 0.5 × 8 */
+      --space-2:   8px;    /* 1 × 8   */
+      --space-3:   12px;   /* 1.5 × 8 */
+      --space-4:   16px;   /* 2 × 8   */
+      --space-5:   24px;   /* 3 × 8   */
+      --space-6:   32px;   /* 4 × 8   */
+      --space-7:   40px;   /* 5 × 8   */
+      --space-8:   48px;   /* 6 × 8   */
+      --space-9:   64px;   /* 8 × 8   */
+      --space-10:  80px;   /* 10 × 8  */
+      --space-11:  96px;   /* 12 × 8  */
+      --space-12:  128px;  /* 16 × 8  */
+
+      /* Semantic spacing */
+      --gap-xs:   var(--space-2);
+      --gap-sm:   var(--space-3);
+      --gap-md:   var(--space-5);
+      --gap-lg:   var(--space-8);
+      --gap-xl:   var(--space-10);
+      --gap-2xl:  var(--space-12);
+
+      /* Section padding */
+      --section-padding-x: 3.5rem;
+      --section-padding-y: 7rem;
+
+      /* Container max */
+      --container-max: 1440px;
+
+      /* ── 4. MOTION TOKENS ─────────────────────── */
+      /* Luxury motion: slow, deliberate, no bounce */
+      --ease-out:       cubic-bezier(0.16, 1, 0.3, 1);       /* primary — smooth decel */
+      --ease-in-out:    cubic-bezier(0.45, 0, 0.55, 1);      /* secondary */
+      --ease-subtle:    cubic-bezier(0.25, 0.46, 0.45, 0.94);/* image zoom */
+      --ease-spring:    cubic-bezier(0.34, 1.56, 0.64, 1);   /* FAB hover only */
+
+      --duration-instant: 80ms;
+      --duration-fast:    150ms;
+      --duration-normal:  250ms;
+      --duration-slow:    400ms;
+      --duration-reveal:  700ms;
+      --duration-marquee: 20s;
+
+      /* ── 5. BORDER & SHADOW TOKENS ───────────── */
+      --border-hairline: 0.5px solid var(--color-border);
+      --border-subtle:   0.5px solid var(--color-border-strong);
+      --border-accent:   0.5px solid var(--color-accent);
+      --border-radius-sm:  2px;
+      --border-radius-md:  4px;
+      --border-radius-lg:  8px;
+      --border-radius-full:9999px;
+
+      /* No heavy shadows — luxury uses hairline borders */
+      --shadow-sm: 0 1px 3px rgba(17,16,16,0.06);
+      --shadow-md: 0 4px 16px rgba(17,16,16,0.08);
+      --shadow-wa: 0 4px 24px rgba(37,211,102,0.28);
+
+      /* ── 6. BREAKPOINTS (reference — use in @media) */
+      /* --bp-sm: 480px  */
+      /* --bp-md: 768px  */
+      /* --bp-lg: 1024px */
+      /* --bp-xl: 1280px */
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Inter', sans-serif;
-      font-weight: 300;
-      color: var(--dark);
-      background: var(--cream);
-      line-height: 1.6;
+      font-family: var(--font-body);
+      font-weight: var(--weight-light);
+      font-size: var(--text-base);
+      color: var(--color-text-primary);
+      background: var(--color-bg-primary);
+      line-height: var(--leading-relaxed);
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     body::before {
