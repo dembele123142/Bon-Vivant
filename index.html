@@ -1,2015 +1,1270 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- SEO Primary -->
-  <title>Bon Vivant Joias | Ouro 18k, Prata 925 e Pedras Naturais</title>
-  <meta name="description" content="Bon Vivant Joias — peças únicas em ouro 18k, prata 925 e pedras naturais. Design autoral, garantia de 2 anos. Compre pelo WhatsApp ou explore o catálogo online." />
-  <meta name="keywords" content="joias, ouro 18k, prata 925, anéis, colares, brincos, pulseiras, joalheria, pedras naturais, joias exclusivas" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://bon-vivant.onrender.com/" />
-
-  <!-- Open Graph / Social -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://bon-vivant.onrender.com/" />
-  <meta property="og:title" content="Bon Vivant Joias | Ouro 18k, Prata 925 e Pedras Naturais" />
-  <meta property="og:description" content="Peças únicas em ouro 18k, prata 925 e pedras naturais. Design autoral, garantia de 2 anos." />
-  <meta property="og:image" content="https://bon-vivant.onrender.com/og-image.jpg" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Bon Vivant Joias" />
-  <meta name="twitter:description" content="Peças únicas em ouro 18k, prata 925 e pedras naturais." />
-
-  <!-- Schema.org Structured Data -->
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Bon Vivant Joias — Joalheria Exclusiva</title>
+  <meta name="description" content="Joias exclusivas em ouro 18k, prata 925 e pedras preciosas. Consultoria personalizada e peças sob encomenda."/>
+  <meta property="og:title" content="Bon Vivant Joias"/>
+  <meta property="og:description" content="Joias exclusivas em ouro 18k, prata 925 e pedras preciosas."/>
+  <meta property="og:type" content="website"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "JewelryStore",
-    "name": "Bon Vivant Joias",
-    "description": "Joalheria especializada em peças autorais em ouro 18k, prata 925 e pedras naturais.",
-    "url": "https://bon-vivant.onrender.com",
-    "telephone": "+55-11-99999-0000",
-    "email": "contato@bonvivant.com.br",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Rua Oscar Freire, 852",
-      "addressLocality": "São Paulo",
-      "addressRegion": "SP",
-      "addressCountry": "BR"
-    },
-    "openingHours": ["Mo-Fr 09:00-19:00", "Sa 10:00-16:00"],
-    "priceRange": "$$",
-    "sameAs": [
-      "https://instagram.com/bonvivantjoias",
-      "https://facebook.com/bonvivantjoias"
-    ]
-  }
+  {"@context":"https://schema.org","@type":"JewelryStore","name":"Bon Vivant Joias","url":"https://bon-vivant.onrender.com","description":"Joalheria exclusiva com peças em ouro 18k, prata 925 e pedras preciosas","telephone":"+5511999990000","priceRange":"R$890 - R$7900"}
   </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    /* ════════════════════════════════════════════
-       BON VIVANT — DESIGN SYSTEM v1.0
-       Personality: Luxury · Minimal
-       ════════════════════════════════════════════
-
-       1. COLOR TOKENS
-       2. TYPOGRAPHY SCALE
-       3. SPATIAL / SPACING TOKENS
-       4. MOTION TOKENS
-       5. SHADOW & BORDER TOKENS
-       6. BREAKPOINT REFERENCE
-    ════════════════════════════════════════════ */
-
+    /* ── TOKENS ── */
     :root {
-
-      /* ── 1. COLOR SYSTEM ──────────────────────── */
-
-      /* Gold — primary brand accent */
-      --color-gold-50:  #fdf8ee;
-      --color-gold-100: #f5e9c8;
-      --color-gold-200: #ead498;
-      --color-gold-300: #d4b060;   /* gold-light */
-      --color-gold-400: #b8963e;   /* gold — main */
-      --color-gold-500: #9a7b2f;
-      --color-gold-600: #7a6024;
-      --color-gold-700: #5a4618;
-
-      /* Neutral Dark */
-      --color-dark-50:  #f5f5f5;
-      --color-dark-100: #e0e0e0;
-      --color-dark-200: #bdbdbd;
-      --color-dark-300: #8a8a8a;
-      --color-dark-400: #5a5a5a;
-      --color-dark-500: #333333;
-      --color-dark-600: #1e1e1e;
-      --color-dark-700: #111010;   /* dark — main */
-      --color-dark-800: #0a0a0a;
-
-      /* Cream — background family */
-      --color-cream-50:  #ffffff;
-      --color-cream-100: #faf9f7;
-      --color-cream-200: #f5f0e8;  /* cream — main */
-      --color-cream-300: #ede8de;  /* warm */
-      --color-cream-400: #e4ddd0;
-      --color-cream-500: #d8d0c0;
-
-      /* Semantic */
-      --color-success:  #25D366;
-      --color-success-dark: #1ebe5c;
-      --color-error:    #e24b4a;
-      --color-warning:  #f5a623;
-      --color-info:     #4a90e2;
-
-      /* Aliases — light mode */
-      --color-bg-primary:    var(--color-cream-200);
-      --color-bg-secondary:  var(--color-cream-50);
-      --color-bg-tertiary:   var(--color-cream-300);
-      --color-bg-inverse:    var(--color-dark-700);
-      --color-text-primary:  var(--color-dark-700);
-      --color-text-secondary:var(--color-dark-300);
-      --color-text-muted:    var(--color-dark-200);
-      --color-text-inverse:  var(--color-cream-200);
-      --color-accent:        var(--color-gold-400);
-      --color-accent-light:  var(--color-gold-300);
-      --color-border:        rgba(17,16,16,0.08);
-      --color-border-strong: rgba(17,16,16,0.20);
-
-      /* Backwards compat */
-      --gold:       var(--color-gold-400);
-      --gold-light: var(--color-gold-300);
-      --dark:       var(--color-dark-700);
-      --cream:      var(--color-cream-200);
-      --warm:       var(--color-cream-300);
-
-      /* ── 2. TYPOGRAPHY SCALE ─────────────────── */
-      /* Font families */
-      --font-display: 'Playfair Display', Georgia, serif;
-      --font-body:    'Inter', system-ui, sans-serif;
-
-      /* 9-step type scale (1.25 ratio — Major Third) */
-      --text-2xs:  0.64rem;    /* 10.24px — labels, badges */
-      --text-xs:   0.75rem;    /* 12px    — captions, meta */
-      --text-sm:   0.875rem;   /* 14px    — body small */
-      --text-base: 1rem;       /* 16px    — body */
-      --text-lg:   1.125rem;   /* 18px    — body large */
-      --text-xl:   1.25rem;    /* 20px    — subheading */
-      --text-2xl:  1.563rem;   /* 25px    — heading sm */
-      --text-3xl:  1.953rem;   /* 31px    — heading md */
-      --text-4xl:  2.441rem;   /* 39px    — heading lg */
-      --text-5xl:  3.052rem;   /* 49px    — display sm */
-      --text-6xl:  3.815rem;   /* 61px    — display md */
-      --text-7xl:  4.768rem;   /* 76px    — display lg */
-
-      /* Font weights */
-      --weight-thin:      200;
-      --weight-light:     300;
-      --weight-regular:   400;
-      --weight-medium:    500;
-      --weight-bold:      700;
-      --weight-black:     900;
-
-      /* Line heights */
-      --leading-tight:  1.1;
-      --leading-snug:   1.25;
-      --leading-normal: 1.5;
-      --leading-relaxed:1.75;
-      --leading-loose:  2.0;
-
-      /* Letter spacing */
-      --tracking-tightest: -0.02em;
-      --tracking-tight:    -0.01em;
-      --tracking-normal:    0em;
-      --tracking-wide:      0.06em;
-      --tracking-wider:     0.12em;
-      --tracking-widest:    0.22em;
-      --tracking-ultra:     0.30em;
-
-      /* ── 3. SPATIAL / SPACING TOKENS ─────────── */
-      /* 8px grid foundation */
-      --space-0:   0px;
-      --space-1:   4px;    /* 0.5 × 8 */
-      --space-2:   8px;    /* 1 × 8   */
-      --space-3:   12px;   /* 1.5 × 8 */
-      --space-4:   16px;   /* 2 × 8   */
-      --space-5:   24px;   /* 3 × 8   */
-      --space-6:   32px;   /* 4 × 8   */
-      --space-7:   40px;   /* 5 × 8   */
-      --space-8:   48px;   /* 6 × 8   */
-      --space-9:   64px;   /* 8 × 8   */
-      --space-10:  80px;   /* 10 × 8  */
-      --space-11:  96px;   /* 12 × 8  */
-      --space-12:  128px;  /* 16 × 8  */
-
-      /* Semantic spacing */
-      --gap-xs:   var(--space-2);
-      --gap-sm:   var(--space-3);
-      --gap-md:   var(--space-5);
-      --gap-lg:   var(--space-8);
-      --gap-xl:   var(--space-10);
-      --gap-2xl:  var(--space-12);
-
-      /* Section padding */
-      --section-padding-x: 3.5rem;
-      --section-padding-y: 7rem;
-
-      /* Container max */
-      --container-max: 1440px;
-
-      /* ── 4. MOTION TOKENS ─────────────────────── */
-      /* Luxury motion: slow, deliberate, no bounce */
-      --ease-out:       cubic-bezier(0.16, 1, 0.3, 1);       /* primary — smooth decel */
-      --ease-in-out:    cubic-bezier(0.45, 0, 0.55, 1);      /* secondary */
-      --ease-subtle:    cubic-bezier(0.25, 0.46, 0.45, 0.94);/* image zoom */
-      --ease-spring:    cubic-bezier(0.34, 1.56, 0.64, 1);   /* FAB hover only */
-
-      --duration-instant: 80ms;
-      --duration-fast:    150ms;
-      --duration-normal:  250ms;
-      --duration-slow:    400ms;
-      --duration-reveal:  700ms;
-      --duration-marquee: 20s;
-
-      /* ── 5. BORDER & SHADOW TOKENS ───────────── */
-      --border-hairline: 0.5px solid var(--color-border);
-      --border-subtle:   0.5px solid var(--color-border-strong);
-      --border-accent:   0.5px solid var(--color-accent);
-      --border-radius-sm:  2px;
-      --border-radius-md:  4px;
-      --border-radius-lg:  8px;
-      --border-radius-full:9999px;
-
-      /* No heavy shadows — luxury uses hairline borders */
-      --shadow-sm: 0 1px 3px rgba(17,16,16,0.06);
-      --shadow-md: 0 4px 16px rgba(17,16,16,0.08);
-      --shadow-wa: 0 4px 24px rgba(37,211,102,0.28);
-
-      /* ── 6. BREAKPOINTS (reference — use in @media) */
-      /* --bp-sm: 480px  */
-      /* --bp-md: 768px  */
-      /* --bp-lg: 1024px */
-      /* --bp-xl: 1280px */
+      --onyx:   #15141A;
+      --marfim: #F4EFE6;
+      --champ:  #C9A664;
+      --esm:    #1F3D32;
+      --graf:   #6B655C;
+      --champ2: #E8C987;
+      --radius: 4px;
+      --ease:   cubic-bezier(0.16,1,0.3,1);
     }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--onyx);color:var(--marfim);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    button{cursor:pointer;border:none;background:none;font-family:inherit}
 
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: var(--font-body);
-      font-weight: var(--weight-light);
-      font-size: var(--text-base);
-      color: var(--color-text-primary);
-      background: var(--color-bg-primary);
-      line-height: var(--leading-relaxed);
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 9999;
-      opacity: 0.032;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-      background-size: 200px 200px;
-    }
-
-    /* ── SKIP LINK (acessibilidade) ── */
-    .skip-link {
-      position: absolute; top: -40px; left: 0;
-      background: var(--gold); color: var(--dark);
-      padding: 8px 16px; font-size: 12px; z-index: 9999;
-      transition: top 0.2s;
-    }
-    .skip-link:focus { top: 0; }
-
-    /* ── NAV ── */
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.4rem 3.5rem;
-      border-bottom: 0.5px solid rgba(0,0,0,0.07);
-      background: var(--cream);
-      position: sticky;
-      top: 0;
-      z-index: 200;
-    }
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 17px;
-      font-weight: 400;
-      letter-spacing: 0.08em;
-      color: var(--dark);
-      text-decoration: none;
-    }
-    .logo span { font-style: italic; font-weight: 700; color: var(--gold); }
-
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-    .nav-links a {
-      font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
-      color: #888; text-decoration: none; transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--dark); }
-
-    .nav-icons { display: flex; gap: 1.3rem; align-items: center; }
-    .nav-icons i { font-size: 19px; color: #777; cursor: pointer; transition: color 0.2s; }
-    .nav-icons i:hover { color: var(--dark); }
-
-    .nav-whatsapp {
-      display: flex; align-items: center; gap: 6px;
-      padding: 0.55rem 1.1rem;
-      background: var(--dark); color: var(--cream);
-      font-size: 10px; font-weight: 500; letter-spacing: 0.14em;
-      text-transform: uppercase; text-decoration: none;
-      transition: background 0.2s;
-    }
-    .nav-whatsapp:hover { background: #2a2a2a; }
-    .nav-whatsapp i { font-size: 15px; color: var(--gold); }
-
-    /* hamburger mobile */
-    .nav-hamburger {
-      display: none; background: none; border: none;
-      cursor: pointer; font-size: 22px; color: var(--dark);
-    }
-
-    /* ── HERO ── */
-    .hero {
-      min-height: 92vh;
-      display: grid;
-      grid-template-columns: 58px 1fr 1fr;
-      grid-template-rows: 1fr auto;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-sidebar {
-      background: var(--dark);
-      grid-column: 1; grid-row: 1 / 3;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: flex-end;
-      padding-bottom: 2.5rem; gap: 1.5rem;
-    }
-    .hero-sidebar-text {
-      writing-mode: vertical-rl; transform: rotate(180deg);
-      font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase;
-      color: rgba(255,255,255,0.2); margin-bottom: auto; margin-top: 2rem;
-    }
-    .hero-sidebar i { font-size: 16px; color: rgba(255,255,255,0.2); }
-
-    .hero-main {
-      grid-column: 2; grid-row: 1;
-      background: var(--dark);
-      position: relative; display: flex;
-      align-items: flex-end; padding: 4rem 3.5rem;
-      overflow: hidden;
-    }
-    .hero-main::before {
-      content: '01';
-      position: absolute; top: -0.1em; right: -0.05em;
-      font-size: 22rem; font-weight: 900;
-      color: rgba(255,255,255,0.025);
-      line-height: 1; pointer-events: none;
-    }
-    .hero-tag {
-      position: absolute; top: 2.5rem; left: -1px;
-      background: var(--gold); color: var(--dark);
-      font-size: 9px; font-weight: 700;
-      letter-spacing: 0.2em; text-transform: uppercase;
-      padding: 6px 14px;
-    }
-    .hero-eyebrow {
-      font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 1.2rem; display: block;
-    }
-    .hero-h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(3rem, 5vw, 5.5rem);
-      font-weight: 400; line-height: 1.0;
-      color: var(--cream); margin-bottom: 2.5rem;
-    }
-    .hero-h1 .thin {
-      font-family: 'Inter', sans-serif; font-weight: 200;
-      font-size: 0.52em; letter-spacing: 0.06em;
-      display: block; color: rgba(255,255,255,0.4); margin-bottom: 0.15em;
-    }
-    .hero-h1 em { font-style: italic; color: var(--gold-light); }
-
-    .hero-right {
-      grid-column: 3; grid-row: 1;
-      background: var(--warm);
-      display: flex; flex-direction: column;
-      justify-content: space-between; padding: 3rem;
-      position: relative; overflow: hidden;
-    }
-    .hero-rotated {
-      position: absolute; bottom: 5rem; right: -3.5rem;
-      font-family: 'Playfair Display', serif;
-      font-size: 6rem; font-weight: 900; font-style: italic;
-      color: rgba(0,0,0,0.04); white-space: nowrap;
-      transform: rotate(-90deg); transform-origin: right center;
-      pointer-events: none; user-select: none; line-height: 1;
-    }
-    .hero-stats { display: flex; flex-direction: column; gap: 2rem; }
-    .hero-stat { border-left: 0.5px solid var(--gold); padding-left: 1.2rem; }
-    .hero-stat span { display: block; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: #aaa; margin-bottom: 0.3rem; }
-    .hero-stat strong { font-size: 12px; font-weight: 400; color: var(--dark); }
-
-    .hero-bottom {
-      grid-column: 2 / 4; grid-row: 2;
-      background: var(--gold);
-      padding: 1.2rem 3.5rem;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .hero-bottom p { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--dark); font-weight: 500; }
-    .hero-scroll { display: flex; align-items: center; gap: 0.8rem; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(0,0,0,0.4); }
-
-    /* ── BUTTONS ── */
-    .btn-dark {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 0.85rem 2rem; background: var(--cream); color: var(--dark);
-      font-size: 10px; font-weight: 500; font-family: 'Inter', sans-serif;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      border: none; cursor: pointer; text-decoration: none; transition: background 0.2s;
-    }
-    .btn-dark:hover { background: #e0dbd2; }
-
-    .btn-ghost {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 0.85rem 2rem; background: transparent; color: var(--dark);
-      font-size: 10px; font-weight: 400; font-family: 'Inter', sans-serif;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      border: 0.5px solid rgba(0,0,0,0.25); cursor: pointer;
-      text-decoration: none; transition: all 0.2s;
-    }
-    .btn-ghost:hover { border-color: var(--dark); }
-
-    .btn-whatsapp {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 0.85rem 2rem; background: #25D366; color: #fff;
-      font-size: 10px; font-weight: 500; font-family: 'Inter', sans-serif;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      border: none; cursor: pointer; text-decoration: none; transition: background 0.2s;
-    }
-    .btn-whatsapp:hover { background: #1ebe5c; }
-
-    /* ── MARQUEE ── */
-    .marquee-strip {
-      background: var(--dark); padding: 1rem 0; overflow: hidden; white-space: nowrap;
-    }
-    .marquee-inner {
-      display: inline-flex; gap: 3rem;
-      animation: marquee 20s linear infinite;
-    }
-    .marquee-inner span { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.22); }
-    .marquee-inner .dot { color: var(--gold); font-size: 6px; vertical-align: middle; }
-    @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    /* ── SECTION SHARED ── */
-    .section { padding: 7rem 3.5rem; }
-    .label { font-size: 9px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; display: block; }
-    .section-headline { font-size: clamp(2.2rem, 3.5vw, 3.5rem); line-height: 1.05; color: var(--dark); }
-    .section-headline .wt { font-family: 'Inter', sans-serif; font-weight: 200; font-size: 0.55em; letter-spacing: 0.1em; color: #aaa; display: block; margin-bottom: 0.1em; }
-    .section-headline .wb { font-family: 'Playfair Display', serif; font-weight: 900; display: block; }
-    .section-headline .wi { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400; color: var(--gold); }
-    .divider { width: 36px; height: 0.5px; background: var(--gold); margin: 1.8rem 0; }
-
-    /* ── FEATURED ── */
-    .featured { background: #fff; padding: 6rem 0; }
-    .featured-header { display: flex; align-items: flex-end; justify-content: space-between; padding: 0 3.5rem; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem; }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
-      gap: 2px;
-    }
-    .product-card { cursor: pointer; position: relative; background: var(--warm); }
-    .product-card:hover .product-img-inner { transform: scale(1.03); }
-    .product-card:first-child { grid-row: 1 / 3; }
-
-    .product-img { overflow: hidden; aspect-ratio: 3/4; background: var(--warm); position: relative; }
-    .product-card:first-child .product-img { aspect-ratio: unset; height: 100%; }
-    .product-img-inner {
-      width: 100%; height: 100%;
-      display: flex; align-items: center; justify-content: center;
-      transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94);
-      min-height: 200px;
-    }
-    .product-img-inner svg { opacity: 0.28; }
-
-    .product-badge {
-      position: absolute; top: 1rem; left: 1rem;
-      font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase;
-      padding: 5px 12px; background: var(--dark); color: var(--cream);
-      font-family: 'Inter', sans-serif; font-weight: 500; z-index: 2;
-    }
-    .product-badge.gold { background: var(--gold); color: var(--dark); }
-
-    .product-info { padding: 1.2rem 1.2rem 1.6rem; }
-    .product-name { font-size: 12px; font-weight: 400; color: var(--dark); letter-spacing: 0.05em; margin-bottom: 0.3rem; }
-    .product-meta { font-size: 10px; color: #bbb; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
-    .product-price { font-size: 14px; font-weight: 500; color: var(--dark); }
-    .product-waba {
-      display: inline-flex; align-items: center; gap: 6px;
-      margin-top: 0.8rem; font-size: 9px; letter-spacing: 0.14em;
-      text-transform: uppercase; color: #25D366;
-      text-decoration: none; font-weight: 500;
-      transition: opacity 0.2s;
-    }
-    .product-waba:hover { opacity: 0.7; }
-
-    .product-card.dark-card { background: var(--dark); }
-    .product-card.dark-card .product-img { background: var(--dark); }
-    .product-card.dark-card .product-info { background: var(--dark); }
-    .product-card.dark-card .product-name { color: var(--cream); }
-    .product-card.dark-card .product-meta { color: rgba(255,255,255,0.3); }
-    .product-card.dark-card .product-price { color: var(--gold-light); }
-    .product-card.dark-card .product-waba { color: #4ade80; }
-
-    /* ── CATALOG ── */
-    .catalog { padding: 7rem 3.5rem; background: var(--cream); }
-    .catalog-top { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 3rem; flex-wrap: wrap; gap: 1.5rem; }
-
-    /* filtros */
-    .filter-bar {
-      display: flex; flex-wrap: wrap; gap: 1rem;
-      margin-bottom: 3rem; padding-bottom: 1.5rem;
-      border-bottom: 0.5px solid rgba(0,0,0,0.07);
-      align-items: center;
-    }
-    .filter-group { display: flex; gap: 0; }
-    .filter-btn {
-      padding: 0.55rem 1.2rem;
-      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
-      background: transparent; border: 0.5px solid rgba(0,0,0,0.15);
-      border-right: none; color: #aaa; cursor: pointer; transition: all 0.2s;
-      font-family: 'Inter', sans-serif;
-    }
-    .filter-btn:last-child { border-right: 0.5px solid rgba(0,0,0,0.15); }
-    .filter-btn.active { background: var(--dark); color: var(--cream); border-color: var(--dark); }
-    .filter-btn:hover:not(.active) { color: var(--dark); border-color: rgba(0,0,0,0.4); }
-
-    .filter-range { display: flex; align-items: center; gap: 0.8rem; margin-left: auto; }
-    .filter-range label { font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: #aaa; }
-    .filter-range select {
-      padding: 0.5rem 1rem; font-size: 10px; font-family: 'Inter', sans-serif;
-      border: 0.5px solid rgba(0,0,0,0.15); background: #fff; color: var(--dark);
-      cursor: pointer; outline: none; letter-spacing: 0.08em;
-    }
-
-    /* grid catálogo */
-    .catalog-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2.5rem;
-    }
-    .cat-card { cursor: pointer; }
-    .cat-card:hover .cat-img { opacity: 0.82; }
-    .cat-card:hover .cat-name { color: var(--gold); }
-    .cat-img {
-      background: var(--warm); aspect-ratio: 1;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 1rem; transition: opacity 0.3s; position: relative; overflow: hidden;
-    }
-    .cat-img svg { opacity: 0.25; }
-    .cat-img.tall { aspect-ratio: 2/3; }
-    .cat-name { font-size: 13px; font-weight: 400; color: var(--dark); letter-spacing: 0.04em; margin-bottom: 0.3rem; transition: color 0.25s; }
-    .cat-detail { font-size: 10px; color: #ccc; letter-spacing: 0.07em; }
-    .cat-price { font-size: 14px; font-weight: 500; color: var(--dark); margin-top: 0.5rem; }
-    .cat-waba {
-      display: inline-flex; align-items: center; gap: 5px;
-      margin-top: 0.6rem; font-size: 9px; letter-spacing: 0.14em;
-      text-transform: uppercase; color: #25D366; text-decoration: none;
-      font-weight: 500; transition: opacity 0.2s;
-    }
-    .cat-waba:hover { opacity: 0.7; }
-
-    .no-results { display: none; text-align: center; padding: 4rem; color: #aaa; font-size: 14px; grid-column: 1/-1; }
-
-    /* ── ABOUT ── */
-    .about { padding: 8rem 3.5rem; display: grid; grid-template-columns: 1fr 72px 1fr; gap: 0; align-items: start; }
-    .about-left { padding-right: 4rem; }
-    .about-number { font-size: 9rem; font-weight: 900; color: rgba(0,0,0,0.04); line-height: 1; margin-bottom: -2rem; display: block; }
-    .about-visual {
-      aspect-ratio: 3/4; background: var(--dark);
-      position: relative; overflow: hidden;
-      margin-top: -4rem; margin-bottom: -4rem;
-    }
-    .about-visual::after { content: ''; position: absolute; inset: 2rem; border: 0.5px solid rgba(201,168,76,0.18); }
-    .about-visual-inner { position: absolute; bottom: 2.5rem; left: 2.5rem; right: 2.5rem; }
-    .about-visual-inner p { font-size: 9px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
-    .about-visual-inner h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 400; font-style: italic; color: var(--cream); line-height: 1.25; }
-    .about-center-line { width: 0.5px; background: rgba(0,0,0,0.08); align-self: stretch; margin: 0 auto; }
-    .about-right { padding-left: 4rem; padding-top: 2rem; }
-
-    .title { font-size: clamp(1.8rem,2.5vw,2.8rem); font-weight: 300; color: var(--dark); line-height: 1.2; margin-bottom: 1.2rem; }
-    .body-text { font-size: 13px; color: #888; line-height: 1.9; max-width: 400px; }
-    .features { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; margin-top: 2rem; }
-    .feature { display: flex; gap: 0.9rem; align-items: flex-start; }
-    .feature-icon { width: 34px; height: 34px; border: 0.5px solid var(--gold); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--gold); font-size: 15px; }
-    .feature-title { font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dark); margin-bottom: 0.25rem; }
-    .feature-desc { font-size: 11px; color: #aaa; line-height: 1.65; }
-
-    /* ── WHATSAPP CTA SECTION ── */
-    .waba-cta {
-      background: var(--dark); padding: 5rem 3.5rem;
-      display: grid; grid-template-columns: 1fr auto;
-      gap: 3rem; align-items: center;
-    }
-    .waba-cta-text .label { color: var(--gold); }
-    .waba-cta-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 3vw, 3rem);
-      font-weight: 400; font-style: italic;
-      color: var(--cream); line-height: 1.2;
-    }
-    .waba-cta-sub { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 0.8rem; line-height: 1.8; }
-    .waba-cta-actions { display: flex; flex-direction: column; gap: 1rem; align-items: flex-end; }
-    .waba-big {
-      display: flex; align-items: center; gap: 12px;
-      padding: 1.1rem 2.5rem; background: #25D366; color: #fff;
-      font-size: 11px; font-weight: 500; font-family: 'Inter', sans-serif;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      text-decoration: none; transition: background 0.2s; white-space: nowrap;
-    }
-    .waba-big:hover { background: #1ebe5c; }
-    .waba-big i { font-size: 20px; }
-    .waba-hint { font-size: 10px; color: rgba(255,255,255,0.25); letter-spacing: 0.1em; }
-
-    /* ── TESTIMONIALS ── */
-    .testimonials { background: var(--dark); padding: 7rem 3.5rem; position: relative; overflow: hidden; }
-    .testimonials::before {
-      content: '"'; position: absolute; top: -0.2em; left: -0.05em;
-      font-family: 'Playfair Display', serif; font-size: 30rem; font-weight: 900;
-      color: rgba(255,255,255,0.018); line-height: 1; pointer-events: none;
-    }
-    .testimonials .label { color: var(--gold); }
-    .testi-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 4rem; }
-    .testi-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem,3vw,2.8rem); font-weight: 400; font-style: italic; color: var(--cream); line-height: 1.2; }
-    .testi-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 3rem; }
-    .testi-card { border-top: 0.5px solid rgba(255,255,255,0.07); padding-top: 2rem; }
-    .testi-card:first-child .testi-text { font-size: 16px; }
-    .testi-text { font-family: 'Playfair Display', serif; font-size: 13px; font-style: italic; color: rgba(255,255,255,0.55); line-height: 1.9; margin-bottom: 1.5rem; }
-    .testi-author { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
-    .testi-location { font-size: 9px; color: rgba(255,255,255,0.18); margin-top: 0.15rem; }
-
-    /* ── NEWSLETTER ── */
-    .newsletter {
-      background: var(--warm); padding: 6rem 3.5rem;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;
-    }
-    .nl-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem,3vw,3rem); font-weight: 400; line-height: 1.15; color: var(--dark); }
-    .nl-title em { font-style: italic; color: var(--gold); }
-    .nl-sub { font-size: 12px; color: #aaa; margin-top: 0.8rem; line-height: 1.8; }
-    .nl-form { display: flex; margin-top: 2rem; }
-    .nl-form input {
-      flex: 1; padding: 0.95rem 1.2rem; font-size: 12px; font-family: 'Inter', sans-serif;
-      font-weight: 300; border: 0.5px solid rgba(0,0,0,0.15); border-right: none;
-      background: #fff; color: var(--dark); outline: none;
-    }
-    .nl-form input::placeholder { color: #ccc; }
-    .nl-form button {
-      padding: 0.95rem 1.8rem; background: var(--dark); color: var(--cream);
-      border: none; font-size: 10px; font-family: 'Inter', sans-serif;
-      font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
-      cursor: pointer; transition: background 0.2s;
-    }
-    .nl-form button:hover { background: #2a2a2a; }
-    .newsletter-right { position: relative; height: 300px; display: flex; align-items: center; justify-content: center; }
-    .geo-ring { position: absolute; border-radius: 50%; border: 0.5px solid rgba(184,150,62,0.22); }
-    .geo-text { font-family: 'Playfair Display', serif; font-size: 4.5rem; font-weight: 900; font-style: italic; color: rgba(0,0,0,0.06); z-index: 2; position: relative; }
-
-    /* ── CONTACT ── */
-    .contact-strip {
-      padding: 5rem 3.5rem; display: grid; grid-template-columns: repeat(4,1fr);
-      gap: 2rem; border-top: 0.5px solid rgba(0,0,0,0.06); background: var(--cream);
-    }
-    .contact-item { display: flex; flex-direction: column; gap: 0.5rem; }
-    .contact-item i { font-size: 20px; color: var(--gold); margin-bottom: 0.5rem; }
-    .contact-label { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: #bbb; }
-    .contact-value { font-size: 12px; color: var(--dark); line-height: 1.6; }
-
-    /* ── FOOTER ── */
-    footer { background: #0e0e0e; padding: 5rem 3.5rem 3.5rem; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; }
-    .f-logo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; color: var(--cream); margin-bottom: 0.8rem; display: block; text-decoration: none; }
-    .f-logo em { font-style: italic; color: var(--gold); }
-    .footer-brand p { font-size: 11px; color: rgba(255,255,255,0.25); line-height: 1.8; max-width: 220px; }
-    .footer-social { display: flex; gap: 1rem; margin-top: 1.5rem; }
-    .footer-social i { font-size: 17px; color: rgba(255,255,255,0.25); cursor: pointer; transition: color 0.2s; }
-    .footer-social i:hover { color: var(--gold); }
-    .footer-col h4 { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 1.2rem; font-weight: 400; }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
-    .footer-col ul a { font-size: 11px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
-    .footer-col ul a:hover { color: var(--gold); }
-    .footer-bottom { background: #090909; padding: 1.4rem 3.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem; }
-    .footer-bottom span { font-size: 10px; color: rgba(255,255,255,0.15); }
-    .footer-pay { display: flex; gap: 1rem; align-items: center; }
-    .pay-pill { font-size: 9px; letter-spacing: 0.1em; padding: 3px 10px; border: 0.5px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.2); }
-
-    /* ── WHATSAPP FAB ── */
-    .wa-fab {
-      position: fixed; bottom: 2rem; right: 2rem;
-      width: 52px; height: 52px; background: #25D366;
-      border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      cursor: pointer; z-index: 999;
-      box-shadow: 0 4px 24px rgba(37,211,102,0.3);
-      text-decoration: none;
-      transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1);
-    }
-    .wa-fab:hover { transform: scale(1.1); }
-    .wa-fab i { font-size: 24px; color: #fff; }
+    /* ── TYPOGRAPHY ── */
+    .f-display{font-family:'Fraunces',serif}
+    .f-mono{font-family:'IBM Plex Mono',monospace}
+    h1,h2,h3{font-family:'Fraunces',serif;font-weight:400;line-height:1.1}
 
     /* ── SCROLL REVEAL ── */
-    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+    .reveal.visible{opacity:1;transform:none}
+    @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 
-    /* ══════════════════════════════════════════
-       MÓDULOS INTERATIVOS — estilos compartilhados
-       ══════════════════════════════════════════ */
-
-    /* Calculadora */
-    .calc-opt {
-      padding: 0.6rem 0.9rem; font-size: 11px; font-family: var(--font-body);
-      letter-spacing: 0.08em; background: var(--color-cream-300); border: 0.5px solid rgba(0,0,0,0.08);
-      cursor: pointer; text-align: left; transition: all 0.2s; color: var(--dark);
-    }
-    .calc-opt:hover { border-color: var(--gold); }
-    .calc-opt.active { background: var(--dark); color: #fff; border-color: var(--dark); }
-
-    .calc-opt-check {
-      display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1rem;
-      font-size: 11px; font-family: var(--font-body); letter-spacing: 0.07em;
-      background: var(--color-cream-300); border: 0.5px solid rgba(0,0,0,0.08);
-      cursor: pointer; transition: all 0.2s; color: #777;
-    }
-    .calc-opt-check.selected { background: rgba(184,150,62,0.1); border-color: var(--gold); color: var(--dark); }
-    .check-price { color: var(--gold); margin-left: auto; font-weight: 600; }
-
-    .waba-big {
-      display: inline-flex; align-items: center; gap: 0.6rem;
-      background: #25D366; color: #fff; padding: 0.9rem 1.6rem;
-      font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
-      font-family: var(--font-body); text-decoration: none; transition: opacity 0.2s;
-    }
-    .waba-big:hover { opacity: 0.88; }
-
-    /* Formulário multi-step */
-    .form-step { display: none; }
-    .form-step.active { display: block; }
-
-    .form-label {
-      display: block; font-size: 9px; letter-spacing: 0.18em;
-      text-transform: uppercase; color: #aaa; margin-bottom: 0.5rem;
-    }
-    .form-input {
-      width: 100%; padding: 0.8rem 1rem; font-size: 13px;
-      font-family: var(--font-body); border: 0.5px solid rgba(0,0,0,0.15);
-      background: #fff; color: var(--dark); outline: none;
-      transition: border-color 0.2s; box-sizing: border-box;
-    }
-    .form-input:focus { border-color: var(--gold); }
-    .form-input.error { border-color: #e05252; }
-    textarea.form-input { resize: vertical; }
-    select.form-input { appearance: none; cursor: pointer; }
-
-    .form-error {
-      font-size: 10px; color: #e05252; margin-top: 0.4rem;
-      display: none; letter-spacing: 0.05em;
-    }
-    .form-error.show { display: block; }
-
-    .interest-card {
-      display: flex; align-items: center; gap: 0.7rem;
-      padding: 0.9rem 1rem; border: 0.5px solid rgba(0,0,0,0.1);
-      cursor: pointer; font-size: 12px; font-family: var(--font-body);
-      color: #777; transition: all 0.2s; background: var(--color-cream-300);
-    }
-    .interest-card input { display: none; }
-    .interest-card.checked { border-color: var(--gold); background: rgba(184,150,62,0.06); color: var(--dark); }
-    .interest-card i { font-size: 18px; color: var(--gold); }
-
-    .form-next, .form-submit {
-      flex: 1; padding: 0.9rem 1.5rem; background: var(--dark); color: #fff;
-      border: none; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
-      font-family: var(--font-body); cursor: pointer; display: flex;
-      align-items: center; justify-content: center; gap: 0.5rem; transition: opacity 0.2s;
-    }
-    .form-next:hover, .form-submit:hover { opacity: 0.85; }
-    .form-back {
-      padding: 0.9rem 1.2rem; background: none; border: 0.5px solid rgba(0,0,0,0.2);
-      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
-      font-family: var(--font-body); cursor: pointer; display: flex;
-      align-items: center; gap: 0.5rem; color: #888; transition: border-color 0.2s;
-    }
-    .form-back:hover { border-color: var(--dark); color: var(--dark); }
-
-    .step-dot {
-      width: 24px; height: 24px; border-radius: 50%; background: rgba(0,0,0,0.07);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 10px; color: #aaa; transition: all 0.3s;
-    }
-    .step-dot.active { background: var(--gold); color: #fff; }
-    .step-dot.done { background: var(--dark); color: #fff; }
-
-    .summary-row {
-      display: flex; justify-content: space-between; font-size: 12px;
-    }
-    .summary-row span:first-child { color: #aaa; }
-    .summary-row span:last-child { color: var(--dark); font-weight: 500; }
-
-    --color-success: #27ae60;
-
-    @keyframes spin { to { transform: rotate(360deg); } }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 1024px) {
-      .products-grid { grid-template-columns: 1fr 1fr; }
-      .product-card:first-child { grid-row: auto; }
-      .catalog-grid { grid-template-columns: repeat(2,1fr); }
-      .testi-grid { grid-template-columns: 1fr 1fr; }
-      .about { grid-template-columns: 1fr; }
-      .about-center-line { display: none; }
-      .about-right { padding-left: 0; padding-top: 3rem; }
-      .about-visual { margin: 0; aspect-ratio: 16/9; }
-      footer { grid-template-columns: 1fr 1fr; }
-      .waba-cta { grid-template-columns: 1fr; }
-      .waba-cta-actions { align-items: flex-start; }
+    /* ══════════════ NAV ══════════════ */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:64px;background:rgba(21,20,26,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,166,100,.12)}
+    .nav-logo{font-family:'Fraunces',serif;font-size:1.25rem;letter-spacing:.08em;color:var(--champ)}
+    .nav-links{display:flex;gap:2rem;list-style:none}
+    .nav-links a{font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--marfim);opacity:.7;transition:opacity .2s}
+    .nav-links a:hover{opacity:1}
+    .nav-cta{font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;padding:.5rem 1.25rem;border:1px solid var(--champ);color:var(--champ);border-radius:2px;transition:background .2s,color .2s}
+    .nav-cta:hover{background:var(--champ);color:var(--onyx)}
+    .nav-burger{display:none;flex-direction:column;gap:5px;padding:4px}
+    .nav-burger span{display:block;width:22px;height:1.5px;background:var(--marfim)}
+    @media(max-width:768px){
+      .nav-links,.nav-cta{display:none}
+      .nav-burger{display:flex}
     }
 
-    @media (max-width: 768px) {
-      nav { padding: 1.2rem 1.5rem; }
-      .nav-links { display: none; }
-      .nav-hamburger { display: block; }
-      .hero { grid-template-columns: 1fr; grid-template-rows: auto auto auto; min-height: auto; }
-      .hero-sidebar { display: none; }
-      .hero-main { grid-column: 1; grid-row: 1; padding: 3rem 1.5rem; min-height: 60vh; }
-      .hero-right { grid-column: 1; grid-row: 2; padding: 2rem 1.5rem; }
-      .hero-bottom { grid-column: 1; grid-row: 3; padding: 1rem 1.5rem; }
-      .section, .catalog, .about, .testimonials, .newsletter, .contact-strip { padding: 4rem 1.5rem; }
-      .featured { padding: 4rem 0; }
-      .featured-header { padding: 0 1.5rem; }
-      .products-grid { grid-template-columns: 1fr 1fr; gap: 1px; }
-      .catalog-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-      .testi-grid { grid-template-columns: 1fr; }
-      .newsletter { grid-template-columns: 1fr; gap: 2rem; }
-      .newsletter-right { display: none; }
-      .contact-strip { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-      footer { grid-template-columns: 1fr 1fr; gap: 2rem; padding: 3rem 1.5rem; }
-      .footer-bottom { padding: 1rem 1.5rem; flex-direction: column; align-items: flex-start; }
-      .filter-bar { flex-direction: column; align-items: flex-start; }
-      .filter-range { margin-left: 0; }
-    }
+    /* mobile nav */
+    .mobile-nav{position:fixed;inset:0;z-index:200;background:var(--onyx);display:flex;flex-direction:column;padding:2rem 2rem;transform:translateX(100%);transition:transform .4s var(--ease)}
+    .mobile-nav.open{transform:none}
+    .mobile-nav-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:3rem}
+    .mobile-nav-close{font-size:1.5rem;color:var(--marfim)}
+    .mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:1.5rem}
+    .mobile-nav a{font-family:'Fraunces',serif;font-size:2rem;color:var(--marfim);opacity:.85}
 
-    @media (max-width: 480px) {
-      .products-grid { grid-template-columns: 1fr; }
-      .catalog-grid { grid-template-columns: 1fr; }
-      .contact-strip { grid-template-columns: 1fr; }
-      footer { grid-template-columns: 1fr; }
-    }
+    /* ══════════════ HERO ══════════════ */
+    .hero{min-height:100svh;display:grid;place-items:center;position:relative;overflow:hidden;background:var(--onyx)}
+    .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 40%,rgba(31,61,50,.45) 0%,transparent 70%)}
 
-    /* mobile nav drawer */
-    .mobile-nav {
-      display: none; position: fixed; inset: 0; background: var(--dark);
-      z-index: 300; flex-direction: column; padding: 2rem 1.5rem;
-    }
-    .mobile-nav.open { display: flex; }
-    .mobile-nav-close { align-self: flex-end; background: none; border: none; font-size: 24px; color: var(--cream); cursor: pointer; margin-bottom: 2rem; }
-    .mobile-nav ul { list-style: none; display: flex; flex-direction: column; gap: 2rem; }
-    .mobile-nav ul a { font-size: 1.2rem; font-weight: 300; letter-spacing: 0.1em; color: var(--cream); text-decoration: none; }
-    .mobile-nav-waba { margin-top: auto; }
+    /* gem SVG */
+    .gem-wrap{position:absolute;right:8vw;top:50%;transform:translateY(-50%);width:min(380px,45vw);opacity:.18;pointer-events:none}
+    .gem-path{fill:none;stroke:var(--champ);stroke-width:1.2;stroke-dasharray:1000;stroke-dashoffset:1000;animation:gemDraw 3s var(--ease) .5s forwards}
+    @keyframes gemDraw{to{stroke-dashoffset:0}}
+    @media(prefers-reduced-motion:reduce){.gem-path{animation:none;stroke-dashoffset:0}}
+
+    /* lid */
+    .hero-lid{position:absolute;inset:0;background:var(--esm);transform-origin:top center;animation:lidOpen 1.1s var(--ease) .2s forwards}
+    @keyframes lidOpen{0%{transform:scaleY(1);opacity:1}100%{transform:scaleY(0);opacity:0}}
+    @media(prefers-reduced-motion:reduce){.hero-lid{animation:none;opacity:0}}
+
+    .hero-inner{position:relative;z-index:2;text-align:center;padding:0 2rem;max-width:780px}
+    .hero-tag{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--champ);margin-bottom:1.5rem;opacity:0;animation:fadeUp .6s var(--ease) 1.3s forwards}
+    .hero-h1{font-size:clamp(2.8rem,8vw,6.5rem);font-weight:300;color:var(--marfim);line-height:1.0;opacity:0;animation:fadeUp .7s var(--ease) 1.5s forwards}
+    .hero-h1 em{font-style:italic;color:var(--champ)}
+    .hero-sub{margin-top:1.25rem;font-size:1.05rem;color:rgba(244,239,230,.65);opacity:0;animation:fadeUp .6s var(--ease) 1.7s forwards}
+    .hero-actions{margin-top:2.5rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;opacity:0;animation:fadeUp .6s var(--ease) 1.9s forwards}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+
+    .btn-primary{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;background:var(--champ);color:var(--onyx);font-family:'IBM Plex Mono',monospace;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;transition:background .2s,transform .2s}
+    .btn-primary:hover{background:var(--champ2);transform:translateY(-2px)}
+    .btn-outline{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;border:1px solid rgba(244,239,230,.3);color:var(--marfim);font-family:'IBM Plex Mono',monospace;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;transition:border-color .2s,transform .2s}
+    .btn-outline:hover{border-color:var(--champ);transform:translateY(-2px)}
+    .hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;opacity:.4}
+    .hero-scroll span{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase}
+    .scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--champ),transparent);animation:scrollPulse 1.8s ease-in-out infinite}
+    @keyframes scrollPulse{0%,100%{opacity:.4}50%{opacity:1}}
+
+    /* ══════════════ MARQUEE ══════════════ */
+    .marquee-strip{background:var(--esm);padding:.75rem 0;overflow:hidden;border-top:1px solid rgba(201,166,100,.2);border-bottom:1px solid rgba(201,166,100,.2)}
+    .marquee-track{display:flex;width:max-content;animation:marqueeScroll 28s linear infinite}
+    @keyframes marqueeScroll{to{transform:translateX(-50%)}}
+    @media(prefers-reduced-motion:reduce){.marquee-track{animation:none}}
+    .marquee-item{display:flex;align-items:center;gap:.75rem;padding:0 2.5rem;white-space:nowrap;font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,230,.75)}
+    .marquee-dot{width:4px;height:4px;border-radius:50%;background:var(--champ);flex-shrink:0}
+
+    /* ══════════════ SECTION COMMON ══════════════ */
+    .section{padding:6rem 5vw}
+    .section-tag{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--champ);margin-bottom:1rem}
+    .section-h{font-size:clamp(2rem,5vw,3.5rem);font-weight:300;color:var(--marfim);margin-bottom:1rem}
+    .section-sub{color:rgba(244,239,230,.6);max-width:520px;line-height:1.7}
+    .section-head{margin-bottom:3.5rem}
+
+    /* ══════════════ FEATURED PRODUCTS ══════════════ */
+    .featured{background:var(--onyx)}
+    .prod-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:auto auto;gap:1.5rem}
+    .prod-grid .card:first-child{grid-row:span 2}
+    @media(max-width:900px){.prod-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}}
+    @media(max-width:580px){.prod-grid{grid-template-columns:1fr}}
+
+    .card{position:relative;background:rgba(244,239,230,.04);border:1px solid rgba(201,166,100,.1);border-radius:var(--radius);overflow:hidden;cursor:pointer}
+    .card-img{aspect-ratio:4/3;background:linear-gradient(135deg,var(--esm) 0%,rgba(21,20,26,.9) 100%);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+    .card:first-child .card-img{aspect-ratio:4/5}
+    .card-img-icon{font-size:3.5rem;opacity:.2;color:var(--champ)}
+    .card-shimmer{position:absolute;inset:0;background:linear-gradient(105deg,transparent 40%,rgba(201,166,100,.18) 50%,transparent 60%);background-size:200% 100%;opacity:0;transition:opacity .3s}
+    .card:hover .card-shimmer{opacity:1;animation:shimmer .6s ease forwards}
+    @keyframes shimmer{from{background-position:200% 0}to{background-position:-200% 0}}
+    .card-lupa{position:absolute;width:80px;height:80px;border-radius:50%;border:1.5px solid rgba(201,166,100,.6);pointer-events:none;opacity:0;transform:translate(-50%,-50%);transition:opacity .2s}
+    .card-body{padding:1.25rem 1.5rem 1.5rem}
+    .card-label{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--champ);margin-bottom:.3rem}
+    .card-name{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:400;color:var(--marfim);margin-bottom:.4rem}
+    .card:first-child .card-name{font-size:1.6rem}
+    .card-mat{font-size:.85rem;color:rgba(244,239,230,.5);margin-bottom:.9rem}
+    .card-footer{display:flex;align-items:center;justify-content:space-between}
+    .card-price{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--champ)}
+    .card-btn{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;padding:.45rem 1rem;border:1px solid var(--champ);color:var(--champ);border-radius:2px;transition:background .2s,color .2s}
+    .card-btn:hover{background:var(--champ);color:var(--onyx)}
+
+    /* ══════════════ CATALOG ══════════════ */
+    .catalog{background:rgba(31,61,50,.12)}
+    .catalog-controls{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
+    .filter-btn{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:.4rem 1rem;border:1px solid rgba(244,239,230,.2);color:rgba(244,239,230,.6);border-radius:2px;transition:all .2s}
+    .filter-btn:hover,.filter-btn.active{border-color:var(--champ);color:var(--champ)}
+    .sort-select{margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:.7rem;background:transparent;color:rgba(244,239,230,.6);border:1px solid rgba(244,239,230,.2);padding:.4rem .8rem;border-radius:2px;cursor:pointer}
+    .sort-select option{background:var(--onyx)}
+    #catalogGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.25rem}
+    .cat-card{background:rgba(244,239,230,.04);border:1px solid rgba(201,166,100,.1);border-radius:var(--radius);overflow:hidden}
+    .cat-card-img{aspect-ratio:1;background:linear-gradient(135deg,var(--esm),rgba(21,20,26,.8));display:flex;align-items:center;justify-content:center}
+    .cat-card-img i{font-size:2.5rem;opacity:.2;color:var(--champ)}
+    .cat-card-body{padding:1rem 1.25rem}
+    .cat-card-name{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--marfim);margin-bottom:.2rem}
+    .cat-card-mat{font-size:.8rem;color:rgba(244,239,230,.5);margin-bottom:.6rem}
+    .cat-card-row{display:flex;align-items:center;justify-content:space-between}
+    .cat-card-price{font-family:'IBM Plex Mono',monospace;font-size:.85rem;color:var(--champ)}
+    .no-results{text-align:center;padding:4rem;color:rgba(244,239,230,.4);font-family:'IBM Plex Mono',monospace;font-size:.8rem;display:none}
+
+    /* ══════════════ ABOUT ══════════════ */
+    .about{background:var(--onyx)}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+    @media(max-width:768px){.about-grid{grid-template-columns:1fr;gap:3rem}}
+    .about-img{aspect-ratio:3/4;background:linear-gradient(160deg,var(--esm) 0%,rgba(21,20,26,.95) 100%);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;border:1px solid rgba(201,166,100,.12)}
+    .about-img i{font-size:5rem;opacity:.15;color:var(--champ)}
+    .about-text p{color:rgba(244,239,230,.65);line-height:1.8;margin-bottom:1rem}
+    .about-stats{display:flex;gap:2.5rem;margin-top:2rem}
+    .stat-n{font-family:'Fraunces',serif;font-size:2.2rem;color:var(--champ)}
+    .stat-l{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,239,230,.5);margin-top:.2rem}
+
+    /* ══════════════ PROCESSO ══════════════ */
+    .processo{background:rgba(31,61,50,.1);position:relative}
+    .processo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;position:relative}
+    @media(max-width:860px){.processo-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:480px){.processo-grid{grid-template-columns:1fr}}
+    .processo-line{position:absolute;top:2rem;left:0;right:0;height:1px;background:rgba(201,166,100,.12)}
+    .processo-fill{position:absolute;top:0;left:0;height:100%;width:0;background:var(--champ);transition:width .8s var(--ease)}
+    .pstep{position:relative;padding-top:1rem}
+    .pstep-num{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.15em;color:var(--champ);margin-bottom:1.5rem}
+    .pstep-dot{width:10px;height:10px;border-radius:50%;border:1.5px solid var(--champ);background:var(--onyx);position:absolute;top:-.25rem;left:0;transition:background .4s}
+    .pstep.lit .pstep-dot{background:var(--champ)}
+    .pstep-icon{font-size:1.6rem;color:rgba(201,166,100,.5);margin-bottom:1rem}
+    .pstep-title{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--marfim);margin-bottom:.5rem}
+    .pstep-desc{font-size:.88rem;color:rgba(244,239,230,.55);line-height:1.7}
+
+    /* ══════════════ TESTIMONIALS ══════════════ */
+    .testimonials{background:var(--onyx)}
+    .testi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+    .testi-card{background:rgba(244,239,230,.04);border:1px solid rgba(201,166,100,.1);border-radius:var(--radius);padding:2rem}
+    .testi-stars{color:var(--champ);font-size:.9rem;margin-bottom:1rem}
+    .testi-text{font-family:'Fraunces',serif;font-size:1.05rem;font-style:italic;color:rgba(244,239,230,.8);line-height:1.7;margin-bottom:1.5rem}
+    .testi-author{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--champ)}
+    .testi-prod{font-size:.8rem;color:rgba(244,239,230,.4);margin-top:.25rem}
+
+    /* ══════════════ NEWSLETTER ══════════════ */
+    .newsletter{background:var(--esm);padding:5rem 5vw;text-align:center}
+    .newsletter h2{font-size:clamp(1.8rem,4vw,3rem);font-weight:300;color:var(--marfim);margin-bottom:1rem}
+    .newsletter p{color:rgba(244,239,230,.65);margin-bottom:2rem}
+    .nl-form{display:flex;gap:.75rem;max-width:460px;margin:0 auto;flex-wrap:wrap}
+    .nl-input{flex:1;min-width:200px;padding:.8rem 1.25rem;background:rgba(244,239,230,.08);border:1px solid rgba(244,239,230,.2);border-radius:2px;color:var(--marfim);font-family:'Inter',sans-serif;font-size:.9rem}
+    .nl-input::placeholder{color:rgba(244,239,230,.4)}
+    .nl-input:focus{outline:none;border-color:var(--champ)}
+    .nl-btn{padding:.8rem 1.75rem;background:var(--champ);color:var(--onyx);font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;white-space:nowrap;transition:background .2s}
+    .nl-btn:hover{background:var(--champ2)}
+
+    /* ══════════════ CONTACT STRIP ══════════════ */
+    .contact-strip{background:rgba(244,239,230,.04);border-top:1px solid rgba(201,166,100,.12);border-bottom:1px solid rgba(201,166,100,.12);padding:3rem 5vw}
+    .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem}
+    .contact-item{display:flex;align-items:flex-start;gap:1rem}
+    .contact-icon{font-size:1.3rem;color:var(--champ);flex-shrink:0;margin-top:.1rem}
+    .contact-label{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--champ);margin-bottom:.25rem}
+    .contact-val{font-size:.9rem;color:rgba(244,239,230,.7)}
+
+    /* ══════════════ FAQ ══════════════ */
+    .faq{background:var(--onyx)}
+    .faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:.75rem}
+    .faq-item{border:1px solid rgba(201,166,100,.12);border-radius:var(--radius);overflow:hidden}
+    .faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;background:transparent;color:var(--marfim);font-family:'Fraunces',serif;font-size:1rem;text-align:left;gap:1rem}
+    .faq-q:hover{background:rgba(244,239,230,.03)}
+    .faq-q i{color:var(--champ);font-size:1rem;flex-shrink:0;transition:transform .3s}
+    .faq-a{padding:0 1.5rem 1.25rem;color:rgba(244,239,230,.65);font-size:.9rem;line-height:1.7;display:none}
+
+    /* ══════════════ CALCULATOR ══════════════ */
+    .calculator{background:rgba(31,61,50,.1);padding:6rem 5vw}
+    .calc-box{background:rgba(244,239,230,.04);border:1px solid rgba(201,166,100,.12);border-radius:var(--radius);padding:2.5rem;max-width:860px;margin:0 auto}
+    .calc-section{margin-bottom:2rem}
+    .calc-label{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--champ);margin-bottom:.9rem}
+    .calc-opts{display:flex;flex-wrap:wrap;gap:.6rem}
+    .calc-opt{padding:.45rem 1.1rem;border:1px solid rgba(244,239,230,.2);border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:rgba(244,239,230,.7);transition:all .2s}
+    .calc-opt:hover,.calc-opt.active,.calc-opt.selected{border-color:var(--champ);color:var(--champ);background:rgba(201,166,100,.08)}
+    .calc-result{margin-top:2rem;padding:1.5rem;border:1px solid rgba(201,166,100,.25);border-radius:var(--radius);text-align:center}
+    .calc-result-val{font-family:'Fraunces',serif;font-size:2.2rem;color:var(--champ)}
+    .calc-result-note{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:rgba(244,239,230,.5);margin-top:.4rem}
+    #calcNote{display:none;margin-top:1rem}
+    .calc-wa{display:inline-flex;align-items:center;gap:.6rem;padding:.7rem 1.5rem;background:#25D366;color:#fff;font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;border-radius:2px;transition:opacity .2s}
+    .calc-wa:hover{opacity:.9}
+
+    /* ══════════════ CONSULTATION FORM ══════════════ */
+    .consult{background:var(--onyx);padding:6rem 5vw}
+    .consult-box{background:rgba(244,239,230,.04);border:1px solid rgba(201,166,100,.12);border-radius:var(--radius);padding:2.5rem;max-width:680px;margin:0 auto}
+    .step-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem}
+    .step-label-txt{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,239,230,.5)}
+    .step-pct-txt{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--champ)}
+    .step-bar-bg{height:2px;background:rgba(244,239,230,.1);border-radius:1px;margin-bottom:1.75rem;overflow:hidden}
+    .step-bar-fill{height:100%;width:33%;background:var(--champ);transition:width .4s var(--ease)}
+    .step-dots{display:flex;gap:.6rem;margin-bottom:2rem}
+    .step-dot{width:8px;height:8px;border-radius:50%;border:1.5px solid rgba(244,239,230,.25);background:transparent;transition:all .3s}
+    .step-dot.active{border-color:var(--champ);background:var(--champ)}
+    .step-dot.done{border-color:var(--champ);background:transparent}
+    .step-panel{display:none}
+    .step-panel.active{display:block}
+    .form-label{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,239,230,.6);margin-bottom:.5rem;display:block}
+    .form-input{width:100%;padding:.75rem 1rem;background:rgba(244,239,230,.06);border:1px solid rgba(244,239,230,.15);border-radius:2px;color:var(--marfim);font-family:'Inter',sans-serif;font-size:.9rem;margin-bottom:.25rem}
+    .form-input:focus{outline:none;border-color:var(--champ)}
+    .form-input.error{border-color:#e24b4a}
+    .form-select{width:100%;padding:.75rem 1rem;background:rgba(21,20,26,.9);border:1px solid rgba(244,239,230,.15);border-radius:2px;color:var(--marfim);font-family:'Inter',sans-serif;font-size:.9rem;margin-bottom:.25rem;cursor:pointer}
+    .form-select:focus{outline:none;border-color:var(--champ)}
+    .form-textarea{width:100%;padding:.75rem 1rem;background:rgba(244,239,230,.06);border:1px solid rgba(244,239,230,.15);border-radius:2px;color:var(--marfim);font-family:'Inter',sans-serif;font-size:.9rem;resize:vertical;min-height:90px}
+    .form-textarea:focus{outline:none;border-color:var(--champ)}
+    .form-group{margin-bottom:1.25rem}
+    .err-msg{font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:#e24b4a;display:none;margin-top:.2rem}
+    .err-msg.show{display:block}
+    .interest-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.6rem;margin-top:.5rem}
+    .interest-card{border:1px solid rgba(244,239,230,.15);border-radius:2px;padding:.75rem;display:flex;flex-direction:column;align-items:center;gap:.4rem;cursor:pointer;transition:border-color .2s,background .2s}
+    .interest-card:hover{border-color:rgba(201,166,100,.4)}
+    .interest-card.checked{border-color:var(--champ);background:rgba(201,166,100,.08)}
+    .interest-card input{display:none}
+    .interest-card i{font-size:1.3rem;color:var(--champ)}
+    .interest-card span{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(244,239,230,.7);text-align:center}
+    .form-nav{display:flex;justify-content:space-between;margin-top:2rem;gap:1rem}
+    .btn-step-next{padding:.7rem 1.75rem;background:var(--champ);color:var(--onyx);font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;transition:background .2s}
+    .btn-step-next:hover{background:var(--champ2)}
+    .btn-step-back{padding:.7rem 1.75rem;border:1px solid rgba(244,239,230,.2);color:rgba(244,239,230,.6);font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;transition:all .2s}
+    .btn-step-back:hover{border-color:var(--champ);color:var(--champ)}
+    .summary-box{background:rgba(244,239,230,.04);border:1px solid rgba(201,166,100,.12);border-radius:var(--radius);padding:1.25rem;margin-bottom:1.5rem}
+    .summary-row{display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid rgba(244,239,230,.07);font-size:.85rem}
+    .summary-row:last-child{border-bottom:none}
+    .summary-row span:first-child{color:rgba(244,239,230,.5);font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
+    .lgpd-row{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.5rem}
+    .lgpd-row input[type=checkbox]{accent-color:var(--champ);width:16px;height:16px;flex-shrink:0;margin-top:.15rem;cursor:pointer}
+    .lgpd-row label{font-size:.82rem;color:rgba(244,239,230,.55);line-height:1.5}
+    .submit-btn{width:100%;padding:.9rem;background:var(--champ);color:var(--onyx);font-family:'IBM Plex Mono',monospace;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;display:flex;align-items:center;justify-content:center;gap:.6rem;transition:background .2s}
+    .submit-btn:hover:not(:disabled){background:var(--champ2)}
+    .submit-btn:disabled{opacity:.6;cursor:default}
+    .step-success{text-align:center;padding:3rem 1rem}
+    .step-success i{font-size:3rem;color:var(--champ);margin-bottom:1rem}
+    .step-success h3{font-family:'Fraunces',serif;font-size:1.6rem;color:var(--marfim);margin-bottom:.75rem}
+    .step-success p{color:rgba(244,239,230,.6)}
+    .step-success button{margin-top:2rem;padding:.7rem 1.75rem;border:1px solid rgba(244,239,230,.2);color:rgba(244,239,230,.6);font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;transition:all .2s}
+    .step-success button:hover{border-color:var(--champ);color:var(--champ)}
+
+    /* ══════════════ FOOTER ══════════════ */
+    footer{background:rgba(244,239,230,.03);border-top:1px solid rgba(201,166,100,.1);padding:4rem 5vw 2rem}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+    @media(max-width:860px){.footer-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
+    .footer-brand{font-family:'Fraunces',serif;font-size:1.4rem;color:var(--champ);margin-bottom:1rem}
+    .footer-desc{font-size:.85rem;color:rgba(244,239,230,.45);line-height:1.7}
+    .footer-col-title{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--champ);margin-bottom:1rem}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+    .footer-col a{font-size:.85rem;color:rgba(244,239,230,.5);transition:color .2s}
+    .footer-col a:hover{color:var(--marfim)}
+    .footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-top:2rem;border-top:1px solid rgba(244,239,230,.06)}
+    .footer-copy{font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:rgba(244,239,230,.3)}
+    .footer-social{display:flex;gap:1rem}
+    .footer-social a{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(244,239,230,.12);border-radius:2px;font-size:.9rem;color:rgba(244,239,230,.4);transition:all .2s}
+    .footer-social a:hover{border-color:var(--champ);color:var(--champ)}
+
+    /* ══════════════ WHATSAPP FAB ══════════════ */
+    .wa-fab{position:fixed;bottom:2rem;right:2rem;z-index:90;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.35);transition:transform .2s,box-shadow .2s}
+    .wa-fab:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(37,211,102,.45)}
+    .wa-fab i{font-size:1.5rem;color:#fff}
   </style>
 </head>
 <body>
 
-  <a class="skip-link" href="#catalogo">Ir para o catálogo</a>
+<!-- NAV -->
+<nav class="nav" role="navigation" aria-label="Navegação principal">
+  <a class="nav-logo" href="#">Bon Vivant</a>
+  <ul class="nav-links">
+    <li><a href="#colecao">Coleção</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#processo">Processo</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a class="nav-cta" href="#consultoria">Consultoria</a>
+  <button class="nav-burger" onclick="openMobileNav()" aria-label="Abrir menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-  <!-- Mobile nav -->
-  <div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="mobile-nav-top">
+    <span class="nav-logo">Bon Vivant</span>
     <button class="mobile-nav-close" onclick="closeMobileNav()" aria-label="Fechar menu"><i class="ti ti-x"></i></button>
-    <ul>
-      <li><a href="#colecoes" onclick="closeMobileNav()">Coleções</a></li>
-      <li><a href="#catalogo" onclick="closeMobileNav()">Catálogo</a></li>
-      <li><a href="#sobre" onclick="closeMobileNav()">Sobre</a></li>
-      <li><a href="#contato" onclick="closeMobileNav()">Contato</a></li>
-    </ul>
-    <div class="mobile-nav-waba">
-      <a class="btn-whatsapp" href="https://wa.me/5511999990000?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20as%20joias." target="_blank" rel="noopener">
-        <i class="ti ti-brand-whatsapp"></i> Comprar pelo WhatsApp
-      </a>
+  </div>
+  <ul>
+    <li><a href="#colecao" onclick="closeMobileNav()">Coleção</a></li>
+    <li><a href="#sobre" onclick="closeMobileNav()">Sobre</a></li>
+    <li><a href="#processo" onclick="closeMobileNav()">Processo</a></li>
+    <li><a href="#calculadora" onclick="closeMobileNav()">Calculadora</a></li>
+    <li><a href="#consultoria" onclick="closeMobileNav()">Consultoria</a></li>
+    <li><a href="#faq" onclick="closeMobileNav()">FAQ</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<section class="hero" aria-label="Destaque principal">
+  <div class="hero-lid" aria-hidden="true"></div>
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="gem-wrap" aria-hidden="true">
+    <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+      <path class="gem-path" d="M150 30 L270 110 L270 190 L150 270 L30 190 L30 110 Z M150 30 L210 110 L150 150 L90 110 Z M30 110 L90 110 L150 150 L30 190 Z M270 110 L210 110 L150 150 L270 190 Z M90 110 L150 150 L210 110 M30 190 L150 150 L270 190 M150 150 L150 270"/>
+    </svg>
+  </div>
+  <div class="hero-inner">
+    <p class="hero-tag f-mono">Joalheria Exclusiva · Est. 2018</p>
+    <h1 class="hero-h1 f-display">Onde o ouro<br/>encontra a <em>arte</em></h1>
+    <p class="hero-sub">Peças únicas em ouro 18k, prata 925 e pedras preciosas.<br/>Criadas para durar gerações.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#colecao"><i class="ti ti-diamond"></i> Ver Coleção</a>
+      <a class="btn-outline" href="#consultoria">Consultoria Gratuita</a>
     </div>
   </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <span class="f-mono">Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
 
-  <!-- NAV -->
-  <nav aria-label="Navegação principal">
-    <a class="logo" href="#" aria-label="Bon Vivant Joias - Página inicial">Bon <span>Vivant</span></a>
-    <ul class="nav-links">
-      <li><a href="#colecoes">Coleções</a></li>
-      <li><a href="#catalogo">Catálogo</a></li>
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
-    <div class="nav-icons">
-      <i class="ti ti-search" title="Buscar" aria-label="Buscar"></i>
-      <i class="ti ti-heart" title="Favoritos" aria-label="Favoritos"></i>
-      <a class="nav-whatsapp" href="https://wa.me/5511999990000?text=Olá!%20Vim%20pelo%20site." target="_blank" rel="noopener" aria-label="Comprar pelo WhatsApp">
-        <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> WhatsApp
-      </a>
-      <button class="nav-hamburger" onclick="openMobileNav()" aria-label="Abrir menu">
-        <i class="ti ti-menu-2"></i>
-      </button>
-    </div>
-  </nav>
+<!-- MARQUEE -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-item"><span class="marquee-dot"></span>Ouro 18k Certificado</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Prata 925 Italiana</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Pedras Preciosas Naturais</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Peças Sob Encomenda</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Garantia Vitalícia</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Embalagem Premium</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Parcela em 12×</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Frete Grátis</div>
+    <!-- duplicado para loop -->
+    <div class="marquee-item"><span class="marquee-dot"></span>Ouro 18k Certificado</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Prata 925 Italiana</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Pedras Preciosas Naturais</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Peças Sob Encomenda</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Garantia Vitalícia</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Embalagem Premium</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Parcela em 12×</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Frete Grátis</div>
+  </div>
+</div>
 
-  <!-- HERO -->
-  <!-- H1 (6 words): "Joias que marcam quem você é."
-       Subheadline (15 words): "Peças únicas em ouro 18k e prata 925 — feitas para durar gerações."
-       CTA primário: "Quero a minha agora" | CTA secundário: "Explorar coleção"
-       Gatilhos: exclusividade, identidade, autoridade -->
-  <section class="hero" id="colecoes" aria-label="Seção principal">
-    <div class="hero-sidebar" aria-hidden="true">
-      <span class="hero-sidebar-text">Bon Vivant Joias — Coleção Outono 2025</span>
-      <i class="ti ti-brand-instagram"></i>
-      <i class="ti ti-brand-pinterest"></i>
-    </div>
-    <div class="hero-main">
-      <div class="hero-tag" aria-hidden="true">Lançamento limitado</div>
-      <div class="reveal">
-        <span class="hero-eyebrow">Coleção Outono · 2025</span>
-        <!-- H1 — 6 palavras poderosas -->
-        <h1 class="hero-h1">
-          <span class="thin">joias que marcam</span>
-          quem você <em>é.</em>
-        </h1>
-        <!-- Subheadline — 15 palavras, benefício claro + urgência -->
-        <p style="font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:2rem;max-width:320px;line-height:1.7">
-          Peças únicas em ouro 18k e prata 925 — criadas para durar gerações e ser admiradas para sempre.
-        </p>
-        <div style="display:flex;gap:1rem;flex-wrap:wrap">
-          <a class="btn-whatsapp" href="https://wa.me/5511999990000?text=Olá!%20Quero%20conhecer%20as%20joias%20da%20coleção%20Outono%202025." target="_blank" rel="noopener">
-            <i class="ti ti-brand-whatsapp" style="font-size:14px" aria-hidden="true"></i> Quero a minha agora
-          </a>
-          <a class="btn-dark" href="#catalogo">Explorar coleção <i class="ti ti-arrow-right" style="font-size:13px" aria-hidden="true"></i></a>
+<!-- FEATURED PRODUCTS -->
+<section class="section featured" id="colecao" aria-labelledby="feat-h">
+  <div class="section-head reveal">
+    <p class="section-tag f-mono">Destaques</p>
+    <h2 class="section-h f-display" id="feat-h">Coleção em evidência</h2>
+  </div>
+  <div class="prod-grid">
+    <!-- large card -->
+    <article class="card reveal" data-lupa>
+      <div class="card-img">
+        <i class="ti ti-diamond card-img-icon"></i>
+        <div class="card-shimmer"></div>
+        <div class="card-lupa" aria-hidden="true"></div>
+      </div>
+      <div class="card-body">
+        <p class="card-label f-mono">Destaque · Ouro 18k</p>
+        <h3 class="card-name f-display">Colar Lumière</h3>
+        <p class="card-mat">Ouro 18k · Ametista natural</p>
+        <div class="card-footer">
+          <span class="card-price f-display">R$&nbsp;3.890</span>
+          <a class="card-btn f-mono" href="https://wa.me/5511999990000?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Colar%20Lumi%C3%A8re." target="_blank" rel="noopener">Consultar</a>
         </div>
       </div>
-    </div>
-    <div class="hero-right">
-      <div class="hero-rotated" aria-hidden="true">Exclusivo</div>
-      <!-- Indicadores de autoridade — números concretos -->
-      <div class="hero-stats reveal">
-        <div class="hero-stat">
-          <span>Desde 2008</span>
-          <strong>+17 anos criando joias de referência</strong>
-        </div>
-        <div class="hero-stat">
-          <span>Clientes satisfeitas</span>
-          <strong>+4.800 peças entregues no Brasil</strong>
-        </div>
-        <div class="hero-stat">
-          <span>Garantia incondicional</span>
-          <strong>2 anos em toda a coleção</strong>
+    </article>
+    <article class="card reveal" data-lupa>
+      <div class="card-img">
+        <i class="ti ti-ring card-img-icon"></i>
+        <div class="card-shimmer"></div>
+        <div class="card-lupa" aria-hidden="true"></div>
+      </div>
+      <div class="card-body">
+        <p class="card-label f-mono">Prata 925</p>
+        <h3 class="card-name f-display">Anel Solstice</h3>
+        <p class="card-mat">Prata 925 · Safira</p>
+        <div class="card-footer">
+          <span class="card-price f-display">R$&nbsp;1.290</span>
+          <a class="card-btn f-mono" href="https://wa.me/5511999990000?text=Ol%C3%A1!%20Interesse%20no%20Anel%20Solstice." target="_blank" rel="noopener">Consultar</a>
         </div>
       </div>
-      <div class="reveal">
-        <a class="btn-ghost" href="#contato">Agendar consultoria gratuita <i class="ti ti-arrow-right" style="font-size:12px" aria-hidden="true"></i></a>
+    </article>
+    <article class="card reveal" data-lupa>
+      <div class="card-img">
+        <i class="ti ti-star card-img-icon"></i>
+        <div class="card-shimmer"></div>
+        <div class="card-lupa" aria-hidden="true"></div>
       </div>
-    </div>
-    <div class="hero-bottom" aria-hidden="true">
-      <!-- Prova social rápida — urgência implícita -->
-      <p>🔒 Compra segura · Frete grátis acima de R$ 800 · Parcele em até 12×</p>
-      <div class="hero-scroll"><i class="ti ti-arrow-down" style="font-size:13px"></i> Ver peças</div>
-    </div>
-  </section>
+      <div class="card-body">
+        <p class="card-label f-mono">Ouro 18k</p>
+        <h3 class="card-name f-display">Brinco Étoile</h3>
+        <p class="card-mat">Ouro 18k · Diamante</p>
+        <div class="card-footer">
+          <span class="card-price f-display">R$&nbsp;5.200</span>
+          <a class="card-btn f-mono" href="https://wa.me/5511999990000?text=Ol%C3%A1!%20Interesse%20no%20Brinco%20%C3%89toile." target="_blank" rel="noopener">Consultar</a>
+        </div>
+      </div>
+    </article>
+    <article class="card reveal" data-lupa>
+      <div class="card-img">
+        <i class="ti ti-link card-img-icon"></i>
+        <div class="card-shimmer"></div>
+        <div class="card-lupa" aria-hidden="true"></div>
+      </div>
+      <div class="card-body">
+        <p class="card-label f-mono">Ouro 18k</p>
+        <h3 class="card-name f-display">Pulseira Arc</h3>
+        <p class="card-mat">Ouro 18k · Rubi</p>
+        <div class="card-footer">
+          <span class="card-price f-display">R$&nbsp;2.680</span>
+          <a class="card-btn f-mono" href="https://wa.me/5511999990000?text=Ol%C3%A1!%20Interesse%20na%20Pulseira%20Arc." target="_blank" rel="noopener">Consultar</a>
+        </div>
+      </div>
+    </article>
+    <article class="card reveal" data-lupa>
+      <div class="card-img">
+        <i class="ti ti-wave-sine card-img-icon"></i>
+        <div class="card-shimmer"></div>
+        <div class="card-lupa" aria-hidden="true"></div>
+      </div>
+      <div class="card-body">
+        <p class="card-label f-mono">Prata 925</p>
+        <h3 class="card-name f-display">Pulseira Vague</h3>
+        <p class="card-mat">Prata 925 · Madrepérola</p>
+        <div class="card-footer">
+          <span class="card-price f-display">R$&nbsp;1.580</span>
+          <a class="card-btn f-mono" href="https://wa.me/5511999990000?text=Ol%C3%A1!%20Interesse%20na%20Pulseira%20Vague." target="_blank" rel="noopener">Consultar</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
 
-  <!-- MARQUEE -->
-  <div class="marquee-strip" aria-hidden="true">
-    <div class="marquee-inner">
-      <span>Ouro 18k</span><span class="dot">◆</span><span>Prata 925</span><span class="dot">◆</span>
-      <span>Design autoral</span><span class="dot">◆</span><span>Pedras certificadas</span><span class="dot">◆</span>
-      <span>Garantia 2 anos</span><span class="dot">◆</span><span>Feito no Brasil</span><span class="dot">◆</span>
-      <span>Embalagem exclusiva</span><span class="dot">◆</span><span>Entrega nacional</span><span class="dot">◆</span>
-      <span>Ouro 18k</span><span class="dot">◆</span><span>Prata 925</span><span class="dot">◆</span>
-      <span>Design autoral</span><span class="dot">◆</span><span>Pedras certificadas</span><span class="dot">◆</span>
-      <span>Garantia 2 anos</span><span class="dot">◆</span><span>Feito no Brasil</span><span class="dot">◆</span>
-      <span>Embalagem exclusiva</span><span class="dot">◆</span><span>Entrega nacional</span><span class="dot">◆</span>
+<!-- CATALOG -->
+<section class="section catalog" aria-labelledby="cat-h">
+  <div class="section-head reveal">
+    <p class="section-tag f-mono">Catálogo Completo</p>
+    <h2 class="section-h f-display" id="cat-h">Todas as peças</h2>
+  </div>
+  <div class="catalog-controls reveal">
+    <button class="filter-btn active" data-filter="todos" onclick="filterCatalog(this,'todos')">Todos</button>
+    <button class="filter-btn" data-filter="colar" onclick="filterCatalog(this,'colar')">Colares</button>
+    <button class="filter-btn" data-filter="anel" onclick="filterCatalog(this,'anel')">Anéis</button>
+    <button class="filter-btn" data-filter="brinco" onclick="filterCatalog(this,'brinco')">Brincos</button>
+    <button class="filter-btn" data-filter="pulseira" onclick="filterCatalog(this,'pulseira')">Pulseiras</button>
+    <button class="filter-btn" data-filter="pingente" onclick="filterCatalog(this,'pingente')">Pingentes</button>
+    <select class="sort-select" onchange="sortCatalog(this.value)" aria-label="Ordenar por">
+      <option value="">Ordenar</option>
+      <option value="price-asc">Menor preço</option>
+      <option value="price-desc">Maior preço</option>
+      <option value="name">Nome A–Z</option>
+    </select>
+  </div>
+  <div id="catalogGrid">
+    <article class="cat-card reveal" data-category="colar" data-price="4100" data-name="Colar Sirocco">
+      <div class="cat-card-img"><i class="ti ti-diamond"></i></div>
+      <div class="cat-card-body">
+        <h3 class="cat-card-name f-display">Colar Sirocco</h3>
+        <p class="cat-card-mat">Ouro 18k · Esmeralda</p>
+        <div class="cat-card-row">
+          <span class="cat-card-price f-mono">R$ 4.100</span>
+          <a href="https://wa.me/5511999990000?text=Interesse%20no%20Colar%20Sirocco." target="_blank" rel="noopener" class="card-btn f-mono">Consultar</a>
+        </div>
+      </div>
+    </article>
+    <article class="cat-card reveal" data-category="anel" data-price="890" data-name="Anel Cosmos">
+      <div class="cat-card-img"><i class="ti ti-ring"></i></div>
+      <div class="cat-card-body">
+        <h3 class="cat-card-name f-display">Anel Cosmos</h3>
+        <p class="cat-card-mat">Prata 925 · Zircônia</p>
+        <div class="cat-card-row">
+          <span class="cat-card-price f-mono">R$ 890</span>
+          <a href="https://wa.me/5511999990000?text=Interesse%20no%20Anel%20Cosmos." target="_blank" rel="noopener" class="card-btn f-mono">Consultar</a>
+        </div>
+      </div>
+    </article>
+    <article class="cat-card reveal" data-category="brinco" data-price="6350" data-name="Brinco Cascade">
+      <div class="cat-card-img"><i class="ti ti-star"></i></div>
+      <div class="cat-card-body">
+        <h3 class="cat-card-name f-display">Brinco Cascade</h3>
+        <p class="cat-card-mat">Ouro 18k · Safira azul</p>
+        <div class="cat-card-row">
+          <span class="cat-card-price f-mono">R$ 6.350</span>
+          <a href="https://wa.me/5511999990000?text=Interesse%20no%20Brinco%20Cascade." target="_blank" rel="noopener" class="card-btn f-mono">Consultar</a>
+        </div>
+      </div>
+    </article>
+    <article class="cat-card reveal" data-category="pingente" data-price="7900" data-name="Pingente Stella">
+      <div class="cat-card-img"><i class="ti ti-sparkles"></i></div>
+      <div class="cat-card-body">
+        <h3 class="cat-card-name f-display">Pingente Stella</h3>
+        <p class="cat-card-mat">Ouro 18k · Diamante</p>
+        <div class="cat-card-row">
+          <span class="cat-card-price f-mono">R$ 7.900</span>
+          <a href="https://wa.me/5511999990000?text=Interesse%20no%20Pingente%20Stella." target="_blank" rel="noopener" class="card-btn f-mono">Consultar</a>
+        </div>
+      </div>
+    </article>
+    <article class="cat-card reveal" data-category="anel" data-price="3200" data-name="Anel Lattice">
+      <div class="cat-card-img"><i class="ti ti-ring"></i></div>
+      <div class="cat-card-body">
+        <h3 class="cat-card-name f-display">Anel Lattice</h3>
+        <p class="cat-card-mat">Ouro 18k · Rubi</p>
+        <div class="cat-card-row">
+          <span class="cat-card-price f-mono">R$ 3.200</span>
+          <a href="https://wa.me/5511999990000?text=Interesse%20no%20Anel%20Lattice." target="_blank" rel="noopener" class="card-btn f-mono">Consultar</a>
+        </div>
+      </div>
+    </article>
+    <article class="cat-card reveal" data-category="pulseira" data-price="1580" data-name="Pulseira Vague">
+      <div class="cat-card-img"><i class="ti ti-wave-sine"></i></div>
+      <div class="cat-card-body">
+        <h3 class="cat-card-name f-display">Pulseira Vague</h3>
+        <p class="cat-card-mat">Prata 925 · Madrepérola</p>
+        <div class="cat-card-row">
+          <span class="cat-card-price f-mono">R$ 1.580</span>
+          <a href="https://wa.me/5511999990000?text=Interesse%20na%20Pulseira%20Vague." target="_blank" rel="noopener" class="card-btn f-mono">Consultar</a>
+        </div>
+      </div>
+    </article>
+  </div>
+  <p class="no-results f-mono" id="noResults">Nenhuma peça encontrada.</p>
+</section>
+
+<!-- ABOUT -->
+<section class="section about" id="sobre" aria-labelledby="about-h">
+  <div class="about-grid">
+    <div class="about-img reveal" aria-hidden="true">
+      <i class="ti ti-building-store"></i>
+    </div>
+    <div class="about-text reveal">
+      <p class="section-tag f-mono">Nossa História</p>
+      <h2 class="section-h f-display" id="about-h">Arte que atravessa gerações</h2>
+      <p>Fundada em 2018, a Bon Vivant nasceu da paixão por transformar metais nobres e pedras preciosas em obras de arte que contam histórias.</p>
+      <p>Cada peça é criada com técnicas ancestrais de ourivesaria, combinadas com design contemporâneo — para quem valoriza o que é único.</p>
+      <div class="about-stats">
+        <div>
+          <div class="stat-n f-display">500+</div>
+          <div class="stat-l f-mono">Peças criadas</div>
+        </div>
+        <div>
+          <div class="stat-n f-display">6+</div>
+          <div class="stat-l f-mono">Anos de experiência</div>
+        </div>
+        <div>
+          <div class="stat-n f-display">98%</div>
+          <div class="stat-l f-mono">Satisfação</div>
+        </div>
+      </div>
     </div>
   </div>
+</section>
 
-  <!-- FEATURED -->
-  <!-- H2: "As mais desejadas desta temporada"
-       Gatilho: escassez social — "as mais desejadas" implica que outras pessoas já querem -->
-  <section class="featured" aria-label="Peças em destaque">
-    <div class="featured-header reveal">
+<!-- PROCESSO -->
+<section class="section processo" id="processo" aria-labelledby="proc-h">
+  <div class="section-head reveal">
+    <p class="section-tag f-mono">Como Trabalhamos</p>
+    <h2 class="section-h f-display" id="proc-h">Seu processo, do início ao fim</h2>
+  </div>
+  <div class="processo-grid" id="processoGrid">
+    <div class="processo-line" aria-hidden="true"><div class="processo-fill" id="processoFill"></div></div>
+    <div class="pstep reveal" id="ps1">
+      <p class="pstep-num f-mono">01</p>
+      <div class="pstep-dot" aria-hidden="true"></div>
+      <div class="pstep-icon"><i class="ti ti-message-circle"></i></div>
+      <h3 class="pstep-title f-display">Consultoria</h3>
+      <p class="pstep-desc">Entendemos seu estilo, ocasião e orçamento em uma conversa sem compromisso.</p>
+    </div>
+    <div class="pstep reveal" id="ps2">
+      <p class="pstep-num f-mono">02</p>
+      <div class="pstep-dot" aria-hidden="true"></div>
+      <div class="pstep-icon"><i class="ti ti-pencil"></i></div>
+      <h3 class="pstep-title f-display">Design</h3>
+      <p class="pstep-desc">Nossos ourives criam o esboço da peça e apresentamos para sua aprovação.</p>
+    </div>
+    <div class="pstep reveal" id="ps3">
+      <p class="pstep-num f-mono">03</p>
+      <div class="pstep-dot" aria-hidden="true"></div>
+      <div class="pstep-icon"><i class="ti ti-flame"></i></div>
+      <h3 class="pstep-title f-display">Criação</h3>
+      <p class="pstep-desc">A peça é manufaturada com materiais certificados e técnica artesanal.</p>
+    </div>
+    <div class="pstep reveal" id="ps4">
+      <p class="pstep-num f-mono">04</p>
+      <div class="pstep-dot" aria-hidden="true"></div>
+      <div class="pstep-icon"><i class="ti ti-gift"></i></div>
+      <h3 class="pstep-title f-display">Entrega</h3>
+      <p class="pstep-desc">Enviamos em embalagem premium com certificado de autenticidade e garantia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials" aria-labelledby="test-h">
+  <div class="section-head reveal">
+    <p class="section-tag f-mono">Depoimentos</p>
+    <h2 class="section-h f-display" id="test-h">O que dizem sobre nós</h2>
+  </div>
+  <div class="testi-grid">
+    <article class="testi-card reveal">
+      <div class="testi-stars">★★★★★</div>
+      <blockquote class="testi-text f-display">"O Colar Lumière superou todas as minhas expectativas. Qualidade impecável e atendimento incrível."</blockquote>
+      <p class="testi-author f-mono">Ana Beatriz M.</p>
+      <p class="testi-prod">Colar Lumière · Ouro 18k</p>
+    </article>
+    <article class="testi-card reveal">
+      <div class="testi-stars">★★★★★</div>
+      <blockquote class="testi-text f-display">"Presenteei minha esposa com o Brinco Étoile no aniversário. Ela chora de emoção cada vez que usa."</blockquote>
+      <p class="testi-author f-mono">Carlos H. S.</p>
+      <p class="testi-prod">Brinco Étoile · Diamante</p>
+    </article>
+    <article class="testi-card reveal">
+      <div class="testi-stars">★★★★★</div>
+      <blockquote class="testi-text f-display">"Peça sob encomenda entregue no prazo prometido. O acabamento é digno de joalheria europeia."</blockquote>
+      <p class="testi-author f-mono">Fernanda L.</p>
+      <p class="testi-prod">Anel personalizado · Safira</p>
+    </article>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div class="newsletter reveal">
+  <p class="section-tag f-mono" style="display:inline-block">Lista VIP</p>
+  <h2 class="f-display">Acesso antecipado às novidades</h2>
+  <p>Receba lançamentos exclusivos, descontos e convites para eventos antes de todo mundo.</p>
+  <div class="nl-form">
+    <input class="nl-input" type="email" id="nl-email" placeholder="seu@email.com" aria-label="Seu e-mail"/>
+    <button class="nl-btn f-mono" onclick="subscribeNewsletter()">Entrar</button>
+  </div>
+</div>
+
+<!-- CONTACT STRIP -->
+<div class="contact-strip">
+  <div class="contact-grid">
+    <div class="contact-item">
+      <i class="ti ti-map-pin contact-icon"></i>
       <div>
-        <span class="label">Mais vendidas · Coleção 2025</span>
-        <h2 class="section-headline">
-          <span class="wt">as mais desejadas</span>
-          <span class="wb">desta <span class="wi">temporada.</span></span>
-        </h2>
+        <p class="contact-label f-mono">Localização</p>
+        <p class="contact-val">São Paulo · SP</p>
       </div>
-      <a class="btn-ghost" href="#catalogo">Ver catálogo completo <i class="ti ti-arrow-right" style="font-size:12px" aria-hidden="true"></i></a>
     </div>
-    <div class="products-grid">
-      <article class="product-card" itemscope itemtype="https://schema.org/Product">
-        <div class="product-img">
-          <span class="product-badge gold">Exclusivo</span>
-          <div class="product-img-inner">
-            <svg width="90" height="90" viewBox="0 0 90 90" fill="none" aria-hidden="true"><circle cx="45" cy="34" r="24" stroke="#8a7040" stroke-width="1.2"/><circle cx="45" cy="34" r="14" stroke="#8a7040" stroke-width="0.6"/><line x1="45" y1="10" x2="45" y2="5" stroke="#8a7040" stroke-width="1.4"/><line x1="45" y1="5" x2="45" y2="80" stroke="#8a7040" stroke-width="0.6"/><ellipse cx="45" cy="78" rx="7" ry="3.5" stroke="#8a7040" stroke-width="0.7"/></svg>
-          </div>
-        </div>
-        <div class="product-info">
-          <p class="product-name" itemprop="name">Colar Lumière</p>
-          <p class="product-meta">Ouro 18k · Ametista natural</p>
-          <p class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="price" content="3890">R$ 3.890</span></p>
-          <a class="product-waba" href="https://wa.me/5511999990000?text=Olá!%20Tenho%20interesse%20no%20Colar%20Lumière." target="_blank" rel="noopener">
-            <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Comprar
-          </a>
-        </div>
-      </article>
-
-      <article class="product-card" itemscope itemtype="https://schema.org/Product">
-        <div class="product-img">
-          <span class="product-badge">Novo</span>
-          <div class="product-img-inner">
-            <svg width="70" height="70" viewBox="0 0 70 70" fill="none" aria-hidden="true"><rect x="10" y="10" width="50" height="50" rx="25" stroke="#8a7040" stroke-width="1"/><rect x="22" y="22" width="26" height="26" rx="13" stroke="#8a7040" stroke-width="0.5"/><circle cx="35" cy="35" r="5" fill="#8a7040" opacity="0.35"/></svg>
-          </div>
-        </div>
-        <div class="product-info">
-          <p class="product-name" itemprop="name">Anel Solstice</p>
-          <p class="product-meta">Prata 925 · Safira azul</p>
-          <p class="product-price">R$ 1.290</p>
-          <a class="product-waba" href="https://wa.me/5511999990000?text=Olá!%20Tenho%20interesse%20no%20Anel%20Solstice." target="_blank" rel="noopener">
-            <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Comprar
-          </a>
-        </div>
-      </article>
-
-      <article class="product-card dark-card" itemscope itemtype="https://schema.org/Product">
-        <div class="product-img">
-          <div class="product-img-inner">
-            <svg width="70" height="70" viewBox="0 0 70 70" fill="none" aria-hidden="true"><path d="M35 8 L38 28 L58 28 L43 40 L48 60 L35 48 L22 60 L27 40 L12 28 L32 28 Z" stroke="#c9a84c" stroke-width="1" fill="none"/></svg>
-          </div>
-        </div>
-        <div class="product-info">
-          <p class="product-name" itemprop="name">Brinco Étoile</p>
-          <p class="product-meta">Ouro 18k · Diamante</p>
-          <p class="product-price">R$ 5.200</p>
-          <a class="product-waba" href="https://wa.me/5511999990000?text=Olá!%20Tenho%20interesse%20no%20Brinco%20Étoile." target="_blank" rel="noopener">
-            <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Comprar
-          </a>
-        </div>
-      </article>
-
-      <article class="product-card" itemscope itemtype="https://schema.org/Product">
-        <div class="product-img">
-          <span class="product-badge">Promoção</span>
-          <div class="product-img-inner">
-            <svg width="70" height="70" viewBox="0 0 70 70" fill="none" aria-hidden="true"><ellipse cx="35" cy="35" rx="28" ry="18" stroke="#8a7040" stroke-width="1"/><ellipse cx="35" cy="35" rx="18" ry="10" stroke="#8a7040" stroke-width="0.5"/><line x1="7" y1="35" x2="63" y2="35" stroke="#8a7040" stroke-width="0.4"/></svg>
-          </div>
-        </div>
-        <div class="product-info">
-          <p class="product-name" itemprop="name">Pulseira Arc</p>
-          <p class="product-meta">Ouro 18k · Rubi natural</p>
-          <p class="product-price">R$ 2.680</p>
-          <a class="product-waba" href="https://wa.me/5511999990000?text=Olá!%20Tenho%20interesse%20na%20Pulseira%20Arc." target="_blank" rel="noopener">
-            <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Comprar
-          </a>
-        </div>
-      </article>
-
-      <article class="product-card dark-card" itemscope itemtype="https://schema.org/Product">
-        <div class="product-img">
-          <div class="product-img-inner">
-            <svg width="70" height="70" viewBox="0 0 70 70" fill="none" aria-hidden="true"><path d="M12 35 Q24 20 35 35 Q46 50 58 35" stroke="#c9a84c" stroke-width="1" fill="none"/><circle cx="12" cy="35" r="4" stroke="#c9a84c" stroke-width="0.6"/><circle cx="58" cy="35" r="4" stroke="#c9a84c" stroke-width="0.6"/></svg>
-          </div>
-        </div>
-        <div class="product-info">
-          <p class="product-name" itemprop="name">Pulseira Vague</p>
-          <p class="product-meta">Prata 925 · Madre pérola</p>
-          <p class="product-price">R$ 1.580</p>
-          <a class="product-waba" href="https://wa.me/5511999990000?text=Olá!%20Tenho%20interesse%20na%20Pulseira%20Vague." target="_blank" rel="noopener">
-            <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Comprar
-          </a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- CATALOG -->
-  <section class="catalog" id="catalogo" aria-label="Catálogo de joias">
-    <div class="catalog-top reveal">
+    <div class="contact-item">
+      <i class="ti ti-brand-whatsapp contact-icon"></i>
       <div>
-        <span class="label">Catálogo completo</span>
-        <h2 class="section-headline" style="font-size:clamp(1.8rem,3vw,3rem)">
-          <span class="wt">explore todas as</span>
-          <span class="wb"><span class="wi">coleções.</span></span>
-        </h2>
+        <p class="contact-label f-mono">WhatsApp</p>
+        <p class="contact-val">(11) 99999-0000</p>
       </div>
     </div>
-
-    <!-- FILTROS -->
-    <div class="filter-bar" role="group" aria-label="Filtros do catálogo">
-      <div class="filter-group" role="group" aria-label="Categoria">
-        <button class="filter-btn active" data-filter="todos" onclick="filterCatalog(this,'todos')">Todos</button>
-        <button class="filter-btn" data-filter="aneis" onclick="filterCatalog(this,'aneis')">Anéis</button>
-        <button class="filter-btn" data-filter="colares" onclick="filterCatalog(this,'colares')">Colares</button>
-        <button class="filter-btn" data-filter="brincos" onclick="filterCatalog(this,'brincos')">Brincos</button>
-        <button class="filter-btn" data-filter="pulseiras" onclick="filterCatalog(this,'pulseiras')">Pulseiras</button>
-        <button class="filter-btn" data-filter="pingentes" onclick="filterCatalog(this,'pingentes')">Pingentes</button>
-      </div>
-      <div class="filter-range">
-        <label for="sort-select">Ordenar:</label>
-        <select id="sort-select" onchange="sortCatalog(this.value)" aria-label="Ordenar produtos">
-          <option value="default">Em destaque</option>
-          <option value="price-asc">Menor preço</option>
-          <option value="price-desc">Maior preço</option>
-          <option value="name">Nome A–Z</option>
-        </select>
+    <div class="contact-item">
+      <i class="ti ti-mail contact-icon"></i>
+      <div>
+        <p class="contact-label f-mono">E-mail</p>
+        <p class="contact-val">contato@bonvivant.com.br</p>
       </div>
     </div>
-
-    <div class="catalog-grid" id="catalogGrid">
-      <article class="cat-card reveal" data-category="colares" data-price="4100" data-name="Colar Sirocco" itemscope itemtype="https://schema.org/Product">
-        <div class="cat-img">
-          <svg width="55" height="55" viewBox="0 0 55 55" fill="none" aria-hidden="true"><path d="M27 5 C33 5 45 13 45 27 C45 41 33 50 27 50 C21 50 9 41 9 27 C9 13 21 5 27 5Z" stroke="#8a7040" stroke-width="0.8" fill="none"/><circle cx="27" cy="27" r="7" stroke="#8a7040" stroke-width="0.5"/></svg>
-        </div>
-        <p class="cat-name" itemprop="name">Colar Sirocco</p>
-        <p class="cat-detail">Ouro 18k · Topázio branco</p>
-        <p class="cat-price">R$ 4.100</p>
-        <a class="cat-waba" href="https://wa.me/5511999990000?text=Olá!%20Interesse%20no%20Colar%20Sirocco." target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Pedir pelo WhatsApp</a>
-      </article>
-
-      <article class="cat-card reveal reveal-delay-1" data-category="aneis" data-price="890" data-name="Anel Cosmos" itemscope itemtype="https://schema.org/Product">
-        <div class="cat-img tall">
-          <svg width="55" height="55" viewBox="0 0 55 55" fill="none" aria-hidden="true"><circle cx="27" cy="27" r="20" stroke="#8a7040" stroke-width="0.8"/><circle cx="27" cy="27" r="10" stroke="#8a7040" stroke-width="0.5"/><circle cx="27" cy="27" r="3" fill="#8a7040" opacity="0.4"/></svg>
-        </div>
-        <p class="cat-name" itemprop="name">Anel Cosmos</p>
-        <p class="cat-detail">Prata 925 · Zircônia</p>
-        <p class="cat-price">R$ 890</p>
-        <a class="cat-waba" href="https://wa.me/5511999990000?text=Olá!%20Interesse%20no%20Anel%20Cosmos." target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Pedir pelo WhatsApp</a>
-      </article>
-
-      <article class="cat-card reveal reveal-delay-2" data-category="brincos" data-price="6350" data-name="Brinco Cascade" itemscope itemtype="https://schema.org/Product">
-        <div class="cat-img">
-          <svg width="55" height="55" viewBox="0 0 55 55" fill="none" aria-hidden="true"><path d="M20 8 L27 19 L34 8" stroke="#8a7040" stroke-width="0.8" fill="none"/><line x1="20" y1="8" x2="20" y2="46" stroke="#8a7040" stroke-width="0.5"/><line x1="34" y1="8" x2="34" y2="46" stroke="#8a7040" stroke-width="0.5"/><ellipse cx="20" cy="48" rx="3" ry="2" stroke="#8a7040" stroke-width="0.5"/><ellipse cx="34" cy="48" rx="3" ry="2" stroke="#8a7040" stroke-width="0.5"/></svg>
-        </div>
-        <p class="cat-name" itemprop="name">Brinco Cascade</p>
-        <p class="cat-detail">Ouro 18k · Esmeralda</p>
-        <p class="cat-price">R$ 6.350</p>
-        <a class="cat-waba" href="https://wa.me/5511999990000?text=Olá!%20Interesse%20no%20Brinco%20Cascade." target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Pedir pelo WhatsApp</a>
-      </article>
-
-      <article class="cat-card reveal" data-category="pingentes" data-price="7900" data-name="Pingente Stella" itemscope itemtype="https://schema.org/Product">
-        <div class="cat-img">
-          <svg width="55" height="55" viewBox="0 0 55 55" fill="none" aria-hidden="true"><polygon points="27,5 31,20 46,20 35,29 39,44 27,35 15,44 19,29 8,20 23,20" stroke="#8a7040" stroke-width="0.8" fill="none"/></svg>
-        </div>
-        <p class="cat-name" itemprop="name">Pingente Stella</p>
-        <p class="cat-detail">Ouro 18k · Diamante</p>
-        <p class="cat-price">R$ 7.900</p>
-        <a class="cat-waba" href="https://wa.me/5511999990000?text=Olá!%20Interesse%20no%20Pingente%20Stella." target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Pedir pelo WhatsApp</a>
-      </article>
-
-      <article class="cat-card reveal reveal-delay-1" data-category="aneis" data-price="3200" data-name="Anel Lattice" itemscope itemtype="https://schema.org/Product">
-        <div class="cat-img">
-          <svg width="55" height="55" viewBox="0 0 55 55" fill="none" aria-hidden="true"><rect x="14" y="14" width="27" height="27" stroke="#8a7040" stroke-width="0.8" fill="none"/><rect x="20" y="20" width="15" height="15" stroke="#8a7040" stroke-width="0.5" fill="none"/></svg>
-        </div>
-        <p class="cat-name" itemprop="name">Anel Lattice</p>
-        <p class="cat-detail">Ouro 18k · Safira rosa</p>
-        <p class="cat-price">R$ 3.200</p>
-        <a class="cat-waba" href="https://wa.me/5511999990000?text=Olá!%20Interesse%20no%20Anel%20Lattice." target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Pedir pelo WhatsApp</a>
-      </article>
-
-      <article class="cat-card reveal reveal-delay-2" data-category="pulseiras" data-price="1580" data-name="Pulseira Vague" itemscope itemtype="https://schema.org/Product">
-        <div class="cat-img">
-          <svg width="55" height="55" viewBox="0 0 55 55" fill="none" aria-hidden="true"><path d="M8 27 Q18 15 27 27 Q36 39 46 27" stroke="#8a7040" stroke-width="0.8" fill="none"/><circle cx="8" cy="27" r="3" stroke="#8a7040" stroke-width="0.5"/><circle cx="46" cy="27" r="3" stroke="#8a7040" stroke-width="0.5"/></svg>
-        </div>
-        <p class="cat-name" itemprop="name">Pulseira Vague</p>
-        <p class="cat-detail">Prata 925 · Madre pérola</p>
-        <p class="cat-price">R$ 1.580</p>
-        <a class="cat-waba" href="https://wa.me/5511999990000?text=Olá!%20Interesse%20na%20Pulseira%20Vague." target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Pedir pelo WhatsApp</a>
-      </article>
-
-      <div class="no-results" id="noResults">Nenhuma peça encontrada nesta categoria.</div>
-    </div>
-  </section>
-
-  <!-- WHATSAPP CTA -->
-  <!-- Gatilho: urgência + autoridade + eliminação de risco -->
-  <section class="waba-cta" aria-label="Comprar pelo WhatsApp">
-    <div class="waba-cta-text reveal">
-      <span class="label">Atendimento exclusivo · Resposta garantida</span>
-      <h2 class="waba-cta-title">A joia certa,<br>na hora certa.</h2>
-      <p class="waba-cta-sub">Nossos especialistas respondem em até 10 minutos. Tire medidas, escolha materiais, personalize — sem sair de casa. Sem compromisso.</p>
-      <!-- Micro-provas de autoridade -->
-      <div style="display:flex;gap:2rem;margin-top:1.5rem;flex-wrap:wrap">
-        <div>
-          <p style="font-size:1.4rem;font-weight:700;color:var(--color-gold-300);line-height:1">4.800+</p>
-          <p style="font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-top:2px">peças entregues</p>
-        </div>
-        <div>
-          <p style="font-size:1.4rem;font-weight:700;color:var(--color-gold-300);line-height:1">98%</p>
-          <p style="font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-top:2px">satisfação</p>
-        </div>
-        <div>
-          <p style="font-size:1.4rem;font-weight:700;color:var(--color-gold-300);line-height:1">17 anos</p>
-          <p style="font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-top:2px">de mercado</p>
-        </div>
+    <div class="contact-item">
+      <i class="ti ti-clock contact-icon"></i>
+      <div>
+        <p class="contact-label f-mono">Horário</p>
+        <p class="contact-val">Seg–Sex · 9h às 18h</p>
       </div>
     </div>
-    <div class="waba-cta-actions reveal">
-      <a class="waba-big" href="https://wa.me/5511999990000?text=Olá!%20Preciso%20de%20ajuda%20para%20escolher%20uma%20joia%20especial." target="_blank" rel="noopener">
-        <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Falar com especialista
-      </a>
-      <span class="waba-hint">⚡ Resposta em até 10 minutos · Seg–Sáb 9h–19h</span>
-    </div>
-  </section>
+  </div>
+</div>
 
-  <!-- ABOUT -->
-  <!-- H2: "Feitas para durar. Criadas para impressionar."
-       3 blocos de benefício com gatilho de autoridade em cada um -->
-  <section class="about" id="sobre" aria-label="Sobre a Bon Vivant">
-    <div class="about-left reveal">
-      <span class="about-number" aria-hidden="true">02</span>
-      <span class="label">Por que a Bon Vivant</span>
-      <h2 class="title">Feitas para durar.<br>Criadas para<br>impressionar.</h2>
-      <div class="divider" aria-hidden="true"></div>
-      <p class="body-text">Desde 2008, cada peça que sai da Bon Vivant passa por rigorosa seleção de materiais e revisão artesanal. Não produzimos em massa — produzimos com intenção.</p>
-      <!-- 3 blocos de benefício com copy persuasiva -->
-      <div class="features">
-        <div class="feature">
-          <div class="feature-icon" aria-hidden="true"><i class="ti ti-diamond"></i></div>
-          <div>
-            <p class="feature-title">Materiais certificados</p>
-            <p class="feature-desc">Apenas ouro 18k, prata 925 e pedras naturais com procedência garantida. Sem substituições, sem atalhos.</p>
-          </div>
-        </div>
-        <div class="feature">
-          <div class="feature-icon" aria-hidden="true"><i class="ti ti-pencil"></i></div>
-          <div>
-            <p class="feature-title">Design 100% autoral</p>
-            <p class="feature-desc">Cada coleção nasce no nosso ateliê. Você nunca vai encontrar a mesma peça em outra loja — garantido.</p>
-          </div>
-        </div>
-        <div class="feature">
-          <div class="feature-icon" aria-hidden="true"><i class="ti ti-shield-check"></i></div>
-          <div>
-            <p class="feature-title">Garantia de 2 anos</p>
-            <p class="feature-desc">Defeito de fabricação? Nós resolvemos. Sem burocracia, sem custo extra. É a nossa promessa.</p>
-          </div>
-        </div>
-        <div class="feature">
-          <div class="feature-icon" aria-hidden="true"><i class="ti ti-package"></i></div>
-          <div>
-            <p class="feature-title">Experiência completa</p>
-            <p class="feature-desc">Da embalagem ao atendimento pós-venda — cada detalhe foi pensado para você se sentir especial.</p>
-          </div>
-        </div>
+<!-- FAQ -->
+<section class="section faq" id="faq" aria-labelledby="faq-h">
+  <div class="section-head reveal" style="text-align:center">
+    <p class="section-tag f-mono">Dúvidas Frequentes</p>
+    <h2 class="section-h f-display" id="faq-h">Perguntas frequentes</h2>
+  </div>
+  <div class="faq-list reveal">
+    <div class="faq-item">
+      <button class="faq-q f-display" onclick="toggleFaq(this)" aria-expanded="false">Vocês fazem peças sob encomenda? <i class="ti ti-plus"></i></button>
+      <p class="faq-a">Sim! Esse é um dos nossos serviços mais especiais. Entre em contato pelo WhatsApp ou preencha o formulário de consultoria para começarmos.</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q f-display" onclick="toggleFaq(this)" aria-expanded="false">Qual a garantia das peças? <i class="ti ti-plus"></i></button>
+      <p class="faq-a">Todas as nossas peças têm garantia vitalícia contra defeitos de fabricação e manutenção gratuita por 1 ano.</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q f-display" onclick="toggleFaq(this)" aria-expanded="false">Como funciona o parcelamento? <i class="ti ti-plus"></i></button>
+      <p class="faq-a">Parcelamos em até 12× sem juros no cartão de crédito. Pagamentos via Pix têm 5% de desconto.</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q f-display" onclick="toggleFaq(this)" aria-expanded="false">Vocês fazem entrega para todo o Brasil? <i class="ti ti-plus"></i></button>
+      <p class="faq-a">Sim, enviamos para todo o Brasil com frete grátis via Sedex, com seguro e embalagem anti-impacto.</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q f-display" onclick="toggleFaq(this)" aria-expanded="false">As pedras preciosas são naturais? <i class="ti ti-plus"></i></button>
+      <p class="faq-a">Sim, trabalhamos exclusivamente com pedras naturais certificadas. Cada peça vem com laudo de autenticidade.</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q f-display" onclick="toggleFaq(this)" aria-expanded="false">Qual o prazo para peças sob encomenda? <i class="ti ti-plus"></i></button>
+      <p class="faq-a">Em média 15 a 30 dias úteis, dependendo da complexidade da peça. Informamos o prazo exato na consultoria.</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q f-display" onclick="toggleFaq(this)" aria-expanded="false">Como cuido das minhas joias? <i class="ti ti-plus"></i></button>
+      <p class="faq-a">Evite contato com produtos químicos, perfumes e cloreto. Guarde em local seco, de preferência na caixinha original. Trazemos de volta ao brilho original gratuitamente.</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q f-display" onclick="toggleFaq(this)" aria-expanded="false">Posso visitar o ateliê? <i class="ti ti-plus"></i></button>
+      <p class="faq-a">Sim, com agendamento prévio. Nosso ateliê fica em São Paulo. Entre em contato para marcar sua visita.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="section calculator" id="calculadora" aria-labelledby="calc-h">
+  <div class="section-head reveal" style="text-align:center">
+    <p class="section-tag f-mono">Calculadora</p>
+    <h2 class="section-h f-display" id="calc-h">Simule seu orçamento</h2>
+    <p class="section-sub" style="margin:0 auto">Selecione as características desejadas e veja uma estimativa instantânea.</p>
+  </div>
+  <div class="calc-box reveal">
+    <div class="calc-section">
+      <p class="calc-label f-mono">Tipo de joia</p>
+      <div class="calc-opts">
+        <button class="calc-opt active" data-group="tipo" data-base="800" onclick="calcSelect(this)">Anel</button>
+        <button class="calc-opt" data-group="tipo" data-base="1200" onclick="calcSelect(this)">Colar</button>
+        <button class="calc-opt" data-group="tipo" data-base="600" onclick="calcSelect(this)">Brinco</button>
+        <button class="calc-opt" data-group="tipo" data-base="900" onclick="calcSelect(this)">Pulseira</button>
+        <button class="calc-opt" data-group="tipo" data-base="500" onclick="calcSelect(this)">Pingente</button>
       </div>
-      <div style="margin-top:2.5rem;display:flex;gap:1rem;flex-wrap:wrap">
-        <a class="btn-ghost" href="#">Conheça nossa história <i class="ti ti-arrow-right" style="font-size:12px" aria-hidden="true"></i></a>
-        <a class="btn-whatsapp" href="https://wa.me/5511999990000?text=Olá!%20Quero%20saber%20mais%20sobre%20a%20Bon%20Vivant." target="_blank" rel="noopener" style="font-size:10px;padding:0.7rem 1.4rem">
-          <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Falar agora
+    </div>
+    <div class="calc-section">
+      <p class="calc-label f-mono">Material</p>
+      <div class="calc-opts">
+        <button class="calc-opt active" data-group="material" data-mult="1.0" onclick="calcSelect(this)">Prata 925</button>
+        <button class="calc-opt" data-group="material" data-mult="2.5" onclick="calcSelect(this)">Ouro 18k</button>
+        <button class="calc-opt" data-group="material" data-mult="3.8" onclick="calcSelect(this)">Ouro 24k</button>
+      </div>
+    </div>
+    <div class="calc-section">
+      <p class="calc-label f-mono">Pedra principal</p>
+      <div class="calc-opts">
+        <button class="calc-opt active" data-group="pedra" data-add="0" onclick="calcSelect(this)">Sem pedra</button>
+        <button class="calc-opt" data-group="pedra" data-add="300" onclick="calcSelect(this)">Zircônia</button>
+        <button class="calc-opt" data-group="pedra" data-add="800" onclick="calcSelect(this)">Safira</button>
+        <button class="calc-opt" data-group="pedra" data-add="1200" onclick="calcSelect(this)">Esmeralda</button>
+        <button class="calc-opt" data-group="pedra" data-add="1800" onclick="calcSelect(this)">Rubi</button>
+        <button class="calc-opt" data-group="pedra" data-add="2500" onclick="calcSelect(this)">Diamante</button>
+      </div>
+    </div>
+    <div class="calc-section">
+      <p class="calc-label f-mono">Serviços adicionais</p>
+      <div class="calc-opts">
+        <button class="calc-opt-check calc-opt" data-add="200" onclick="calcToggle(this)">Gravação</button>
+        <button class="calc-opt-check calc-opt" data-add="350" onclick="calcToggle(this)">Banho ouro</button>
+        <button class="calc-opt-check calc-opt" data-add="400" onclick="calcToggle(this)">Caixa premium</button>
+        <button class="calc-opt-check calc-opt" data-add="150" onclick="calcToggle(this)">Certificado GIA</button>
+      </div>
+    </div>
+    <div class="calc-result">
+      <p class="calc-result-val f-display" id="calcResult">R$ 800</p>
+      <p class="calc-result-note f-mono" id="calcParcel">ou 12× de R$ 66,67 · Pix: R$ 760</p>
+      <div id="calcNote">
+        <a class="calc-wa" id="calcWaba" href="https://wa.me/5511999990000" target="_blank" rel="noopener">
+          <i class="ti ti-brand-whatsapp"></i> Confirmar orçamento
         </a>
       </div>
     </div>
-    <div class="about-center-line" aria-hidden="true"></div>
-    <div style="padding-left:4rem;padding-top:4rem;padding-bottom:4rem">
-      <div class="about-visual reveal">
-        <div class="about-visual-inner">
-          <p>Desde 2008 — São Paulo</p>
-          <h2>Joias que<br>contam histórias<br>reais.</h2>
-        </div>
-        <div style="position:absolute;bottom:2rem;right:2rem;font-size:9px;letter-spacing:0.18em;color:rgba(255,255,255,0.2)" aria-hidden="true">Ateliê próprio · SP</div>
+  </div>
+</section>
+
+<!-- CONSULTATION FORM -->
+<section class="section consult" id="consultoria" aria-labelledby="consult-h">
+  <div class="section-head reveal" style="text-align:center">
+    <p class="section-tag f-mono">Consultoria Gratuita</p>
+    <h2 class="section-h f-display" id="consult-h">Vamos criar algo especial?</h2>
+    <p class="section-sub" style="margin:0 auto">Preencha abaixo e entraremos em contato pelo WhatsApp.</p>
+  </div>
+  <div class="consult-box reveal">
+    <form id="consultForm" novalidate>
+      <div class="step-header">
+        <span class="step-label-txt f-mono" id="stepLabel">Passo 1 de 3 — Interesse</span>
+        <span class="step-pct-txt f-mono" id="stepPct">33%</span>
       </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <!-- Gatilho: prova social + resultados quantificáveis + identificação -->
-  <section class="testimonials" aria-label="Depoimentos de clientes">
-    <div class="testi-header reveal">
-      <div>
-        <span class="label">+4.800 clientes satisfeitas · Nota 4.9/5</span>
-        <h2 class="testi-title">Elas compraram.<br>Nunca esqueceram.</h2>
-      </div>
-      <a href="https://wa.me/5511999990000?text=Olá!%20Vi%20os%20depoimentos%20e%20quero%20conhecer%20as%20joias." target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.35);text-decoration:none;border:0.5px solid rgba(255,255,255,0.1);padding:0.75rem 1.4rem;transition:color 0.2s">
-        Quero ser a próxima <i class="ti ti-arrow-right" style="font-size:12px" aria-hidden="true"></i>
-      </a>
-    </div>
-    <div class="testi-grid">
-      <!-- Depoimento 1 — maior, mais emocional, resultado específico -->
-      <div class="testi-card reveal">
-        <div style="display:flex;gap:4px;margin-bottom:1rem">
-          <i class="ti ti-star-filled" style="font-size:12px;color:var(--color-gold-300)" aria-hidden="true"></i>
-          <i class="ti ti-star-filled" style="font-size:12px;color:var(--color-gold-300)" aria-hidden="true"></i>
-          <i class="ti ti-star-filled" style="font-size:12px;color:var(--color-gold-300)" aria-hidden="true"></i>
-          <i class="ti ti-star-filled" style="font-size:12px;color:var(--color-gold-300)" aria-hidden="true"></i>
-          <i class="ti ti-star-filled" style="font-size:12px;color:var(--color-gold-300)" aria-hidden="true"></i>
-        </div>
-        <blockquote class="testi-text">"Comprei o Colar Lumière para o meu casamento. Três anos depois, toda vez que uso, alguém para pra perguntar onde comprei. É o tipo de peça que você passa pra filha."</blockquote>
-        <p class="testi-author">Mariana V.</p>
-        <p class="testi-location">São Paulo · Cliente desde 2021</p>
-      </div>
-      <!-- Depoimento 2 — foco no atendimento / processo de compra -->
-      <div class="testi-card reveal reveal-delay-1">
-        <div style="display:flex;gap:4px;margin-bottom:1rem">
-          <i class="ti ti-star-filled" style="font-size:12px;color:var(--color-gold-300)" aria-hidden="true"></i>
-          <i class="ti ti-star-filled" style="font-size:12px;color:var(--color-gold-300)" aria-hidden="true"></i>
-          <i class="ti ti-star-filled" style="font-size:12px;color:var(--color-gold-300)" aria-hidden="true"></i>
-          <i class="ti ti-star-filled" style="font-size:12px;color:var(--color-gold-300)" aria-hidden="true"></i>
-          <i class="ti ti-star-filled" style="font-size:12px;color:var(--color-gold-300)" aria-hidden="true"></i>
-        </div>
-        <blockquote class="testi-text">"Nunca imaginei que comprar joia pelo WhatsApp fosse tão fácil e seguro. Tiraram minhas dúvidas, me enviaram fotos reais e a peça chegou em 3 dias. Compra garantida."</blockquote>
-        <p class="testi-author">Fernanda R.</p>
-        <p class="testi-location">Rio de Janeiro · Cliente desde 2022</p>
-      </div>
-      <!-- Depoimento 3 — foco na qualidade e durabilidade -->
-      <div class="testi-card reveal reveal-delay-2">
-        <div style="display:flex;gap:4px;margin-bottom:1rem">
-          <i class="ti ti-star-filled" style="font-size:12px;color:var(--color-gold-300)" aria-hidden="true"></i>
-          <i class="ti ti-star-filled" style="font-size:12px;color:var(--color-gold-300)" aria-hidden="true"></i>
-          <i class="ti ti-star-filled" style="font-size:12px;color:var(--color-gold-300)" aria-hidden="true"></i>
-          <i class="ti ti-star-filled" style="font-size:12px;color:var(--color-gold-300)" aria-hidden="true"></i>
-          <i class="ti ti-star-filled" style="font-size:12px;color:var(--color-gold-300)" aria-hidden="true"></i>
-        </div>
-        <blockquote class="testi-text">"Uso o Anel Solstice todos os dias há 2 anos. Nenhum sinal de desgaste. Essa é a diferença de uma joia verdadeira — não mancha, não perde o brilho, não desaponta."</blockquote>
-        <p class="testi-author">Ana C.</p>
-        <p class="testi-location">Curitiba · Cliente desde 2023</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- NEWSLETTER -->
-  <!-- Gatilho: exclusividade + FOMO + benefício concreto -->
-  <section class="newsletter" aria-label="Newsletter">
-    <div class="newsletter-left reveal">
-      <span class="label">Acesso antecipado · Vagas limitadas</span>
-      <h2 class="nl-title">As melhores<br>peças somem <em>rápido.</em></h2>
-      <p class="nl-sub">Inscreva-se e receba lançamentos 48h antes do público, ofertas exclusivas para assinantes e convites para eventos privados da Bon Vivant.</p>
-      <div class="nl-form">
-        <label for="nl-email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Seu e-mail</label>
-        <input type="email" id="nl-email" placeholder="seu@email.com" autocomplete="email" />
-        <button type="button" onclick="subscribeNewsletter()">Inscrever</button>
-      </div>
-    </div>
-    <div class="newsletter-right reveal" aria-hidden="true">
-      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
-        <div class="geo-ring" style="width:260px;height:260px;"></div>
-        <div class="geo-ring" style="width:190px;height:190px;"></div>
-        <div class="geo-ring" style="width:120px;height:120px;"></div>
-      </div>
-      <div class="geo-text">BV</div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact-strip" id="contato" aria-label="Informações de contato">
-    <div class="contact-item reveal">
-      <i class="ti ti-map-pin" aria-hidden="true"></i>
-      <span class="contact-label">Loja física</span>
-      <address class="contact-value" style="font-style:normal">Rua Oscar Freire, 852<br>Jardins · São Paulo</address>
-    </div>
-    <div class="contact-item reveal reveal-delay-1">
-      <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
-      <span class="contact-label">WhatsApp</span>
-      <a class="contact-value" href="https://wa.me/5511999990000" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">(11) 99999-0000<br><span style="font-size:10px;color:#bbb">Seg–Sáb, 9h–19h</span></a>
-    </div>
-    <div class="contact-item reveal reveal-delay-2">
-      <i class="ti ti-mail" aria-hidden="true"></i>
-      <span class="contact-label">E-mail</span>
-      <a class="contact-value" href="mailto:contato@bonvivant.com.br" style="text-decoration:none;color:inherit">contato@bonvivant.com.br</a>
-    </div>
-    <div class="contact-item reveal reveal-delay-3">
-      <i class="ti ti-clock" aria-hidden="true"></i>
-      <span class="contact-label">Horário</span>
-      <span class="contact-value">Seg–Sex: 9h–19h<br>Sábado: 10h–16h</span>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <!-- 8 perguntas de alta intenção com respostas focadas em conversão -->
-  <section style="background:#fff;padding:7rem 3.5rem" aria-label="Perguntas frequentes">
-    <div class="reveal" style="max-width:800px;margin:0 auto">
-      <span class="label" style="text-align:center;display:block">Tire suas dúvidas</span>
-      <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:400;font-style:italic;color:var(--dark);text-align:center;margin-bottom:3.5rem;line-height:1.2">Tudo o que você precisa<br>saber antes de comprar.</h2>
-
-      <div id="faqList" style="display:flex;flex-direction:column;gap:0">
-
-        <div class="faq-item" style="border-top:0.5px solid rgba(0,0,0,0.07)">
-          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;padding:1.4rem 0;background:none;border:none;cursor:pointer;text-align:left;font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--dark);letter-spacing:0.03em">
-            As joias são realmente de ouro 18k?
-            <i class="ti ti-plus" style="font-size:16px;color:var(--gold);flex-shrink:0;transition:transform 0.3s" aria-hidden="true"></i>
-          </button>
-          <div class="faq-a" style="display:none;padding-bottom:1.4rem">
-            <p style="font-size:13px;color:#888;line-height:1.85">Sim, 100%. Todas as peças em ouro são fabricadas em ouro 18k puro, com certificação garantida. Nossas peças em prata utilizam exclusivamente prata 925 (lei). Trabalhamos apenas com fornecedores certificados e auditados — não usamos banho, folheado ou simulados. Se quiser, envie uma mensagem no WhatsApp e explicamos como verificar a autenticidade da sua peça.</p>
-          </div>
-        </div>
-
-        <div class="faq-item" style="border-top:0.5px solid rgba(0,0,0,0.07)">
-          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;padding:1.4rem 0;background:none;border:none;cursor:pointer;text-align:left;font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--dark);letter-spacing:0.03em">
-            Como funciona a compra pelo WhatsApp?
-            <i class="ti ti-plus" style="font-size:16px;color:var(--gold);flex-shrink:0;transition:transform 0.3s" aria-hidden="true"></i>
-          </button>
-          <div class="faq-a" style="display:none;padding-bottom:1.4rem">
-            <p style="font-size:13px;color:#888;line-height:1.85">É simples: clique em qualquer botão "Comprar" no site e você será direcionado ao nosso WhatsApp com a mensagem já preenchida. Nossa equipe confirma a disponibilidade, envia fotos reais da peça, informa o prazo de entrega e te passa as formas de pagamento. O processo completo leva menos de 10 minutos.</p>
-          </div>
-        </div>
-
-        <div class="faq-item" style="border-top:0.5px solid rgba(0,0,0,0.07)">
-          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;padding:1.4rem 0;background:none;border:none;cursor:pointer;text-align:left;font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--dark);letter-spacing:0.03em">
-            Vocês entregam para todo o Brasil?
-            <i class="ti ti-plus" style="font-size:16px;color:var(--gold);flex-shrink:0;transition:transform 0.3s" aria-hidden="true"></i>
-          </button>
-          <div class="faq-a" style="display:none;padding-bottom:1.4rem">
-            <p style="font-size:13px;color:#888;line-height:1.85">Sim. Entregamos para todos os estados com frete rastreado e seguro. Pedidos acima de R$ 800 têm frete gratuito. O prazo médio é de 3 a 7 dias úteis — e você acompanha o envio em tempo real pelo rastreamento que enviamos no WhatsApp.</p>
-          </div>
-        </div>
-
-        <div class="faq-item" style="border-top:0.5px solid rgba(0,0,0,0.07)">
-          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;padding:1.4rem 0;background:none;border:none;cursor:pointer;text-align:left;font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--dark);letter-spacing:0.03em">
-            Posso parcelar a compra?
-            <i class="ti ti-plus" style="font-size:16px;color:var(--gold);flex-shrink:0;transition:transform 0.3s" aria-hidden="true"></i>
-          </button>
-          <div class="faq-a" style="display:none;padding-bottom:1.4rem">
-            <p style="font-size:13px;color:#888;line-height:1.85">Sim. Parcelamos em até 12× no cartão de crédito. Aceitamos também Pix (com desconto especial de 5%), boleto bancário e transferência. Informe a forma de pagamento preferida no WhatsApp e nossa equipe gera o link de pagamento seguro em instantes.</p>
-          </div>
-        </div>
-
-        <div class="faq-item" style="border-top:0.5px solid rgba(0,0,0,0.07)">
-          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;padding:1.4rem 0;background:none;border:none;cursor:pointer;text-align:left;font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--dark);letter-spacing:0.03em">
-            O que cobre a garantia de 2 anos?
-            <i class="ti ti-plus" style="font-size:16px;color:var(--gold);flex-shrink:0;transition:transform 0.3s" aria-hidden="true"></i>
-          </button>
-          <div class="faq-a" style="display:none;padding-bottom:1.4rem">
-            <p style="font-size:13px;color:#888;line-height:1.85">Nossa garantia cobre qualquer defeito de fabricação: solda, fecho, pedra solta ou acabamento. Caso isso ocorra dentro de 2 anos da compra, reparamos ou substituímos a peça sem custo algum. A garantia não cobre danos por mau uso, acidentes ou desgaste natural — mas oferecemos serviço de manutenção com desconto para clientes da casa.</p>
-          </div>
-        </div>
-
-        <div class="faq-item" style="border-top:0.5px solid rgba(0,0,0,0.07)">
-          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;padding:1.4rem 0;background:none;border:none;cursor:pointer;text-align:left;font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--dark);letter-spacing:0.03em">
-            Posso trocar ou devolver a peça?
-            <i class="ti ti-plus" style="font-size:16px;color:var(--gold);flex-shrink:0;transition:transform 0.3s" aria-hidden="true"></i>
-          </button>
-          <div class="faq-a" style="display:none;padding-bottom:1.4rem">
-            <p style="font-size:13px;color:#888;line-height:1.85">Sim. Você tem 7 dias corridos após o recebimento para solicitar troca ou devolução, conforme o Código de Defesa do Consumidor. A peça deve estar em perfeito estado, sem uso. Entre em contato pelo WhatsApp e nossa equipe orienta todo o processo — sem burocracia.</p>
-          </div>
-        </div>
-
-        <div class="faq-item" style="border-top:0.5px solid rgba(0,0,0,0.07)">
-          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;padding:1.4rem 0;background:none;border:none;cursor:pointer;text-align:left;font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--dark);letter-spacing:0.03em">
-            Fazem joias personalizadas?
-            <i class="ti ti-plus" style="font-size:16px;color:var(--gold);flex-shrink:0;transition:transform 0.3s" aria-hidden="true"></i>
-          </button>
-          <div class="faq-a" style="display:none;padding-bottom:1.4rem">
-            <p style="font-size:13px;color:#888;line-height:1.85">Sim — é um dos nossos serviços mais procurados. Podemos criar uma peça exclusiva do zero, gravar nomes ou datas, adaptar tamanhos e escolher pedras específicas. O prazo para peças personalizadas é de 15 a 30 dias úteis. Agende uma consultoria gratuita pelo WhatsApp para começar.</p>
-          </div>
-        </div>
-
-        <div class="faq-item" style="border-top:0.5px solid rgba(0,0,0,0.07);border-bottom:0.5px solid rgba(0,0,0,0.07)">
-          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;padding:1.4rem 0;background:none;border:none;cursor:pointer;text-align:left;font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--dark);letter-spacing:0.03em">
-            Como cuidar da minha joia para durar mais?
-            <i class="ti ti-plus" style="font-size:16px;color:var(--gold);flex-shrink:0;transition:transform 0.3s" aria-hidden="true"></i>
-          </button>
-          <div class="faq-a" style="display:none;padding-bottom:1.4rem">
-            <p style="font-size:13px;color:#888;line-height:1.85">Evite contato com perfume, cloro e produtos de limpeza. Guarde cada peça separada em sua embalagem original. Para limpar, use pano macio e seco. Joias em ouro 18k são altamente resistentes — mas um polimento anual mantém o brilho como no primeiro dia. Todas essas dicas chegam junto com a sua peça, num cartão impresso.</p>
-          </div>
-        </div>
-
+      <div class="step-bar-bg"><div class="step-bar-fill" id="stepBar"></div></div>
+      <div class="step-dots">
+        <button type="button" class="step-dot active" data-step="1" aria-label="Passo 1"></button>
+        <button type="button" class="step-dot" data-step="2" aria-label="Passo 2"></button>
+        <button type="button" class="step-dot" data-step="3" aria-label="Passo 3"></button>
       </div>
 
-      <div style="text-align:center;margin-top:3rem">
-        <p style="font-size:12px;color:#aaa;margin-bottom:1rem">Ainda tem dúvidas? Nossa equipe responde em minutos.</p>
-        <a class="btn-whatsapp" href="https://wa.me/5511999990000?text=Olá!%20Tenho%20uma%20dúvida%20antes%20de%20comprar." target="_blank" rel="noopener" style="display:inline-flex">
-          <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Perguntar no WhatsApp
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       MÓDULO 1 — CALCULADORA DE ORÇAMENTO
-       State machine: idle → selecting → computing → result → reset
-       Data flow: inputs → priceEngine() → display
-       Edge cases: combinações inválidas, preço zero
-       ══════════════════════════════════════════ -->
-  <section id="calculadora" style="background:var(--color-cream-300);padding:7rem 3.5rem" aria-label="Calculadora de orçamento">
-    <div style="max-width:860px;margin:0 auto">
-      <div class="reveal" style="text-align:center;margin-bottom:3.5rem">
-        <span class="label" style="display:block;text-align:center">Orçamento instantâneo</span>
-        <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:400;font-style:italic;color:var(--dark);line-height:1.2">Monte sua joia.<br>Veja o preço agora.</h2>
-        <p style="font-size:13px;color:#999;margin-top:0.8rem">Selecione as opções abaixo para calcular o valor estimado da sua peça personalizada.</p>
-      </div>
-
-      <div id="calcWidget" style="background:#fff;padding:2.5rem;border:0.5px solid rgba(0,0,0,0.06)">
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2rem">
-
-          <!-- Tipo de peça -->
-          <div>
-            <label style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#aaa;display:block;margin-bottom:0.8rem">Tipo de peça</label>
-            <div id="calc-tipo" style="display:flex;flex-direction:column;gap:0.5rem">
-              <button class="calc-opt active" data-group="tipo" data-val="anel" data-base="800" onclick="calcSelect(this)">Anel</button>
-              <button class="calc-opt" data-group="tipo" data-val="colar" data-base="1200" onclick="calcSelect(this)">Colar</button>
-              <button class="calc-opt" data-group="tipo" data-val="brinco" data-base="900" onclick="calcSelect(this)">Brinco</button>
-              <button class="calc-opt" data-group="tipo" data-val="pulseira" data-base="1100" onclick="calcSelect(this)">Pulseira</button>
-            </div>
+      <!-- STEP 1 -->
+      <div class="step-panel active" id="step1">
+        <div class="form-group">
+          <label class="form-label f-mono">O que você procura?</label>
+          <div class="interest-grid">
+            <label class="interest-card"><input type="checkbox" name="interest" value="anel"/><i class="ti ti-ring"></i><span>Anel</span></label>
+            <label class="interest-card"><input type="checkbox" name="interest" value="colar"/><i class="ti ti-diamond"></i><span>Colar</span></label>
+            <label class="interest-card"><input type="checkbox" name="interest" value="brinco"/><i class="ti ti-star"></i><span>Brinco</span></label>
+            <label class="interest-card"><input type="checkbox" name="interest" value="pulseira"/><i class="ti ti-link"></i><span>Pulseira</span></label>
+            <label class="interest-card"><input type="checkbox" name="interest" value="presente"/><i class="ti ti-gift"></i><span>Presente</span></label>
+            <label class="interest-card"><input type="checkbox" name="interest" value="encomenda"/><i class="ti ti-pencil"></i><span>Sob encomenda</span></label>
           </div>
-
-          <!-- Material -->
-          <div>
-            <label style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#aaa;display:block;margin-bottom:0.8rem">Material</label>
-            <div id="calc-material" style="display:flex;flex-direction:column;gap:0.5rem">
-              <button class="calc-opt active" data-group="material" data-val="prata" data-mult="1.0" onclick="calcSelect(this)">Prata 925</button>
-              <button class="calc-opt" data-group="material" data-val="ouro18" data-mult="2.8" onclick="calcSelect(this)">Ouro 18k</button>
-              <button class="calc-opt" data-group="material" data-val="ouro24" data-mult="4.2" onclick="calcSelect(this)">Ouro 24k</button>
-            </div>
-          </div>
-
-          <!-- Pedra -->
-          <div>
-            <label style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#aaa;display:block;margin-bottom:0.8rem">Pedra preciosa</label>
-            <div id="calc-pedra" style="display:flex;flex-direction:column;gap:0.5rem">
-              <button class="calc-opt active" data-group="pedra" data-val="sem" data-add="0" onclick="calcSelect(this)">Sem pedra</button>
-              <button class="calc-opt" data-group="pedra" data-val="zirconia" data-add="150" onclick="calcSelect(this)">Zircônia</button>
-              <button class="calc-opt" data-group="pedra" data-val="natural" data-add="600" onclick="calcSelect(this)">Pedra natural</button>
-              <button class="calc-opt" data-group="pedra" data-val="diamante" data-add="2200" onclick="calcSelect(this)">Diamante</button>
-            </div>
-          </div>
+          <p class="err-msg" id="err-interest">Selecione pelo menos uma opção.</p>
         </div>
-
-        <!-- Personalização -->
-        <div style="border-top:0.5px solid rgba(0,0,0,0.06);padding-top:1.5rem;margin-bottom:2rem">
-          <label style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#aaa;display:block;margin-bottom:0.8rem">Personalização</label>
-          <div style="display:flex;gap:0.8rem;flex-wrap:wrap">
-            <button class="calc-opt-check" data-add="180" onclick="calcToggle(this)">
-              <i class="ti ti-text-size" style="font-size:14px" aria-hidden="true"></i> Gravação de texto <span class="check-price">+R$ 180</span>
-            </button>
-            <button class="calc-opt-check" data-add="250" onclick="calcToggle(this)">
-              <i class="ti ti-resize" style="font-size:14px" aria-hidden="true"></i> Tamanho especial <span class="check-price">+R$ 250</span>
-            </button>
-            <button class="calc-opt-check" data-add="120" onclick="calcToggle(this)">
-              <i class="ti ti-package" style="font-size:14px" aria-hidden="true"></i> Embalagem premium <span class="check-price">+R$ 120</span>
-            </button>
-          </div>
+        <div class="form-group">
+          <label class="form-label f-mono" for="orcamento">Faixa de orçamento</label>
+          <select class="form-select" id="orcamento" name="orcamento">
+            <option value="">Selecione…</option>
+            <option value="ate1k">Até R$ 1.000</option>
+            <option value="1k3k">R$ 1.000 – R$ 3.000</option>
+            <option value="3k8k">R$ 3.000 – R$ 8.000</option>
+            <option value="acima8k">Acima de R$ 8.000</option>
+          </select>
+          <p class="err-msg" id="err-orcamento">Selecione sua faixa de orçamento.</p>
         </div>
-
-        <!-- Resultado -->
-        <div style="background:var(--dark);padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
-          <div>
-            <p style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:0.3rem">Estimativa de orçamento</p>
-            <div style="display:flex;align-items:baseline;gap:0.5rem">
-              <span id="calcResult" style="font-size:2rem;font-weight:700;color:var(--color-gold-300);transition:all 0.3s">R$ 800</span>
-              <span style="font-size:11px;color:rgba(255,255,255,0.3)">à vista · Pix com 5% OFF</span>
-            </div>
-            <p id="calcParcel" style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:0.2rem">ou 12× de R$ 73,33</p>
-          </div>
-          <a id="calcWaba" class="waba-big" href="#" target="_blank" rel="noopener" style="white-space:nowrap">
-            <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Pedir orçamento
-          </a>
-        </div>
-
-        <!-- Estado vazio / aviso -->
-        <p id="calcNote" style="font-size:11px;color:#bbb;margin-top:0.8rem;text-align:center;display:none">
-          ⚠️ Esta é uma estimativa. O valor final é confirmado pelo nosso especialista.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       MÓDULO 2 — FORMULÁRIO MULTI-STEP (Consultoria)
-       State machine: step1 → step2 → step3 → sending → success | error
-       Steps: (1) Tipo de interesse → (2) Dados pessoais → (3) Confirmação
-       Validation: campo a campo, inline, em tempo real
-       Edge cases: campos vazios, telefone inválido, envio duplicado
-       ══════════════════════════════════════════ -->
-  <section id="consultoria" style="background:#fff;padding:7rem 3.5rem" aria-label="Formulário de consultoria">
-    <div style="max-width:640px;margin:0 auto">
-      <div class="reveal" style="text-align:center;margin-bottom:3rem">
-        <span class="label" style="display:block;text-align:center">Consultoria gratuita</span>
-        <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:400;font-style:italic;color:var(--dark);line-height:1.2">Encontre a joia<br>perfeita para você.</h2>
-        <p style="font-size:13px;color:#999;margin-top:0.8rem">Nosso especialista entra em contato em até 2h. Sem compromisso.</p>
-      </div>
-
-      <!-- Progress bar -->
-      <div style="margin-bottom:2.5rem">
-        <div style="display:flex;justify-content:space-between;margin-bottom:0.8rem">
-          <span id="stepLabel" style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold)">Passo 1 de 3 — Interesse</span>
-          <span id="stepPct" style="font-size:10px;letter-spacing:0.12em;color:#bbb">33%</span>
-        </div>
-        <div style="height:2px;background:rgba(0,0,0,0.06);position:relative">
-          <div id="stepBar" style="height:2px;background:var(--gold);width:33%;transition:width 0.5s var(--ease-out)"></div>
-        </div>
-        <div style="display:flex;justify-content:space-between;margin-top:0.6rem">
-          <span class="step-dot active" data-step="1">1</span>
-          <span class="step-dot" data-step="2">2</span>
-          <span class="step-dot" data-step="3">3</span>
+        <div class="form-nav" style="justify-content:flex-end">
+          <button type="button" class="btn-step-next f-mono" onclick="goStep(2)">Continuar →</button>
         </div>
       </div>
 
-      <form id="consultForm" novalidate>
-
-        <!-- STEP 1: Interesse -->
-        <div id="step1" class="form-step active">
-          <fieldset style="border:none;padding:0;margin:0">
-            <legend style="font-size:12px;color:#888;margin-bottom:1.5rem;line-height:1.7">O que você está buscando? (pode selecionar mais de um)</legend>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem">
-              <label class="interest-card"><input type="checkbox" name="interest" value="presente"><i class="ti ti-gift" aria-hidden="true"></i> Presente especial</label>
-              <label class="interest-card"><input type="checkbox" name="interest" value="casamento"><i class="ti ti-rings-wedding" aria-hidden="true"></i> Casamento / noivado</label>
-              <label class="interest-card"><input type="checkbox" name="interest" value="personalizada"><i class="ti ti-pencil" aria-hidden="true"></i> Joia personalizada</label>
-              <label class="interest-card"><input type="checkbox" name="interest" value="colecao"><i class="ti ti-diamond" aria-hidden="true"></i> Nova coleção</label>
-            </div>
-            <div id="err-interest" class="form-error">Selecione ao menos uma opção.</div>
-          </fieldset>
-
-          <div style="margin-top:1.5rem">
-            <label class="form-label" for="orcamento">Faixa de orçamento</label>
-            <select id="orcamento" name="orcamento" class="form-input">
-              <option value="">Selecione...</option>
-              <option value="ate1k">Até R$ 1.000</option>
-              <option value="1k3k">R$ 1.000 – R$ 3.000</option>
-              <option value="3k8k">R$ 3.000 – R$ 8.000</option>
-              <option value="acima8k">Acima de R$ 8.000</option>
-            </select>
-            <div id="err-orcamento" class="form-error">Informe sua faixa de orçamento.</div>
-          </div>
-
-          <button type="button" class="form-next" onclick="goStep(2)">Próximo <i class="ti ti-arrow-right" aria-hidden="true"></i></button>
+      <!-- STEP 2 -->
+      <div class="step-panel" id="step2">
+        <div class="form-group">
+          <label class="form-label f-mono" for="nome">Nome completo</label>
+          <input class="form-input" type="text" id="nome" name="nome" placeholder="Seu nome" autocomplete="name"/>
+          <p class="err-msg" id="err-nome">Informe seu nome.</p>
         </div>
-
-        <!-- STEP 2: Dados pessoais -->
-        <div id="step2" class="form-step">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:1.2rem">
-            <div>
-              <label class="form-label" for="nome">Nome</label>
-              <input type="text" id="nome" name="nome" class="form-input" placeholder="Seu nome" autocomplete="given-name" />
-              <div id="err-nome" class="form-error">Informe seu nome.</div>
-            </div>
-            <div>
-              <label class="form-label" for="telefone">WhatsApp</label>
-              <input type="tel" id="telefone" name="telefone" class="form-input" placeholder="(11) 99999-0000" autocomplete="tel" oninput="maskPhone(this)" />
-              <div id="err-telefone" class="form-error">Informe um número válido.</div>
-            </div>
-          </div>
-          <div>
-            <label class="form-label" for="email2">E-mail</label>
-            <input type="email" id="email2" name="email" class="form-input" placeholder="seu@email.com" autocomplete="email" />
-            <div id="err-email2" class="form-error">Informe um e-mail válido.</div>
-          </div>
-          <div style="margin-top:1.2rem">
-            <label class="form-label" for="mensagem">Mensagem (opcional)</label>
-            <textarea id="mensagem" name="mensagem" class="form-input" rows="3" placeholder="Conte mais sobre o que você procura..."></textarea>
-          </div>
-          <div style="display:flex;gap:1rem;margin-top:1.5rem">
-            <button type="button" class="form-back" onclick="goStep(1)"><i class="ti ti-arrow-left" aria-hidden="true"></i> Voltar</button>
-            <button type="button" class="form-next" onclick="goStep(3)">Revisar pedido <i class="ti ti-arrow-right" aria-hidden="true"></i></button>
-          </div>
+        <div class="form-group">
+          <label class="form-label f-mono" for="telefone">WhatsApp</label>
+          <input class="form-input" type="tel" id="telefone" name="telefone" placeholder="(11) 99999-0000" autocomplete="tel" oninput="maskPhone(this)"/>
+          <p class="err-msg" id="err-telefone">Informe um número válido.</p>
         </div>
-
-        <!-- STEP 3: Confirmação -->
-        <div id="step3" class="form-step">
-          <div style="background:var(--color-cream-300);padding:1.5rem;margin-bottom:1.5rem">
-            <p style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#aaa;margin-bottom:1rem">Resumo da sua solicitação</p>
-            <div id="summaryContent" style="display:flex;flex-direction:column;gap:0.6rem"></div>
-          </div>
-          <label style="display:flex;align-items:flex-start;gap:0.7rem;cursor:pointer;margin-bottom:1.5rem">
-            <input type="checkbox" id="lgpdCheck" style="margin-top:2px;accent-color:var(--gold)" />
-            <span style="font-size:11px;color:#888;line-height:1.7">Concordo com a <a href="#" style="color:var(--gold)">política de privacidade</a> e autorizo o contato da Bon Vivant pelo WhatsApp e e-mail.</span>
-          </label>
-          <div id="err-lgpd" class="form-error">Aceite os termos para continuar.</div>
-          <div style="display:flex;gap:1rem">
-            <button type="button" class="form-back" onclick="goStep(2)"><i class="ti ti-arrow-left" aria-hidden="true"></i> Voltar</button>
-            <button type="button" id="submitBtn" class="form-submit" onclick="submitForm()">
-              <span id="submitText"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Enviar via WhatsApp</span>
-              <span id="submitLoading" style="display:none"><i class="ti ti-loader-2" style="animation:spin 1s linear infinite" aria-hidden="true"></i> Enviando...</span>
-            </button>
-          </div>
+        <div class="form-group">
+          <label class="form-label f-mono" for="email2">E-mail</label>
+          <input class="form-input" type="email" id="email2" name="email2" placeholder="seu@email.com" autocomplete="email"/>
+          <p class="err-msg" id="err-email2">Informe um e-mail válido.</p>
         </div>
-
-        <!-- SUCCESS STATE -->
-        <div id="stepSuccess" class="form-step" style="text-align:center;padding:3rem 0">
-          <div style="width:56px;height:56px;background:var(--color-success);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem">
-            <i class="ti ti-check" style="font-size:24px;color:#fff" aria-hidden="true"></i>
-          </div>
-          <h3 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;font-style:italic;color:var(--dark);margin-bottom:0.8rem">Solicitação enviada!</h3>
-          <p style="font-size:13px;color:#888;line-height:1.8;max-width:380px;margin:0 auto 2rem">Nossa equipe entrará em contato pelo WhatsApp em até 2 horas. Obrigada pela preferência.</p>
-          <button type="button" onclick="resetForm()" style="background:none;border:0.5px solid rgba(0,0,0,0.2);padding:0.75rem 1.5rem;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;cursor:pointer;font-family:var(--font-body)">Nova solicitação</button>
+        <div class="form-group">
+          <label class="form-label f-mono" for="mensagem">Mensagem (opcional)</label>
+          <textarea class="form-textarea" id="mensagem" name="mensagem" placeholder="Detalhes adicionais…"></textarea>
         </div>
-
-      </form>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-brand">
-      <a class="f-logo" href="#" aria-label="Bon Vivant Joias">Bon <em>Vivant</em></a>
-      <p>Joias com história. Design com propósito. Qualidade sem concessão.</p>
-      <div class="footer-social">
-        <a href="#" aria-label="Instagram" rel="noopener"><i class="ti ti-brand-instagram"></i></a>
-        <a href="#" aria-label="Facebook" rel="noopener"><i class="ti ti-brand-facebook"></i></a>
-        <a href="#" aria-label="Pinterest" rel="noopener"><i class="ti ti-brand-pinterest"></i></a>
+        <div class="form-nav">
+          <button type="button" class="btn-step-back f-mono" onclick="goStep(1)">← Voltar</button>
+          <button type="button" class="btn-step-next f-mono" onclick="goStep(3)">Revisar →</button>
+        </div>
       </div>
+
+      <!-- STEP 3 -->
+      <div class="step-panel" id="step3">
+        <div class="summary-box" id="summaryContent"></div>
+        <div class="form-group">
+          <div class="lgpd-row">
+            <input type="checkbox" id="lgpdCheck" name="lgpdCheck"/>
+            <label for="lgpdCheck">Concordo com o tratamento dos meus dados para fins de atendimento, conforme a LGPD.</label>
+          </div>
+          <p class="err-msg" id="err-lgpd">Aceite os termos para continuar.</p>
+        </div>
+        <button type="button" class="submit-btn f-mono" id="submitBtn" onclick="submitForm()">
+          <span id="submitText" style="display:inline-flex;align-items:center;gap:.5rem"><i class="ti ti-brand-whatsapp"></i> Enviar pelo WhatsApp</span>
+          <span id="submitLoading" style="display:none;align-items:center;gap:.5rem"><i class="ti ti-loader-2" style="animation:spin .8s linear infinite"></i> Enviando…</span>
+        </button>
+        <div class="form-nav" style="justify-content:flex-start;margin-top:1rem">
+          <button type="button" class="btn-step-back f-mono" onclick="goStep(2)">← Voltar</button>
+        </div>
+      </div>
+
+      <!-- SUCCESS -->
+      <div class="step-panel step-success" id="stepSuccess">
+        <i class="ti ti-circle-check"></i>
+        <h3 class="f-display">Solicitação enviada!</h3>
+        <p>Você será redirecionado(a) ao WhatsApp. Responderemos em breve.</p>
+        <button type="button" class="f-mono" onclick="resetForm()">Nova consulta</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <p class="footer-brand f-display">Bon Vivant</p>
+      <p class="footer-desc">Joias exclusivas criadas com paixão e técnica artesanal. Cada peça conta uma história única.</p>
     </div>
     <div class="footer-col">
-      <h4>Comprar</h4>
+      <p class="footer-col-title f-mono">Coleção</p>
       <ul>
-        <li><a href="#catalogo" onclick="filterCatalog(null,'aneis')">Anéis</a></li>
-        <li><a href="#catalogo" onclick="filterCatalog(null,'colares')">Colares</a></li>
-        <li><a href="#catalogo" onclick="filterCatalog(null,'brincos')">Brincos</a></li>
-        <li><a href="#catalogo" onclick="filterCatalog(null,'pulseiras')">Pulseiras</a></li>
-        <li><a href="#catalogo">Kits &amp; presentes</a></li>
+        <li><a href="#colecao">Colares</a></li>
+        <li><a href="#colecao">Anéis</a></li>
+        <li><a href="#colecao">Brincos</a></li>
+        <li><a href="#colecao">Pulseiras</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>A marca</h4>
+      <p class="footer-col-title f-mono">Serviços</p>
       <ul>
-        <li><a href="#sobre">Nossa história</a></li>
-        <li><a href="#">Processos</a></li>
-        <li><a href="#">Sustentabilidade</a></li>
-        <li><a href="#">Imprensa</a></li>
+        <li><a href="#consultoria">Consultoria</a></li>
+        <li><a href="#calculadora">Calculadora</a></li>
+        <li><a href="#processo">Processo</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Suporte</h4>
+      <p class="footer-col-title f-mono">Contato</p>
       <ul>
-        <li><a href="#">Perguntas frequentes</a></li>
-        <li><a href="#">Trocas &amp; devoluções</a></li>
-        <li><a href="#">Cuidados com a joia</a></li>
-        <li><a href="#">Privacidade</a></li>
+        <li><a href="https://wa.me/5511999990000" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="mailto:contato@bonvivant.com.br">E-mail</a></li>
+        <li><a href="#faq">FAQ</a></li>
       </ul>
     </div>
-  </footer>
-
+  </div>
   <div class="footer-bottom">
-    <span>© 2025 Bon Vivant Joias. Todos os direitos reservados.</span>
-    <div class="footer-pay">
-      <span class="pay-pill">Visa</span>
-      <span class="pay-pill">Mastercard</span>
-      <span class="pay-pill">Pix</span>
-      <span class="pay-pill">Boleto</span>
+    <p class="footer-copy f-mono">© 2024 Bon Vivant Joias. Todos os direitos reservados.</p>
+    <div class="footer-social">
+      <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+      <a href="#" aria-label="Pinterest"><i class="ti ti-brand-pinterest"></i></a>
+      <a href="https://wa.me/5511999990000" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp"></i></a>
     </div>
   </div>
+</footer>
 
-  <!-- WHATSAPP FAB -->
-  <a class="wa-fab" href="https://wa.me/5511999990000?text=Olá!%20Vim%20pelo%20site%20da%20Bon%20Vivant." target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp">
-    <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
-  </a>
+<!-- WHATSAPP FAB -->
+<a class="wa-fab" href="https://wa.me/5511999990000" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp">
+  <i class="ti ti-brand-whatsapp"></i>
+</a>
 
-  <script>
-    /* ── MOBILE NAV ── */
-    function openMobileNav() {
-      document.getElementById('mobileNav').classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeMobileNav() {
-      document.getElementById('mobileNav').classList.remove('open');
-      document.body.style.overflow = '';
-    }
+<style>
+@keyframes spin{to{transform:rotate(360deg)}}
+</style>
 
-    /* ── FILTROS ── */
-    const allCards = () => document.querySelectorAll('#catalogGrid .cat-card');
+<script>
+  /* ── MOBILE NAV ── */
+  function openMobileNav() {
+    document.getElementById('mobileNav').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobileNav() {
+    document.getElementById('mobileNav').classList.remove('open');
+    document.body.style.overflow = '';
+  }
 
-    function filterCatalog(btn, category) {
-      if (btn) {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-      } else {
-        document.querySelectorAll('.filter-btn').forEach(b => {
-          b.classList.toggle('active', b.dataset.filter === category);
-        });
-      }
+  /* ── FILTROS ── */
+  const allCards = () => document.querySelectorAll('#catalogGrid .cat-card');
 
-      let visible = 0;
-      allCards().forEach(card => {
-        const match = category === 'todos' || card.dataset.category === category;
-        card.style.display = match ? '' : 'none';
-        if (match) visible++;
-      });
-
-      document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
-    }
-
-    /* ── ORDENAÇÃO ── */
-    function sortCatalog(value) {
-      const grid = document.getElementById('catalogGrid');
-      const cards = Array.from(allCards());
-
-      cards.sort((a, b) => {
-        if (value === 'price-asc') return Number(a.dataset.price) - Number(b.dataset.price);
-        if (value === 'price-desc') return Number(b.dataset.price) - Number(a.dataset.price);
-        if (value === 'name') return a.dataset.name.localeCompare(b.dataset.name, 'pt-BR');
-        return 0;
-      });
-
-      cards.forEach(card => grid.appendChild(card));
-    }
-
-    /* ── NEWSLETTER ── */
-    function subscribeNewsletter() {
-      const input = document.getElementById('nl-email');
-      const email = input.value.trim();
-      if (!email || !email.includes('@')) {
-        input.style.borderColor = '#e24b4a';
-        input.focus();
-        return;
-      }
-      input.style.borderColor = '#25D366';
-      input.value = '';
-      input.placeholder = 'Obrigado! Você está na lista.';
-      setTimeout(() => { input.placeholder = 'seu@email.com'; input.style.borderColor = ''; }, 4000);
-    }
-
-    /* ── FAQ ── */
-    function toggleFaq(btn) {
-      const answer = btn.nextElementSibling;
-      const icon = btn.querySelector('i');
-      const isOpen = btn.getAttribute('aria-expanded') === 'true';
-
-      // fecha todos
-      document.querySelectorAll('.faq-q').forEach(b => {
-        b.setAttribute('aria-expanded', 'false');
-        b.nextElementSibling.style.display = 'none';
-        b.querySelector('i').style.transform = 'rotate(0deg)';
-      });
-
-      // abre o clicado se estava fechado
-      if (!isOpen) {
-        btn.setAttribute('aria-expanded', 'true');
-        answer.style.display = 'block';
-        icon.style.transform = 'rotate(45deg)';
-      }
-    }
-
-    /* ══════════════════════════════════════════
-       MÓDULO 1 — CALCULADORA DE ORÇAMENTO
-       State machine: idle → selecting → computing → result
-       ══════════════════════════════════════════ */
-    const calcState = { base: 800, mult: 1.0, add: 0, extras: 0 };
-
-    function calcSelect(btn) {
-      const group = btn.dataset.group;
-      document.querySelectorAll(`.calc-opt[data-group="${group}"]`).forEach(b => b.classList.remove('active'));
+  function filterCatalog(btn, category) {
+    if (btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      if (group === 'tipo') calcState.base = +btn.dataset.base;
-      if (group === 'material') calcState.mult = +btn.dataset.mult;
-      if (group === 'pedra') calcState.add = +btn.dataset.add;
-      renderCalc();
-    }
-
-    function calcToggle(btn) {
-      btn.classList.toggle('selected');
-      calcState.extras = Array.from(document.querySelectorAll('.calc-opt-check.selected'))
-        .reduce((sum, b) => sum + +b.dataset.add, 0);
-      renderCalc();
-    }
-
-    function renderCalc() {
-      const total = Math.round(calcState.base * calcState.mult + calcState.add + calcState.extras);
-      const parcel = (total / 12).toFixed(2).replace('.', ',');
-      const pix = Math.round(total * 0.95);
-      document.getElementById('calcResult').textContent = `R$ ${total.toLocaleString('pt-BR')}`;
-      document.getElementById('calcParcel').textContent = `ou 12× de R$ ${parcel} · Pix: R$ ${pix.toLocaleString('pt-BR')}`;
-      const tipo  = document.querySelector('.calc-opt[data-group="tipo"].active')?.textContent || '';
-      const mat   = document.querySelector('.calc-opt[data-group="material"].active')?.textContent || '';
-      const pedra = document.querySelector('.calc-opt[data-group="pedra"].active')?.textContent || '';
-      const msg = encodeURIComponent(`Olá! Tenho interesse em um(a) ${tipo} em ${mat} com ${pedra}. Orçamento estimado: R$ ${total.toLocaleString('pt-BR')}. Poderia confirmar o valor?`);
-      document.getElementById('calcWaba').href = `https://wa.me/5511999990000?text=${msg}`;
-      document.getElementById('calcNote').style.display = 'block';
-    }
-
-    /* ══════════════════════════════════════════
-       MÓDULO 2 — FORMULÁRIO MULTI-STEP
-       State machine: step1 → step2 → step3 → success | error
-       ══════════════════════════════════════════ */
-    let currentStep = 1;
-    const stepMeta = {
-      1: { label: 'Passo 1 de 3 — Interesse', pct: '33%', width: '33%' },
-      2: { label: 'Passo 2 de 3 — Seus dados', pct: '66%', width: '66%' },
-      3: { label: 'Passo 3 de 3 — Confirmação', pct: '100%', width: '100%' },
-    };
-
-    function goStep(n) {
-      if (n > currentStep && !validateStep(currentStep)) return;
-      if (n === 3) buildSummary();
-      document.querySelector(`#step${currentStep}`)?.classList.remove('active');
-      currentStep = n;
-      document.querySelector(`#step${n}`)?.classList.add('active');
-      const meta = stepMeta[n];
-      document.getElementById('stepLabel').textContent = meta.label;
-      document.getElementById('stepPct').textContent = meta.pct;
-      document.getElementById('stepBar').style.width = meta.width;
-      document.querySelectorAll('.step-dot').forEach(dot => {
-        const s = +dot.dataset.step;
-        dot.classList.toggle('active', s === n);
-        dot.classList.toggle('done', s < n);
+    } else {
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.filter === category);
       });
     }
-
-    function validateStep(step) {
-      let valid = true;
-      if (step === 1) {
-        const checked = document.querySelectorAll('input[name="interest"]:checked').length > 0;
-        const orc = document.getElementById('orcamento').value;
-        showErr('err-interest', !checked);
-        showErr('err-orcamento', !orc);
-        valid = checked && !!orc;
-      }
-      if (step === 2) {
-        const nome = document.getElementById('nome').value.trim();
-        const tel  = document.getElementById('telefone').value.replace(/\D/g,'');
-        const email = document.getElementById('email2').value.trim();
-        const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-        showErr('err-nome', !nome);
-        showErr('err-telefone', tel.length < 10);
-        showErr('err-email2', !emailOk);
-        setInputError('nome', !nome);
-        setInputError('telefone', tel.length < 10);
-        setInputError('email2', !emailOk);
-        valid = !!nome && tel.length >= 10 && emailOk;
-      }
-      return valid;
-    }
-
-    function showErr(id, show) { document.getElementById(id)?.classList.toggle('show', show); }
-    function setInputError(id, has) { document.getElementById(id)?.classList.toggle('error', has); }
-
-    function buildSummary() {
-      const interests = Array.from(document.querySelectorAll('input[name="interest"]:checked'))
-        .map(i => i.parentElement.textContent.trim()).join(', ');
-      const orcMap = { ate1k:'Até R$ 1.000','1k3k':'R$ 1.000–3.000','3k8k':'R$ 3.000–8.000',acima8k:'Acima de R$ 8.000' };
-      const orc = orcMap[document.getElementById('orcamento').value] || '—';
-      const nome  = document.getElementById('nome').value.trim();
-      const tel   = document.getElementById('telefone').value.trim();
-      const email = document.getElementById('email2').value.trim();
-      const msg   = document.getElementById('mensagem').value.trim();
-      document.getElementById('summaryContent').innerHTML = `
-        <div class="summary-row"><span>Interesse</span><span>${interests||'—'}</span></div>
-        <div class="summary-row"><span>Orçamento</span><span>${orc}</span></div>
-        <div class="summary-row"><span>Nome</span><span>${nome}</span></div>
-        <div class="summary-row"><span>WhatsApp</span><span>${tel}</span></div>
-        <div class="summary-row"><span>E-mail</span><span>${email}</span></div>
-        ${msg?`<div class="summary-row"><span>Mensagem</span><span style="max-width:240px;text-align:right">${msg}</span></div>`:''}
-      `;
-    }
-
-    function maskPhone(input) {
-      let v = input.value.replace(/\D/g,'').slice(0,11);
-      if (v.length > 10) v = v.replace(/^(\d{2})(\d{5})(\d{4})$/,'($1) $2-$3');
-      else if (v.length > 6) v = v.replace(/^(\d{2})(\d{4})(\d*)$/,'($1) $2-$3');
-      else if (v.length > 2) v = v.replace(/^(\d{2})(\d*)$/,'($1) $2');
-      input.value = v;
-    }
-
-    function submitForm() {
-      if (!document.getElementById('lgpdCheck').checked) { showErr('err-lgpd', true); return; }
-      showErr('err-lgpd', false);
-      const btn = document.getElementById('submitBtn');
-      btn.disabled = true;
-      document.getElementById('submitText').style.display = 'none';
-      document.getElementById('submitLoading').style.display = 'inline-flex';
-      const nome = document.getElementById('nome').value.trim();
-      const tel  = document.getElementById('telefone').value.trim();
-      const interests = Array.from(document.querySelectorAll('input[name="interest"]:checked'))
-        .map(i => i.parentElement.textContent.trim()).join(', ');
-      const orcMap = { ate1k:'Até R$ 1.000','1k3k':'R$ 1.000–3.000','3k8k':'R$ 3.000–8.000',acima8k:'Acima de R$ 8.000' };
-      const orc   = orcMap[document.getElementById('orcamento').value] || '';
-      const extra = document.getElementById('mensagem').value.trim();
-      const waMsg = encodeURIComponent(`Olá! Me chamo ${nome} (${tel}).\nInteresse: ${interests}.\nOrçamento: ${orc}.\n${extra?'Obs: '+extra+'\n':''}Gostaria de uma consultoria gratuita.`);
-      setTimeout(() => {
-        window.open(`https://wa.me/5511999990000?text=${waMsg}`, '_blank');
-        document.getElementById('step3').classList.remove('active');
-        document.getElementById('stepSuccess').classList.add('active');
-        document.getElementById('stepLabel').textContent = 'Solicitação enviada!';
-      }, 1200);
-    }
-
-    function resetForm() {
-      document.getElementById('consultForm').reset();
-      document.querySelectorAll('.interest-card').forEach(c => c.classList.remove('checked'));
-      document.getElementById('stepSuccess').classList.remove('active');
-      currentStep = 1;
-      document.getElementById('step1').classList.add('active');
-      document.getElementById('stepLabel').textContent = stepMeta[1].label;
-      document.getElementById('stepPct').textContent = stepMeta[1].pct;
-      document.getElementById('stepBar').style.width = stepMeta[1].width;
-      document.querySelectorAll('.step-dot').forEach(dot => {
-        dot.classList.toggle('active', +dot.dataset.step === 1);
-        dot.classList.remove('done');
-      });
-      document.getElementById('submitBtn').disabled = false;
-      document.getElementById('submitText').style.display = 'inline-flex';
-      document.getElementById('submitLoading').style.display = 'none';
-    }
-
-    document.querySelectorAll('.interest-card').forEach(card => {
-      card.addEventListener('click', () => card.classList.toggle('checked', card.querySelector('input').checked));
+    let visible = 0;
+    allCards().forEach(card => {
+      const match = category === 'todos' || card.dataset.category === category;
+      card.style.display = match ? '' : 'none';
+      if (match) visible++;
     });
+    document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
+  }
 
-    /* ── SCROLL REVEAL ── */
-    const observer = new IntersectionObserver((entries) => {
+  /* ── ORDENAÇÃO ── */
+  function sortCatalog(value) {
+    const grid = document.getElementById('catalogGrid');
+    const cards = Array.from(allCards());
+    cards.sort((a, b) => {
+      if (value === 'price-asc') return Number(a.dataset.price) - Number(b.dataset.price);
+      if (value === 'price-desc') return Number(b.dataset.price) - Number(a.dataset.price);
+      if (value === 'name') return a.dataset.name.localeCompare(b.dataset.name, 'pt-BR');
+      return 0;
+    });
+    cards.forEach(card => grid.appendChild(card));
+  }
+
+  /* ── NEWSLETTER ── */
+  function subscribeNewsletter() {
+    const input = document.getElementById('nl-email');
+    const email = input.value.trim();
+    if (!email || !email.includes('@')) {
+      input.style.borderColor = '#e24b4a';
+      input.focus();
+      return;
+    }
+    input.style.borderColor = '#25D366';
+    input.value = '';
+    input.placeholder = 'Obrigado! Você está na lista.';
+    setTimeout(() => { input.placeholder = 'seu@email.com'; input.style.borderColor = ''; }, 4000);
+  }
+
+  /* ── FAQ ── */
+  function toggleFaq(btn) {
+    const answer = btn.nextElementSibling;
+    const icon = btn.querySelector('i');
+    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+    document.querySelectorAll('.faq-q').forEach(b => {
+      b.setAttribute('aria-expanded', 'false');
+      b.nextElementSibling.style.display = 'none';
+      b.querySelector('i').style.transform = 'rotate(0deg)';
+    });
+    if (!isOpen) {
+      btn.setAttribute('aria-expanded', 'true');
+      answer.style.display = 'block';
+      icon.style.transform = 'rotate(45deg)';
+    }
+  }
+
+  /* ══════════════════════════════════════════
+     MÓDULO 1 — CALCULADORA DE ORÇAMENTO
+     ══════════════════════════════════════════ */
+  const calcState = { base: 800, mult: 1.0, add: 0, extras: 0 };
+
+  function calcSelect(btn) {
+    const group = btn.dataset.group;
+    document.querySelectorAll(`.calc-opt[data-group="${group}"]`).forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    if (group === 'tipo') calcState.base = +btn.dataset.base;
+    if (group === 'material') calcState.mult = +btn.dataset.mult;
+    if (group === 'pedra') calcState.add = +btn.dataset.add;
+    renderCalc();
+  }
+
+  function calcToggle(btn) {
+    btn.classList.toggle('selected');
+    calcState.extras = Array.from(document.querySelectorAll('.calc-opt-check.selected'))
+      .reduce((sum, b) => sum + +b.dataset.add, 0);
+    renderCalc();
+  }
+
+  function renderCalc() {
+    const total = Math.round(calcState.base * calcState.mult + calcState.add + calcState.extras);
+    const parcel = (total / 12).toFixed(2).replace('.', ',');
+    const pix = Math.round(total * 0.95);
+    document.getElementById('calcResult').textContent = `R$ ${total.toLocaleString('pt-BR')}`;
+    document.getElementById('calcParcel').textContent = `ou 12× de R$ ${parcel} · Pix: R$ ${pix.toLocaleString('pt-BR')}`;
+    const tipo  = document.querySelector('.calc-opt[data-group="tipo"].active')?.textContent || '';
+    const mat   = document.querySelector('.calc-opt[data-group="material"].active')?.textContent || '';
+    const pedra = document.querySelector('.calc-opt[data-group="pedra"].active')?.textContent || '';
+    const msg = encodeURIComponent(`Olá! Tenho interesse em um(a) ${tipo} em ${mat} com ${pedra}. Orçamento estimado: R$ ${total.toLocaleString('pt-BR')}. Poderia confirmar o valor?`);
+    document.getElementById('calcWaba').href = `https://wa.me/5511999990000?text=${msg}`;
+    document.getElementById('calcNote').style.display = 'block';
+  }
+
+  /* ══════════════════════════════════════════
+     MÓDULO 2 — FORMULÁRIO MULTI-STEP
+     ══════════════════════════════════════════ */
+  let currentStep = 1;
+  const stepMeta = {
+    1: { label: 'Passo 1 de 3 — Interesse', pct: '33%', width: '33%' },
+    2: { label: 'Passo 2 de 3 — Seus dados', pct: '66%', width: '66%' },
+    3: { label: 'Passo 3 de 3 — Confirmação', pct: '100%', width: '100%' },
+  };
+
+  function goStep(n) {
+    if (n > currentStep && !validateStep(currentStep)) return;
+    if (n === 3) buildSummary();
+    document.querySelector(`#step${currentStep}`)?.classList.remove('active');
+    currentStep = n;
+    document.querySelector(`#step${n}`)?.classList.add('active');
+    const meta = stepMeta[n];
+    document.getElementById('stepLabel').textContent = meta.label;
+    document.getElementById('stepPct').textContent = meta.pct;
+    document.getElementById('stepBar').style.width = meta.width;
+    document.querySelectorAll('.step-dot').forEach(dot => {
+      const s = +dot.dataset.step;
+      dot.classList.toggle('active', s === n);
+      dot.classList.toggle('done', s < n);
+    });
+  }
+
+  function validateStep(step) {
+    let valid = true;
+    if (step === 1) {
+      const checked = document.querySelectorAll('input[name="interest"]:checked').length > 0;
+      const orc = document.getElementById('orcamento').value;
+      showErr('err-interest', !checked);
+      showErr('err-orcamento', !orc);
+      valid = checked && !!orc;
+    }
+    if (step === 2) {
+      const nome = document.getElementById('nome').value.trim();
+      const tel  = document.getElementById('telefone').value.replace(/\D/g,'');
+      const email = document.getElementById('email2').value.trim();
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      showErr('err-nome', !nome);
+      showErr('err-telefone', tel.length < 10);
+      showErr('err-email2', !emailOk);
+      setInputError('nome', !nome);
+      setInputError('telefone', tel.length < 10);
+      setInputError('email2', !emailOk);
+      valid = !!nome && tel.length >= 10 && emailOk;
+    }
+    return valid;
+  }
+
+  function showErr(id, show) { document.getElementById(id)?.classList.toggle('show', show); }
+  function setInputError(id, has) { document.getElementById(id)?.classList.toggle('error', has); }
+
+  function buildSummary() {
+    const interests = Array.from(document.querySelectorAll('input[name="interest"]:checked'))
+      .map(i => i.parentElement.textContent.trim()).join(', ');
+    const orcMap = { ate1k:'Até R$ 1.000','1k3k':'R$ 1.000–3.000','3k8k':'R$ 3.000–8.000',acima8k:'Acima de R$ 8.000' };
+    const orc = orcMap[document.getElementById('orcamento').value] || '—';
+    const nome  = document.getElementById('nome').value.trim();
+    const tel   = document.getElementById('telefone').value.trim();
+    const email = document.getElementById('email2').value.trim();
+    const msg   = document.getElementById('mensagem').value.trim();
+    document.getElementById('summaryContent').innerHTML = `
+      <div class="summary-row"><span>Interesse</span><span>${interests||'—'}</span></div>
+      <div class="summary-row"><span>Orçamento</span><span>${orc}</span></div>
+      <div class="summary-row"><span>Nome</span><span>${nome}</span></div>
+      <div class="summary-row"><span>WhatsApp</span><span>${tel}</span></div>
+      <div class="summary-row"><span>E-mail</span><span>${email}</span></div>
+      ${msg?`<div class="summary-row"><span>Mensagem</span><span style="max-width:240px;text-align:right">${msg}</span></div>`:''}
+    `;
+  }
+
+  function maskPhone(input) {
+    let v = input.value.replace(/\D/g,'').slice(0,11);
+    if (v.length > 10) v = v.replace(/^(\d{2})(\d{5})(\d{4})$/,'($1) $2-$3');
+    else if (v.length > 6) v = v.replace(/^(\d{2})(\d{4})(\d*)$/,'($1) $2-$3');
+    else if (v.length > 2) v = v.replace(/^(\d{2})(\d*)$/,'($1) $2');
+    input.value = v;
+  }
+
+  function submitForm() {
+    if (!document.getElementById('lgpdCheck').checked) { showErr('err-lgpd', true); return; }
+    showErr('err-lgpd', false);
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    document.getElementById('submitText').style.display = 'none';
+    document.getElementById('submitLoading').style.display = 'inline-flex';
+    const nome = document.getElementById('nome').value.trim();
+    const tel  = document.getElementById('telefone').value.trim();
+    const interests = Array.from(document.querySelectorAll('input[name="interest"]:checked'))
+      .map(i => i.parentElement.textContent.trim()).join(', ');
+    const orcMap = { ate1k:'Até R$ 1.000','1k3k':'R$ 1.000–3.000','3k8k':'R$ 3.000–8.000',acima8k:'Acima de R$ 8.000' };
+    const orc   = orcMap[document.getElementById('orcamento').value] || '';
+    const extra = document.getElementById('mensagem').value.trim();
+    const waMsg = encodeURIComponent(`Olá! Me chamo ${nome} (${tel}).\nInteresse: ${interests}.\nOrçamento: ${orc}.\n${extra?'Obs: '+extra+'\n':''}Gostaria de uma consultoria gratuita.`);
+    setTimeout(() => {
+      window.open(`https://wa.me/5511999990000?text=${waMsg}`, '_blank');
+      document.getElementById('step3').classList.remove('active');
+      document.getElementById('stepSuccess').classList.add('active');
+      document.getElementById('stepLabel').textContent = 'Solicitação enviada!';
+    }, 1200);
+  }
+
+  function resetForm() {
+    document.getElementById('consultForm').reset();
+    document.querySelectorAll('.interest-card').forEach(c => c.classList.remove('checked'));
+    document.getElementById('stepSuccess').classList.remove('active');
+    currentStep = 1;
+    document.getElementById('step1').classList.add('active');
+    document.getElementById('stepLabel').textContent = stepMeta[1].label;
+    document.getElementById('stepPct').textContent = stepMeta[1].pct;
+    document.getElementById('stepBar').style.width = stepMeta[1].width;
+    document.querySelectorAll('.step-dot').forEach(dot => {
+      dot.classList.toggle('active', +dot.dataset.step === 1);
+      dot.classList.remove('done');
+    });
+    document.getElementById('submitBtn').disabled = false;
+    document.getElementById('submitText').style.display = 'inline-flex';
+    document.getElementById('submitLoading').style.display = 'none';
+  }
+
+  document.querySelectorAll('.interest-card').forEach(card => {
+    card.addEventListener('click', () => card.classList.toggle('checked', card.querySelector('input').checked));
+  });
+
+  /* ── SCROLL REVEAL ── */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  /* ── PROCESSO LINE ── */
+  const processoGrid = document.getElementById('processoGrid');
+  const processoFill = document.getElementById('processoFill');
+  if (processoGrid && processoFill) {
+    const lineObs = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+          const steps = processoGrid.querySelectorAll('.pstep');
+          let delay = 0;
+          steps.forEach((step, i) => {
+            setTimeout(() => {
+              step.classList.add('lit');
+              processoFill.style.width = `${((i + 1) / steps.length) * 100}%`;
+            }, delay);
+            delay += 300;
+          });
+          lineObs.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
+    }, { threshold: 0.3 });
+    lineObs.observe(processoGrid);
+  }
+
+  /* ── CURSOR LUPA (desktop only) ── */
+  if (window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
+    document.querySelectorAll('[data-lupa]').forEach(card => {
+      const lupa = card.querySelector('.card-lupa');
+      if (!lupa) return;
+      card.addEventListener('mouseenter', () => { lupa.style.opacity = '1'; });
+      card.addEventListener('mouseleave', () => { lupa.style.opacity = '0'; });
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.querySelector('.card-img').getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        lupa.style.left = x + 'px';
+        lupa.style.top  = y + 'px';
+      });
+    });
+  }
+</script>
 </body>
 </html>
