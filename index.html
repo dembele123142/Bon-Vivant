@@ -145,19 +145,42 @@
     @media(prefers-reduced-motion:reduce){.hero h1 em{animation:none}.hero-ghost-inner{animation:none}}
 
     /* ══════════════ HERO GEM (3D em CSS puro) ══════════════ */
-    .hero-gem{position:absolute;right:9%;top:50%;transform:translateY(-50%);width:170px;height:170px;perspective:1000px;display:none;pointer-events:none;z-index:1}
+    .hero-gem{position:absolute;right:9%;top:50%;transform:translateY(-50%);width:190px;height:220px;perspective:1100px;display:none;pointer-events:none;z-index:1}
     @media(min-width:901px){.hero-gem{display:block}}
     .gem-scroll{width:100%;height:100%;transform-style:preserve-3d}
-    .gem-3d{position:relative;width:100%;height:100%;transform-style:preserve-3d}
-    .facet{position:absolute;inset:0;margin:auto;width:120px;height:120px;clip-path:polygon(50% 0%,100% 38%,82% 100%,18% 100%,0% 38%);backface-visibility:hidden;border:1px solid rgba(201,160,32,.35)}
-    .facet.f1{background:linear-gradient(135deg,rgba(201,160,32,.85),rgba(201,160,32,.1));transform:rotateY(0deg) translateZ(60px)}
-    .facet.f2{background:linear-gradient(135deg,rgba(224,184,48,.7),rgba(201,160,32,.12));transform:rotateY(60deg) translateZ(60px)}
-    .facet.f3{background:linear-gradient(135deg,rgba(201,160,32,.55),rgba(201,160,32,.08));transform:rotateY(120deg) translateZ(60px)}
-    .facet.f4{background:linear-gradient(135deg,rgba(201,160,32,.85),rgba(201,160,32,.1));transform:rotateY(180deg) translateZ(60px)}
-    .facet.f5{background:linear-gradient(135deg,rgba(224,184,48,.7),rgba(201,160,32,.12));transform:rotateY(240deg) translateZ(60px)}
-    .facet.f6{background:linear-gradient(135deg,rgba(201,160,32,.55),rgba(201,160,32,.08));transform:rotateY(300deg) translateZ(60px)}
-    .facet.cap-top{width:110px;height:110px;background:radial-gradient(circle at 35% 30%,rgba(255,244,214,.9),rgba(201,160,32,.15));transform:rotateX(90deg) translateZ(58px)}
-    .facet.cap-bottom{width:110px;height:110px;background:radial-gradient(circle at 65% 70%,rgba(201,160,32,.5),rgba(122,96,15,.15));transform:rotateX(-90deg) translateZ(58px)}
+    .gem-3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;filter:drop-shadow(0 18px 30px rgba(0,0,0,.35))}
+
+    /* MESA — faceta superior plana do diamante */
+    .facet.table{position:absolute;left:50%;top:50%;width:58px;height:58px;margin:-29px 0 0 -29px;backface-visibility:hidden;
+      background:radial-gradient(circle at 38% 32%,rgba(255,251,232,.98),rgba(224,184,48,.55) 55%,rgba(201,160,32,.3));
+      clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%);
+      transform:translateY(-72px) rotateX(90deg) translateZ(29px)}
+
+    /* COROA — 6 facetas triangulares afunilando para a mesa */
+    .facet.crown{position:absolute;left:50%;top:50%;width:86px;height:78px;margin:-78px 0 0 -43px;backface-visibility:hidden;
+      clip-path:polygon(50% 0%,100% 100%,0% 100%);transform-origin:center bottom}
+    .crown.c1{background:linear-gradient(160deg,rgba(255,246,214,.95),rgba(201,160,32,.35));transform:translateY(-36px) rotateY(0deg) translateZ(48px) rotateX(-36deg)}
+    .crown.c2{background:linear-gradient(160deg,rgba(224,184,48,.85),rgba(201,160,32,.22));transform:translateY(-36px) rotateY(60deg) translateZ(48px) rotateX(-36deg)}
+    .crown.c3{background:linear-gradient(160deg,rgba(201,160,32,.7),rgba(140,110,18,.2));transform:translateY(-36px) rotateY(120deg) translateZ(48px) rotateX(-36deg)}
+    .crown.c4{background:linear-gradient(160deg,rgba(255,246,214,.95),rgba(201,160,32,.35));transform:translateY(-36px) rotateY(180deg) translateZ(48px) rotateX(-36deg)}
+    .crown.c5{background:linear-gradient(160deg,rgba(224,184,48,.85),rgba(201,160,32,.22));transform:translateY(-36px) rotateY(240deg) translateZ(48px) rotateX(-36deg)}
+    .crown.c6{background:linear-gradient(160deg,rgba(201,160,32,.7),rgba(140,110,18,.2));transform:translateY(-36px) rotateY(300deg) translateZ(48px) rotateX(-36deg)}
+
+    /* PAVILHÃO — 6 facetas triangulares afunilando para a culatra */
+    .facet.pavilion{position:absolute;left:50%;top:50%;width:86px;height:110px;margin:0 0 0 -43px;backface-visibility:hidden;
+      clip-path:polygon(50% 100%,100% 0%,0% 0%);transform-origin:center top}
+    .pavilion.p1{background:linear-gradient(200deg,rgba(201,160,32,.65),rgba(90,70,10,.18));transform:translateY(-2px) rotateY(30deg) translateZ(44px) rotateX(30deg)}
+    .pavilion.p2{background:linear-gradient(200deg,rgba(224,184,48,.6),rgba(90,70,10,.16));transform:translateY(-2px) rotateY(90deg) translateZ(44px) rotateX(30deg)}
+    .pavilion.p3{background:linear-gradient(200deg,rgba(201,160,32,.5),rgba(90,70,10,.14));transform:translateY(-2px) rotateY(150deg) translateZ(44px) rotateX(30deg)}
+    .pavilion.p4{background:linear-gradient(200deg,rgba(201,160,32,.65),rgba(90,70,10,.18));transform:translateY(-2px) rotateY(210deg) translateZ(44px) rotateX(30deg)}
+    .pavilion.p5{background:linear-gradient(200deg,rgba(224,184,48,.6),rgba(90,70,10,.16));transform:translateY(-2px) rotateY(270deg) translateZ(44px) rotateX(30deg)}
+    .pavilion.p6{background:linear-gradient(200deg,rgba(201,160,32,.5),rgba(90,70,10,.14));transform:translateY(-2px) rotateY(330deg) translateZ(44px) rotateX(30deg)}
+
+    /* brilho — sweep de luz atravessando o diamante em loop */
+    .gem-glint{position:absolute;left:50%;top:50%;width:4px;height:220px;margin:-110px 0 0 -2px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,.9),transparent);
+      transform:translateZ(70px) rotate(18deg);opacity:0;animation:gemGlint 5s ease-in-out infinite}
+    @keyframes gemGlint{0%,100%{opacity:0;left:20%}45%{opacity:0}50%{opacity:.85;left:70%}55%{opacity:0}}
+    @media(prefers-reduced-motion:reduce){.gem-glint{animation:none;opacity:0}}
 
     /* ══════════════ CATEGORY TILES ══════════════ */
     .section{padding:4.5rem 6vw}
@@ -411,14 +434,20 @@
   <div class="hero-gem" aria-hidden="true">
     <div class="gem-scroll">
       <div class="gem-3d">
-        <span class="facet f1"></span>
-        <span class="facet f2"></span>
-        <span class="facet f3"></span>
-        <span class="facet f4"></span>
-        <span class="facet f5"></span>
-        <span class="facet f6"></span>
-        <span class="facet cap-top"></span>
-        <span class="facet cap-bottom"></span>
+        <span class="facet table"></span>
+        <span class="facet crown c1"></span>
+        <span class="facet crown c2"></span>
+        <span class="facet crown c3"></span>
+        <span class="facet crown c4"></span>
+        <span class="facet crown c5"></span>
+        <span class="facet crown c6"></span>
+        <span class="facet pavilion p1"></span>
+        <span class="facet pavilion p2"></span>
+        <span class="facet pavilion p3"></span>
+        <span class="facet pavilion p4"></span>
+        <span class="facet pavilion p5"></span>
+        <span class="facet pavilion p6"></span>
+        <span class="gem-glint"></span>
       </div>
     </div>
   </div>
@@ -1037,7 +1066,7 @@
     /* GEM 3D — rotação contínua + tilt no scroll + parallax no mouse */
     const heroGem = document.querySelector('.hero-gem');
     if (heroGem && window.innerWidth > 900) {
-      gsap.to('.gem-3d', { rotateY: 360, duration: 16, repeat: -1, ease: 'none' });
+      gsap.to('.gem-3d', { rotateY: 360, duration: 26, repeat: -1, ease: 'none' });
       gsap.to('.gem-scroll', {
         rotateX: 16,
         ease: 'none',
