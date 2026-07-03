@@ -4,955 +4,950 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Bon Vivant Joias — Cordões, Brincos e Pulseiras em Ouro e Prata</title>
-  <meta name="description" content="Cordões, brincos, pulseiras e alianças em ouro 18k e prata 925. Consultoria gratuita e entrega para todo o Brasil."/>
+  <meta name="description" content="Cordões, brincos, pulseiras e alianças em ouro 18k e prata 925. Frete grátis, até 12x sem juros e consultoria gratuita."/>
   <meta property="og:title" content="Bon Vivant Joias"/>
   <meta property="og:description" content="Cordões, brincos e pulseiras em ouro 18k e prata 925."/>
   <meta property="og:type" content="website"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;1,6..96,400;1,6..96,500&family=Work+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"JewelryStore","name":"Bon Vivant Joias","url":"https://bon-vivant.onrender.com","description":"Cordões, brincos, pulseiras e alianças em ouro 18k e prata 925","telephone":"+5511999990000","priceRange":"R$890 - R$7900"}
+  {"@context":"https://schema.org","@type":"JewelryStore","name":"Bon Vivant Joias","url":"https://bon-vivant.onrender.com","description":"Cordões, brincos, pulseiras e alianças em ouro 18k e prata 925","telephone":"+5511999990000","priceRange":"R$690 - R$7900"}
   </script>
   <style>
     :root{
       --forest:      #1A4430;
       --forest-deep: #122E20;
-      --sage:        #4A7A5C;
-      --cream:       #F7F4EC;
-      --ink:         #14231B;
       --gold:        #C9A020;
       --gold-hi:     #E0B830;
-      --line-dark:   rgba(255,255,255,.14);
-      --line-light:  rgba(20,35,27,.14);
+      --cream:       #F7F4EC;
+      --ink:         #1A2620;
+      --muted:       #6B7A72;
+      --line:        #E4E0D4;
       --ease:        cubic-bezier(0.19,1,0.22,1);
-      --nav-w:       84px;
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{background:var(--forest);color:#fff;font-family:'Work Sans',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+    body{background:#fff;color:var(--ink);font-family:'Work Sans',sans-serif;font-size:16px;line-height:1.55}
     img{display:block;max-width:100%}
     a{color:inherit;text-decoration:none}
     button{cursor:pointer;border:none;background:none;font-family:inherit;color:inherit}
-    ::selection{background:var(--gold);color:var(--forest-deep)}
-
-    body::after{
-      content:'';position:fixed;inset:0;z-index:998;pointer-events:none;opacity:.045;mix-blend-mode:overlay;
-      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    }
-
+    ul{list-style:none}
+    ::selection{background:var(--gold);color:#fff}
     .f-display{font-family:'Bodoni Moda',serif}
-    .f-mono{font-family:'Space Mono',monospace}
-    h1,h2,h3{font-family:'Bodoni Moda',serif;font-weight:400;line-height:1.02}
+    h1,h2,h3{font-family:'Bodoni Moda',serif;font-weight:500;line-height:1.15}
 
-    .tag{display:inline-flex;align-items:center;gap:.6em;font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase}
-    .tag::before{content:'';width:22px;height:1px;background:currentColor;opacity:.6}
-
-    .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
     .reveal.visible{opacity:1;transform:none}
     @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
-    .idx-row:nth-child(1).reveal{transition-delay:0ms}
-    .idx-row:nth-child(2).reveal{transition-delay:60ms}
-    .idx-row:nth-child(3).reveal{transition-delay:120ms}
-    .idx-row:nth-child(4).reveal{transition-delay:180ms}
-    .idx-row:nth-child(5).reveal{transition-delay:240ms}
-    .spec-row:nth-child(1).reveal{transition-delay:0ms}
-    .spec-row:nth-child(2).reveal{transition-delay:40ms}
-    .spec-row:nth-child(3).reveal{transition-delay:80ms}
-    .spec-row:nth-child(4).reveal{transition-delay:120ms}
-    .spec-row:nth-child(5).reveal{transition-delay:160ms}
-    .spec-row:nth-child(6).reveal{transition-delay:200ms}
-    .processo-grid .pstep:nth-child(2).reveal{transition-delay:50ms}
-    .processo-grid .pstep:nth-child(3).reveal{transition-delay:100ms}
-    .processo-grid .pstep:nth-child(4).reveal{transition-delay:150ms}
-    @media(prefers-reduced-motion:reduce){.idx-row.reveal,.spec-row.reveal,.processo-grid .pstep.reveal{transition-delay:0ms}}
+    .shop-grid .shop-card:nth-child(1).reveal{transition-delay:0ms}
+    .shop-grid .shop-card:nth-child(2).reveal{transition-delay:60ms}
+    .shop-grid .shop-card:nth-child(3).reveal{transition-delay:120ms}
+    .shop-grid .shop-card:nth-child(4).reveal{transition-delay:180ms}
+    .shop-grid .shop-card:nth-child(5).reveal{transition-delay:240ms}
+    .shop-grid .shop-card:nth-child(6).reveal{transition-delay:300ms}
+    .cat-tiles a:nth-child(1).reveal{transition-delay:0ms}
+    .cat-tiles a:nth-child(2).reveal{transition-delay:40ms}
+    .cat-tiles a:nth-child(3).reveal{transition-delay:80ms}
+    .cat-tiles a:nth-child(4).reveal{transition-delay:120ms}
+    .cat-tiles a:nth-child(5).reveal{transition-delay:160ms}
+    .cat-tiles a:nth-child(6).reveal{transition-delay:200ms}
+    @media(prefers-reduced-motion:reduce){.shop-grid .shop-card.reveal,.cat-tiles a.reveal{transition-delay:0ms}}
 
     a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
-      outline:2px solid var(--gold);outline-offset:3px
+      outline:2px solid var(--forest);outline-offset:2px
     }
 
-    /* ══════════════ SIDE NAV (desktop) ══════════════ */
-    .side-nav{position:fixed;top:0;left:0;bottom:0;width:var(--nav-w);z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:1.75rem 0;background:var(--forest-deep);border-right:1px solid var(--line-dark)}
-    .side-logo{writing-mode:vertical-rl;transform:rotate(180deg);font-family:'Bodoni Moda',serif;font-size:1.05rem;letter-spacing:.08em;white-space:nowrap}
-    .side-logo em{font-style:italic;color:var(--gold)}
-    .side-links{display:flex;flex-direction:column;gap:1.5rem;align-items:center}
-    .side-links a{writing-mode:vertical-rl;font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);transition:color .2s;padding:.4rem 0}
-    .side-links a:hover{color:var(--gold)}
-    .side-cta{writing-mode:vertical-rl;transform:rotate(180deg);font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);padding:1rem .55rem;transition:background .2s,color .2s}
-    .side-cta:hover{background:var(--gold);color:var(--forest-deep)}
+    /* ══════════════ ANNOUNCEMENT BAR ══════════════ */
+    .announce{background:var(--forest-deep);color:#fff;text-align:center;padding:.55rem 1rem;font-size:.78rem;letter-spacing:.02em}
+    .announce strong{color:var(--gold)}
 
-    .top-bar{display:none;position:fixed;top:0;left:0;right:0;z-index:100;align-items:center;justify-content:space-between;padding:0 5vw;height:64px;background:rgba(18,46,32,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-dark)}
-    .top-logo{font-family:'Bodoni Moda',serif;font-size:1.2rem}
-    .top-logo em{font-style:italic;color:var(--gold)}
-    .top-burger{display:flex;flex-direction:column;gap:5px;padding:6px;min-width:44px;min-height:44px;align-items:center;justify-content:center}
-    .top-burger span{display:block;width:22px;height:1px;background:#fff}
+    /* ══════════════ HEADER ══════════════ */
+    .header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--line)}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:1rem 5vw;gap:1.5rem}
+    .logo{font-family:'Bodoni Moda',serif;font-size:1.35rem;color:var(--forest);white-space:nowrap}
+    .logo em{font-style:italic;color:var(--gold)}
+    .main-nav{display:flex;align-items:center;gap:1.75rem}
+    .main-nav a{font-size:.86rem;font-weight:500;color:var(--ink);position:relative;padding:.25rem 0}
+    .main-nav a::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--gold);transition:width .25s var(--ease)}
+    .main-nav a:hover::after{width:100%}
+    .header-actions{display:flex;align-items:center;gap:.5rem}
+    .icon-btn{position:relative;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--forest);border-radius:50%;transition:background .2s}
+    .icon-btn:hover{background:var(--cream)}
+    .cart-badge{position:absolute;top:2px;right:2px;min-width:17px;height:17px;padding:0 3px;border-radius:9px;background:var(--gold);color:#fff;font-size:.62rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+    .header-burger{display:none;flex-direction:column;gap:5px;padding:6px;min-width:44px;min-height:44px;align-items:center;justify-content:center}
+    .header-burger span{display:block;width:22px;height:2px;background:var(--ink)}
+    @media(max-width:900px){.main-nav{display:none}.header-burger{display:flex}}
 
-    @media(max-width:900px){
-      .side-nav{display:none}
-      .top-bar{display:flex}
-      .main{margin-left:0 !important;padding-top:64px}
-    }
-
-    .main{margin-left:var(--nav-w)}
-
-    .mobile-nav{position:fixed;inset:0;z-index:200;background:var(--forest-deep);display:flex;flex-direction:column;padding:1.5rem 6vw;transform:translateX(100%);transition:transform .45s var(--ease)}
+    /* ══════════════ MOBILE NAV ══════════════ */
+    .mobile-nav{position:fixed;inset:0;z-index:250;background:#fff;display:flex;flex-direction:column;padding:1.5rem 6vw;transform:translateX(100%);transition:transform .4s var(--ease)}
     .mobile-nav.open{transform:none}
-    .mobile-nav-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:3.5rem;height:44px}
-    .mobile-nav-close{font-size:1.4rem;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center}
-    .mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:1.75rem}
-    .mobile-nav li{border-bottom:1px solid var(--line-dark);padding-bottom:1.5rem}
-    .mobile-nav a{font-family:'Bodoni Moda',serif;font-style:italic;font-size:2.1rem}
+    .mobile-nav-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:2.5rem;height:44px}
+    .mobile-nav-close{font-size:1.4rem;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;color:var(--forest)}
+    .mobile-nav ul{display:flex;flex-direction:column;gap:0}
+    .mobile-nav li{border-bottom:1px solid var(--line)}
+    .mobile-nav a{display:block;padding:1.1rem 0;font-family:'Bodoni Moda',serif;font-size:1.4rem;color:var(--ink)}
 
-    /* ══════════════ HERO — split screen ══════════════ */
-    .hero{display:grid;grid-template-columns:1.3fr 1fr;min-height:100svh}
-    @media(max-width:900px){.hero{grid-template-columns:1fr;min-height:auto}}
-    .hero-left{background:var(--forest);display:flex;flex-direction:column;justify-content:center;padding:8vw 5vw;position:relative}
-    .hero-right{background:var(--gold);color:var(--forest-deep);display:flex;flex-direction:column;justify-content:space-between;padding:4vw;position:relative;overflow:hidden}
-    @media(max-width:900px){.hero-right{min-height:60vh}}
+    /* ══════════════ CART DRAWER ══════════════ */
+    .cart-overlay{position:fixed;inset:0;background:rgba(20,35,27,.45);z-index:300;opacity:0;pointer-events:none;transition:opacity .3s}
+    .cart-overlay.open{opacity:1;pointer-events:auto}
+    .cart-drawer{position:fixed;top:0;right:0;bottom:0;width:min(400px,92vw);background:#fff;z-index:301;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .35s var(--ease)}
+    .cart-drawer.open{transform:none}
+    .cart-head{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;border-bottom:1px solid var(--line)}
+    .cart-head h3{font-size:1.2rem}
+    .cart-close{font-size:1.3rem;min-width:40px;min-height:40px;display:flex;align-items:center;justify-content:center}
+    .cart-items{flex:1;overflow-y:auto;padding:1rem 1.5rem}
+    .cart-empty{text-align:center;padding:3rem 1rem;color:var(--muted);font-size:.9rem}
+    .cart-item{display:flex;align-items:center;gap:.9rem;padding:.9rem 0;border-bottom:1px solid var(--line)}
+    .cart-item-thumb{width:52px;height:52px;border-radius:6px;background:linear-gradient(155deg,var(--forest),var(--forest-deep));display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Bodoni Moda',serif;font-style:italic;color:var(--gold);font-size:1.2rem}
+    .cart-item-info{flex:1;min-width:0}
+    .cart-item-name{font-size:.9rem;font-weight:500}
+    .cart-item-price{font-size:.82rem;color:var(--gold);font-weight:600}
+    .cart-item-remove{width:32px;height:32px;display:flex;align-items:center;justify-content:center;color:var(--muted);flex-shrink:0}
+    .cart-item-remove:hover{color:#c0392b}
+    .cart-foot{padding:1.25rem 1.5rem;border-top:1px solid var(--line)}
+    .cart-total-row{display:flex;justify-content:space-between;margin-bottom:1rem;font-size:1rem}
+    .cart-total-row strong{color:var(--gold);font-family:'Bodoni Moda',serif;font-size:1.3rem}
+    .cart-send{width:100%;padding:.95rem;background:#25D366;color:#fff;font-weight:600;font-size:.9rem;border-radius:6px;display:flex;align-items:center;justify-content:center;gap:.5rem;transition:opacity .2s;min-height:48px}
+    .cart-send:hover{opacity:.9}
+    .cart-send:disabled{opacity:.4;cursor:default}
 
-    .hero-eyebrow{color:var(--gold);margin-bottom:2rem}
-    .hero-h1{font-size:clamp(2.6rem,6.6vw,5.8rem);letter-spacing:-.01em}
-    .hero-h1 .line{display:block;overflow:hidden}
-    .hero-h1 .line span{display:block;transform:translateY(115%);animation:lineUp 1s var(--ease) forwards}
-    .hero-h1 .line:nth-child(1) span{animation-delay:.1s}
-    .hero-h1 .line:nth-child(2) span{animation-delay:.25s}
-    .hero-h1 em{font-style:italic;color:var(--gold)}
-    @keyframes lineUp{to{transform:translateY(0)}}
-    @media(prefers-reduced-motion:reduce){.hero-h1 .line span{animation:none;transform:none}}
-
-    .hero-sub{margin-top:1.75rem;max-width:420px;color:rgba(255,255,255,.68);font-size:1rem;opacity:0;animation:fadeIn .8s var(--ease) 1s forwards}
-    .hero-actions{margin-top:2.5rem;display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeIn .8s var(--ease) 1.2s forwards}
-    @keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-    @media(prefers-reduced-motion:reduce){.hero-sub,.hero-actions{animation:none;opacity:1}}
-
-    .btn-gold{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.9rem;background:var(--gold);color:var(--forest-deep);font-family:'Space Mono',monospace;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:background .25s,transform .25s;min-height:44px}
+    /* ══════════════ HERO BANNER ══════════════ */
+    .hero{background:linear-gradient(120deg,var(--forest) 0%,var(--forest-deep) 100%);position:relative;overflow:hidden;padding:4.5rem 6vw}
+    .hero-inner{max-width:640px;position:relative;z-index:2}
+    .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:.4rem .9rem;border-radius:99px;margin-bottom:1.25rem}
+    .hero h1{color:#fff;font-size:clamp(2.1rem,5vw,3.4rem);margin-bottom:1rem}
+    .hero h1 em{font-style:italic;color:var(--gold)}
+    .hero p{color:rgba(255,255,255,.72);max-width:420px;margin-bottom:1.75rem;font-size:1rem}
+    .hero-actions{display:flex;gap:.9rem;flex-wrap:wrap}
+    .btn-gold{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.75rem;background:var(--gold);color:#fff;font-weight:600;font-size:.88rem;border-radius:6px;transition:background .2s,transform .2s;min-height:44px}
     .btn-gold:hover{background:var(--gold-hi);transform:translateY(-2px)}
-    .btn-dark{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.9rem;background:var(--forest-deep);color:#fff;font-family:'Space Mono',monospace;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:background .25s,transform .25s;min-height:44px}
-    .btn-dark:hover{background:var(--forest);transform:translateY(-2px)}
-    .btn-line{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.9rem;border:1px solid rgba(255,255,255,.3);font-family:'Space Mono',monospace;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:border-color .25s,transform .25s;min-height:44px}
-    .btn-line:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+    .btn-outline-white{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.75rem;border:1.5px solid rgba(255,255,255,.4);color:#fff;font-weight:600;font-size:.88rem;border-radius:6px;transition:border-color .2s,transform .2s;min-height:44px}
+    .btn-outline-white:hover{border-color:var(--gold);transform:translateY(-2px)}
+    .hero-ghost{position:absolute;right:-4%;bottom:-18%;font-family:'Bodoni Moda',serif;font-style:italic;font-size:min(22vw,20rem);color:rgba(255,255,255,.05);line-height:1;pointer-events:none;user-select:none}
 
-    .hero-numeral{font-family:'Bodoni Moda',serif;font-style:italic;font-size:clamp(6rem,16vw,11rem);line-height:.8;opacity:.9}
-    .hero-material{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;border-top:1px solid rgba(20,35,27,.3);padding-top:1.25rem;margin-top:auto}
-    .hero-ghost{position:absolute;right:-6%;bottom:-8%;font-family:'Bodoni Moda',serif;font-style:italic;font-size:16rem;color:rgba(20,35,27,.08);line-height:1;pointer-events:none;user-select:none}
-    @media(max-width:900px){.hero-ghost{font-size:8rem}}
+    /* ══════════════ CATEGORY TILES ══════════════ */
+    .section{padding:4.5rem 6vw}
+    .section-title{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:2rem;flex-wrap:wrap}
+    .section-title h2{font-size:clamp(1.5rem,3vw,2.1rem);color:var(--forest)}
+    .section-title .see-all{font-size:.85rem;font-weight:600;color:var(--forest);border-bottom:1px solid var(--gold);padding-bottom:2px}
+    .cat-tiles{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem}
+    @media(max-width:900px){.cat-tiles{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:480px){.cat-tiles{grid-template-columns:repeat(2,1fr)}}
+    .cat-tile{display:flex;flex-direction:column;align-items:center;gap:.75rem;text-align:center;min-height:44px}
+    .cat-tile-img{width:100%;aspect-ratio:1;border-radius:50%;background:linear-gradient(155deg,var(--cream),#fff);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:var(--gold);transition:border-color .2s,transform .2s}
+    .cat-tile:hover .cat-tile-img{border-color:var(--gold);transform:translateY(-4px)}
+    .cat-tile-label{font-size:.82rem;font-weight:600;color:var(--ink)}
 
-    /* ══════════════ MARQUEE (inverted, gold bg) ══════════════ */
-    .marquee-strip{background:var(--gold);color:var(--forest-deep);padding:1rem 0;overflow:hidden;border-bottom:1px solid rgba(20,35,27,.15)}
-    .marquee-track{display:flex;width:max-content;animation:marqueeScroll 32s linear infinite}
-    @keyframes marqueeScroll{to{transform:translateX(-50%)}}
-    @media(prefers-reduced-motion:reduce){.marquee-track{animation:none}}
-    .marquee-item{display:flex;align-items:center;gap:1rem;padding:0 2.25rem;white-space:nowrap;font-family:'Bodoni Moda',serif;font-style:italic;font-size:1.05rem}
-    .marquee-rule{width:22px;height:1px;background:var(--forest-deep);flex-shrink:0;opacity:.5}
+    /* ══════════════ PRODUCT CARDS (shop) ══════════════ */
+    .shop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.5rem}
+    .shop-card{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;transition:box-shadow .25s,transform .25s;display:flex;flex-direction:column}
+    .shop-card:hover{box-shadow:0 14px 32px rgba(20,35,27,.1);transform:translateY(-3px)}
+    .shop-img{aspect-ratio:1;position:relative;background:linear-gradient(155deg,var(--forest) 0%,var(--forest-deep) 100%);display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .shop-img::before{content:attr(data-letter);font-family:'Bodoni Moda',serif;font-style:italic;font-size:4.5rem;color:rgba(201,160,32,.28)}
+    .badge-row{position:absolute;top:.6rem;left:.6rem;right:.6rem;display:flex;justify-content:space-between;align-items:flex-start;pointer-events:none}
+    .badge-off{background:var(--gold);color:#fff;font-size:.68rem;font-weight:700;padding:.3rem .55rem;border-radius:4px}
+    .badge-ship{background:var(--forest);color:#fff;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;padding:.3rem .5rem;border-radius:4px}
+    .fav-btn{position:absolute;bottom:.6rem;right:.6rem;width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--forest);font-size:1rem;box-shadow:0 2px 8px rgba(0,0,0,.12);transition:color .2s,transform .2s}
+    .fav-btn:hover{color:var(--gold);transform:scale(1.08)}
+    .fav-btn.active{color:var(--gold)}
+    .shop-body{padding:1.1rem 1.1rem 1.25rem;display:flex;flex-direction:column;flex:1}
+    .shop-mat{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:.3rem}
+    .shop-name{font-family:'Bodoni Moda',serif;font-size:1.08rem;margin-bottom:.6rem}
+    .shop-price-row{margin-bottom:.2rem}
+    .shop-price-old{font-size:.78rem;color:var(--muted);text-decoration:line-through;margin-right:.4rem}
+    .shop-price-now{font-family:'Bodoni Moda',serif;font-size:1.3rem;color:var(--forest);font-weight:600}
+    .shop-price-pix{font-size:.7rem;color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:.02em;margin-left:.3rem}
+    .shop-installment{font-size:.78rem;color:var(--muted);margin-bottom:1rem}
+    .shop-actions{display:flex;gap:.5rem;margin-top:auto}
+    .shop-add{flex:1;padding:.7rem;background:var(--forest);color:#fff;font-size:.78rem;font-weight:600;border-radius:6px;text-align:center;transition:background .2s;min-height:42px}
+    .shop-add:hover{background:var(--forest-deep)}
+    .shop-add.added{background:var(--gold)}
+    .shop-wa{width:42px;height:42px;border:1px solid var(--line);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#25D366;font-size:1.1rem;transition:border-color .2s;flex-shrink:0}
+    .shop-wa:hover{border-color:#25D366}
 
-    /* ══════════════ SECTION COMMON ══════════════ */
-    .section{padding:7rem 5vw}
-    .section-dark{background:var(--forest)}
-    .section-deep{background:var(--forest-deep)}
-    .section-light{background:var(--cream);color:var(--ink)}
-    .section-light .tag{color:var(--forest)}
-    .section-head{margin-bottom:3.5rem;display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap}
-    .section-h{font-size:clamp(2.1rem,4.6vw,3.5rem);margin-top:1rem}
-    .section-h em{font-style:italic;color:var(--gold)}
-    .section-sub{opacity:.68;max-width:420px;line-height:1.75;font-size:.95rem}
+    .section-alt{background:var(--cream)}
 
-    /* ══════════════ FEATURED — INDEX LIST (não mais grade de cards) ══════════════ */
-    .idx-list{border-top:1px solid var(--line-dark)}
-    .idx-row{display:grid;grid-template-columns:64px 2fr 1fr auto auto;align-items:center;gap:2rem;padding:1.6rem 0;border-bottom:1px solid var(--line-dark);cursor:pointer;transition:background .2s;position:relative}
-    .idx-row:hover{background:rgba(255,255,255,.03)}
-    @media(max-width:760px){.idx-row{grid-template-columns:40px 1fr;grid-template-areas:"num name" "num mat" "num price";row-gap:.35rem;padding:1.4rem 0}
-      .idx-num{grid-area:num}.idx-name{grid-area:name}.idx-mat{grid-area:mat}.idx-price{grid-area:price}.idx-go{display:none}}
-    .idx-num{font-family:'Space Mono',monospace;font-size:.85rem;color:var(--gold)}
-    .idx-name{font-family:'Bodoni Moda',serif;font-size:1.5rem}
-    .idx-mat{font-family:'Work Sans',sans-serif;font-size:.85rem;opacity:.6}
-    .idx-price{font-family:'Bodoni Moda',serif;font-style:italic;font-size:1.2rem;color:var(--gold);white-space:nowrap}
-    .idx-go{width:38px;height:38px;border:1px solid var(--line-dark);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:all .25s var(--ease);flex-shrink:0}
-    .idx-row:hover .idx-go{background:var(--gold);border-color:var(--gold);color:var(--forest-deep);transform:rotate(45deg)}
-    .idx-row{overflow:visible}
-    .idx-preview{position:absolute;width:150px;height:150px;pointer-events:none;opacity:0;transition:opacity .2s;z-index:5;background:linear-gradient(155deg,var(--forest-deep),var(--forest));border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;transform:translate(-50%,-50%)}
-    .idx-preview::before{content:attr(data-letter);font-family:'Bodoni Moda',serif;font-style:italic;font-size:3.2rem;color:var(--gold)}
-    @media(max-width:900px){.idx-preview{display:none}}
+    /* ══════════════ CATALOG FILTERS ══════════════ */
+    .catalog-controls{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-bottom:2rem}
+    .filter-btn{font-size:.8rem;font-weight:600;padding:.55rem 1.05rem;border:1px solid var(--line);border-radius:99px;color:var(--muted);background:#fff;transition:all .2s;min-height:40px}
+    .filter-btn:hover,.filter-btn.active{border-color:var(--forest);color:var(--forest);background:var(--cream)}
+    .sort-select{margin-left:auto;font-size:.8rem;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:99px;padding:.55rem 1rem;cursor:pointer;min-height:40px}
+    .no-results{text-align:center;padding:4rem;color:var(--muted);font-size:.85rem;display:none}
 
-    /* ══════════════ CATALOG — spec table (bloco claro) ══════════════ */
-    .catalog-controls{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin-bottom:2.75rem}
-    .filter-btn{font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;padding:.55rem 1rem;border:1px solid var(--line-light);color:var(--ink);opacity:.6;transition:all .2s;min-height:40px}
-    .filter-btn:hover,.filter-btn.active{border-color:var(--forest);opacity:1;color:var(--forest)}
-    .sort-select{margin-left:auto;font-family:'Space Mono',monospace;font-size:.68rem;background:transparent;color:var(--ink);border:1px solid var(--line-light);padding:.55rem .8rem;cursor:pointer;min-height:40px}
-    .spec-table{border-top:2px solid var(--ink)}
-    .spec-head{display:none;grid-template-columns:56px 1.6fr 1fr .8fr auto;gap:1.5rem;padding:.75rem 0;font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;opacity:.55;border-bottom:1px solid var(--line-light)}
-    @media(min-width:761px){.spec-head{display:grid}}
-    .spec-row{display:grid;grid-template-columns:56px 1.6fr 1fr .8fr auto;align-items:center;gap:1.5rem;padding:1.15rem 0;border-bottom:1px solid var(--line-light)}
-    @media(max-width:760px){.spec-row{grid-template-columns:40px 1fr;grid-template-areas:"letter name" "letter mat" "letter price" "letter action";row-gap:.3rem}
-      .spec-letter{grid-area:letter}.spec-name{grid-area:name}.spec-mat{grid-area:mat}.spec-price{grid-area:price}.spec-action{grid-area:action;margin-top:.4rem}}
-    .spec-letter{font-family:'Bodoni Moda',serif;font-style:italic;font-size:1.3rem;color:var(--forest);opacity:.5}
-    .spec-name{font-family:'Bodoni Moda',serif;font-size:1.05rem}
-    .spec-mat{font-size:.82rem;opacity:.6}
-    .spec-price{font-family:'Space Mono',monospace;font-size:.85rem}
-    .spec-action{font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--forest);position:relative;padding-bottom:.15rem;white-space:nowrap;min-height:44px;display:flex;align-items:center}
-    .spec-action::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--forest);transition:width .3s var(--ease)}
-    .spec-action:hover::after{width:100%}
-    .no-results{text-align:center;padding:4rem;opacity:.5;font-family:'Space Mono',monospace;font-size:.8rem;display:none}
+    /* ══════════════ ABOUT STRIP ══════════════ */
+    .about-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center}
+    @media(max-width:760px){.about-strip{grid-template-columns:repeat(2,1fr)}}
+    .about-item i{font-size:1.6rem;color:var(--gold);margin-bottom:.75rem;display:block}
+    .about-item h4{font-size:.92rem;margin-bottom:.35rem}
+    .about-item p{font-size:.8rem;color:var(--muted)}
 
-    /* ══════════════ ABOUT ══════════════ */
-    .about-grid{display:grid;grid-template-columns:.55fr 1.45fr;gap:5vw;align-items:end}
-    @media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:2.5rem}}
-    .about-num{font-family:'Bodoni Moda',serif;font-style:italic;font-size:clamp(5rem,12vw,9rem);color:var(--gold);line-height:.8}
-    .about-text p{opacity:.7;line-height:1.85;margin-bottom:1.1rem;font-size:1.02rem}
-    .about-stats{display:flex;gap:0;margin-top:2.5rem;border-top:1px solid var(--line-dark)}
-    .stat{flex:1;padding:1.5rem 1.5rem 0 0;border-right:1px solid var(--line-dark)}
-    .stat:last-child{border-right:none}
-    .stat-n{font-family:'Bodoni Moda',serif;font-style:italic;font-size:2.2rem;color:var(--gold)}
-    .stat-l{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;opacity:.55;margin-top:.3rem}
+    /* ══════════════ TESTIMONIALS ══════════════ */
+    .testi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem}
+    .testi-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:1.5rem}
+    .testi-stars{color:var(--gold);font-size:.85rem;margin-bottom:.75rem}
+    .testi-text{font-size:.9rem;color:var(--ink);line-height:1.65;margin-bottom:1.1rem}
+    .testi-who{display:flex;align-items:center;gap:.7rem}
+    .testi-avatar{width:38px;height:38px;border-radius:50%;background:var(--forest);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Bodoni Moda',serif;font-style:italic;font-size:.95rem;flex-shrink:0}
+    .testi-name{font-size:.85rem;font-weight:600}
+    .testi-prod{font-size:.75rem;color:var(--muted)}
 
-    /* ══════════════ PROCESSO ══════════════ */
-    .processo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5rem;position:relative}
-    @media(max-width:860px){.processo-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:480px){.processo-grid{grid-template-columns:1fr}}
-    .processo-line{position:absolute;top:0;left:0;right:0;height:1px;background:var(--line-dark)}
-    .processo-fill{position:absolute;top:0;left:0;height:100%;width:0;background:var(--gold);transition:width .8s var(--ease)}
-    .pstep{position:relative;padding-top:1.75rem}
-    .pstep-num{font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.12em;color:var(--gold);margin-bottom:1.5rem}
-    .pstep-dot{width:9px;height:9px;border-radius:50%;border:1px solid var(--gold);background:var(--forest-deep);position:absolute;top:-4.5px;left:0;transition:background .4s}
-    .pstep.lit .pstep-dot{background:var(--gold)}
-    .pstep-title{font-family:'Bodoni Moda',serif;font-size:1.2rem;margin-bottom:.6rem}
-    .pstep-desc{font-size:.86rem;opacity:.68;line-height:1.75}
-
-    /* ══════════════ TESTIMONIALS — ticker + destaque ══════════════ */
-    .testi-featured{border-left:2px solid var(--gold);padding-left:2rem;margin-bottom:3rem}
-    .testi-featured p{font-family:'Bodoni Moda',serif;font-size:clamp(1.4rem,2.6vw,2.1rem);font-style:italic;line-height:1.4;margin-bottom:1.25rem}
-    .testi-featured .who{font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
-    .testi-strip{border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);padding:1.5rem 0;overflow:hidden}
-    .testi-strip .marquee-track{animation-duration:40s}
-    .testi-chip{display:flex;align-items:center;gap:.75rem;padding:0 2.5rem;white-space:nowrap;font-size:.9rem;opacity:.7}
-    .testi-chip strong{color:var(--gold);font-weight:500}
-
-    /* ══════════════ NEWSLETTER ══════════════ */
-    .newsletter{text-align:center}
-    .newsletter h2{font-size:clamp(1.9rem,4vw,3.2rem);margin-bottom:1.1rem}
-    .newsletter p{opacity:.68;margin-bottom:2.25rem}
-    .nl-form{display:flex;gap:0;max-width:440px;margin:0 auto;border-bottom:1px solid var(--line-dark)}
-    .nl-input{flex:1;min-width:0;padding:.9rem 0;background:transparent;border:none;color:#fff;font-family:'Work Sans',sans-serif;font-size:.95rem}
-    .nl-input::placeholder{color:rgba(255,255,255,.4)}
-    .nl-input:focus{outline:none}
-    .nl-btn{padding:.9rem 0 .9rem 1.25rem;background:transparent;color:var(--gold);font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;min-height:44px}
-    .nl-btn:hover{color:var(--gold-hi)}
-
-    /* ══════════════ CONTACT STRIP ══════════════ */
-    .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem}
-    .contact-item{display:flex;align-items:flex-start;gap:1rem}
-    .contact-icon{font-size:1.15rem;color:var(--gold);flex-shrink:0;margin-top:.1rem}
-    .contact-label{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem}
-    .contact-val{font-size:.9rem;opacity:.75}
-
-    /* ══════════════ FAQ (bloco claro) ══════════════ */
-    .faq-list{max-width:820px}
-    .faq-item{border-top:1px solid var(--line-light)}
-    .faq-list .faq-item:last-child{border-bottom:1px solid var(--line-light)}
-    .faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 0;color:var(--ink);font-family:'Bodoni Moda',serif;font-size:1.1rem;text-align:left;gap:1rem;min-height:44px}
-    .faq-q i{color:var(--forest);font-size:1rem;flex-shrink:0;transition:transform .3s}
-    .faq-a{padding:0 0 1.4rem;opacity:.68;font-size:.92rem;line-height:1.75;max-width:80%;display:none}
+    /* ══════════════ FAQ ══════════════ */
+    .faq-list{max-width:760px;margin:0 auto}
+    .faq-item{border-bottom:1px solid var(--line)}
+    .faq-item:first-child{border-top:1px solid var(--line)}
+    .faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 0;font-weight:600;font-size:.98rem;text-align:left;gap:1rem;min-height:44px;color:var(--ink)}
+    .faq-q i{color:var(--gold);flex-shrink:0;transition:transform .3s}
+    .faq-a{padding:0 0 1.2rem;color:var(--muted);font-size:.9rem;line-height:1.7;max-width:88%;display:none}
 
     /* ══════════════ CALCULATOR ══════════════ */
-    .calc-box{border:1px solid var(--line-dark);padding:2.5rem;max-width:900px}
-    .calc-section{margin-bottom:2.1rem}
-    .calc-label{font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.9rem}
-    .calc-opts{display:flex;flex-wrap:wrap;gap:.6rem}
-    .calc-opt{padding:.5rem 1.1rem;border:1px solid var(--line-dark);font-family:'Space Mono',monospace;font-size:.72rem;opacity:.7;transition:all .2s;min-height:40px}
-    .calc-opt:hover,.calc-opt.active,.calc-opt.selected{border-color:var(--gold);color:var(--gold);opacity:1}
-    .calc-result{margin-top:2rem;padding:1.75rem 0 0;border-top:2px solid var(--gold);text-align:left;display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-    .calc-result-val{font-family:'Bodoni Moda',serif;font-style:italic;font-size:2.6rem;color:var(--gold)}
-    .calc-result-note{font-family:'Space Mono',monospace;font-size:.7rem;opacity:.55;margin-top:.4rem}
-    #calcNote{display:none}
-    .calc-wa{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 1.7rem;background:#25D366;color:#fff;font-family:'Space Mono',monospace;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;transition:opacity .2s;min-height:44px}
+    .calc-box{border:1px solid var(--line);border-radius:12px;padding:2rem;max-width:900px;margin:0 auto;background:#fff}
+    .calc-section{margin-bottom:1.75rem}
+    .calc-label{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--forest);margin-bottom:.7rem}
+    .calc-opts{display:flex;flex-wrap:wrap;gap:.5rem}
+    .calc-opt{padding:.5rem 1rem;border:1px solid var(--line);border-radius:99px;font-size:.8rem;color:var(--muted);transition:all .2s;min-height:40px;background:#fff}
+    .calc-opt:hover,.calc-opt.active,.calc-opt.selected{border-color:var(--gold);color:var(--forest);background:var(--cream)}
+    .calc-result{margin-top:1.75rem;padding:1.5rem;border-radius:10px;background:var(--cream);text-align:center}
+    .calc-result-val{font-family:'Bodoni Moda',serif;font-size:2.1rem;color:var(--forest)}
+    .calc-result-note{font-size:.78rem;color:var(--muted);margin-top:.4rem}
+    #calcNote{display:none;margin-top:1rem}
+    .calc-wa{display:inline-flex;align-items:center;gap:.55rem;padding:.75rem 1.5rem;background:#25D366;color:#fff;font-weight:600;font-size:.85rem;border-radius:6px;transition:opacity .2s;min-height:44px}
     .calc-wa:hover{opacity:.9}
 
-    /* ══════════════ CONSULTATION FORM ══════════════ */
-    .consult-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:5vw;align-items:start}
-    @media(max-width:900px){.consult-grid{grid-template-columns:1fr;gap:2.5rem}}
-    .consult-box{border:1px solid var(--line-dark);padding:2.5rem}
-    .step-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.85rem}
-    .step-label-txt{font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;opacity:.55}
-    .step-pct-txt{font-family:'Space Mono',monospace;font-size:.7rem;color:var(--gold)}
-    .step-bar-bg{height:1px;background:var(--line-dark);margin-bottom:1.9rem;overflow:hidden}
+    /* ══════════════ CONSULT FORM ══════════════ */
+    .consult-box{border:1px solid var(--line);border-radius:12px;padding:2rem;max-width:640px;margin:0 auto;background:#fff}
+    .step-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem}
+    .step-label-txt{font-size:.78rem;font-weight:600;color:var(--muted)}
+    .step-pct-txt{font-size:.78rem;font-weight:700;color:var(--forest)}
+    .step-bar-bg{height:5px;background:var(--line);border-radius:3px;margin-bottom:1.6rem;overflow:hidden}
     .step-bar-fill{height:100%;width:33%;background:var(--gold);transition:width .4s var(--ease)}
-    .step-dots{display:flex;gap:.6rem;margin-bottom:2.1rem}
-    .step-dot{width:8px;height:8px;border-radius:50%;border:1px solid var(--line-dark);background:transparent;transition:all .3s}
+    .step-dots{display:flex;gap:.5rem;margin-bottom:1.75rem}
+    .step-dot{width:8px;height:8px;border-radius:50%;border:1px solid var(--line);background:#fff;transition:all .3s}
     .step-dot.active{border-color:var(--gold);background:var(--gold)}
-    .step-dot.done{border-color:var(--gold);background:transparent}
+    .step-dot.done{border-color:var(--gold);background:#fff}
     .step-panel{display:none}
     .step-panel.active{display:block}
-    .form-label{font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;opacity:.65;margin-bottom:.6rem;display:block}
-    .form-input{width:100%;padding:.8rem 0;background:transparent;border:none;border-bottom:1px solid var(--line-dark);color:#fff;font-family:'Work Sans',sans-serif;font-size:.95rem;margin-bottom:.3rem;min-height:44px}
-    .form-input:focus{outline:none;border-bottom-color:var(--gold)}
-    .form-input.error{border-bottom-color:#e24b4a}
-    .form-select{width:100%;padding:.8rem 0;background:transparent;border:none;border-bottom:1px solid var(--line-dark);color:#fff;font-family:'Work Sans',sans-serif;font-size:.95rem;margin-bottom:.3rem;cursor:pointer;min-height:44px}
-    .form-select:focus{outline:none;border-bottom-color:var(--gold)}
-    .form-select option{background:var(--forest)}
-    .form-textarea{width:100%;padding:.8rem 0;background:transparent;border:none;border-bottom:1px solid var(--line-dark);color:#fff;font-family:'Work Sans',sans-serif;font-size:.95rem;resize:vertical;min-height:90px}
-    .form-textarea:focus{outline:none;border-bottom-color:var(--gold)}
-    .form-group{margin-bottom:1.5rem}
-    .err-msg{font-family:'Space Mono',monospace;font-size:.65rem;color:#e24b4a;display:none;margin-top:.25rem}
+    .form-label{font-size:.8rem;font-weight:700;color:var(--forest);margin-bottom:.5rem;display:block}
+    .form-input{width:100%;padding:.75rem .9rem;background:#fff;border:1px solid var(--line);border-radius:6px;color:var(--ink);font-family:'Work Sans',sans-serif;font-size:.92rem;margin-bottom:.25rem;min-height:44px}
+    .form-input:focus{outline:none;border-color:var(--gold)}
+    .form-input.error{border-color:#c0392b}
+    .form-select{width:100%;padding:.75rem .9rem;background:#fff;border:1px solid var(--line);border-radius:6px;color:var(--ink);font-family:'Work Sans',sans-serif;font-size:.92rem;margin-bottom:.25rem;cursor:pointer;min-height:44px}
+    .form-select:focus{outline:none;border-color:var(--gold)}
+    .form-textarea{width:100%;padding:.75rem .9rem;background:#fff;border:1px solid var(--line);border-radius:6px;color:var(--ink);font-family:'Work Sans',sans-serif;font-size:.92rem;resize:vertical;min-height:90px}
+    .form-textarea:focus{outline:none;border-color:var(--gold)}
+    .form-group{margin-bottom:1.25rem}
+    .err-msg{font-size:.72rem;color:#c0392b;display:none;margin-top:.25rem}
     .err-msg.show{display:block}
-    .interest-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.6rem;margin-top:.6rem}
-    .interest-card{border:1px solid var(--line-dark);padding:.85rem;display:flex;flex-direction:column;align-items:center;gap:.45rem;cursor:pointer;transition:border-color .2s;min-height:44px}
-    .interest-card:hover{border-color:rgba(201,160,32,.5)}
-    .interest-card.checked{border-color:var(--gold)}
+    .interest-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:.55rem;margin-top:.5rem}
+    .interest-card{border:1px solid var(--line);border-radius:8px;padding:.8rem;display:flex;flex-direction:column;align-items:center;gap:.4rem;cursor:pointer;transition:border-color .2s,background .2s;min-height:44px}
+    .interest-card:hover{border-color:var(--gold)}
+    .interest-card.checked{border-color:var(--gold);background:var(--cream)}
     .interest-card input{display:none}
-    .interest-card i{font-size:1.2rem;color:var(--gold)}
-    .interest-card span{font-family:'Space Mono',monospace;font-size:.63rem;letter-spacing:.06em;text-transform:uppercase;opacity:.75;text-align:center}
-    .form-nav{display:flex;justify-content:space-between;margin-top:2.25rem;gap:1rem}
-    .btn-step-next{padding:.75rem 1.75rem;background:var(--gold);color:var(--forest-deep);font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;transition:background .2s;min-height:44px}
-    .btn-step-next:hover{background:var(--gold-hi)}
-    .btn-step-back{padding:.75rem 1.75rem;border:1px solid var(--line-dark);opacity:.7;font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;transition:all .2s;min-height:44px}
-    .btn-step-back:hover{border-color:var(--gold);color:var(--gold);opacity:1}
-    .summary-box{border:1px solid var(--line-dark);padding:1.4rem;margin-bottom:1.75rem}
-    .summary-row{display:flex;justify-content:space-between;padding:.55rem 0;border-bottom:1px solid var(--line-dark);font-size:.85rem;gap:1rem}
+    .interest-card i{font-size:1.15rem;color:var(--forest)}
+    .interest-card span{font-size:.72rem;font-weight:600;color:var(--ink);text-align:center}
+    .form-nav{display:flex;justify-content:space-between;margin-top:2rem;gap:1rem}
+    .btn-step-next{padding:.75rem 1.6rem;background:var(--forest);color:#fff;font-weight:600;font-size:.85rem;border-radius:6px;transition:background .2s;min-height:44px}
+    .btn-step-next:hover{background:var(--forest-deep)}
+    .btn-step-back{padding:.75rem 1.6rem;border:1px solid var(--line);color:var(--muted);font-weight:600;font-size:.85rem;border-radius:6px;transition:all .2s;min-height:44px}
+    .btn-step-back:hover{border-color:var(--forest);color:var(--forest)}
+    .summary-box{border:1px solid var(--line);border-radius:8px;padding:1.2rem;margin-bottom:1.5rem;background:var(--cream)}
+    .summary-row{display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--line);font-size:.85rem;gap:1rem}
     .summary-row:last-child{border-bottom:none}
-    .summary-row span:first-child{opacity:.55;font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;flex-shrink:0}
-    .lgpd-row{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.5rem}
+    .summary-row span:first-child{color:var(--muted);font-weight:600;flex-shrink:0}
+    .lgpd-row{display:flex;align-items:flex-start;gap:.7rem;margin-bottom:.5rem}
     .lgpd-row input[type=checkbox]{accent-color:var(--gold);width:18px;height:18px;flex-shrink:0;margin-top:.1rem;cursor:pointer}
-    .lgpd-row label{font-size:.82rem;opacity:.7;line-height:1.55}
-    .submit-btn{width:100%;padding:1rem;background:var(--gold);color:var(--forest-deep);font-family:'Space Mono',monospace;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:.6rem;transition:background .2s;min-height:48px}
-    .submit-btn:hover:not(:disabled){background:var(--gold-hi)}
-    .submit-btn:disabled{opacity:.6;cursor:default}
-    .step-success{text-align:center;padding:3rem 1rem}
-    .step-success i{font-size:2.6rem;color:var(--gold);margin-bottom:1.1rem}
-    .step-success h3{font-family:'Bodoni Moda',serif;font-size:1.7rem;margin-bottom:.85rem}
-    .step-success p{opacity:.7}
-    .step-success button{margin-top:2rem;padding:.75rem 1.75rem;border:1px solid var(--line-dark);opacity:.7;font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;transition:all .2s;min-height:44px}
-    .step-success button:hover{border-color:var(--gold);color:var(--gold);opacity:1}
+    .lgpd-row label{font-size:.8rem;color:var(--muted);line-height:1.5}
+    .submit-btn{width:100%;padding:.95rem;background:#25D366;color:#fff;font-weight:700;font-size:.88rem;border-radius:6px;display:flex;align-items:center;justify-content:center;gap:.55rem;transition:opacity .2s;min-height:48px}
+    .submit-btn:hover:not(:disabled){opacity:.9}
+    .submit-btn:disabled{opacity:.5;cursor:default}
+    .step-success{text-align:center;padding:2.5rem 1rem}
+    .step-success i{font-size:2.4rem;color:var(--gold);margin-bottom:1rem}
+    .step-success h3{font-size:1.5rem;margin-bottom:.75rem}
+    .step-success p{color:var(--muted)}
+    .step-success button{margin-top:1.75rem;padding:.7rem 1.6rem;border:1px solid var(--line);color:var(--muted);font-weight:600;font-size:.85rem;border-radius:6px;transition:all .2s;min-height:44px}
+    .step-success button:hover{border-color:var(--forest);color:var(--forest)}
 
-    /* ══════════════ FOOTER (mega type) ══════════════ */
-    footer{padding:6rem 5vw 2rem;background:var(--forest-deep)}
-    .footer-mega{font-family:'Bodoni Moda',serif;font-style:italic;font-size:clamp(2.6rem,8vw,6rem);line-height:1;margin-bottom:3rem}
-    .footer-mega a{color:var(--gold)}
-    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3.5rem;padding-top:2.5rem;border-top:1px solid var(--line-dark)}
+    /* ══════════════ FOOTER ══════════════ */
+    footer{background:var(--forest-deep);color:rgba(255,255,255,.8);padding:3.5rem 6vw 1.75rem}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
     @media(max-width:860px){.footer-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:480px){.footer-grid{grid-template-columns:1fr}.footer-mega{font-size:2.4rem}}
-    .footer-desc{font-size:.85rem;opacity:.55;line-height:1.75}
-    .footer-col-title{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:1.1rem}
-    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.7rem}
-    .footer-col a{font-size:.85rem;opacity:.55;transition:opacity .2s}
+    @media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
+    .footer-brand{font-family:'Bodoni Moda',serif;font-size:1.4rem;color:#fff;margin-bottom:.9rem}
+    .footer-brand em{font-style:italic;color:var(--gold)}
+    .footer-desc{font-size:.82rem;opacity:.7;line-height:1.7}
+    .footer-payments{display:flex;gap:.5rem;margin-top:1rem;flex-wrap:wrap}
+    .footer-payments span{font-size:.66rem;font-weight:700;border:1px solid rgba(255,255,255,.2);border-radius:4px;padding:.25rem .5rem;opacity:.75}
+    .footer-col-title{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--gold);margin-bottom:1rem}
+    .footer-col ul{display:flex;flex-direction:column;gap:.65rem}
+    .footer-col a{font-size:.84rem;opacity:.75;transition:opacity .2s}
     .footer-col a:hover{opacity:1}
-    .footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-top:2rem;border-top:1px solid var(--line-dark)}
-    .footer-copy{font-family:'Space Mono',monospace;font-size:.62rem;opacity:.4}
-    .footer-social{display:flex;gap:.75rem}
-    .footer-social a{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line-dark);font-size:.9rem;opacity:.6;transition:all .2s}
+    .footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-top:1.75rem;border-top:1px solid rgba(255,255,255,.12)}
+    .footer-copy{font-size:.72rem;opacity:.5}
+    .footer-social{display:flex;gap:.65rem}
+    .footer-social a{width:38px;height:38px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.18);border-radius:50%;font-size:.9rem;opacity:.75;transition:all .2s}
     .footer-social a:hover{border-color:var(--gold);color:var(--gold);opacity:1}
 
     /* ══════════════ WHATSAPP FAB ══════════════ */
-    .wa-fab{position:fixed;bottom:1.75rem;right:1.75rem;z-index:90;width:54px;height:54px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.35);transition:transform .2s,box-shadow .2s}
-    .wa-fab:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(37,211,102,.45)}
-    .wa-fab i{font-size:1.5rem;color:#fff}
+    .wa-fab{position:fixed;bottom:1.5rem;right:1.5rem;z-index:90;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.4);transition:transform .2s}
+    .wa-fab:hover{transform:scale(1.08)}
+    .wa-fab i{font-size:1.6rem;color:#fff}
 
     @keyframes spin{to{transform:rotate(360deg)}}
   </style>
 </head>
 <body>
 
-<!-- SIDE NAV (desktop) -->
-<aside class="side-nav" role="navigation" aria-label="Navegação principal">
-  <a class="side-logo" href="#">Bon Vivant <em>Joias</em></a>
-  <ul class="side-links" style="list-style:none">
-    <li><a href="#colecao">Coleção</a></li>
-    <li><a href="#sobre">Sobre</a></li>
-    <li><a href="#processo">Processo</a></li>
-    <li><a href="#faq">FAQ</a></li>
-  </ul>
-  <a class="side-cta" href="#consultoria">Consultoria</a>
-</aside>
+<div class="announce">Frete grátis acima de R$ 500 · <strong>Consultoria gratuita</strong> · Até 12x sem juros</div>
 
-<!-- TOP BAR (mobile) -->
-<div class="top-bar">
-  <a class="top-logo" href="#">Bon Vivant <em>Joias</em></a>
-  <button class="top-burger" onclick="openMobileNav()" aria-label="Abrir menu">
-    <span></span><span></span><span></span>
-  </button>
-</div>
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <button class="header-burger" onclick="openMobileNav()" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+    <a class="logo" href="#">Bon Vivant <em>Joias</em></a>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a href="#catalogo" onclick="return goCat('cordao')">Cordões</a>
+      <a href="#catalogo" onclick="return goCat('brinco')">Brincos</a>
+      <a href="#catalogo" onclick="return goCat('pulseira')">Pulseiras</a>
+      <a href="#catalogo" onclick="return goCat('anel')">Alianças</a>
+      <a href="#catalogo" onclick="return goCat('pingente')">Pingentes</a>
+      <a href="#consultoria">Consultoria</a>
+    </nav>
+    <div class="header-actions">
+      <a class="icon-btn" href="https://wa.me/5511999990000" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></a>
+      <button class="icon-btn" onclick="openCart()" aria-label="Abrir minha seleção">
+        <i class="ti ti-shopping-bag" aria-hidden="true"></i>
+        <span class="cart-badge" id="cartBadge" style="display:none">0</span>
+      </button>
+    </div>
+  </div>
+</header>
 
 <!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Menu">
   <div class="mobile-nav-top">
-    <span class="top-logo">Bon Vivant <em>Joias</em></span>
+    <span class="logo">Bon Vivant <em>Joias</em></span>
     <button class="mobile-nav-close" onclick="closeMobileNav()" aria-label="Fechar menu"><i class="ti ti-x" aria-hidden="true"></i></button>
   </div>
   <ul>
-    <li><a href="#colecao" onclick="closeMobileNav()">Coleção</a></li>
-    <li><a href="#sobre" onclick="closeMobileNav()">Sobre</a></li>
-    <li><a href="#processo" onclick="closeMobileNav()">Processo</a></li>
+    <li><a href="#catalogo" onclick="closeMobileNav();goCat('cordao')">Cordões</a></li>
+    <li><a href="#catalogo" onclick="closeMobileNav();goCat('brinco')">Brincos</a></li>
+    <li><a href="#catalogo" onclick="closeMobileNav();goCat('pulseira')">Pulseiras</a></li>
+    <li><a href="#catalogo" onclick="closeMobileNav();goCat('anel')">Alianças</a></li>
+    <li><a href="#catalogo" onclick="closeMobileNav();goCat('pingente')">Pingentes</a></li>
     <li><a href="#calculadora" onclick="closeMobileNav()">Calculadora</a></li>
     <li><a href="#consultoria" onclick="closeMobileNav()">Consultoria</a></li>
     <li><a href="#faq" onclick="closeMobileNav()">FAQ</a></li>
   </ul>
 </div>
 
-<div class="main">
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Minha seleção">
+  <div class="cart-head">
+    <h3 class="f-display">Minha seleção</h3>
+    <button class="cart-close" onclick="closeCart()" aria-label="Fechar"><i class="ti ti-x" aria-hidden="true"></i></button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <p class="cart-empty">Sua seleção está vazia.<br/>Adicione peças para consultar tudo de uma vez.</p>
+  </div>
+  <div class="cart-foot">
+    <div class="cart-total-row"><span>Total estimado</span><strong id="cartTotal">R$ 0</strong></div>
+    <button class="cart-send" id="cartSendBtn" onclick="sendCartWhatsapp()" disabled>
+      <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Enviar seleção pelo WhatsApp
+    </button>
+  </div>
+</aside>
 
-  <!-- HERO — split screen -->
-  <section class="hero" aria-label="Destaque principal">
-    <div class="hero-left">
-      <p class="tag hero-eyebrow">Ourivesaria autoral desde 2018</p>
-      <h1 class="hero-h1">
-        <span class="line"><span>Cordões e joias</span></span>
-        <span class="line"><span>em <em>ouro e prata</em></span></span>
-      </h1>
-      <p class="hero-sub">Cordões, brincos, pulseiras e alianças feitos à mão, um a um. Consultoria gratuita para você escolher a peça certa.</p>
-      <div class="hero-actions">
-        <a class="btn-gold" href="#colecao">Ver coleção</a>
-        <a class="btn-line" href="#consultoria">Consultoria gratuita</a>
-      </div>
-    </div>
-    <div class="hero-right">
-      <span class="hero-ghost" aria-hidden="true">BV</span>
-      <p class="tag" style="color:var(--forest-deep)">N.º 01</p>
-      <p class="hero-numeral">18k</p>
-      <p class="hero-material">Ouro 18k — Prata 925<br/>Peças sob encomenda</p>
-    </div>
-  </section>
-
-  <!-- MARQUEE -->
-  <div class="marquee-strip" aria-hidden="true">
-    <div class="marquee-track">
-      <div class="marquee-item"><span class="marquee-rule"></span>Ouro 18k certificado</div>
-      <div class="marquee-item"><span class="marquee-rule"></span>Prata 925 italiana</div>
-      <div class="marquee-item"><span class="marquee-rule"></span>Pedras naturais</div>
-      <div class="marquee-item"><span class="marquee-rule"></span>Sob encomenda</div>
-      <div class="marquee-item"><span class="marquee-rule"></span>Garantia vitalícia</div>
-      <div class="marquee-item"><span class="marquee-rule"></span>Parcela em 12×</div>
-      <div class="marquee-item"><span class="marquee-rule"></span>Frete grátis</div>
-      <div class="marquee-item"><span class="marquee-rule"></span>Ouro 18k certificado</div>
-      <div class="marquee-item"><span class="marquee-rule"></span>Prata 925 italiana</div>
-      <div class="marquee-item"><span class="marquee-rule"></span>Pedras naturais</div>
-      <div class="marquee-item"><span class="marquee-rule"></span>Sob encomenda</div>
-      <div class="marquee-item"><span class="marquee-rule"></span>Garantia vitalícia</div>
-      <div class="marquee-item"><span class="marquee-rule"></span>Parcela em 12×</div>
-      <div class="marquee-item"><span class="marquee-rule"></span>Frete grátis</div>
+<!-- HERO -->
+<section class="hero">
+  <span class="hero-ghost" aria-hidden="true">BV</span>
+  <div class="hero-inner">
+    <span class="hero-badge"><i class="ti ti-sparkles" aria-hidden="true"></i> Coleção 2024</span>
+    <h1>Cordões, brincos e pulseiras em <em>ouro e prata</em></h1>
+    <p>Peças feitas à mão, um a um. Frete grátis, parcelamento em até 12x e consultoria gratuita para você escolher com segurança.</p>
+    <div class="hero-actions">
+      <a class="btn-gold" href="#catalogo">Ver coleção <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      <a class="btn-outline-white" href="#consultoria">Consultoria gratuita</a>
     </div>
   </div>
+</section>
 
-  <!-- FEATURED — index list -->
-  <section class="section section-dark" id="colecao" aria-labelledby="feat-h">
-    <div class="section-head reveal">
-      <div>
-        <p class="tag">01 — Destaques</p>
-        <h2 class="section-h" id="feat-h">Coleção em <em>evidência</em></h2>
-      </div>
-      <p class="section-sub">Passe o cursor sobre cada peça para uma prévia. Toque para consultar pelo WhatsApp.</p>
-    </div>
-    <div class="idx-list">
-      <a class="idx-row reveal" data-lupa href="https://wa.me/5511999990000?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Cord%C3%A3o%20Cartier." target="_blank" rel="noopener">
-        <span class="idx-num">01</span>
-        <span class="idx-name">Cordão Cartier</span>
-        <span class="idx-mat">Ouro 18k · Elos maciços</span>
-        <span class="idx-price">R$ 3.890</span>
-        <span class="idx-go" aria-hidden="true"><i class="ti ti-arrow-up-right" aria-hidden="true"></i></span>
-        <div class="idx-preview" data-letter="C" aria-hidden="true"></div>
-      </a>
-      <a class="idx-row reveal" data-lupa href="https://wa.me/5511999990000?text=Ol%C3%A1!%20Interesse%20na%20Alian%C3%A7a%20Solstice." target="_blank" rel="noopener">
-        <span class="idx-num">02</span>
-        <span class="idx-name">Aliança Solstice</span>
-        <span class="idx-mat">Prata 925 · Acabamento fosco</span>
-        <span class="idx-price">R$ 1.290</span>
-        <span class="idx-go" aria-hidden="true"><i class="ti ti-arrow-up-right" aria-hidden="true"></i></span>
-        <div class="idx-preview" data-letter="A" aria-hidden="true"></div>
-      </a>
-      <a class="idx-row reveal" data-lupa href="https://wa.me/5511999990000?text=Ol%C3%A1!%20Interesse%20no%20Brinco%20%C3%89toile." target="_blank" rel="noopener">
-        <span class="idx-num">03</span>
-        <span class="idx-name">Brinco Étoile</span>
-        <span class="idx-mat">Ouro 18k · Diamante</span>
-        <span class="idx-price">R$ 5.200</span>
-        <span class="idx-go" aria-hidden="true"><i class="ti ti-arrow-up-right" aria-hidden="true"></i></span>
-        <div class="idx-preview" data-letter="B" aria-hidden="true"></div>
-      </a>
-      <a class="idx-row reveal" data-lupa href="https://wa.me/5511999990000?text=Ol%C3%A1!%20Interesse%20na%20Pulseira%20Elo%20Cubano." target="_blank" rel="noopener">
-        <span class="idx-num">04</span>
-        <span class="idx-name">Pulseira Elo Cubano</span>
-        <span class="idx-mat">Ouro 18k · Fecho reforçado</span>
-        <span class="idx-price">R$ 2.680</span>
-        <span class="idx-go" aria-hidden="true"><i class="ti ti-arrow-up-right" aria-hidden="true"></i></span>
-        <div class="idx-preview" data-letter="P" aria-hidden="true"></div>
-      </a>
-      <a class="idx-row reveal" data-lupa href="https://wa.me/5511999990000?text=Ol%C3%A1!%20Interesse%20na%20Pulseira%20Veneziana." target="_blank" rel="noopener">
-        <span class="idx-num">05</span>
-        <span class="idx-name">Pulseira Veneziana</span>
-        <span class="idx-mat">Prata 925 · Elos finos</span>
-        <span class="idx-price">R$ 1.580</span>
-        <span class="idx-go" aria-hidden="true"><i class="ti ti-arrow-up-right" aria-hidden="true"></i></span>
-        <div class="idx-preview" data-letter="P" aria-hidden="true"></div>
-      </a>
-    </div>
-  </section>
+<!-- CATEGORY TILES -->
+<section class="section">
+  <div class="section-title">
+    <h2>Compre por categoria</h2>
+  </div>
+  <div class="cat-tiles">
+    <a class="cat-tile reveal" href="#catalogo" onclick="return goCat('cordao')">
+      <span class="cat-tile-img"><i class="ti ti-diamond" aria-hidden="true"></i></span>
+      <span class="cat-tile-label">Cordões</span>
+    </a>
+    <a class="cat-tile reveal" href="#catalogo" onclick="return goCat('brinco')">
+      <span class="cat-tile-img"><i class="ti ti-star" aria-hidden="true"></i></span>
+      <span class="cat-tile-label">Brincos</span>
+    </a>
+    <a class="cat-tile reveal" href="#catalogo" onclick="return goCat('pulseira')">
+      <span class="cat-tile-img"><i class="ti ti-wave-sine" aria-hidden="true"></i></span>
+      <span class="cat-tile-label">Pulseiras</span>
+    </a>
+    <a class="cat-tile reveal" href="#catalogo" onclick="return goCat('anel')">
+      <span class="cat-tile-img"><i class="ti ti-circle" aria-hidden="true"></i></span>
+      <span class="cat-tile-label">Alianças</span>
+    </a>
+    <a class="cat-tile reveal" href="#catalogo" onclick="return goCat('pingente')">
+      <span class="cat-tile-img"><i class="ti ti-tag" aria-hidden="true"></i></span>
+      <span class="cat-tile-label">Pingentes</span>
+    </a>
+    <a class="cat-tile reveal" href="#catalogo" onclick="return goCat('todos')">
+      <span class="cat-tile-img"><i class="ti ti-gift" aria-hidden="true"></i></span>
+      <span class="cat-tile-label">Kits</span>
+    </a>
+  </div>
+</section>
 
-  <!-- CATALOG — spec table, bloco claro -->
-  <section class="section section-light" aria-labelledby="cat-h">
-    <div class="section-head reveal">
-      <div>
-        <p class="tag">02 — Catálogo</p>
-        <h2 class="section-h" id="cat-h">Todas as <em>peças</em></h2>
+<!-- MAIS VENDIDOS -->
+<section class="section section-alt">
+  <div class="section-title">
+    <h2>Mais vendidos</h2>
+    <a class="see-all" href="#catalogo">Ver tudo</a>
+  </div>
+  <div class="shop-grid">
+    <article class="shop-card reveal">
+      <div class="shop-img" data-letter="C">
+        <div class="badge-row">
+          <span class="badge-off">15% OFF</span>
+          <span class="badge-ship">Frete grátis</span>
+        </div>
+        <button class="fav-btn" onclick="toggleFav(this)" aria-label="Favoritar"><i class="ti ti-heart" aria-hidden="true"></i></button>
       </div>
-    </div>
-    <div class="catalog-controls reveal">
-      <button class="filter-btn active" data-filter="todos" onclick="filterCatalog(this,'todos')">Todos</button>
-      <button class="filter-btn" data-filter="cordao" onclick="filterCatalog(this,'cordao')">Cordões</button>
-      <button class="filter-btn" data-filter="anel" onclick="filterCatalog(this,'anel')">Alianças</button>
-      <button class="filter-btn" data-filter="brinco" onclick="filterCatalog(this,'brinco')">Brincos</button>
-      <button class="filter-btn" data-filter="pulseira" onclick="filterCatalog(this,'pulseira')">Pulseiras</button>
-      <button class="filter-btn" data-filter="pingente" onclick="filterCatalog(this,'pingente')">Pingentes</button>
-      <select class="sort-select" onchange="sortCatalog(this.value)" aria-label="Ordenar por">
-        <option value="">Ordenar</option>
-        <option value="price-asc">Menor preço</option>
-        <option value="price-desc">Maior preço</option>
-        <option value="name">Nome A–Z</option>
-      </select>
-    </div>
-    <div class="spec-table">
-      <div class="spec-head" aria-hidden="true">
-        <span></span><span>Peça</span><span>Material</span><span>Preço</span><span></span>
-      </div>
-      <div id="catalogGrid">
-        <div class="cat-card spec-row reveal" data-category="cordao" data-price="4100" data-name="Cordão Grumet">
-          <span class="spec-letter">C</span>
-          <span class="spec-name">Cordão Grumet</span>
-          <span class="spec-mat">Ouro 18k · Elo grumet</span>
-          <span class="spec-price">R$ 4.100</span>
-          <a href="https://wa.me/5511999990000?text=Interesse%20no%20Cord%C3%A3o%20Grumet." target="_blank" rel="noopener" class="spec-action">Consultar →</a>
+      <div class="shop-body">
+        <p class="shop-mat">Ouro 18k · Elos maciços</p>
+        <h3 class="shop-name">Cordão Cartier</h3>
+        <div class="shop-price-row">
+          <span class="shop-price-old">R$ 4.590</span>
+          <span class="shop-price-now">R$ 3.890</span>
+          <span class="shop-price-pix">no Pix</span>
         </div>
-        <div class="cat-card spec-row reveal" data-category="anel" data-price="890" data-name="Aliança Cosmos">
-          <span class="spec-letter">A</span>
-          <span class="spec-name">Aliança Cosmos</span>
-          <span class="spec-mat">Prata 925 · Zircônia</span>
-          <span class="spec-price">R$ 890</span>
-          <a href="https://wa.me/5511999990000?text=Interesse%20na%20Alian%C3%A7a%20Cosmos." target="_blank" rel="noopener" class="spec-action">Consultar →</a>
-        </div>
-        <div class="cat-card spec-row reveal" data-category="brinco" data-price="6350" data-name="Brinco Cascade">
-          <span class="spec-letter">B</span>
-          <span class="spec-name">Brinco Cascade</span>
-          <span class="spec-mat">Ouro 18k · Safira azul</span>
-          <span class="spec-price">R$ 6.350</span>
-          <a href="https://wa.me/5511999990000?text=Interesse%20no%20Brinco%20Cascade." target="_blank" rel="noopener" class="spec-action">Consultar →</a>
-        </div>
-        <div class="cat-card spec-row reveal" data-category="pingente" data-price="7900" data-name="Pingente Stella">
-          <span class="spec-letter">P</span>
-          <span class="spec-name">Pingente Stella</span>
-          <span class="spec-mat">Ouro 18k · Diamante</span>
-          <span class="spec-price">R$ 7.900</span>
-          <a href="https://wa.me/5511999990000?text=Interesse%20no%20Pingente%20Stella." target="_blank" rel="noopener" class="spec-action">Consultar →</a>
-        </div>
-        <div class="cat-card spec-row reveal" data-category="anel" data-price="3200" data-name="Aliança Lattice">
-          <span class="spec-letter">A</span>
-          <span class="spec-name">Aliança Lattice</span>
-          <span class="spec-mat">Ouro 18k · Rubi</span>
-          <span class="spec-price">R$ 3.200</span>
-          <a href="https://wa.me/5511999990000?text=Interesse%20na%20Alian%C3%A7a%20Lattice." target="_blank" rel="noopener" class="spec-action">Consultar →</a>
-        </div>
-        <div class="cat-card spec-row reveal" data-category="pulseira" data-price="1580" data-name="Pulseira Veneziana">
-          <span class="spec-letter">P</span>
-          <span class="spec-name">Pulseira Veneziana</span>
-          <span class="spec-mat">Prata 925 · Elos finos</span>
-          <span class="spec-price">R$ 1.580</span>
-          <a href="https://wa.me/5511999990000?text=Interesse%20na%20Pulseira%20Veneziana." target="_blank" rel="noopener" class="spec-action">Consultar →</a>
+        <p class="shop-installment">ou 12x de R$ 324,17 sem juros</p>
+        <div class="shop-actions">
+          <button class="shop-add" onclick="addToCart(this,'Cordão Cartier',3890)">Adicionar à seleção</button>
+          <a class="shop-wa" href="https://wa.me/5511999990000?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Cord%C3%A3o%20Cartier." target="_blank" rel="noopener" aria-label="Consultar no WhatsApp"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></a>
         </div>
       </div>
-    </div>
-    <p class="no-results f-mono" id="noResults">Nenhuma peça encontrada.</p>
-  </section>
+    </article>
+    <article class="shop-card reveal">
+      <div class="shop-img" data-letter="A">
+        <div class="badge-row">
+          <span class="badge-off">19% OFF</span>
+          <span class="badge-ship">Frete grátis</span>
+        </div>
+        <button class="fav-btn" onclick="toggleFav(this)" aria-label="Favoritar"><i class="ti ti-heart" aria-hidden="true"></i></button>
+      </div>
+      <div class="shop-body">
+        <p class="shop-mat">Prata 925 · Fosco</p>
+        <h3 class="shop-name">Aliança Solstice</h3>
+        <div class="shop-price-row">
+          <span class="shop-price-old">R$ 1.590</span>
+          <span class="shop-price-now">R$ 1.290</span>
+          <span class="shop-price-pix">no Pix</span>
+        </div>
+        <p class="shop-installment">ou 12x de R$ 107,50 sem juros</p>
+        <div class="shop-actions">
+          <button class="shop-add" onclick="addToCart(this,'Aliança Solstice',1290)">Adicionar à seleção</button>
+          <a class="shop-wa" href="https://wa.me/5511999990000?text=Ol%C3%A1!%20Interesse%20na%20Alian%C3%A7a%20Solstice." target="_blank" rel="noopener" aria-label="Consultar no WhatsApp"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </article>
+    <article class="shop-card reveal">
+      <div class="shop-img" data-letter="B">
+        <div class="badge-row">
+          <span class="badge-off">16% OFF</span>
+          <span class="badge-ship">Frete grátis</span>
+        </div>
+        <button class="fav-btn" onclick="toggleFav(this)" aria-label="Favoritar"><i class="ti ti-heart" aria-hidden="true"></i></button>
+      </div>
+      <div class="shop-body">
+        <p class="shop-mat">Ouro 18k · Diamante</p>
+        <h3 class="shop-name">Brinco Étoile</h3>
+        <div class="shop-price-row">
+          <span class="shop-price-old">R$ 6.200</span>
+          <span class="shop-price-now">R$ 5.200</span>
+          <span class="shop-price-pix">no Pix</span>
+        </div>
+        <p class="shop-installment">ou 12x de R$ 433,33 sem juros</p>
+        <div class="shop-actions">
+          <button class="shop-add" onclick="addToCart(this,'Brinco Étoile',5200)">Adicionar à seleção</button>
+          <a class="shop-wa" href="https://wa.me/5511999990000?text=Ol%C3%A1!%20Interesse%20no%20Brinco%20%C3%89toile." target="_blank" rel="noopener" aria-label="Consultar no WhatsApp"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </article>
+    <article class="shop-card reveal">
+      <div class="shop-img" data-letter="P">
+        <div class="badge-row">
+          <span class="badge-off">16% OFF</span>
+          <span class="badge-ship">Frete grátis</span>
+        </div>
+        <button class="fav-btn" onclick="toggleFav(this)" aria-label="Favoritar"><i class="ti ti-heart" aria-hidden="true"></i></button>
+      </div>
+      <div class="shop-body">
+        <p class="shop-mat">Ouro 18k · Fecho reforçado</p>
+        <h3 class="shop-name">Pulseira Elo Cubano</h3>
+        <div class="shop-price-row">
+          <span class="shop-price-old">R$ 3.180</span>
+          <span class="shop-price-now">R$ 2.680</span>
+          <span class="shop-price-pix">no Pix</span>
+        </div>
+        <p class="shop-installment">ou 12x de R$ 223,33 sem juros</p>
+        <div class="shop-actions">
+          <button class="shop-add" onclick="addToCart(this,'Pulseira Elo Cubano',2680)">Adicionar à seleção</button>
+          <a class="shop-wa" href="https://wa.me/5511999990000?text=Ol%C3%A1!%20Interesse%20na%20Pulseira%20Elo%20Cubano." target="_blank" rel="noopener" aria-label="Consultar no WhatsApp"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </article>
+    <article class="shop-card reveal">
+      <div class="shop-img" data-letter="P">
+        <div class="badge-row">
+          <span class="badge-off">16% OFF</span>
+          <span class="badge-ship">Frete grátis</span>
+        </div>
+        <button class="fav-btn" onclick="toggleFav(this)" aria-label="Favoritar"><i class="ti ti-heart" aria-hidden="true"></i></button>
+      </div>
+      <div class="shop-body">
+        <p class="shop-mat">Prata 925 · Elos finos</p>
+        <h3 class="shop-name">Pulseira Veneziana</h3>
+        <div class="shop-price-row">
+          <span class="shop-price-old">R$ 1.890</span>
+          <span class="shop-price-now">R$ 1.580</span>
+          <span class="shop-price-pix">no Pix</span>
+        </div>
+        <p class="shop-installment">ou 12x de R$ 131,67 sem juros</p>
+        <div class="shop-actions">
+          <button class="shop-add" onclick="addToCart(this,'Pulseira Veneziana',1580)">Adicionar à seleção</button>
+          <a class="shop-wa" href="https://wa.me/5511999990000?text=Ol%C3%A1!%20Interesse%20na%20Pulseira%20Veneziana." target="_blank" rel="noopener" aria-label="Consultar no WhatsApp"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
 
-  <!-- ABOUT -->
-  <section class="section section-dark" id="sobre" aria-labelledby="about-h">
-    <div class="about-grid">
-      <div class="about-num reveal" aria-hidden="true">06+</div>
-      <div class="about-text reveal">
-        <p class="tag">03 — Nossa história</p>
-        <h2 class="section-h" style="margin-bottom:1.5rem">Arte que atravessa <em>gerações</em></h2>
-        <p>Fundada em 2018, a Bon Vivant Joias nasceu da paixão por transformar metais nobres em peças que contam histórias — do cordão do dia a dia à aliança de uma vida inteira.</p>
-        <p>Cada peça é criada com técnicas ancestrais de ourivesaria, combinadas com acabamento contemporâneo, para quem valoriza o que é único.</p>
-        <div class="about-stats">
-          <div class="stat">
-            <div class="stat-n">500+</div>
-            <div class="stat-l">Peças criadas</div>
-          </div>
-          <div class="stat">
-            <div class="stat-n">6+</div>
-            <div class="stat-l">Anos de experiência</div>
-          </div>
-          <div class="stat">
-            <div class="stat-n">98%</div>
-            <div class="stat-l">Satisfação</div>
-          </div>
+<!-- ABOUT STRIP -->
+<section class="section" style="padding-top:3rem;padding-bottom:3rem">
+  <div class="about-strip">
+    <div class="about-item"><i class="ti ti-truck" aria-hidden="true"></i><h4>Frete grátis</h4><p>Acima de R$ 500, para todo o Brasil</p></div>
+    <div class="about-item"><i class="ti ti-credit-card" aria-hidden="true"></i><h4>12x sem juros</h4><p>No cartão, ou 5% off no Pix</p></div>
+    <div class="about-item"><i class="ti ti-certificate" aria-hidden="true"></i><h4>Garantia vitalícia</h4><p>Contra defeitos de fabricação</p></div>
+    <div class="about-item"><i class="ti ti-headset" aria-hidden="true"></i><h4>Consultoria gratuita</h4><p>Atendimento personalizado</p></div>
+  </div>
+</section>
+
+<!-- OFERTAS / CATÁLOGO -->
+<section class="section section-alt" id="catalogo">
+  <div class="section-title">
+    <h2>Ofertas da semana</h2>
+  </div>
+  <div class="catalog-controls">
+    <button class="filter-btn active" data-filter="todos" onclick="filterCatalog(this,'todos')">Todos</button>
+    <button class="filter-btn" data-filter="cordao" onclick="filterCatalog(this,'cordao')">Cordões</button>
+    <button class="filter-btn" data-filter="anel" onclick="filterCatalog(this,'anel')">Alianças</button>
+    <button class="filter-btn" data-filter="brinco" onclick="filterCatalog(this,'brinco')">Brincos</button>
+    <button class="filter-btn" data-filter="pulseira" onclick="filterCatalog(this,'pulseira')">Pulseiras</button>
+    <button class="filter-btn" data-filter="pingente" onclick="filterCatalog(this,'pingente')">Pingentes</button>
+    <select class="sort-select" onchange="sortCatalog(this.value)" aria-label="Ordenar por">
+      <option value="">Ordenar</option>
+      <option value="price-asc">Menor preço</option>
+      <option value="price-desc">Maior preço</option>
+      <option value="name">Nome A–Z</option>
+    </select>
+  </div>
+  <div class="shop-grid" id="catalogGrid">
+    <article class="cat-card shop-card reveal" data-category="cordao" data-price="4100" data-name="Cordão Grumet">
+      <div class="shop-img" data-letter="C">
+        <div class="badge-row"><span class="badge-off">16% OFF</span><span class="badge-ship">Frete grátis</span></div>
+        <button class="fav-btn" onclick="toggleFav(this)" aria-label="Favoritar"><i class="ti ti-heart" aria-hidden="true"></i></button>
+      </div>
+      <div class="shop-body">
+        <p class="shop-mat">Ouro 18k · Elo grumet</p>
+        <h3 class="shop-name">Cordão Grumet</h3>
+        <div class="shop-price-row"><span class="shop-price-old">R$ 4.890</span><span class="shop-price-now">R$ 4.100</span><span class="shop-price-pix">no Pix</span></div>
+        <p class="shop-installment">ou 12x de R$ 341,67 sem juros</p>
+        <div class="shop-actions">
+          <button class="shop-add" onclick="addToCart(this,'Cordão Grumet',4100)">Adicionar à seleção</button>
+          <a class="shop-wa" href="https://wa.me/5511999990000?text=Interesse%20no%20Cord%C3%A3o%20Grumet." target="_blank" rel="noopener" aria-label="Consultar no WhatsApp"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></a>
         </div>
       </div>
-    </div>
-  </section>
+    </article>
+    <article class="cat-card shop-card reveal" data-category="anel" data-price="890" data-name="Aliança Cosmos">
+      <div class="shop-img" data-letter="A">
+        <div class="badge-row"><span class="badge-off">18% OFF</span><span class="badge-ship">Frete grátis</span></div>
+        <button class="fav-btn" onclick="toggleFav(this)" aria-label="Favoritar"><i class="ti ti-heart" aria-hidden="true"></i></button>
+      </div>
+      <div class="shop-body">
+        <p class="shop-mat">Prata 925 · Zircônia</p>
+        <h3 class="shop-name">Aliança Cosmos</h3>
+        <div class="shop-price-row"><span class="shop-price-old">R$ 1.090</span><span class="shop-price-now">R$ 890</span><span class="shop-price-pix">no Pix</span></div>
+        <p class="shop-installment">ou 12x de R$ 74,17 sem juros</p>
+        <div class="shop-actions">
+          <button class="shop-add" onclick="addToCart(this,'Aliança Cosmos',890)">Adicionar à seleção</button>
+          <a class="shop-wa" href="https://wa.me/5511999990000?text=Interesse%20na%20Alian%C3%A7a%20Cosmos." target="_blank" rel="noopener" aria-label="Consultar no WhatsApp"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </article>
+    <article class="cat-card shop-card reveal" data-category="brinco" data-price="6350" data-name="Brinco Cascade">
+      <div class="shop-img" data-letter="B">
+        <div class="badge-row"><span class="badge-off">15% OFF</span><span class="badge-ship">Frete grátis</span></div>
+        <button class="fav-btn" onclick="toggleFav(this)" aria-label="Favoritar"><i class="ti ti-heart" aria-hidden="true"></i></button>
+      </div>
+      <div class="shop-body">
+        <p class="shop-mat">Ouro 18k · Safira azul</p>
+        <h3 class="shop-name">Brinco Cascade</h3>
+        <div class="shop-price-row"><span class="shop-price-old">R$ 7.490</span><span class="shop-price-now">R$ 6.350</span><span class="shop-price-pix">no Pix</span></div>
+        <p class="shop-installment">ou 12x de R$ 529,17 sem juros</p>
+        <div class="shop-actions">
+          <button class="shop-add" onclick="addToCart(this,'Brinco Cascade',6350)">Adicionar à seleção</button>
+          <a class="shop-wa" href="https://wa.me/5511999990000?text=Interesse%20no%20Brinco%20Cascade." target="_blank" rel="noopener" aria-label="Consultar no WhatsApp"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </article>
+    <article class="cat-card shop-card reveal" data-category="pingente" data-price="7900" data-name="Pingente Stella">
+      <div class="shop-img" data-letter="P">
+        <div class="badge-row"><span class="badge-off">14% OFF</span><span class="badge-ship">Frete grátis</span></div>
+        <button class="fav-btn" onclick="toggleFav(this)" aria-label="Favoritar"><i class="ti ti-heart" aria-hidden="true"></i></button>
+      </div>
+      <div class="shop-body">
+        <p class="shop-mat">Ouro 18k · Diamante</p>
+        <h3 class="shop-name">Pingente Stella</h3>
+        <div class="shop-price-row"><span class="shop-price-old">R$ 9.200</span><span class="shop-price-now">R$ 7.900</span><span class="shop-price-pix">no Pix</span></div>
+        <p class="shop-installment">ou 12x de R$ 658,33 sem juros</p>
+        <div class="shop-actions">
+          <button class="shop-add" onclick="addToCart(this,'Pingente Stella',7900)">Adicionar à seleção</button>
+          <a class="shop-wa" href="https://wa.me/5511999990000?text=Interesse%20no%20Pingente%20Stella." target="_blank" rel="noopener" aria-label="Consultar no WhatsApp"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </article>
+    <article class="cat-card shop-card reveal" data-category="anel" data-price="3200" data-name="Aliança Lattice">
+      <div class="shop-img" data-letter="A">
+        <div class="badge-row"><span class="badge-off">16% OFF</span><span class="badge-ship">Frete grátis</span></div>
+        <button class="fav-btn" onclick="toggleFav(this)" aria-label="Favoritar"><i class="ti ti-heart" aria-hidden="true"></i></button>
+      </div>
+      <div class="shop-body">
+        <p class="shop-mat">Ouro 18k · Rubi</p>
+        <h3 class="shop-name">Aliança Lattice</h3>
+        <div class="shop-price-row"><span class="shop-price-old">R$ 3.790</span><span class="shop-price-now">R$ 3.200</span><span class="shop-price-pix">no Pix</span></div>
+        <p class="shop-installment">ou 12x de R$ 266,67 sem juros</p>
+        <div class="shop-actions">
+          <button class="shop-add" onclick="addToCart(this,'Aliança Lattice',3200)">Adicionar à seleção</button>
+          <a class="shop-wa" href="https://wa.me/5511999990000?text=Interesse%20na%20Alian%C3%A7a%20Lattice." target="_blank" rel="noopener" aria-label="Consultar no WhatsApp"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </article>
+    <article class="cat-card shop-card reveal" data-category="brinco" data-price="690" data-name="Brinco Argola">
+      <div class="shop-img" data-letter="B">
+        <div class="badge-row"><span class="badge-off">16% OFF</span><span class="badge-ship">Frete grátis</span></div>
+        <button class="fav-btn" onclick="toggleFav(this)" aria-label="Favoritar"><i class="ti ti-heart" aria-hidden="true"></i></button>
+      </div>
+      <div class="shop-body">
+        <p class="shop-mat">Prata 925 · Argola lisa</p>
+        <h3 class="shop-name">Brinco Argola</h3>
+        <div class="shop-price-row"><span class="shop-price-old">R$ 820</span><span class="shop-price-now">R$ 690</span><span class="shop-price-pix">no Pix</span></div>
+        <p class="shop-installment">ou 12x de R$ 57,50 sem juros</p>
+        <div class="shop-actions">
+          <button class="shop-add" onclick="addToCart(this,'Brinco Argola',690)">Adicionar à seleção</button>
+          <a class="shop-wa" href="https://wa.me/5511999990000?text=Interesse%20no%20Brinco%20Argola." target="_blank" rel="noopener" aria-label="Consultar no WhatsApp"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </article>
+  </div>
+  <p class="no-results" id="noResults">Nenhuma peça encontrada.</p>
+</section>
 
-  <!-- PROCESSO -->
-  <section class="section section-deep" id="processo" aria-labelledby="proc-h">
-    <div class="section-head reveal">
-      <div>
-        <p class="tag">04 — Como trabalhamos</p>
-        <h2 class="section-h" id="proc-h">Do desenho à <em>entrega</em></h2>
+<!-- TESTIMONIALS -->
+<section class="section" id="depoimentos">
+  <div class="section-title">
+    <h2>O que dizem sobre nós</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"O Cordão Cartier superou todas as minhas expectativas. Qualidade impecável e atendimento incrível."</p>
+      <div class="testi-who">
+        <span class="testi-avatar">A</span>
+        <div><p class="testi-name">Ana Beatriz M.</p><p class="testi-prod">Cordão Cartier</p></div>
       </div>
     </div>
-    <div class="processo-grid" id="processoGrid">
-      <div class="processo-line" aria-hidden="true"><div class="processo-fill" id="processoFill"></div></div>
-      <div class="pstep reveal" id="ps1">
-        <p class="pstep-num">01</p>
-        <div class="pstep-dot" aria-hidden="true"></div>
-        <h3 class="pstep-title">Consultoria</h3>
-        <p class="pstep-desc">Entendemos seu estilo, ocasião e orçamento em uma conversa sem compromisso.</p>
-      </div>
-      <div class="pstep reveal" id="ps2">
-        <p class="pstep-num">02</p>
-        <div class="pstep-dot" aria-hidden="true"></div>
-        <h3 class="pstep-title">Design</h3>
-        <p class="pstep-desc">Nossos ourives criam o esboço da peça e apresentamos para sua aprovação.</p>
-      </div>
-      <div class="pstep reveal" id="ps3">
-        <p class="pstep-num">03</p>
-        <div class="pstep-dot" aria-hidden="true"></div>
-        <h3 class="pstep-title">Criação</h3>
-        <p class="pstep-desc">A peça é manufaturada com materiais certificados e técnica artesanal.</p>
-      </div>
-      <div class="pstep reveal" id="ps4">
-        <p class="pstep-num">04</p>
-        <div class="pstep-dot" aria-hidden="true"></div>
-        <h3 class="pstep-title">Entrega</h3>
-        <p class="pstep-desc">Enviamos em embalagem premium com certificado de autenticidade e garantia.</p>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Presenteei minha esposa com o Brinco Étoile. Ela chora de emoção cada vez que usa."</p>
+      <div class="testi-who">
+        <span class="testi-avatar">C</span>
+        <div><p class="testi-name">Carlos H. S.</p><p class="testi-prod">Brinco Étoile</p></div>
       </div>
     </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="section section-dark" aria-labelledby="test-h">
-    <div class="section-head reveal">
-      <div>
-        <p class="tag">05 — Depoimentos</p>
-        <h2 class="section-h" id="test-h">O que dizem <em>sobre nós</em></h2>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Peça sob encomenda entregue no prazo. O acabamento é digno de joalheria europeia."</p>
+      <div class="testi-who">
+        <span class="testi-avatar">F</span>
+        <div><p class="testi-name">Fernanda L.</p><p class="testi-prod">Aliança personalizada</p></div>
       </div>
     </div>
-    <div class="testi-featured reveal">
-      <p>"O Cordão Cartier superou todas as minhas expectativas. Qualidade impecável e atendimento incrível."</p>
-      <p class="who">Ana Beatriz M. — Cordão Cartier, Ouro 18k</p>
-    </div>
-  </section>
-  <div class="testi-strip" aria-hidden="true">
-    <div class="marquee-track">
-      <div class="testi-chip">★★★★★ <strong>Carlos H.</strong> — "Ela chora de emoção cada vez que usa o Brinco Étoile."</div>
-      <div class="testi-chip">★★★★★ <strong>Fernanda L.</strong> — "Acabamento digno de joalheria europeia."</div>
-      <div class="testi-chip">★★★★★ <strong>Marcos P.</strong> — "Entrega no prazo e embalagem impecável."</div>
-      <div class="testi-chip">★★★★★ <strong>Juliana R.</strong> — "Consultoria atenciosa do início ao fim."</div>
-      <div class="testi-chip">★★★★★ <strong>Carlos H.</strong> — "Ela chora de emoção cada vez que usa o Brinco Étoile."</div>
-      <div class="testi-chip">★★★★★ <strong>Fernanda L.</strong> — "Acabamento digno de joalheria europeia."</div>
-      <div class="testi-chip">★★★★★ <strong>Marcos P.</strong> — "Entrega no prazo e embalagem impecável."</div>
-      <div class="testi-chip">★★★★★ <strong>Juliana R.</strong> — "Consultoria atenciosa do início ao fim."</div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Comprei pelo Pix e ainda ganhei desconto. Entrega rápida e embalagem linda."</p>
+      <div class="testi-who">
+        <span class="testi-avatar">M</span>
+        <div><p class="testi-name">Marcos P.</p><p class="testi-prod">Pulseira Elo Cubano</p></div>
+      </div>
     </div>
   </div>
+</section>
 
-  <!-- NEWSLETTER -->
-  <div class="section section-deep newsletter reveal">
-    <p class="tag" style="justify-content:center;display:flex;margin-bottom:1rem">Lista VIP</p>
-    <h2 class="f-display">Acesso antecipado às <em style="font-style:italic;color:var(--gold)">novidades</em></h2>
-    <p>Receba lançamentos exclusivos, descontos e convites para eventos antes de todo mundo.</p>
-    <div class="nl-form">
-      <input class="nl-input" type="email" id="nl-email" placeholder="seu@email.com" aria-label="Seu e-mail"/>
-      <button class="nl-btn" onclick="subscribeNewsletter()">Entrar →</button>
+<!-- FAQ -->
+<section class="section section-alt" id="faq">
+  <div class="section-title" style="justify-content:center;text-align:center;flex-direction:column;align-items:center">
+    <h2>Perguntas frequentes</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Vocês fazem peças sob encomenda? <i class="ti ti-plus" aria-hidden="true"></i></button>
+      <p class="faq-a">Sim! Esse é um dos nossos serviços mais especiais. Entre em contato pelo WhatsApp ou preencha o formulário de consultoria para começarmos.</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Qual a garantia das peças? <i class="ti ti-plus" aria-hidden="true"></i></button>
+      <p class="faq-a">Todas as nossas peças têm garantia vitalícia contra defeitos de fabricação e manutenção gratuita por 1 ano.</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Como funciona o parcelamento? <i class="ti ti-plus" aria-hidden="true"></i></button>
+      <p class="faq-a">Parcelamos em até 12× sem juros no cartão de crédito. Pagamentos via Pix têm 5% de desconto.</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Vocês fazem entrega para todo o Brasil? <i class="ti ti-plus" aria-hidden="true"></i></button>
+      <p class="faq-a">Sim, enviamos para todo o Brasil com frete grátis acima de R$ 500, com seguro e embalagem anti-impacto.</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">As pedras preciosas são naturais? <i class="ti ti-plus" aria-hidden="true"></i></button>
+      <p class="faq-a">Sim, trabalhamos exclusivamente com pedras naturais certificadas. Cada peça vem com laudo de autenticidade.</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Qual o prazo para peças sob encomenda? <i class="ti ti-plus" aria-hidden="true"></i></button>
+      <p class="faq-a">Em média 15 a 30 dias úteis, dependendo da complexidade da peça. Informamos o prazo exato na consultoria.</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Como cuido das minhas joias? <i class="ti ti-plus" aria-hidden="true"></i></button>
+      <p class="faq-a">Evite contato com produtos químicos, perfumes e cloreto. Guarde em local seco, de preferência na caixinha original.</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Posso visitar o ateliê? <i class="ti ti-plus" aria-hidden="true"></i></button>
+      <p class="faq-a">Sim, com agendamento prévio. Nosso ateliê fica em São Paulo. Entre em contato para marcar sua visita.</p>
     </div>
   </div>
+</section>
 
-  <!-- CONTACT STRIP -->
-  <div class="section section-dark" style="padding-top:4rem;padding-bottom:4rem">
-    <div class="contact-grid">
-      <div class="contact-item">
-        <i class="ti ti-map-pin contact-icon" aria-hidden="true"></i>
-        <div>
-          <p class="contact-label">Localização</p>
-          <p class="contact-val">São Paulo · SP</p>
-        </div>
+<!-- CALCULATOR -->
+<section class="section" id="calculadora">
+  <div class="section-title" style="justify-content:center;text-align:center;flex-direction:column;align-items:center">
+    <h2>Simule seu orçamento</h2>
+  </div>
+  <div class="calc-box">
+    <div class="calc-section">
+      <p class="calc-label">Tipo de joia</p>
+      <div class="calc-opts">
+        <button class="calc-opt active" data-group="tipo" data-base="800" onclick="calcSelect(this)">Aliança</button>
+        <button class="calc-opt" data-group="tipo" data-base="1200" onclick="calcSelect(this)">Cordão</button>
+        <button class="calc-opt" data-group="tipo" data-base="600" onclick="calcSelect(this)">Brinco</button>
+        <button class="calc-opt" data-group="tipo" data-base="900" onclick="calcSelect(this)">Pulseira</button>
+        <button class="calc-opt" data-group="tipo" data-base="500" onclick="calcSelect(this)">Pingente</button>
       </div>
-      <div class="contact-item">
-        <i class="ti ti-brand-whatsapp contact-icon" aria-hidden="true"></i>
-        <div>
-          <p class="contact-label">WhatsApp</p>
-          <p class="contact-val">(11) 99999-0000</p>
-        </div>
+    </div>
+    <div class="calc-section">
+      <p class="calc-label">Material</p>
+      <div class="calc-opts">
+        <button class="calc-opt active" data-group="material" data-mult="1.0" onclick="calcSelect(this)">Prata 925</button>
+        <button class="calc-opt" data-group="material" data-mult="2.5" onclick="calcSelect(this)">Ouro 18k</button>
+        <button class="calc-opt" data-group="material" data-mult="3.8" onclick="calcSelect(this)">Ouro 24k</button>
       </div>
-      <div class="contact-item">
-        <i class="ti ti-mail contact-icon" aria-hidden="true"></i>
-        <div>
-          <p class="contact-label">E-mail</p>
-          <p class="contact-val">contato@bonvivant.com.br</p>
-        </div>
+    </div>
+    <div class="calc-section">
+      <p class="calc-label">Pedra principal</p>
+      <div class="calc-opts">
+        <button class="calc-opt active" data-group="pedra" data-add="0" onclick="calcSelect(this)">Sem pedra</button>
+        <button class="calc-opt" data-group="pedra" data-add="300" onclick="calcSelect(this)">Zircônia</button>
+        <button class="calc-opt" data-group="pedra" data-add="800" onclick="calcSelect(this)">Safira</button>
+        <button class="calc-opt" data-group="pedra" data-add="1200" onclick="calcSelect(this)">Esmeralda</button>
+        <button class="calc-opt" data-group="pedra" data-add="1800" onclick="calcSelect(this)">Rubi</button>
+        <button class="calc-opt" data-group="pedra" data-add="2500" onclick="calcSelect(this)">Diamante</button>
       </div>
-      <div class="contact-item">
-        <i class="ti ti-clock contact-icon" aria-hidden="true"></i>
-        <div>
-          <p class="contact-label">Horário</p>
-          <p class="contact-val">Seg–Sex · 9h às 18h</p>
-        </div>
+    </div>
+    <div class="calc-section">
+      <p class="calc-label">Serviços adicionais</p>
+      <div class="calc-opts">
+        <button class="calc-opt-check calc-opt" data-add="200" onclick="calcToggle(this)">Gravação</button>
+        <button class="calc-opt-check calc-opt" data-add="350" onclick="calcToggle(this)">Banho ouro</button>
+        <button class="calc-opt-check calc-opt" data-add="400" onclick="calcToggle(this)">Caixa premium</button>
+        <button class="calc-opt-check calc-opt" data-add="150" onclick="calcToggle(this)">Certificado GIA</button>
+      </div>
+    </div>
+    <div class="calc-result">
+      <p class="calc-result-val" id="calcResult">R$ 800</p>
+      <p class="calc-result-note" id="calcParcel">ou 12× de R$ 66,67 · Pix: R$ 760</p>
+      <div id="calcNote">
+        <a class="calc-wa" id="calcWaba" href="https://wa.me/5511999990000" target="_blank" rel="noopener">
+          <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Confirmar orçamento
+        </a>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- FAQ — bloco claro -->
-  <section class="section section-light" id="faq" aria-labelledby="faq-h">
-    <div class="section-head reveal">
-      <div>
-        <p class="tag">06 — Dúvidas</p>
-        <h2 class="section-h" id="faq-h">Perguntas <em>frequentes</em></h2>
+<!-- CONSULT FORM -->
+<section class="section section-alt" id="consultoria">
+  <div class="section-title" style="justify-content:center;text-align:center;flex-direction:column;align-items:center">
+    <h2>Vamos criar algo especial?</h2>
+  </div>
+  <div class="consult-box">
+    <form id="consultForm" novalidate>
+      <div class="step-header">
+        <span class="step-label-txt" id="stepLabel">Passo 1 de 3 — Interesse</span>
+        <span class="step-pct-txt" id="stepPct">33%</span>
       </div>
-    </div>
-    <div class="faq-list reveal">
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Vocês fazem peças sob encomenda? <i class="ti ti-plus" aria-hidden="true"></i></button>
-        <p class="faq-a">Sim! Esse é um dos nossos serviços mais especiais. Entre em contato pelo WhatsApp ou preencha o formulário de consultoria para começarmos.</p>
+      <div class="step-bar-bg"><div class="step-bar-fill" id="stepBar"></div></div>
+      <div class="step-dots">
+        <button type="button" class="step-dot active" data-step="1" aria-label="Passo 1"></button>
+        <button type="button" class="step-dot" data-step="2" aria-label="Passo 2"></button>
+        <button type="button" class="step-dot" data-step="3" aria-label="Passo 3"></button>
       </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Qual a garantia das peças? <i class="ti ti-plus" aria-hidden="true"></i></button>
-        <p class="faq-a">Todas as nossas peças têm garantia vitalícia contra defeitos de fabricação e manutenção gratuita por 1 ano.</p>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Como funciona o parcelamento? <i class="ti ti-plus" aria-hidden="true"></i></button>
-        <p class="faq-a">Parcelamos em até 12× sem juros no cartão de crédito. Pagamentos via Pix têm 5% de desconto.</p>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Vocês fazem entrega para todo o Brasil? <i class="ti ti-plus" aria-hidden="true"></i></button>
-        <p class="faq-a">Sim, enviamos para todo o Brasil com frete grátis via Sedex, com seguro e embalagem anti-impacto.</p>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">As pedras preciosas são naturais? <i class="ti ti-plus" aria-hidden="true"></i></button>
-        <p class="faq-a">Sim, trabalhamos exclusivamente com pedras naturais certificadas. Cada peça vem com laudo de autenticidade.</p>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Qual o prazo para peças sob encomenda? <i class="ti ti-plus" aria-hidden="true"></i></button>
-        <p class="faq-a">Em média 15 a 30 dias úteis, dependendo da complexidade da peça. Informamos o prazo exato na consultoria.</p>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Como cuido das minhas joias? <i class="ti ti-plus" aria-hidden="true"></i></button>
-        <p class="faq-a">Evite contato com produtos químicos, perfumes e cloreto. Guarde em local seco, de preferência na caixinha original. Trazemos de volta ao brilho original gratuitamente.</p>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Posso visitar o ateliê? <i class="ti ti-plus" aria-hidden="true"></i></button>
-        <p class="faq-a">Sim, com agendamento prévio. Nosso ateliê fica em São Paulo. Entre em contato para marcar sua visita.</p>
-      </div>
-    </div>
-  </section>
 
-  <!-- CALCULATOR -->
-  <section class="section section-dark" id="calculadora" aria-labelledby="calc-h">
-    <div class="section-head reveal">
-      <div>
-        <p class="tag">07 — Calculadora</p>
-        <h2 class="section-h" id="calc-h">Simule seu <em>orçamento</em></h2>
-      </div>
-      <p class="section-sub">Selecione as características desejadas e veja uma estimativa instantânea.</p>
-    </div>
-    <div class="calc-box reveal">
-      <div class="calc-section">
-        <p class="calc-label">Tipo de joia</p>
-        <div class="calc-opts">
-          <button class="calc-opt active" data-group="tipo" data-base="800" onclick="calcSelect(this)">Aliança</button>
-          <button class="calc-opt" data-group="tipo" data-base="1200" onclick="calcSelect(this)">Cordão</button>
-          <button class="calc-opt" data-group="tipo" data-base="600" onclick="calcSelect(this)">Brinco</button>
-          <button class="calc-opt" data-group="tipo" data-base="900" onclick="calcSelect(this)">Pulseira</button>
-          <button class="calc-opt" data-group="tipo" data-base="500" onclick="calcSelect(this)">Pingente</button>
+      <div class="step-panel active" id="step1">
+        <div class="form-group">
+          <label class="form-label">O que você procura?</label>
+          <div class="interest-grid">
+            <label class="interest-card"><input type="checkbox" name="interest" value="anel"/><i class="ti ti-circle" aria-hidden="true"></i><span>Aliança</span></label>
+            <label class="interest-card"><input type="checkbox" name="interest" value="cordao"/><i class="ti ti-diamond" aria-hidden="true"></i><span>Cordão</span></label>
+            <label class="interest-card"><input type="checkbox" name="interest" value="brinco"/><i class="ti ti-star" aria-hidden="true"></i><span>Brinco</span></label>
+            <label class="interest-card"><input type="checkbox" name="interest" value="pulseira"/><i class="ti ti-link" aria-hidden="true"></i><span>Pulseira</span></label>
+            <label class="interest-card"><input type="checkbox" name="interest" value="presente"/><i class="ti ti-gift" aria-hidden="true"></i><span>Presente</span></label>
+            <label class="interest-card"><input type="checkbox" name="interest" value="encomenda"/><i class="ti ti-pencil" aria-hidden="true"></i><span>Sob encomenda</span></label>
+          </div>
+          <p class="err-msg" id="err-interest">Selecione pelo menos uma opção.</p>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="orcamento">Faixa de orçamento</label>
+          <select class="form-select" id="orcamento" name="orcamento">
+            <option value="">Selecione…</option>
+            <option value="ate1k">Até R$ 1.000</option>
+            <option value="1k3k">R$ 1.000 – R$ 3.000</option>
+            <option value="3k8k">R$ 3.000 – R$ 8.000</option>
+            <option value="acima8k">Acima de R$ 8.000</option>
+          </select>
+          <p class="err-msg" id="err-orcamento">Selecione sua faixa de orçamento.</p>
+        </div>
+        <div class="form-nav" style="justify-content:flex-end">
+          <button type="button" class="btn-step-next" onclick="goStep(2)">Continuar →</button>
         </div>
       </div>
-      <div class="calc-section">
-        <p class="calc-label">Material</p>
-        <div class="calc-opts">
-          <button class="calc-opt active" data-group="material" data-mult="1.0" onclick="calcSelect(this)">Prata 925</button>
-          <button class="calc-opt" data-group="material" data-mult="2.5" onclick="calcSelect(this)">Ouro 18k</button>
-          <button class="calc-opt" data-group="material" data-mult="3.8" onclick="calcSelect(this)">Ouro 24k</button>
+
+      <div class="step-panel" id="step2">
+        <div class="form-group">
+          <label class="form-label" for="nome">Nome completo</label>
+          <input class="form-input" type="text" id="nome" name="nome" placeholder="Seu nome" autocomplete="name"/>
+          <p class="err-msg" id="err-nome">Informe seu nome.</p>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="telefone">WhatsApp</label>
+          <input class="form-input" type="tel" id="telefone" name="telefone" placeholder="(11) 99999-0000" autocomplete="tel" oninput="maskPhone(this)"/>
+          <p class="err-msg" id="err-telefone">Informe um número válido.</p>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="email2">E-mail</label>
+          <input class="form-input" type="email" id="email2" name="email2" placeholder="seu@email.com" autocomplete="email"/>
+          <p class="err-msg" id="err-email2">Informe um e-mail válido.</p>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="mensagem">Mensagem (opcional)</label>
+          <textarea class="form-textarea" id="mensagem" name="mensagem" placeholder="Detalhes adicionais…"></textarea>
+        </div>
+        <div class="form-nav">
+          <button type="button" class="btn-step-back" onclick="goStep(1)">← Voltar</button>
+          <button type="button" class="btn-step-next" onclick="goStep(3)">Revisar →</button>
         </div>
       </div>
-      <div class="calc-section">
-        <p class="calc-label">Pedra principal</p>
-        <div class="calc-opts">
-          <button class="calc-opt active" data-group="pedra" data-add="0" onclick="calcSelect(this)">Sem pedra</button>
-          <button class="calc-opt" data-group="pedra" data-add="300" onclick="calcSelect(this)">Zircônia</button>
-          <button class="calc-opt" data-group="pedra" data-add="800" onclick="calcSelect(this)">Safira</button>
-          <button class="calc-opt" data-group="pedra" data-add="1200" onclick="calcSelect(this)">Esmeralda</button>
-          <button class="calc-opt" data-group="pedra" data-add="1800" onclick="calcSelect(this)">Rubi</button>
-          <button class="calc-opt" data-group="pedra" data-add="2500" onclick="calcSelect(this)">Diamante</button>
+
+      <div class="step-panel" id="step3">
+        <div class="summary-box" id="summaryContent"></div>
+        <div class="form-group">
+          <div class="lgpd-row">
+            <input type="checkbox" id="lgpdCheck" name="lgpdCheck"/>
+            <label for="lgpdCheck">Concordo com o tratamento dos meus dados para fins de atendimento, conforme a LGPD.</label>
+          </div>
+          <p class="err-msg" id="err-lgpd">Aceite os termos para continuar.</p>
+        </div>
+        <button type="button" class="submit-btn" id="submitBtn" onclick="submitForm()">
+          <span id="submitText" style="display:inline-flex;align-items:center;gap:.5rem"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Enviar pelo WhatsApp</span>
+          <span id="submitLoading" style="display:none;align-items:center;gap:.5rem"><i class="ti ti-loader-2" style="animation:spin .8s linear infinite" aria-hidden="true"></i> Enviando…</span>
+        </button>
+        <div class="form-nav" style="justify-content:flex-start;margin-top:1rem">
+          <button type="button" class="btn-step-back" onclick="goStep(2)">← Voltar</button>
         </div>
       </div>
-      <div class="calc-section">
-        <p class="calc-label">Serviços adicionais</p>
-        <div class="calc-opts">
-          <button class="calc-opt-check calc-opt" data-add="200" onclick="calcToggle(this)">Gravação</button>
-          <button class="calc-opt-check calc-opt" data-add="350" onclick="calcToggle(this)">Banho ouro</button>
-          <button class="calc-opt-check calc-opt" data-add="400" onclick="calcToggle(this)">Caixa premium</button>
-          <button class="calc-opt-check calc-opt" data-add="150" onclick="calcToggle(this)">Certificado GIA</button>
-        </div>
+
+      <div class="step-panel step-success" id="stepSuccess">
+        <i class="ti ti-circle-check" aria-hidden="true"></i>
+        <h3>Solicitação enviada!</h3>
+        <p>Você será redirecionado(a) ao WhatsApp. Responderemos em breve.</p>
+        <button type="button" onclick="resetForm()">Nova consulta</button>
       </div>
-      <div class="calc-result">
-        <div>
-          <p class="calc-result-val" id="calcResult">R$ 800</p>
-          <p class="calc-result-note" id="calcParcel">ou 12× de R$ 66,67 · Pix: R$ 760</p>
-        </div>
-        <div id="calcNote">
-          <a class="calc-wa" id="calcWaba" href="https://wa.me/5511999990000" target="_blank" rel="noopener">
-            <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Confirmar orçamento
-          </a>
-        </div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <p class="footer-brand">Bon Vivant <em>Joias</em></p>
+      <p class="footer-desc">Cordões, brincos e pulseiras em ouro e prata, feitos à mão com paixão e técnica artesanal.</p>
+      <div class="footer-payments">
+        <span>PIX</span><span>VISA</span><span>MASTER</span><span>ELO</span><span>BOLETO</span>
       </div>
     </div>
-  </section>
-
-  <!-- CONSULTATION FORM -->
-  <section class="section section-deep" id="consultoria" aria-labelledby="consult-h">
-    <div class="consult-grid">
-      <div class="reveal">
-        <p class="tag">08 — Consultoria gratuita</p>
-        <h2 class="section-h" id="consult-h" style="margin-bottom:1.25rem">Vamos criar algo <em>especial</em>?</h2>
-        <p class="section-sub">Preencha o formulário e entraremos em contato pelo WhatsApp em até 1 dia útil.</p>
-      </div>
-      <div class="consult-box reveal">
-        <form id="consultForm" novalidate>
-          <div class="step-header">
-            <span class="step-label-txt" id="stepLabel">Passo 1 de 3 — Interesse</span>
-            <span class="step-pct-txt" id="stepPct">33%</span>
-          </div>
-          <div class="step-bar-bg"><div class="step-bar-fill" id="stepBar"></div></div>
-          <div class="step-dots">
-            <button type="button" class="step-dot active" data-step="1" aria-label="Passo 1"></button>
-            <button type="button" class="step-dot" data-step="2" aria-label="Passo 2"></button>
-            <button type="button" class="step-dot" data-step="3" aria-label="Passo 3"></button>
-          </div>
-
-          <!-- STEP 1 -->
-          <div class="step-panel active" id="step1">
-            <div class="form-group">
-              <label class="form-label">O que você procura?</label>
-              <div class="interest-grid">
-                <label class="interest-card"><input type="checkbox" name="interest" value="anel"/><i class="ti ti-circle" aria-hidden="true"></i><span>Aliança</span></label>
-                <label class="interest-card"><input type="checkbox" name="interest" value="cordao"/><i class="ti ti-diamond" aria-hidden="true"></i><span>Cordão</span></label>
-                <label class="interest-card"><input type="checkbox" name="interest" value="brinco"/><i class="ti ti-star" aria-hidden="true"></i><span>Brinco</span></label>
-                <label class="interest-card"><input type="checkbox" name="interest" value="pulseira"/><i class="ti ti-link" aria-hidden="true"></i><span>Pulseira</span></label>
-                <label class="interest-card"><input type="checkbox" name="interest" value="presente"/><i class="ti ti-gift" aria-hidden="true"></i><span>Presente</span></label>
-                <label class="interest-card"><input type="checkbox" name="interest" value="encomenda"/><i class="ti ti-pencil" aria-hidden="true"></i><span>Sob encomenda</span></label>
-              </div>
-              <p class="err-msg" id="err-interest">Selecione pelo menos uma opção.</p>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="orcamento">Faixa de orçamento</label>
-              <select class="form-select" id="orcamento" name="orcamento">
-                <option value="">Selecione…</option>
-                <option value="ate1k">Até R$ 1.000</option>
-                <option value="1k3k">R$ 1.000 – R$ 3.000</option>
-                <option value="3k8k">R$ 3.000 – R$ 8.000</option>
-                <option value="acima8k">Acima de R$ 8.000</option>
-              </select>
-              <p class="err-msg" id="err-orcamento">Selecione sua faixa de orçamento.</p>
-            </div>
-            <div class="form-nav" style="justify-content:flex-end">
-              <button type="button" class="btn-step-next" onclick="goStep(2)">Continuar →</button>
-            </div>
-          </div>
-
-          <!-- STEP 2 -->
-          <div class="step-panel" id="step2">
-            <div class="form-group">
-              <label class="form-label" for="nome">Nome completo</label>
-              <input class="form-input" type="text" id="nome" name="nome" placeholder="Seu nome" autocomplete="name"/>
-              <p class="err-msg" id="err-nome">Informe seu nome.</p>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="telefone">WhatsApp</label>
-              <input class="form-input" type="tel" id="telefone" name="telefone" placeholder="(11) 99999-0000" autocomplete="tel" oninput="maskPhone(this)"/>
-              <p class="err-msg" id="err-telefone">Informe um número válido.</p>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="email2">E-mail</label>
-              <input class="form-input" type="email" id="email2" name="email2" placeholder="seu@email.com" autocomplete="email"/>
-              <p class="err-msg" id="err-email2">Informe um e-mail válido.</p>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="mensagem">Mensagem (opcional)</label>
-              <textarea class="form-textarea" id="mensagem" name="mensagem" placeholder="Detalhes adicionais…"></textarea>
-            </div>
-            <div class="form-nav">
-              <button type="button" class="btn-step-back" onclick="goStep(1)">← Voltar</button>
-              <button type="button" class="btn-step-next" onclick="goStep(3)">Revisar →</button>
-            </div>
-          </div>
-
-          <!-- STEP 3 -->
-          <div class="step-panel" id="step3">
-            <div class="summary-box" id="summaryContent"></div>
-            <div class="form-group">
-              <div class="lgpd-row">
-                <input type="checkbox" id="lgpdCheck" name="lgpdCheck"/>
-                <label for="lgpdCheck">Concordo com o tratamento dos meus dados para fins de atendimento, conforme a LGPD.</label>
-              </div>
-              <p class="err-msg" id="err-lgpd">Aceite os termos para continuar.</p>
-            </div>
-            <button type="button" class="submit-btn" id="submitBtn" onclick="submitForm()">
-              <span id="submitText" style="display:inline-flex;align-items:center;gap:.5rem"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Enviar pelo WhatsApp</span>
-              <span id="submitLoading" style="display:none;align-items:center;gap:.5rem"><i class="ti ti-loader-2" style="animation:spin .8s linear infinite" aria-hidden="true"></i> Enviando…</span>
-            </button>
-            <div class="form-nav" style="justify-content:flex-start;margin-top:1rem">
-              <button type="button" class="btn-step-back" onclick="goStep(2)">← Voltar</button>
-            </div>
-          </div>
-
-          <!-- SUCCESS -->
-          <div class="step-panel step-success" id="stepSuccess">
-            <i class="ti ti-circle-check" aria-hidden="true"></i>
-            <h3>Solicitação enviada!</h3>
-            <p>Você será redirecionado(a) ao WhatsApp. Responderemos em breve.</p>
-            <button type="button" onclick="resetForm()">Nova consulta</button>
-          </div>
-        </form>
-      </div>
+    <div class="footer-col">
+      <p class="footer-col-title">Categorias</p>
+      <ul>
+        <li><a href="#catalogo" onclick="goCat('cordao')">Cordões</a></li>
+        <li><a href="#catalogo" onclick="goCat('anel')">Alianças</a></li>
+        <li><a href="#catalogo" onclick="goCat('brinco')">Brincos</a></li>
+        <li><a href="#catalogo" onclick="goCat('pulseira')">Pulseiras</a></li>
+      </ul>
     </div>
-  </section>
-
-  <!-- FOOTER — mega type -->
-  <footer>
-    <p class="footer-mega">Vamos criar<br/>algo <a href="#consultoria">especial</a>?</p>
-    <div class="footer-grid">
-      <div>
-        <p class="footer-desc">Bon Vivant Joias — cordões, brincos e pulseiras em ouro e prata, feitos à mão com paixão e técnica artesanal.</p>
-      </div>
-      <div class="footer-col">
-        <p class="footer-col-title">Coleção</p>
-        <ul>
-          <li><a href="#colecao">Cordões</a></li>
-          <li><a href="#colecao">Alianças</a></li>
-          <li><a href="#colecao">Brincos</a></li>
-          <li><a href="#colecao">Pulseiras</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <p class="footer-col-title">Serviços</p>
-        <ul>
-          <li><a href="#consultoria">Consultoria</a></li>
-          <li><a href="#calculadora">Calculadora</a></li>
-          <li><a href="#processo">Processo</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <p class="footer-col-title">Contato</p>
-        <ul>
-          <li><a href="https://wa.me/5511999990000" target="_blank" rel="noopener">WhatsApp</a></li>
-          <li><a href="mailto:contato@bonvivant.com.br">E-mail</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
-      </div>
+    <div class="footer-col">
+      <p class="footer-col-title">Serviços</p>
+      <ul>
+        <li><a href="#consultoria">Consultoria</a></li>
+        <li><a href="#calculadora">Calculadora</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
     </div>
-    <div class="footer-bottom">
-      <p class="footer-copy">© 2024 Bon Vivant Joias. Todos os direitos reservados.</p>
-      <div class="footer-social">
-        <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram" aria-hidden="true"></i></a>
-        <a href="#" aria-label="Pinterest"><i class="ti ti-brand-pinterest" aria-hidden="true"></i></a>
-        <a href="https://wa.me/5511999990000" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></a>
-      </div>
+    <div class="footer-col">
+      <p class="footer-col-title">Contato</p>
+      <ul>
+        <li><a href="https://wa.me/5511999990000" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="mailto:contato@bonvivant.com.br">E-mail</a></li>
+        <li>São Paulo · SP</li>
+      </ul>
     </div>
-  </footer>
-
-</div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2024 Bon Vivant Joias. Todos os direitos reservados.</p>
+    <div class="footer-social">
+      <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Pinterest"><i class="ti ti-brand-pinterest" aria-hidden="true"></i></a>
+      <a href="https://wa.me/5511999990000" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</footer>
 
 <!-- WHATSAPP FAB -->
 <a class="wa-fab" href="https://wa.me/5511999990000" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp">
@@ -968,6 +963,12 @@
   function closeMobileNav() {
     document.getElementById('mobileNav').classList.remove('open');
     document.body.style.overflow = '';
+  }
+
+  /* ── ATALHO: ir para catálogo já filtrado ── */
+  function goCat(category) {
+    filterCatalog(null, category);
+    return true;
   }
 
   /* ── FILTROS ── */
@@ -1004,20 +1005,92 @@
     cards.forEach(card => grid.appendChild(card));
   }
 
-  /* ── NEWSLETTER ── */
-  function subscribeNewsletter() {
-    const input = document.getElementById('nl-email');
-    const email = input.value.trim();
-    if (!email || !email.includes('@')) {
-      input.style.borderColor = '#e24b4a';
-      input.focus();
+  /* ── FAVORITOS (visual) ── */
+  function toggleFav(btn) {
+    btn.classList.toggle('active');
+  }
+
+  /* ══════════════════════════════════════════
+     MÓDULO — MINHA SELEÇÃO (carrinho client-side)
+     ══════════════════════════════════════════ */
+  let cart = JSON.parse(localStorage.getItem('bv_cart') || '[]');
+
+  function saveCart() {
+    localStorage.setItem('bv_cart', JSON.stringify(cart));
+  }
+
+  function addToCart(btn, name, price) {
+    cart.push({ name, price, id: Date.now() + Math.random() });
+    saveCart();
+    renderCart();
+    if (btn) {
+      const original = btn.textContent;
+      btn.textContent = 'Adicionado ✓';
+      btn.classList.add('added');
+      setTimeout(() => { btn.textContent = original; btn.classList.remove('added'); }, 1400);
+    }
+    openCart();
+  }
+
+  function removeFromCart(id) {
+    cart = cart.filter(item => item.id !== id);
+    saveCart();
+    renderCart();
+  }
+
+  function renderCart() {
+    const badge = document.getElementById('cartBadge');
+    const itemsEl = document.getElementById('cartItems');
+    const totalEl = document.getElementById('cartTotal');
+    const sendBtn = document.getElementById('cartSendBtn');
+
+    if (cart.length === 0) {
+      badge.style.display = 'none';
+      itemsEl.innerHTML = '<p class="cart-empty">Sua seleção está vazia.<br/>Adicione peças para consultar tudo de uma vez.</p>';
+      totalEl.textContent = 'R$ 0';
+      sendBtn.disabled = true;
       return;
     }
-    input.style.borderColor = '#25D366';
-    input.value = '';
-    input.placeholder = 'Obrigado! Você está na lista.';
-    setTimeout(() => { input.placeholder = 'seu@email.com'; input.style.borderColor = ''; }, 4000);
+
+    badge.style.display = 'flex';
+    badge.textContent = cart.length;
+    sendBtn.disabled = false;
+
+    itemsEl.innerHTML = cart.map(item => `
+      <div class="cart-item">
+        <span class="cart-item-thumb">${item.name.charAt(0)}</span>
+        <div class="cart-item-info">
+          <p class="cart-item-name">${item.name}</p>
+          <p class="cart-item-price">R$ ${item.price.toLocaleString('pt-BR')}</p>
+        </div>
+        <button class="cart-item-remove" onclick="removeFromCart(${item.id})" aria-label="Remover"><i class="ti ti-trash" aria-hidden="true"></i></button>
+      </div>
+    `).join('');
+
+    const total = cart.reduce((sum, item) => sum + item.price, 0);
+    totalEl.textContent = `R$ ${total.toLocaleString('pt-BR')}`;
   }
+
+  function openCart() {
+    document.getElementById('cartDrawer').classList.add('open');
+    document.getElementById('cartOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeCart() {
+    document.getElementById('cartDrawer').classList.remove('open');
+    document.getElementById('cartOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function sendCartWhatsapp() {
+    if (cart.length === 0) return;
+    const lines = cart.map(item => `• ${item.name} — R$ ${item.price.toLocaleString('pt-BR')}`).join('\n');
+    const total = cart.reduce((sum, item) => sum + item.price, 0);
+    const msg = encodeURIComponent(`Olá! Tenho interesse nas seguintes peças:\n\n${lines}\n\nTotal estimado: R$ ${total.toLocaleString('pt-BR')}\n\nPoderia me ajudar a fechar o pedido?`);
+    window.open(`https://wa.me/5511999990000?text=${msg}`, '_blank');
+  }
+
+  renderCart();
 
   /* ── FAQ ── */
   function toggleFaq(btn) {
@@ -1037,7 +1110,7 @@
   }
 
   /* ══════════════════════════════════════════
-     MÓDULO 1 — CALCULADORA DE ORÇAMENTO
+     MÓDULO — CALCULADORA DE ORÇAMENTO
      ══════════════════════════════════════════ */
   const calcState = { base: 800, mult: 1.0, add: 0, extras: 0 };
 
@@ -1073,7 +1146,7 @@
   }
 
   /* ══════════════════════════════════════════
-     MÓDULO 2 — FORMULÁRIO MULTI-STEP
+     MÓDULO — FORMULÁRIO MULTI-STEP
      ══════════════════════════════════════════ */
   let currentStep = 1;
   const stepMeta = {
@@ -1209,44 +1282,6 @@
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-  /* ── PROCESSO LINE ── */
-  const processoGrid = document.getElementById('processoGrid');
-  const processoFill = document.getElementById('processoFill');
-  if (processoGrid && processoFill) {
-    const lineObs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const steps = processoGrid.querySelectorAll('.pstep');
-          let delay = 0;
-          steps.forEach((step, i) => {
-            setTimeout(() => {
-              step.classList.add('lit');
-              processoFill.style.width = `${((i + 1) / steps.length) * 100}%`;
-            }, delay);
-            delay += 300;
-          });
-          lineObs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
-    lineObs.observe(processoGrid);
-  }
-
-  /* ── PREVIEW FLUTUANTE (desktop only) — segue o cursor na lista de destaques ── */
-  if (window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
-    document.querySelectorAll('[data-lupa]').forEach(row => {
-      const preview = row.querySelector('.idx-preview');
-      if (!preview) return;
-      row.addEventListener('mouseenter', () => { preview.style.opacity = '1'; });
-      row.addEventListener('mouseleave', () => { preview.style.opacity = '0'; });
-      row.addEventListener('mousemove', (e) => {
-        const rect = row.getBoundingClientRect();
-        preview.style.left = (e.clientX - rect.left) + 'px';
-        preview.style.top  = (e.clientY - rect.top) + 'px';
-      });
-    });
-  }
 </script>
 </body>
 </html>
