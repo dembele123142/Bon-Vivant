@@ -145,7 +145,7 @@
     @media(prefers-reduced-motion:reduce){.hero h1 em{animation:none}.hero-ghost-inner{animation:none}}
 
     /* ══════════════ HERO GEM (3D em CSS puro) ══════════════ */
-    .hero-gem{position:absolute;right:9%;top:50%;width:170px;height:170px;perspective:1000px;display:none;pointer-events:none;z-index:1}
+    .hero-gem{position:absolute;right:9%;top:50%;transform:translateY(-50%);width:170px;height:170px;perspective:1000px;display:none;pointer-events:none;z-index:1}
     @media(min-width:901px){.hero-gem{display:block}}
     .gem-scroll{width:100%;height:100%;transform-style:preserve-3d}
     .gem-3d{position:relative;width:100%;height:100%;transform-style:preserve-3d}
@@ -158,7 +158,6 @@
     .facet.f6{background:linear-gradient(135deg,rgba(201,160,32,.55),rgba(201,160,32,.08));transform:rotateY(300deg) translateZ(60px)}
     .facet.cap-top{width:110px;height:110px;background:radial-gradient(circle at 35% 30%,rgba(255,244,214,.9),rgba(201,160,32,.15));transform:rotateX(90deg) translateZ(58px)}
     .facet.cap-bottom{width:110px;height:110px;background:radial-gradient(circle at 65% 70%,rgba(201,160,32,.5),rgba(122,96,15,.15));transform:rotateX(-90deg) translateZ(58px)}
-    @media(prefers-reduced-motion:reduce){.hero-gem{display:none}}
 
     /* ══════════════ CATEGORY TILES ══════════════ */
     .section{padding:4.5rem 6vw}
