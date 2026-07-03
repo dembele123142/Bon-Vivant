@@ -45,6 +45,33 @@
     .reveal.visible{opacity:1;transform:none}
     @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 
+    /* stagger de entrada nos grids (30-50ms por item) */
+    .prod-grid .card:nth-child(1).reveal{transition-delay:0ms}
+    .prod-grid .card:nth-child(2).reveal{transition-delay:60ms}
+    .prod-grid .card:nth-child(3).reveal{transition-delay:110ms}
+    .prod-grid .card:nth-child(4).reveal{transition-delay:160ms}
+    .prod-grid .card:nth-child(5).reveal{transition-delay:210ms}
+    #catalogGrid .cat-card:nth-child(1).reveal{transition-delay:0ms}
+    #catalogGrid .cat-card:nth-child(2).reveal{transition-delay:40ms}
+    #catalogGrid .cat-card:nth-child(3).reveal{transition-delay:80ms}
+    #catalogGrid .cat-card:nth-child(4).reveal{transition-delay:120ms}
+    #catalogGrid .cat-card:nth-child(5).reveal{transition-delay:160ms}
+    #catalogGrid .cat-card:nth-child(6).reveal{transition-delay:200ms}
+    .testi-grid .testi-card:nth-child(1).reveal{transition-delay:0ms}
+    .testi-grid .testi-card:nth-child(2).reveal{transition-delay:60ms}
+    .testi-grid .testi-card:nth-child(3).reveal{transition-delay:120ms}
+    .processo-grid .pstep:nth-child(2).reveal{transition-delay:40ms}
+    .processo-grid .pstep:nth-child(3).reveal{transition-delay:80ms}
+    .processo-grid .pstep:nth-child(4).reveal{transition-delay:120ms}
+    @media(prefers-reduced-motion:reduce){
+      .prod-grid .card.reveal,#catalogGrid .cat-card.reveal,.testi-grid .testi-card.reveal,.processo-grid .pstep.reveal{transition-delay:0ms}
+    }
+
+    /* ── FOCO VISÍVEL (navegação por teclado) ── */
+    a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+      outline:2px solid var(--champ);outline-offset:2px;border-radius:2px
+    }
+
     /* ══════════════ NAV ══════════════ */
     .nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:64px;background:rgba(21,20,26,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,166,100,.12)}
     .nav-logo{font-family:'Fraunces',serif;font-size:1.25rem;letter-spacing:.08em;color:var(--champ)}
@@ -334,7 +361,7 @@
 <div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Menu">
   <div class="mobile-nav-top">
     <span class="nav-logo">Bon Vivant Joias</span>
-    <button class="mobile-nav-close" onclick="closeMobileNav()" aria-label="Fechar menu"><i class="ti ti-x"></i></button>
+    <button class="mobile-nav-close" onclick="closeMobileNav()" aria-label="Fechar menu"><i class="ti ti-x" aria-hidden="true"></i></button>
   </div>
   <ul>
     <li><a href="#colecao" onclick="closeMobileNav()">Coleção</a></li>
@@ -360,7 +387,7 @@
     <h1 class="hero-h1 f-display">Onde o ouro<br/>encontra a <em>arte</em></h1>
     <p class="hero-sub">Peças únicas em ouro 18k, prata 925 e pedras preciosas.<br/>Criadas para durar gerações.</p>
     <div class="hero-actions">
-      <a class="btn-primary" href="#colecao"><i class="ti ti-diamond"></i> Ver Coleção</a>
+      <a class="btn-primary" href="#colecao"><i class="ti ti-diamond" aria-hidden="true"></i> Ver Coleção</a>
       <a class="btn-outline" href="#consultoria">Consultoria Gratuita</a>
     </div>
   </div>
@@ -403,7 +430,7 @@
     <!-- large card -->
     <article class="card reveal" data-lupa>
       <div class="card-img">
-        <i class="ti ti-diamond card-img-icon"></i>
+        <i class="ti ti-diamond card-img-icon" aria-hidden="true"></i>
         <div class="card-shimmer"></div>
         <div class="card-lupa" aria-hidden="true"></div>
       </div>
@@ -419,7 +446,7 @@
     </article>
     <article class="card reveal" data-lupa>
       <div class="card-img">
-        <i class="ti ti-ring card-img-icon"></i>
+        <i class="ti ti-ring card-img-icon" aria-hidden="true"></i>
         <div class="card-shimmer"></div>
         <div class="card-lupa" aria-hidden="true"></div>
       </div>
@@ -435,7 +462,7 @@
     </article>
     <article class="card reveal" data-lupa>
       <div class="card-img">
-        <i class="ti ti-star card-img-icon"></i>
+        <i class="ti ti-star card-img-icon" aria-hidden="true"></i>
         <div class="card-shimmer"></div>
         <div class="card-lupa" aria-hidden="true"></div>
       </div>
@@ -451,7 +478,7 @@
     </article>
     <article class="card reveal" data-lupa>
       <div class="card-img">
-        <i class="ti ti-link card-img-icon"></i>
+        <i class="ti ti-link card-img-icon" aria-hidden="true"></i>
         <div class="card-shimmer"></div>
         <div class="card-lupa" aria-hidden="true"></div>
       </div>
@@ -467,7 +494,7 @@
     </article>
     <article class="card reveal" data-lupa>
       <div class="card-img">
-        <i class="ti ti-wave-sine card-img-icon"></i>
+        <i class="ti ti-wave-sine card-img-icon" aria-hidden="true"></i>
         <div class="card-shimmer"></div>
         <div class="card-lupa" aria-hidden="true"></div>
       </div>
@@ -506,7 +533,7 @@
   </div>
   <div id="catalogGrid">
     <article class="cat-card reveal" data-category="colar" data-price="4100" data-name="Colar Sirocco">
-      <div class="cat-card-img"><i class="ti ti-diamond"></i></div>
+      <div class="cat-card-img"><i class="ti ti-diamond" aria-hidden="true"></i></div>
       <div class="cat-card-body">
         <h3 class="cat-card-name f-display">Colar Sirocco</h3>
         <p class="cat-card-mat">Ouro 18k · Esmeralda</p>
@@ -517,7 +544,7 @@
       </div>
     </article>
     <article class="cat-card reveal" data-category="anel" data-price="890" data-name="Anel Cosmos">
-      <div class="cat-card-img"><i class="ti ti-ring"></i></div>
+      <div class="cat-card-img"><i class="ti ti-ring" aria-hidden="true"></i></div>
       <div class="cat-card-body">
         <h3 class="cat-card-name f-display">Anel Cosmos</h3>
         <p class="cat-card-mat">Prata 925 · Zircônia</p>
@@ -528,7 +555,7 @@
       </div>
     </article>
     <article class="cat-card reveal" data-category="brinco" data-price="6350" data-name="Brinco Cascade">
-      <div class="cat-card-img"><i class="ti ti-star"></i></div>
+      <div class="cat-card-img"><i class="ti ti-star" aria-hidden="true"></i></div>
       <div class="cat-card-body">
         <h3 class="cat-card-name f-display">Brinco Cascade</h3>
         <p class="cat-card-mat">Ouro 18k · Safira azul</p>
@@ -539,7 +566,7 @@
       </div>
     </article>
     <article class="cat-card reveal" data-category="pingente" data-price="7900" data-name="Pingente Stella">
-      <div class="cat-card-img"><i class="ti ti-sparkles"></i></div>
+      <div class="cat-card-img"><i class="ti ti-sparkles" aria-hidden="true"></i></div>
       <div class="cat-card-body">
         <h3 class="cat-card-name f-display">Pingente Stella</h3>
         <p class="cat-card-mat">Ouro 18k · Diamante</p>
@@ -550,7 +577,7 @@
       </div>
     </article>
     <article class="cat-card reveal" data-category="anel" data-price="3200" data-name="Anel Lattice">
-      <div class="cat-card-img"><i class="ti ti-ring"></i></div>
+      <div class="cat-card-img"><i class="ti ti-ring" aria-hidden="true"></i></div>
       <div class="cat-card-body">
         <h3 class="cat-card-name f-display">Anel Lattice</h3>
         <p class="cat-card-mat">Ouro 18k · Rubi</p>
@@ -561,7 +588,7 @@
       </div>
     </article>
     <article class="cat-card reveal" data-category="pulseira" data-price="1580" data-name="Pulseira Vague">
-      <div class="cat-card-img"><i class="ti ti-wave-sine"></i></div>
+      <div class="cat-card-img"><i class="ti ti-wave-sine" aria-hidden="true"></i></div>
       <div class="cat-card-body">
         <h3 class="cat-card-name f-display">Pulseira Vague</h3>
         <p class="cat-card-mat">Prata 925 · Madrepérola</p>
@@ -579,7 +606,7 @@
 <section class="section about" id="sobre" aria-labelledby="about-h">
   <div class="about-grid">
     <div class="about-img reveal" aria-hidden="true">
-      <i class="ti ti-building-store"></i>
+      <i class="ti ti-building-store" aria-hidden="true"></i>
     </div>
     <div class="about-text reveal">
       <p class="section-tag f-mono">Nossa História</p>
@@ -615,28 +642,28 @@
     <div class="pstep reveal" id="ps1">
       <p class="pstep-num f-mono">01</p>
       <div class="pstep-dot" aria-hidden="true"></div>
-      <div class="pstep-icon"><i class="ti ti-message-circle"></i></div>
+      <div class="pstep-icon"><i class="ti ti-message-circle" aria-hidden="true"></i></div>
       <h3 class="pstep-title f-display">Consultoria</h3>
       <p class="pstep-desc">Entendemos seu estilo, ocasião e orçamento em uma conversa sem compromisso.</p>
     </div>
     <div class="pstep reveal" id="ps2">
       <p class="pstep-num f-mono">02</p>
       <div class="pstep-dot" aria-hidden="true"></div>
-      <div class="pstep-icon"><i class="ti ti-pencil"></i></div>
+      <div class="pstep-icon"><i class="ti ti-pencil" aria-hidden="true"></i></div>
       <h3 class="pstep-title f-display">Design</h3>
       <p class="pstep-desc">Nossos ourives criam o esboço da peça e apresentamos para sua aprovação.</p>
     </div>
     <div class="pstep reveal" id="ps3">
       <p class="pstep-num f-mono">03</p>
       <div class="pstep-dot" aria-hidden="true"></div>
-      <div class="pstep-icon"><i class="ti ti-flame"></i></div>
+      <div class="pstep-icon"><i class="ti ti-flame" aria-hidden="true"></i></div>
       <h3 class="pstep-title f-display">Criação</h3>
       <p class="pstep-desc">A peça é manufaturada com materiais certificados e técnica artesanal.</p>
     </div>
     <div class="pstep reveal" id="ps4">
       <p class="pstep-num f-mono">04</p>
       <div class="pstep-dot" aria-hidden="true"></div>
-      <div class="pstep-icon"><i class="ti ti-gift"></i></div>
+      <div class="pstep-icon"><i class="ti ti-gift" aria-hidden="true"></i></div>
       <h3 class="pstep-title f-display">Entrega</h3>
       <p class="pstep-desc">Enviamos em embalagem premium com certificado de autenticidade e garantia.</p>
     </div>
@@ -686,28 +713,28 @@
 <div class="contact-strip">
   <div class="contact-grid">
     <div class="contact-item">
-      <i class="ti ti-map-pin contact-icon"></i>
+      <i class="ti ti-map-pin contact-icon" aria-hidden="true"></i>
       <div>
         <p class="contact-label f-mono">Localização</p>
         <p class="contact-val">São Paulo · SP</p>
       </div>
     </div>
     <div class="contact-item">
-      <i class="ti ti-brand-whatsapp contact-icon"></i>
+      <i class="ti ti-brand-whatsapp contact-icon" aria-hidden="true"></i>
       <div>
         <p class="contact-label f-mono">WhatsApp</p>
         <p class="contact-val">(11) 99999-0000</p>
       </div>
     </div>
     <div class="contact-item">
-      <i class="ti ti-mail contact-icon"></i>
+      <i class="ti ti-mail contact-icon" aria-hidden="true"></i>
       <div>
         <p class="contact-label f-mono">E-mail</p>
         <p class="contact-val">contato@bonvivant.com.br</p>
       </div>
     </div>
     <div class="contact-item">
-      <i class="ti ti-clock contact-icon"></i>
+      <i class="ti ti-clock contact-icon" aria-hidden="true"></i>
       <div>
         <p class="contact-label f-mono">Horário</p>
         <p class="contact-val">Seg–Sex · 9h às 18h</p>
@@ -724,35 +751,35 @@
   </div>
   <div class="faq-list reveal">
     <div class="faq-item">
-      <button class="faq-q f-display" onclick="toggleFaq(this)" aria-expanded="false">Vocês fazem peças sob encomenda? <i class="ti ti-plus"></i></button>
+      <button class="faq-q f-display" onclick="toggleFaq(this)" aria-expanded="false">Vocês fazem peças sob encomenda? <i class="ti ti-plus" aria-hidden="true"></i></button>
       <p class="faq-a">Sim! Esse é um dos nossos serviços mais especiais. Entre em contato pelo WhatsApp ou preencha o formulário de consultoria para começarmos.</p>
     </div>
     <div class="faq-item">
-      <button class="faq-q f-display" onclick="toggleFaq(this)" aria-expanded="false">Qual a garantia das peças? <i class="ti ti-plus"></i></button>
+      <button class="faq-q f-display" onclick="toggleFaq(this)" aria-expanded="false">Qual a garantia das peças? <i class="ti ti-plus" aria-hidden="true"></i></button>
       <p class="faq-a">Todas as nossas peças têm garantia vitalícia contra defeitos de fabricação e manutenção gratuita por 1 ano.</p>
     </div>
     <div class="faq-item">
-      <button class="faq-q f-display" onclick="toggleFaq(this)" aria-expanded="false">Como funciona o parcelamento? <i class="ti ti-plus"></i></button>
+      <button class="faq-q f-display" onclick="toggleFaq(this)" aria-expanded="false">Como funciona o parcelamento? <i class="ti ti-plus" aria-hidden="true"></i></button>
       <p class="faq-a">Parcelamos em até 12× sem juros no cartão de crédito. Pagamentos via Pix têm 5% de desconto.</p>
     </div>
     <div class="faq-item">
-      <button class="faq-q f-display" onclick="toggleFaq(this)" aria-expanded="false">Vocês fazem entrega para todo o Brasil? <i class="ti ti-plus"></i></button>
+      <button class="faq-q f-display" onclick="toggleFaq(this)" aria-expanded="false">Vocês fazem entrega para todo o Brasil? <i class="ti ti-plus" aria-hidden="true"></i></button>
       <p class="faq-a">Sim, enviamos para todo o Brasil com frete grátis via Sedex, com seguro e embalagem anti-impacto.</p>
     </div>
     <div class="faq-item">
-      <button class="faq-q f-display" onclick="toggleFaq(this)" aria-expanded="false">As pedras preciosas são naturais? <i class="ti ti-plus"></i></button>
+      <button class="faq-q f-display" onclick="toggleFaq(this)" aria-expanded="false">As pedras preciosas são naturais? <i class="ti ti-plus" aria-hidden="true"></i></button>
       <p class="faq-a">Sim, trabalhamos exclusivamente com pedras naturais certificadas. Cada peça vem com laudo de autenticidade.</p>
     </div>
     <div class="faq-item">
-      <button class="faq-q f-display" onclick="toggleFaq(this)" aria-expanded="false">Qual o prazo para peças sob encomenda? <i class="ti ti-plus"></i></button>
+      <button class="faq-q f-display" onclick="toggleFaq(this)" aria-expanded="false">Qual o prazo para peças sob encomenda? <i class="ti ti-plus" aria-hidden="true"></i></button>
       <p class="faq-a">Em média 15 a 30 dias úteis, dependendo da complexidade da peça. Informamos o prazo exato na consultoria.</p>
     </div>
     <div class="faq-item">
-      <button class="faq-q f-display" onclick="toggleFaq(this)" aria-expanded="false">Como cuido das minhas joias? <i class="ti ti-plus"></i></button>
+      <button class="faq-q f-display" onclick="toggleFaq(this)" aria-expanded="false">Como cuido das minhas joias? <i class="ti ti-plus" aria-hidden="true"></i></button>
       <p class="faq-a">Evite contato com produtos químicos, perfumes e cloreto. Guarde em local seco, de preferência na caixinha original. Trazemos de volta ao brilho original gratuitamente.</p>
     </div>
     <div class="faq-item">
-      <button class="faq-q f-display" onclick="toggleFaq(this)" aria-expanded="false">Posso visitar o ateliê? <i class="ti ti-plus"></i></button>
+      <button class="faq-q f-display" onclick="toggleFaq(this)" aria-expanded="false">Posso visitar o ateliê? <i class="ti ti-plus" aria-hidden="true"></i></button>
       <p class="faq-a">Sim, com agendamento prévio. Nosso ateliê fica em São Paulo. Entre em contato para marcar sua visita.</p>
     </div>
   </div>
@@ -809,7 +836,7 @@
       <p class="calc-result-note f-mono" id="calcParcel">ou 12× de R$ 66,67 · Pix: R$ 760</p>
       <div id="calcNote">
         <a class="calc-wa" id="calcWaba" href="https://wa.me/5511999990000" target="_blank" rel="noopener">
-          <i class="ti ti-brand-whatsapp"></i> Confirmar orçamento
+          <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Confirmar orçamento
         </a>
       </div>
     </div>
@@ -841,12 +868,12 @@
         <div class="form-group">
           <label class="form-label f-mono">O que você procura?</label>
           <div class="interest-grid">
-            <label class="interest-card"><input type="checkbox" name="interest" value="anel"/><i class="ti ti-ring"></i><span>Anel</span></label>
-            <label class="interest-card"><input type="checkbox" name="interest" value="colar"/><i class="ti ti-diamond"></i><span>Colar</span></label>
-            <label class="interest-card"><input type="checkbox" name="interest" value="brinco"/><i class="ti ti-star"></i><span>Brinco</span></label>
-            <label class="interest-card"><input type="checkbox" name="interest" value="pulseira"/><i class="ti ti-link"></i><span>Pulseira</span></label>
-            <label class="interest-card"><input type="checkbox" name="interest" value="presente"/><i class="ti ti-gift"></i><span>Presente</span></label>
-            <label class="interest-card"><input type="checkbox" name="interest" value="encomenda"/><i class="ti ti-pencil"></i><span>Sob encomenda</span></label>
+            <label class="interest-card"><input type="checkbox" name="interest" value="anel"/><i class="ti ti-ring" aria-hidden="true"></i><span>Anel</span></label>
+            <label class="interest-card"><input type="checkbox" name="interest" value="colar"/><i class="ti ti-diamond" aria-hidden="true"></i><span>Colar</span></label>
+            <label class="interest-card"><input type="checkbox" name="interest" value="brinco"/><i class="ti ti-star" aria-hidden="true"></i><span>Brinco</span></label>
+            <label class="interest-card"><input type="checkbox" name="interest" value="pulseira"/><i class="ti ti-link" aria-hidden="true"></i><span>Pulseira</span></label>
+            <label class="interest-card"><input type="checkbox" name="interest" value="presente"/><i class="ti ti-gift" aria-hidden="true"></i><span>Presente</span></label>
+            <label class="interest-card"><input type="checkbox" name="interest" value="encomenda"/><i class="ti ti-pencil" aria-hidden="true"></i><span>Sob encomenda</span></label>
           </div>
           <p class="err-msg" id="err-interest">Selecione pelo menos uma opção.</p>
         </div>
@@ -904,8 +931,8 @@
           <p class="err-msg" id="err-lgpd">Aceite os termos para continuar.</p>
         </div>
         <button type="button" class="submit-btn f-mono" id="submitBtn" onclick="submitForm()">
-          <span id="submitText" style="display:inline-flex;align-items:center;gap:.5rem"><i class="ti ti-brand-whatsapp"></i> Enviar pelo WhatsApp</span>
-          <span id="submitLoading" style="display:none;align-items:center;gap:.5rem"><i class="ti ti-loader-2" style="animation:spin .8s linear infinite"></i> Enviando…</span>
+          <span id="submitText" style="display:inline-flex;align-items:center;gap:.5rem"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Enviar pelo WhatsApp</span>
+          <span id="submitLoading" style="display:none;align-items:center;gap:.5rem"><i class="ti ti-loader-2" style="animation:spin .8s linear infinite" aria-hidden="true"></i> Enviando…</span>
         </button>
         <div class="form-nav" style="justify-content:flex-start;margin-top:1rem">
           <button type="button" class="btn-step-back f-mono" onclick="goStep(2)">← Voltar</button>
@@ -914,7 +941,7 @@
 
       <!-- SUCCESS -->
       <div class="step-panel step-success" id="stepSuccess">
-        <i class="ti ti-circle-check"></i>
+        <i class="ti ti-circle-check" aria-hidden="true"></i>
         <h3 class="f-display">Solicitação enviada!</h3>
         <p>Você será redirecionado(a) ao WhatsApp. Responderemos em breve.</p>
         <button type="button" class="f-mono" onclick="resetForm()">Nova consulta</button>
@@ -959,16 +986,16 @@
   <div class="footer-bottom">
     <p class="footer-copy f-mono">© 2024 Bon Vivant Joias. Todos os direitos reservados.</p>
     <div class="footer-social">
-      <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
-      <a href="#" aria-label="Pinterest"><i class="ti ti-brand-pinterest"></i></a>
-      <a href="https://wa.me/5511999990000" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp"></i></a>
+      <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Pinterest"><i class="ti ti-brand-pinterest" aria-hidden="true"></i></a>
+      <a href="https://wa.me/5511999990000" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></a>
     </div>
   </div>
 </footer>
 
 <!-- WHATSAPP FAB -->
 <a class="wa-fab" href="https://wa.me/5511999990000" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp">
-  <i class="ti ti-brand-whatsapp"></i>
+  <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
 </a>
 
 <style>
