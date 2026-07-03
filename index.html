@@ -61,18 +61,6 @@
       outline:2px solid var(--forest);outline-offset:2px
     }
 
-    /* ══════════════ ANNOUNCEMENT BAR ══════════════ */
-    .announce{background:var(--forest-deep);color:#fff;padding:.55rem 0;font-size:.78rem;letter-spacing:.02em;overflow:hidden}
-    .announce strong{color:var(--gold)}
-    .announce-track{display:flex;width:max-content;white-space:nowrap;animation:announceScroll 20s linear infinite}
-    .announce-item{padding:0 .6rem}
-    .announce-sep{opacity:.4}
-    @keyframes announceScroll{to{transform:translateX(-50%)}}
-    @media(prefers-reduced-motion:reduce){
-      .announce-track{animation:none;justify-content:center;width:100%}
-      .announce-track>*:nth-child(n+7){display:none}
-    }
-
     /* ══════════════ HEADER ══════════════ */
     .header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--line)}
     .header-inner{display:flex;align-items:center;justify-content:space-between;padding:1rem 5vw;gap:1.5rem}
@@ -153,42 +141,19 @@
     @keyframes ghostPulse{from{transform:scale(.95)}to{transform:scale(1.05)}}
     @media(prefers-reduced-motion:reduce){.hero h1 em{animation:none}.hero-ghost-inner{animation:none}}
 
-    /* ══════════════ HERO GEM (3D em CSS puro) ══════════════ */
+    /* ══════════════ HERO GEM — diamante (mesma geometria da logomarca) ══════════════ */
     .hero-gem{position:absolute;right:9%;top:50%;transform:translateY(-50%);width:190px;height:220px;perspective:1100px;display:none;pointer-events:none;z-index:1}
     @media(min-width:901px){.hero-gem{display:block}}
     .gem-scroll{width:100%;height:100%;transform-style:preserve-3d}
-    .gem-3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;filter:drop-shadow(0 18px 30px rgba(0,0,0,.35))}
-
-    /* MESA — faceta superior plana do diamante */
-    .facet.table{position:absolute;left:50%;top:50%;width:58px;height:58px;margin:-29px 0 0 -29px;backface-visibility:hidden;
-      background:radial-gradient(circle at 38% 32%,rgba(255,251,232,.98),rgba(224,184,48,.55) 55%,rgba(201,160,32,.3));
-      clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%);
-      transform:translateY(-72px) rotateX(90deg) translateZ(29px)}
-
-    /* COROA — 6 facetas triangulares afunilando para a mesa */
-    .facet.crown{position:absolute;left:50%;top:50%;width:86px;height:78px;margin:-78px 0 0 -43px;backface-visibility:hidden;
-      clip-path:polygon(50% 0%,100% 100%,0% 100%);transform-origin:center bottom}
-    .crown.c1{background:linear-gradient(160deg,rgba(255,246,214,.95),rgba(201,160,32,.35));transform:translateY(-36px) rotateY(0deg) translateZ(48px) rotateX(-36deg)}
-    .crown.c2{background:linear-gradient(160deg,rgba(224,184,48,.85),rgba(201,160,32,.22));transform:translateY(-36px) rotateY(60deg) translateZ(48px) rotateX(-36deg)}
-    .crown.c3{background:linear-gradient(160deg,rgba(201,160,32,.7),rgba(140,110,18,.2));transform:translateY(-36px) rotateY(120deg) translateZ(48px) rotateX(-36deg)}
-    .crown.c4{background:linear-gradient(160deg,rgba(255,246,214,.95),rgba(201,160,32,.35));transform:translateY(-36px) rotateY(180deg) translateZ(48px) rotateX(-36deg)}
-    .crown.c5{background:linear-gradient(160deg,rgba(224,184,48,.85),rgba(201,160,32,.22));transform:translateY(-36px) rotateY(240deg) translateZ(48px) rotateX(-36deg)}
-    .crown.c6{background:linear-gradient(160deg,rgba(201,160,32,.7),rgba(140,110,18,.2));transform:translateY(-36px) rotateY(300deg) translateZ(48px) rotateX(-36deg)}
-
-    /* PAVILHÃO — 6 facetas triangulares afunilando para a culatra */
-    .facet.pavilion{position:absolute;left:50%;top:50%;width:86px;height:110px;margin:0 0 0 -43px;backface-visibility:hidden;
-      clip-path:polygon(50% 100%,100% 0%,0% 0%);transform-origin:center top}
-    .pavilion.p1{background:linear-gradient(200deg,rgba(201,160,32,.65),rgba(90,70,10,.18));transform:translateY(-2px) rotateY(30deg) translateZ(44px) rotateX(30deg)}
-    .pavilion.p2{background:linear-gradient(200deg,rgba(224,184,48,.6),rgba(90,70,10,.16));transform:translateY(-2px) rotateY(90deg) translateZ(44px) rotateX(30deg)}
-    .pavilion.p3{background:linear-gradient(200deg,rgba(201,160,32,.5),rgba(90,70,10,.14));transform:translateY(-2px) rotateY(150deg) translateZ(44px) rotateX(30deg)}
-    .pavilion.p4{background:linear-gradient(200deg,rgba(201,160,32,.65),rgba(90,70,10,.18));transform:translateY(-2px) rotateY(210deg) translateZ(44px) rotateX(30deg)}
-    .pavilion.p5{background:linear-gradient(200deg,rgba(224,184,48,.6),rgba(90,70,10,.16));transform:translateY(-2px) rotateY(270deg) translateZ(44px) rotateX(30deg)}
-    .pavilion.p6{background:linear-gradient(200deg,rgba(201,160,32,.5),rgba(90,70,10,.14));transform:translateY(-2px) rotateY(330deg) translateZ(44px) rotateX(30deg)}
+    .gem-3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;filter:drop-shadow(0 18px 30px rgba(0,0,0,.4))}
+    .gem-face{position:absolute;inset:0;backface-visibility:hidden}
+    .gem-face.back{transform:rotateY(180deg)}
+    .gem-face svg{width:100%;height:100%;overflow:visible}
 
     /* brilho — sweep de luz atravessando o diamante em loop */
-    .gem-glint{position:absolute;left:50%;top:50%;width:4px;height:220px;margin:-110px 0 0 -2px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,.9),transparent);
-      transform:translateZ(70px) rotate(18deg);opacity:0;animation:gemGlint 5s ease-in-out infinite}
-    @keyframes gemGlint{0%,100%{opacity:0;left:20%}45%{opacity:0}50%{opacity:.85;left:70%}55%{opacity:0}}
+    .gem-glint{position:absolute;left:50%;top:8%;width:3px;height:84%;margin-left:-1.5px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,.9),transparent);
+      transform:translateZ(2px) rotate(14deg);opacity:0;animation:gemGlint 5s ease-in-out infinite}
+    @keyframes gemGlint{0%,100%{opacity:0;left:22%}45%{opacity:0}50%{opacity:.9;left:72%}55%{opacity:0}}
     @media(prefers-reduced-motion:reduce){.gem-glint{animation:none;opacity:0}}
 
     /* ══════════════ CATEGORY TILES ══════════════ */
@@ -371,15 +336,6 @@
 </head>
 <body>
 
-<div class="announce" aria-label="Benefícios">
-  <div class="announce-track">
-    <span class="announce-item"><strong>Consultoria gratuita</strong></span><span class="announce-sep">·</span>
-    <span class="announce-item">Até 12x sem juros</span><span class="announce-sep">·</span>
-    <span class="announce-item" aria-hidden="true"><strong>Consultoria gratuita</strong></span><span class="announce-sep" aria-hidden="true">·</span>
-    <span class="announce-item" aria-hidden="true">Até 12x sem juros</span><span class="announce-sep" aria-hidden="true">·</span>
-  </div>
-</div>
-
 <!-- HEADER -->
 <header class="header">
   <div class="header-inner">
@@ -453,19 +409,44 @@
   <div class="hero-gem" aria-hidden="true">
     <div class="gem-scroll">
       <div class="gem-3d">
-        <span class="facet table"></span>
-        <span class="facet crown c1"></span>
-        <span class="facet crown c2"></span>
-        <span class="facet crown c3"></span>
-        <span class="facet crown c4"></span>
-        <span class="facet crown c5"></span>
-        <span class="facet crown c6"></span>
-        <span class="facet pavilion p1"></span>
-        <span class="facet pavilion p2"></span>
-        <span class="facet pavilion p3"></span>
-        <span class="facet pavilion p4"></span>
-        <span class="facet pavilion p5"></span>
-        <span class="facet pavilion p6"></span>
+        <span class="gem-face front">
+          <svg viewBox="0 0 100 120">
+            <defs>
+              <linearGradient id="gemFill1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFF6D6"/>
+                <stop offset="45%" stop-color="#E0B830"/>
+                <stop offset="100%" stop-color="#8C6E12"/>
+              </linearGradient>
+            </defs>
+            <polygon points="50,4 92,44 50,116 8,44" fill="url(#gemFill1)" stroke="#FFF6D6" stroke-width="1.2"/>
+            <polyline points="26,30 74,30" fill="none" stroke="#8C6E12" stroke-width="1" opacity=".65"/>
+            <polyline points="26,30 8,44" fill="none" stroke="#8C6E12" stroke-width="1" opacity=".65"/>
+            <polyline points="74,30 92,44" fill="none" stroke="#8C6E12" stroke-width="1" opacity=".65"/>
+            <polyline points="50,4 26,30" fill="none" stroke="#8C6E12" stroke-width="1" opacity=".65"/>
+            <polyline points="50,4 74,30" fill="none" stroke="#8C6E12" stroke-width="1" opacity=".65"/>
+            <polyline points="8,44 92,44" fill="none" stroke="#8C6E12" stroke-width="1" opacity=".5"/>
+            <polyline points="50,44 50,116" fill="none" stroke="#8C6E12" stroke-width="1" opacity=".5"/>
+          </svg>
+        </span>
+        <span class="gem-face back">
+          <svg viewBox="0 0 100 120">
+            <defs>
+              <linearGradient id="gemFill2" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#FFF6D6"/>
+                <stop offset="45%" stop-color="#C9A020"/>
+                <stop offset="100%" stop-color="#6B5310"/>
+              </linearGradient>
+            </defs>
+            <polygon points="50,4 92,44 50,116 8,44" fill="url(#gemFill2)" stroke="#FFF6D6" stroke-width="1.2"/>
+            <polyline points="26,30 74,30" fill="none" stroke="#6B5310" stroke-width="1" opacity=".65"/>
+            <polyline points="26,30 8,44" fill="none" stroke="#6B5310" stroke-width="1" opacity=".65"/>
+            <polyline points="74,30 92,44" fill="none" stroke="#6B5310" stroke-width="1" opacity=".65"/>
+            <polyline points="50,4 26,30" fill="none" stroke="#6B5310" stroke-width="1" opacity=".65"/>
+            <polyline points="50,4 74,30" fill="none" stroke="#6B5310" stroke-width="1" opacity=".65"/>
+            <polyline points="8,44 92,44" fill="none" stroke="#6B5310" stroke-width="1" opacity=".5"/>
+            <polyline points="50,44 50,116" fill="none" stroke="#6B5310" stroke-width="1" opacity=".5"/>
+          </svg>
+        </span>
         <span class="gem-glint"></span>
       </div>
     </div>
