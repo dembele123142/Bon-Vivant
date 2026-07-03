@@ -49,11 +49,11 @@
     .shop-grid .shop-card:nth-child(5).reveal{transition-delay:240ms}
     .shop-grid .shop-card:nth-child(6).reveal{transition-delay:300ms}
     .cat-tiles a:nth-child(1).reveal{transition-delay:0ms}
-    .cat-tiles a:nth-child(2).reveal{transition-delay:40ms}
-    .cat-tiles a:nth-child(3).reveal{transition-delay:80ms}
-    .cat-tiles a:nth-child(4).reveal{transition-delay:120ms}
-    .cat-tiles a:nth-child(5).reveal{transition-delay:160ms}
-    .cat-tiles a:nth-child(6).reveal{transition-delay:200ms}
+    .cat-tiles a:nth-child(2).reveal{transition-delay:80ms}
+    .cat-tiles a:nth-child(3).reveal{transition-delay:160ms}
+    .cat-tiles a:nth-child(4).reveal{transition-delay:240ms}
+    .cat-tiles a:nth-child(5).reveal{transition-delay:320ms}
+    .cat-tiles a:nth-child(6).reveal{transition-delay:400ms}
     @media(prefers-reduced-motion:reduce){.shop-grid .shop-card.reveal,.cat-tiles a.reveal{transition-delay:0ms}}
 
     a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
@@ -61,17 +61,27 @@
     }
 
     /* ══════════════ ANNOUNCEMENT BAR ══════════════ */
-    .announce{background:var(--forest-deep);color:#fff;text-align:center;padding:.55rem 1rem;font-size:.78rem;letter-spacing:.02em}
+    .announce{background:var(--forest-deep);color:#fff;padding:.55rem 0;font-size:.78rem;letter-spacing:.02em;overflow:hidden}
     .announce strong{color:var(--gold)}
+    .announce-track{display:flex;width:max-content;white-space:nowrap;animation:announceScroll 20s linear infinite}
+    .announce-item{padding:0 .6rem}
+    .announce-sep{opacity:.4}
+    @keyframes announceScroll{to{transform:translateX(-50%)}}
+    @media(prefers-reduced-motion:reduce){
+      .announce-track{animation:none;justify-content:center;width:100%}
+      .announce-track>*:nth-child(n+7){display:none}
+    }
 
     /* ══════════════ HEADER ══════════════ */
     .header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--line)}
     .header-inner{display:flex;align-items:center;justify-content:space-between;padding:1rem 5vw;gap:1.5rem}
-    .logo{font-family:'Bodoni Moda',serif;font-size:1.35rem;color:var(--forest);white-space:nowrap}
+    .logo{font-family:'Bodoni Moda',serif;font-size:1.35rem;color:var(--forest);white-space:nowrap;opacity:0;animation:logoFade .6s cubic-bezier(0.25,0.46,0.45,0.94) .1s forwards}
     .logo em{font-style:italic;color:var(--gold)}
+    @keyframes logoFade{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+    @media(prefers-reduced-motion:reduce){.logo{animation:none;opacity:1}}
     .main-nav{display:flex;align-items:center;gap:1.75rem}
     .main-nav a{font-size:.86rem;font-weight:500;color:var(--ink);position:relative;padding:.25rem 0}
-    .main-nav a::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--gold);transition:width .25s var(--ease)}
+    .main-nav a::after{content:'';position:absolute;left:50%;bottom:-2px;width:0;height:2px;background:var(--gold);transform:translateX(-50%);transition:width .35s cubic-bezier(0.25,0.46,0.45,0.94)}
     .main-nav a:hover::after{width:100%}
     .header-actions{display:flex;align-items:center;gap:.5rem}
     .icon-btn{position:relative;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--forest);border-radius:50%;transition:background .2s}
@@ -119,14 +129,19 @@
     .hero-inner{max-width:640px;position:relative;z-index:2}
     .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:.4rem .9rem;border-radius:99px;margin-bottom:1.25rem}
     .hero h1{color:#fff;font-size:clamp(2.1rem,5vw,3.4rem);margin-bottom:1rem}
-    .hero h1 em{font-style:italic;color:var(--gold)}
+    .hero-h1-line-wrap{display:block;overflow:hidden}
+    .hero-h1-line{display:block}
+    .hero h1 em{font-style:italic;color:var(--gold);display:inline-block;animation:emGlow 3.2s ease-in-out infinite}
+    @keyframes emGlow{0%,100%{text-shadow:0 0 0 rgba(201,160,32,0)}50%{text-shadow:0 0 20px rgba(201,160,32,.55)}}
     .hero p{color:rgba(255,255,255,.72);max-width:420px;margin-bottom:1.75rem;font-size:1rem}
     .hero-actions{display:flex;gap:.9rem;flex-wrap:wrap}
-    .btn-gold{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.75rem;background:var(--gold);color:#fff;font-weight:600;font-size:.88rem;border-radius:6px;transition:background .2s,transform .2s;min-height:44px}
+    .btn-gold{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.75rem;background:var(--gold);color:#fff;font-weight:600;font-size:.88rem;border-radius:6px;transition:background .35s cubic-bezier(0.25,0.46,0.45,0.94),transform .35s cubic-bezier(0.25,0.46,0.45,0.94);min-height:44px}
     .btn-gold:hover{background:var(--gold-hi);transform:translateY(-2px)}
-    .btn-outline-white{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.75rem;border:1.5px solid rgba(255,255,255,.4);color:#fff;font-weight:600;font-size:.88rem;border-radius:6px;transition:border-color .2s,transform .2s;min-height:44px}
+    .btn-outline-white{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.75rem;border:1.5px solid rgba(255,255,255,.4);color:#fff;font-weight:600;font-size:.88rem;border-radius:6px;transition:border-color .35s cubic-bezier(0.25,0.46,0.45,0.94),transform .35s cubic-bezier(0.25,0.46,0.45,0.94);min-height:44px}
     .btn-outline-white:hover{border-color:var(--gold);transform:translateY(-2px)}
-    .hero-ghost{position:absolute;right:-4%;bottom:-18%;font-family:'Bodoni Moda',serif;font-style:italic;font-size:min(22vw,20rem);color:rgba(255,255,255,.05);line-height:1;pointer-events:none;user-select:none}
+    .hero-ghost{position:absolute;right:-4%;bottom:-18%;font-family:'Bodoni Moda',serif;font-style:italic;font-size:min(22vw,20rem);color:rgba(255,255,255,.05);line-height:1;pointer-events:none;user-select:none;animation:ghostPulse 8s ease-in-out infinite alternate;transform-origin:center}
+    @keyframes ghostPulse{from{transform:scale(.95)}to{transform:scale(1.05)}}
+    @media(prefers-reduced-motion:reduce){.hero h1 em{animation:none}.hero-ghost{animation:none}}
 
     /* ══════════════ CATEGORY TILES ══════════════ */
     .section{padding:4.5rem 6vw}
@@ -137,18 +152,23 @@
     @media(max-width:900px){.cat-tiles{grid-template-columns:repeat(3,1fr)}}
     @media(max-width:480px){.cat-tiles{grid-template-columns:repeat(2,1fr)}}
     .cat-tile{display:flex;flex-direction:column;align-items:center;gap:.75rem;text-align:center;min-height:44px}
-    .cat-tile-img{width:100%;aspect-ratio:1;border-radius:50%;background:linear-gradient(155deg,var(--cream),#fff);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:var(--gold);transition:border-color .2s,transform .2s}
-    .cat-tile:hover .cat-tile-img{border-color:var(--gold);transform:translateY(-4px)}
+    .cat-tile-img{width:100%;aspect-ratio:1;border-radius:50%;background:linear-gradient(155deg,var(--cream),#fff);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:var(--gold);transition:border-color .35s cubic-bezier(0.25,0.46,0.45,0.94),transform .35s cubic-bezier(0.25,0.46,0.45,0.94),box-shadow .35s cubic-bezier(0.25,0.46,0.45,0.94)}
+    .cat-tile-img i{transition:transform .3s cubic-bezier(0.25,0.46,0.45,0.94)}
+    .cat-tile:hover .cat-tile-img{border-color:var(--gold);transform:scale(1.06);box-shadow:0 10px 26px rgba(201,160,32,.28)}
+    .cat-tile:hover .cat-tile-img i{transform:translateY(-3px)}
     .cat-tile-label{font-size:.82rem;font-weight:600;color:var(--ink)}
 
     /* ══════════════ PRODUCT CARDS (shop) ══════════════ */
     .shop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.5rem}
-    .shop-card{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;transition:box-shadow .25s,transform .25s;display:flex;flex-direction:column}
-    .shop-card:hover{box-shadow:0 14px 32px rgba(20,35,27,.1);transform:translateY(-3px)}
+    .shop-card{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;transition:box-shadow .4s cubic-bezier(0.25,0.46,0.45,0.94),transform .4s cubic-bezier(0.25,0.46,0.45,0.94);display:flex;flex-direction:column}
+    .shop-card:hover{box-shadow:0 14px 32px rgba(20,35,27,.14);transform:translateY(-4px)}
     .shop-img{aspect-ratio:1;position:relative;background:linear-gradient(155deg,var(--forest) 0%,var(--forest-deep) 100%);display:flex;align-items:center;justify-content:center;overflow:hidden}
-    .shop-img::before{content:attr(data-letter);font-family:'Bodoni Moda',serif;font-style:italic;font-size:4.5rem;color:rgba(201,160,32,.28)}
+    .shop-img::before{content:attr(data-letter);font-family:'Bodoni Moda',serif;font-style:italic;font-size:4.5rem;color:rgba(201,160,32,.28);transition:transform .4s cubic-bezier(0.25,0.46,0.45,0.94)}
+    .shop-card:hover .shop-img::before{transform:scale(1.05)}
     .badge-row{position:absolute;top:.6rem;left:.6rem;right:.6rem;display:flex;justify-content:space-between;align-items:flex-start;pointer-events:none}
-    .badge-off{background:var(--gold);color:#fff;font-size:.68rem;font-weight:700;padding:.3rem .55rem;border-radius:4px}
+    .badge-off{background:var(--gold);color:#fff;font-size:.68rem;font-weight:700;padding:.3rem .55rem;border-radius:4px;transform-origin:center}
+    @keyframes badgePop{0%{transform:scale(1)}50%{transform:scale(1.15)}100%{transform:scale(1)}}
+    .badge-off.pulse{animation:badgePop .5s cubic-bezier(0.25,0.46,0.45,0.94)}
     .badge-ship{background:var(--forest);color:#fff;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;padding:.3rem .5rem;border-radius:4px}
     .fav-btn{position:absolute;bottom:.6rem;right:.6rem;width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--forest);font-size:1rem;box-shadow:0 2px 8px rgba(0,0,0,.12);transition:color .2s,transform .2s}
     .fav-btn:hover{color:var(--gold);transform:scale(1.08)}
@@ -299,7 +319,16 @@
 </head>
 <body>
 
-<div class="announce">Frete grátis acima de R$ 500 · <strong>Consultoria gratuita</strong> · Até 12x sem juros</div>
+<div class="announce" aria-label="Benefícios">
+  <div class="announce-track">
+    <span class="announce-item">Frete grátis acima de R$ 500</span><span class="announce-sep">·</span>
+    <span class="announce-item"><strong>Consultoria gratuita</strong></span><span class="announce-sep">·</span>
+    <span class="announce-item">Até 12x sem juros</span><span class="announce-sep">·</span>
+    <span class="announce-item" aria-hidden="true">Frete grátis acima de R$ 500</span><span class="announce-sep" aria-hidden="true">·</span>
+    <span class="announce-item" aria-hidden="true"><strong>Consultoria gratuita</strong></span><span class="announce-sep" aria-hidden="true">·</span>
+    <span class="announce-item" aria-hidden="true">Até 12x sem juros</span><span class="announce-sep" aria-hidden="true">·</span>
+  </div>
+</div>
 
 <!-- HEADER -->
 <header class="header">
@@ -367,7 +396,10 @@
   <span class="hero-ghost" aria-hidden="true">BV</span>
   <div class="hero-inner">
     <span class="hero-badge"><i class="ti ti-sparkles" aria-hidden="true"></i> Coleção 2024</span>
-    <h1>Cordões, brincos e pulseiras em <em>ouro e prata</em></h1>
+    <h1>
+      <span class="hero-h1-line-wrap"><span class="hero-h1-line">Cordões, brincos e pulseiras em</span></span>
+      <span class="hero-h1-line-wrap"><span class="hero-h1-line"><em>ouro e prata</em></span></span>
+    </h1>
     <p>Peças feitas à mão, um a um. Frete grátis, parcelamento em até 12x e consultoria gratuita para você escolher com segurança.</p>
     <div class="hero-actions">
       <a class="btn-gold" href="#catalogo">Ver coleção <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
@@ -954,6 +986,37 @@
   <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
 </a>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  /* ══════════════════════════════════════════
+     ANIMAÇÕES GSAP — hero timeline + badge pulse
+     Luxuosas e lentas: 0.4s–1.2s, power2.out
+     ══════════════════════════════════════════ */
+  (function () {
+    if (typeof gsap === 'undefined') return;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    /* HERO — entrada orquestrada */
+    gsap.timeline({ defaults: { ease: 'power2.out' } })
+      .fromTo('.hero-badge', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 }, 0)
+      .fromTo('.hero-h1-line', { yPercent: 110, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.6, stagger: 0.1 }, 0.3)
+      .fromTo('.hero p', { opacity: 0 }, { opacity: 1, duration: 0.5 }, 0.7)
+      .fromTo('.hero-actions', { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: 'back.out(1.6)' }, 0.9);
+
+    /* BADGES DE DESCONTO — pulso suave ao entrar na tela (uma vez) */
+    document.querySelectorAll('.badge-off').forEach((badge) => {
+      ScrollTrigger.create({
+        trigger: badge,
+        start: 'top 90%',
+        once: true,
+        onEnter: () => badge.classList.add('pulse'),
+      });
+    });
+  })();
+</script>
 <script>
   /* ── MOBILE NAV ── */
   function openMobileNav() {
