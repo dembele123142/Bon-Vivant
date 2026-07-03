@@ -136,19 +136,36 @@
     .hero p{color:rgba(255,255,255,.72);max-width:420px;margin-bottom:1.75rem;font-size:1rem}
     .hero-actions{display:flex;gap:.9rem;flex-wrap:wrap}
     .btn-gold{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.75rem;background:var(--gold);color:#fff;font-weight:600;font-size:.88rem;border-radius:6px;transition:background .35s cubic-bezier(0.25,0.46,0.45,0.94),transform .35s cubic-bezier(0.25,0.46,0.45,0.94);min-height:44px}
-    .btn-gold:hover{background:var(--gold-hi);transform:translateY(-2px)}
+    .btn-gold:hover{background:var(--gold-hi)}
     .btn-outline-white{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.75rem;border:1.5px solid rgba(255,255,255,.4);color:#fff;font-weight:600;font-size:.88rem;border-radius:6px;transition:border-color .35s cubic-bezier(0.25,0.46,0.45,0.94),transform .35s cubic-bezier(0.25,0.46,0.45,0.94);min-height:44px}
-    .btn-outline-white:hover{border-color:var(--gold);transform:translateY(-2px)}
-    .hero-ghost{position:absolute;right:-4%;bottom:-18%;font-family:'Bodoni Moda',serif;font-style:italic;font-size:min(22vw,20rem);color:rgba(255,255,255,.05);line-height:1;pointer-events:none;user-select:none;animation:ghostPulse 8s ease-in-out infinite alternate;transform-origin:center}
+    .btn-outline-white:hover{border-color:var(--gold)}
+    .hero-ghost{position:absolute;right:-4%;bottom:-18%;font-family:'Bodoni Moda',serif;font-style:italic;font-size:min(22vw,20rem);color:rgba(255,255,255,.05);line-height:1;pointer-events:none;user-select:none}
+    .hero-ghost-inner{display:inline-block;animation:ghostPulse 8s ease-in-out infinite alternate;transform-origin:center}
     @keyframes ghostPulse{from{transform:scale(.95)}to{transform:scale(1.05)}}
-    @media(prefers-reduced-motion:reduce){.hero h1 em{animation:none}.hero-ghost{animation:none}}
+    @media(prefers-reduced-motion:reduce){.hero h1 em{animation:none}.hero-ghost-inner{animation:none}}
+
+    /* ══════════════ HERO GEM (3D em CSS puro) ══════════════ */
+    .hero-gem{position:absolute;right:9%;top:50%;width:170px;height:170px;perspective:1000px;display:none;pointer-events:none;z-index:1}
+    @media(min-width:901px){.hero-gem{display:block}}
+    .gem-scroll{width:100%;height:100%;transform-style:preserve-3d}
+    .gem-3d{position:relative;width:100%;height:100%;transform-style:preserve-3d}
+    .facet{position:absolute;inset:0;margin:auto;width:120px;height:120px;clip-path:polygon(50% 0%,100% 38%,82% 100%,18% 100%,0% 38%);backface-visibility:hidden;border:1px solid rgba(201,160,32,.35)}
+    .facet.f1{background:linear-gradient(135deg,rgba(201,160,32,.85),rgba(201,160,32,.1));transform:rotateY(0deg) translateZ(60px)}
+    .facet.f2{background:linear-gradient(135deg,rgba(224,184,48,.7),rgba(201,160,32,.12));transform:rotateY(60deg) translateZ(60px)}
+    .facet.f3{background:linear-gradient(135deg,rgba(201,160,32,.55),rgba(201,160,32,.08));transform:rotateY(120deg) translateZ(60px)}
+    .facet.f4{background:linear-gradient(135deg,rgba(201,160,32,.85),rgba(201,160,32,.1));transform:rotateY(180deg) translateZ(60px)}
+    .facet.f5{background:linear-gradient(135deg,rgba(224,184,48,.7),rgba(201,160,32,.12));transform:rotateY(240deg) translateZ(60px)}
+    .facet.f6{background:linear-gradient(135deg,rgba(201,160,32,.55),rgba(201,160,32,.08));transform:rotateY(300deg) translateZ(60px)}
+    .facet.cap-top{width:110px;height:110px;background:radial-gradient(circle at 35% 30%,rgba(255,244,214,.9),rgba(201,160,32,.15));transform:rotateX(90deg) translateZ(58px)}
+    .facet.cap-bottom{width:110px;height:110px;background:radial-gradient(circle at 65% 70%,rgba(201,160,32,.5),rgba(122,96,15,.15));transform:rotateX(-90deg) translateZ(58px)}
+    @media(prefers-reduced-motion:reduce){.hero-gem{display:none}}
 
     /* ══════════════ CATEGORY TILES ══════════════ */
     .section{padding:4.5rem 6vw}
     .section-title{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:2rem;flex-wrap:wrap}
     .section-title h2{font-size:clamp(1.5rem,3vw,2.1rem);color:var(--forest)}
     .section-title .see-all{font-size:.85rem;font-weight:600;color:var(--forest);border-bottom:1px solid var(--gold);padding-bottom:2px}
-    .cat-tiles{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem}
+    .cat-tiles{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem;perspective:800px}
     @media(max-width:900px){.cat-tiles{grid-template-columns:repeat(3,1fr)}}
     @media(max-width:480px){.cat-tiles{grid-template-columns:repeat(2,1fr)}}
     .cat-tile{display:flex;flex-direction:column;align-items:center;gap:.75rem;text-align:center;min-height:44px}
@@ -159,9 +176,9 @@
     .cat-tile-label{font-size:.82rem;font-weight:600;color:var(--ink)}
 
     /* ══════════════ PRODUCT CARDS (shop) ══════════════ */
-    .shop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.5rem}
-    .shop-card{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;transition:box-shadow .4s cubic-bezier(0.25,0.46,0.45,0.94),transform .4s cubic-bezier(0.25,0.46,0.45,0.94);display:flex;flex-direction:column}
-    .shop-card:hover{box-shadow:0 14px 32px rgba(20,35,27,.14);transform:translateY(-4px)}
+    .shop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.5rem;perspective:1000px}
+    .shop-card{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;transition:box-shadow .4s cubic-bezier(0.25,0.46,0.45,0.94);display:flex;flex-direction:column;will-change:transform}
+    .shop-card:hover{box-shadow:0 14px 32px rgba(20,35,27,.14)}
     .shop-img{aspect-ratio:1;position:relative;background:linear-gradient(155deg,var(--forest) 0%,var(--forest-deep) 100%);display:flex;align-items:center;justify-content:center;overflow:hidden}
     .shop-img::before{content:attr(data-letter);font-family:'Bodoni Moda',serif;font-style:italic;font-size:4.5rem;color:rgba(201,160,32,.28);transition:transform .4s cubic-bezier(0.25,0.46,0.45,0.94)}
     .shop-card:hover .shop-img::before{transform:scale(1.05)}
@@ -391,7 +408,21 @@
 
 <!-- HERO -->
 <section class="hero">
-  <span class="hero-ghost" aria-hidden="true">BV</span>
+  <span class="hero-ghost" aria-hidden="true"><span class="hero-ghost-inner">BV</span></span>
+  <div class="hero-gem" aria-hidden="true">
+    <div class="gem-scroll">
+      <div class="gem-3d">
+        <span class="facet f1"></span>
+        <span class="facet f2"></span>
+        <span class="facet f3"></span>
+        <span class="facet f4"></span>
+        <span class="facet f5"></span>
+        <span class="facet f6"></span>
+        <span class="facet cap-top"></span>
+        <span class="facet cap-bottom"></span>
+      </div>
+    </div>
+  </div>
   <div class="hero-inner">
     <span class="hero-badge"><i class="ti ti-sparkles" aria-hidden="true"></i> Coleção 2024</span>
     <h1>
@@ -412,27 +443,27 @@
     <h2>Compre por categoria</h2>
   </div>
   <div class="cat-tiles">
-    <a class="cat-tile reveal" href="#catalogo" onclick="return goCat('cordao')">
+    <a class="cat-tile" href="#catalogo" onclick="return goCat('cordao')">
       <span class="cat-tile-img"><i class="ti ti-diamond" aria-hidden="true"></i></span>
       <span class="cat-tile-label">Cordões</span>
     </a>
-    <a class="cat-tile reveal" href="#catalogo" onclick="return goCat('brinco')">
+    <a class="cat-tile" href="#catalogo" onclick="return goCat('brinco')">
       <span class="cat-tile-img"><i class="ti ti-star" aria-hidden="true"></i></span>
       <span class="cat-tile-label">Brincos</span>
     </a>
-    <a class="cat-tile reveal" href="#catalogo" onclick="return goCat('pulseira')">
+    <a class="cat-tile" href="#catalogo" onclick="return goCat('pulseira')">
       <span class="cat-tile-img"><i class="ti ti-wave-sine" aria-hidden="true"></i></span>
       <span class="cat-tile-label">Pulseiras</span>
     </a>
-    <a class="cat-tile reveal" href="#catalogo" onclick="return goCat('anel')">
+    <a class="cat-tile" href="#catalogo" onclick="return goCat('anel')">
       <span class="cat-tile-img"><i class="ti ti-circle" aria-hidden="true"></i></span>
       <span class="cat-tile-label">Alianças</span>
     </a>
-    <a class="cat-tile reveal" href="#catalogo" onclick="return goCat('pingente')">
+    <a class="cat-tile" href="#catalogo" onclick="return goCat('pingente')">
       <span class="cat-tile-img"><i class="ti ti-tag" aria-hidden="true"></i></span>
       <span class="cat-tile-label">Pingentes</span>
     </a>
-    <a class="cat-tile reveal" href="#catalogo" onclick="return goCat('todos')">
+    <a class="cat-tile" href="#catalogo" onclick="return goCat('todos')">
       <span class="cat-tile-img"><i class="ti ti-gift" aria-hidden="true"></i></span>
       <span class="cat-tile-label">Kits</span>
     </a>
@@ -445,8 +476,8 @@
     <h2>Mais vendidos</h2>
     <a class="see-all" href="#catalogo">Ver tudo</a>
   </div>
-  <div class="shop-grid">
-    <article class="shop-card reveal">
+  <div class="shop-grid featured-grid">
+    <article class="shop-card">
       <div class="shop-img" data-letter="C">
         <div class="badge-row">
           <span class="badge-off">15% OFF</span>
@@ -469,7 +500,7 @@
         </div>
       </div>
     </article>
-    <article class="shop-card reveal">
+    <article class="shop-card">
       <div class="shop-img" data-letter="A">
         <div class="badge-row">
           <span class="badge-off">19% OFF</span>
@@ -492,7 +523,7 @@
         </div>
       </div>
     </article>
-    <article class="shop-card reveal">
+    <article class="shop-card">
       <div class="shop-img" data-letter="B">
         <div class="badge-row">
           <span class="badge-off">16% OFF</span>
@@ -515,7 +546,7 @@
         </div>
       </div>
     </article>
-    <article class="shop-card reveal">
+    <article class="shop-card">
       <div class="shop-img" data-letter="P">
         <div class="badge-row">
           <span class="badge-off">16% OFF</span>
@@ -538,7 +569,7 @@
         </div>
       </div>
     </article>
-    <article class="shop-card reveal">
+    <article class="shop-card">
       <div class="shop-img" data-letter="P">
         <div class="badge-row">
           <span class="badge-off">16% OFF</span>
@@ -1003,6 +1034,78 @@
       .fromTo('.hero-h1-line', { yPercent: 110, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.6, stagger: 0.1 }, 0.3)
       .fromTo('.hero p', { opacity: 0 }, { opacity: 1, duration: 0.5 }, 0.7)
       .fromTo('.hero-actions', { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: 'back.out(1.6)' }, 0.9);
+
+    /* GEM 3D — rotação contínua + tilt no scroll + parallax no mouse */
+    const heroGem = document.querySelector('.hero-gem');
+    if (heroGem && window.innerWidth > 900) {
+      gsap.to('.gem-3d', { rotateY: 360, duration: 16, repeat: -1, ease: 'none' });
+      gsap.to('.gem-scroll', {
+        rotateX: 16,
+        ease: 'none',
+        scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true },
+      });
+      if (window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
+        const gemTiltX = gsap.quickTo(heroGem, 'rotateZ', { duration: 0.7, ease: 'power3' });
+        const gemTiltY = gsap.quickTo(heroGem, 'y', { duration: 0.7, ease: 'power3' });
+        document.querySelector('.hero').addEventListener('mousemove', (e) => {
+          const r = heroGem.getBoundingClientRect();
+          const cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+          gemTiltX((e.clientX - cx) * 0.015);
+          gemTiltY((e.clientY - cy) * 0.06);
+        });
+      }
+    }
+
+    /* MONOGRAMA DE FUNDO — parallax sutil no scroll */
+    gsap.to('.hero-ghost', {
+      y: 70,
+      ease: 'none',
+      scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true },
+    });
+
+    /* CATEGORIAS — entrada em cascata sincronizada ao scroll (scrub) */
+    gsap.timeline({
+      scrollTrigger: { trigger: '.cat-tiles', start: 'top 90%', end: 'top 55%', scrub: 0.6 },
+    }).from('.cat-tile', {
+      opacity: 0, y: 46, rotateX: -25, transformOrigin: 'top center', stagger: 0.08, ease: 'none',
+    });
+
+    /* MAIS VENDIDOS — entrada em cascata sincronizada ao scroll (scrub) */
+    gsap.timeline({
+      scrollTrigger: { trigger: '.featured-grid', start: 'top 90%', end: 'top 45%', scrub: 0.6 },
+    }).from('.featured-grid .shop-card', {
+      opacity: 0, y: 60, rotateX: -14, transformOrigin: 'top center', stagger: 0.1, ease: 'none',
+    });
+
+    /* CARDS DE PRODUTO — tilt 3D + elevação seguindo o mouse (desktop) */
+    if (window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
+      document.querySelectorAll('.shop-card').forEach((card) => {
+        const tiltX = gsap.quickTo(card, 'rotateX', { duration: 0.5, ease: 'power3' });
+        const tiltY = gsap.quickTo(card, 'rotateY', { duration: 0.5, ease: 'power3' });
+        const lift = gsap.quickTo(card, 'y', { duration: 0.4, ease: 'power3' });
+        card.addEventListener('mousemove', (e) => {
+          const r = card.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width - 0.5;
+          const py = (e.clientY - r.top) / r.height - 0.5;
+          tiltY(px * 7);
+          tiltX(-py * 7);
+          lift(-4);
+        });
+        card.addEventListener('mouseleave', () => { tiltX(0); tiltY(0); lift(0); });
+      });
+
+      /* BOTÕES MAGNÉTICOS */
+      document.querySelectorAll('.btn-gold, .btn-outline-white').forEach((btn) => {
+        const mx = gsap.quickTo(btn, 'x', { duration: 0.4, ease: 'power3' });
+        const my = gsap.quickTo(btn, 'y', { duration: 0.4, ease: 'power3' });
+        btn.addEventListener('mousemove', (e) => {
+          const r = btn.getBoundingClientRect();
+          mx((e.clientX - r.left - r.width / 2) * 0.25);
+          my((e.clientY - r.top - r.height / 2) * 0.25);
+        });
+        btn.addEventListener('mouseleave', () => { mx(0); my(0); });
+      });
+    }
 
     /* BADGES DE DESCONTO — pulso suave ao entrar na tela (uma vez) */
     document.querySelectorAll('.badge-off').forEach((badge) => {
