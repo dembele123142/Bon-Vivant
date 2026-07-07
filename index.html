@@ -25,9 +25,13 @@
       --gold-hi:     #E0B830;
       --cream:       #F7F4EC;
       --ink:         #1A2620;
-      --muted:       #6B7A72;
+      --muted:       #5C6B62;
       --line:        #E4E0D4;
       --ease:        cubic-bezier(0.19,1,0.22,1);
+      --shadow-sm:   0 2px 8px rgba(20,35,27,.08);
+      --shadow-md:   0 8px 20px rgba(20,35,27,.10);
+      --shadow-lg:   0 14px 32px rgba(20,35,27,.14);
+      --shadow-xl:   0 24px 48px rgba(20,35,27,.18);
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
@@ -100,7 +104,7 @@
     /* ══════════════ CART DRAWER ══════════════ */
     .cart-overlay{position:fixed;inset:0;background:rgba(20,35,27,.45);z-index:300;opacity:0;pointer-events:none;transition:opacity .3s}
     .cart-overlay.open{opacity:1;pointer-events:auto}
-    .cart-drawer{position:fixed;top:0;right:0;bottom:0;width:min(400px,92vw);background:#fff;z-index:301;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .35s var(--ease)}
+    .cart-drawer{position:fixed;top:0;right:0;bottom:0;width:min(400px,92vw);background:#fff;z-index:301;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .35s var(--ease);box-shadow:var(--shadow-xl)}
     .cart-drawer.open{transform:none}
     .cart-head{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;border-bottom:1px solid var(--line)}
     .cart-head h3{font-size:1.2rem}
@@ -112,7 +116,7 @@
     .cart-item-info{flex:1;min-width:0}
     .cart-item-name{font-size:.9rem;font-weight:500}
     .cart-item-price{font-size:.82rem;color:var(--gold);font-weight:600}
-    .cart-item-remove{width:32px;height:32px;display:flex;align-items:center;justify-content:center;color:var(--muted);flex-shrink:0}
+    .cart-item-remove{width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:var(--muted);flex-shrink:0}
     .cart-item-remove:hover{color:#c0392b}
     .cart-foot{padding:1.25rem 1.5rem;border-top:1px solid var(--line)}
     .cart-total-row{display:flex;justify-content:space-between;margin-bottom:1rem;font-size:1rem}
@@ -132,7 +136,7 @@
     @keyframes emGlow{0%,100%{text-shadow:0 0 0 rgba(201,160,32,0)}50%{text-shadow:0 0 20px rgba(201,160,32,.55)}}
     .hero p{color:rgba(255,255,255,.72);max-width:420px;margin-bottom:1.75rem;font-size:1rem}
     .hero-actions{display:flex;gap:.9rem;flex-wrap:wrap}
-    .btn-gold{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.75rem;background:var(--gold);color:#fff;font-weight:600;font-size:.88rem;border-radius:6px;transition:background .35s cubic-bezier(0.25,0.46,0.45,0.94),transform .35s cubic-bezier(0.25,0.46,0.45,0.94);min-height:44px}
+    .btn-gold{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.75rem;background:var(--gold);color:var(--forest-deep);font-weight:700;font-size:.88rem;border-radius:6px;transition:background .35s cubic-bezier(0.25,0.46,0.45,0.94),transform .35s cubic-bezier(0.25,0.46,0.45,0.94);min-height:44px}
     .btn-gold:hover{background:var(--gold-hi)}
     .btn-outline-white{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.75rem;border:1.5px solid rgba(255,255,255,.4);color:#fff;font-weight:600;font-size:.88rem;border-radius:6px;transition:border-color .35s cubic-bezier(0.25,0.46,0.45,0.94),transform .35s cubic-bezier(0.25,0.46,0.45,0.94);min-height:44px}
     .btn-outline-white:hover{border-color:var(--gold)}
@@ -178,16 +182,16 @@
     .shop-card{position:relative;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;transition:box-shadow .4s cubic-bezier(0.25,0.46,0.45,0.94);display:flex;flex-direction:column;will-change:transform}
     .shop-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:center;transition:transform .4s cubic-bezier(0.25,0.46,0.45,0.94);z-index:2}
     .shop-card:hover::before{transform:scaleX(1)}
-    .shop-card:hover{box-shadow:0 14px 32px rgba(20,35,27,.14)}
+    .shop-card:hover{box-shadow:var(--shadow-lg)}
     .shop-img{aspect-ratio:1;position:relative;background:linear-gradient(155deg,var(--forest) 0%,var(--forest-deep) 100%);display:flex;align-items:center;justify-content:center;overflow:hidden}
     .shop-img::before{content:attr(data-letter);font-family:'Bodoni Moda',serif;font-style:italic;font-size:4.5rem;color:rgba(201,160,32,.28);transition:transform .4s cubic-bezier(0.25,0.46,0.45,0.94)}
     .shop-card:hover .shop-img::before{transform:scale(1.05)}
     .badge-row{position:absolute;top:.6rem;left:.6rem;right:.6rem;display:flex;justify-content:space-between;align-items:flex-start;pointer-events:none}
-    .badge-off{background:var(--gold);color:#fff;font-size:.68rem;font-weight:700;padding:.3rem .55rem;border-radius:4px;transform-origin:center}
+    .badge-off{background:var(--gold);color:var(--forest-deep);font-size:.68rem;font-weight:700;padding:.3rem .55rem;border-radius:4px;transform-origin:center}
     @keyframes badgePop{0%{transform:scale(1)}50%{transform:scale(1.15)}100%{transform:scale(1)}}
     .badge-off.pulse{animation:badgePop .5s cubic-bezier(0.25,0.46,0.45,0.94)}
     .badge-ship{background:var(--forest);color:#fff;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;padding:.3rem .5rem;border-radius:4px}
-    .fav-btn{position:absolute;bottom:.6rem;right:.6rem;width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--forest);font-size:1rem;box-shadow:0 2px 8px rgba(0,0,0,.12);transition:color .2s,transform .2s}
+    .fav-btn{position:absolute;bottom:.4rem;right:.4rem;width:44px;height:44px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--forest);font-size:1rem;box-shadow:var(--shadow-sm);transition:color .2s,transform .2s}
     .fav-btn:hover{color:var(--gold);transform:scale(1.08)}
     .fav-btn.active{color:var(--gold)}
     .shop-body{padding:1.1rem 1.1rem 1.25rem;display:flex;flex-direction:column;flex:1}
@@ -223,7 +227,8 @@
 
     /* ══════════════ TESTIMONIALS ══════════════ */
     .testi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem}
-    .testi-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:1.5rem}
+    .testi-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:1.5rem;box-shadow:var(--shadow-sm);transition:box-shadow .35s cubic-bezier(0.25,0.46,0.45,0.94),transform .35s cubic-bezier(0.25,0.46,0.45,0.94)}
+    .testi-card:hover{box-shadow:var(--shadow-md);transform:translateY(-3px)}
     .testi-stars{color:var(--gold);font-size:.85rem;margin-bottom:.75rem}
     .testi-text{font-size:.9rem;color:var(--ink);line-height:1.65;margin-bottom:1.1rem}
     .testi-who{display:flex;align-items:center;gap:.7rem}
@@ -746,7 +751,7 @@
   </div>
   <div class="testi-grid">
     <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
+      <div class="testi-stars" role="img" aria-label="Avaliação 5 de 5 estrelas">★★★★★</div>
       <p class="testi-text">"O Cordão Cartier superou todas as minhas expectativas. Qualidade impecável e atendimento incrível."</p>
       <div class="testi-who">
         <span class="testi-avatar">A</span>
@@ -754,7 +759,7 @@
       </div>
     </div>
     <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
+      <div class="testi-stars" role="img" aria-label="Avaliação 5 de 5 estrelas">★★★★★</div>
       <p class="testi-text">"Presenteei minha esposa com o Brinco Étoile. Ela chora de emoção cada vez que usa."</p>
       <div class="testi-who">
         <span class="testi-avatar">C</span>
@@ -762,7 +767,7 @@
       </div>
     </div>
     <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
+      <div class="testi-stars" role="img" aria-label="Avaliação 5 de 5 estrelas">★★★★★</div>
       <p class="testi-text">"Peça sob encomenda entregue no prazo. O acabamento é digno de joalheria europeia."</p>
       <div class="testi-who">
         <span class="testi-avatar">F</span>
@@ -770,7 +775,7 @@
       </div>
     </div>
     <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
+      <div class="testi-stars" role="img" aria-label="Avaliação 5 de 5 estrelas">★★★★★</div>
       <p class="testi-text">"Comprei pelo Pix e ainda ganhei desconto. Entrega rápida e embalagem linda."</p>
       <div class="testi-who">
         <span class="testi-avatar">M</span>
