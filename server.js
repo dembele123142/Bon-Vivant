@@ -82,6 +82,9 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.static(__dirname));
 
+// atalho: /admin também abre o painel (além de /admin.html)
+app.get('/admin', (req, res) => res.sendFile(path.join(__dirname, 'admin.html')));
+
 // ---------- rotas públicas ----------
 app.get('/api/products', async (req, res) => {
   const { data, error } = await supabase.from('products').select('*').order('created_at', { ascending: true });
