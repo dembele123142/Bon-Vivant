@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231A4430'/><polygon points='32,10 50,26 32,58 14,26' fill='none' stroke='%23C9A020' stroke-width='3'/><polyline points='22,20 42,20' stroke='%23C9A020' stroke-width='2' fill='none'/><polyline points='22,20 14,26' stroke='%23C9A020' stroke-width='2' fill='none'/><polyline points='42,20 50,26' stroke='%23C9A020' stroke-width='2' fill='none'/><polyline points='32,10 22,20' stroke='%23C9A020' stroke-width='2' fill='none'/><polyline points='32,10 42,20' stroke='%23C9A020' stroke-width='2' fill='none'/></svg>"/>
+  <link rel="icon" type="image/png" href="images/logo.png"/>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"JewelryStore","name":"Bon Vivant Joias","url":"https://bon-vivant.onrender.com","description":"Cordões, brincos, pulseiras e alianças em ouro 18k e prata 925","telephone":"+5511999990000","priceRange":"R$690 - R$7900"}
   </script>
@@ -72,6 +72,8 @@
     .logo em{font-style:italic;color:var(--gold)}
     .brand-mark{width:20px;height:24px;color:var(--gold);flex-shrink:0}
     .brand-mark.lg{width:27px;height:32px}
+    .brand-logo{width:36px;height:36px;border-radius:50%;flex-shrink:0;object-fit:cover}
+    .brand-logo.lg{width:46px;height:46px}
     @keyframes logoFade{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
     @media(prefers-reduced-motion:reduce){.logo{animation:none;opacity:1}}
 
@@ -351,7 +353,7 @@
       <span></span><span></span><span></span>
     </button>
     <a class="logo" href="#">
-      <svg class="brand-mark" viewBox="0 0 100 120" aria-hidden="true"><polygon points="50,4 92,44 50,116 8,44" fill="none" stroke="currentColor" stroke-width="5"/><polyline points="26,30 74,30" fill="none" stroke="currentColor" stroke-width="3"/><polyline points="26,30 8,44" fill="none" stroke="currentColor" stroke-width="3"/><polyline points="74,30 92,44" fill="none" stroke="currentColor" stroke-width="3"/><polyline points="50,4 26,30" fill="none" stroke="currentColor" stroke-width="3"/><polyline points="50,4 74,30" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+      <img class="brand-logo" src="images/logo.png" alt="Bon Vivant Joias"/>
       Bon Vivant <em>Joias</em>
     </a>
     <nav class="main-nav" aria-label="Navegação principal">
@@ -376,7 +378,7 @@
 <div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Menu">
   <div class="mobile-nav-top">
     <span class="logo">
-      <svg class="brand-mark" viewBox="0 0 100 120" aria-hidden="true"><polygon points="50,4 92,44 50,116 8,44" fill="none" stroke="currentColor" stroke-width="5"/><polyline points="26,30 74,30" fill="none" stroke="currentColor" stroke-width="3"/><polyline points="26,30 8,44" fill="none" stroke="currentColor" stroke-width="3"/><polyline points="74,30 92,44" fill="none" stroke="currentColor" stroke-width="3"/><polyline points="50,4 26,30" fill="none" stroke="currentColor" stroke-width="3"/><polyline points="50,4 74,30" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+      <img class="brand-logo" src="images/logo.png" alt="Bon Vivant Joias"/>
       Bon Vivant <em>Joias</em>
     </span>
     <button class="mobile-nav-close" onclick="closeMobileNav()" aria-label="Fechar menu"><i class="ti ti-x" aria-hidden="true"></i></button>
@@ -790,7 +792,7 @@
   <div class="footer-grid">
     <div>
       <p class="footer-brand">
-        <svg class="brand-mark lg" viewBox="0 0 100 120" aria-hidden="true"><polygon points="50,4 92,44 50,116 8,44" fill="none" stroke="currentColor" stroke-width="4"/><polyline points="26,30 74,30" fill="none" stroke="currentColor" stroke-width="2.4"/><polyline points="26,30 8,44" fill="none" stroke="currentColor" stroke-width="2.4"/><polyline points="74,30 92,44" fill="none" stroke="currentColor" stroke-width="2.4"/><polyline points="50,4 26,30" fill="none" stroke="currentColor" stroke-width="2.4"/><polyline points="50,4 74,30" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>
+        <img class="brand-logo lg" src="images/logo.png" alt="Bon Vivant Joias"/>
         Bon Vivant <em>Joias</em>
       </p>
       <p class="footer-desc">Cordões, brincos e pulseiras em ouro e prata, feitos à mão com paixão e técnica artesanal.</p>
