@@ -172,18 +172,25 @@
 
   async function login() {
     const password = document.getElementById('password').value;
-    const res = await fetch('/api/admin/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ password }),
-    });
-    if (res.ok) {
-      document.getElementById('loginErr').classList.remove('show');
-      document.getElementById('loginScreen').style.display = 'none';
-      document.getElementById('app').style.display = 'block';
-      loadProducts();
-    } else {
-      document.getElementById('loginErr').classList.add('show');
+    const loginErr = document.getElementById('loginErr');
+    try {
+      const res = await fetch('/api/admin/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password }),
+      });
+      if (res.ok) {
+        loginErr.classList.remove('show');
+        document.getElementById('loginScreen').style.display = 'none';
+        document.getElementById('app').style.display = 'block';
+        loadProducts();
+      } else {
+        loginErr.textContent = 'Senha incorreta.';
+        loginErr.classList.add('show');
+      }
+    } catch (err) {
+      loginErr.textContent = 'Não foi possível conectar ao servidor. Tente novamente em instantes.';
+      loginErr.classList.add('show');
     }
   }
 
@@ -193,9 +200,14 @@
   }
 
   async function loadProducts() {
-    const res = await fetch('/api/products');
-    products = await res.json();
-    renderTable();
+    try {
+      const res = await fetch('/api/products');
+      if (!res.ok) throw new Error('Erro ao carregar produtos (status ' + res.status + ')');
+      products = await res.json();
+      renderTable();
+    } catch (err) {
+      toast('Não foi possível carregar os produtos. Verifique sua conexão e recarregue a página.', true);
+    }
   }
 
   function renderTable() {
@@ -269,17 +281,39 @@
 
     const url = id ? `/api/admin/products/${id}` : '/api/admin/products';
     const method = id ? 'PUT' : 'POST';
+    const submitBtn = document.getElementById('submitBtn');
+    const originalLabel = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando… (pode levar até 1 minuto se o servidor estiver "acordando")';
     try {
       const res = await fetch(url, { method, body: fd });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Erro ao salvar');
+      const data = await safeJson(res);
+      if (!res.ok) throw new Error((data && data.error) || `Erro ao salvar (status ${res.status})`);
       toast(id ? 'Produto atualizado!' : 'Produto adicionado!');
       resetForm();
       loadProducts();
     } catch (err) {
-      toast(err.message, true);
+      toast(connectionErrorMessage(err), true);
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalLabel;
     }
     return false;
+  }
+
+  // lê a resposta como JSON sem quebrar se o corpo vier vazio/incompleto
+  // (ex: timeout do servidor gratuito "acordando" cortando a resposta no meio)
+  async function safeJson(res) {
+    const text = await res.text();
+    if (!text) return null;
+    try { return JSON.parse(text); } catch { return null; }
+  }
+
+  function connectionErrorMessage(err) {
+    if (err instanceof TypeError || /unexpected end of json|failed to fetch/i.test(err.message || '')) {
+      return 'O servidor demorou pra responder (comum quando ele estava "dormindo"). Espere um instante e tente novamente.';
+    }
+    return err.message || 'Erro inesperado. Tente novamente.';
   }
 
   async function deleteProduct(id) {
@@ -287,11 +321,12 @@
     if (!confirm(`Excluir "${p ? p.name : id}"? Essa ação não pode ser desfeita.`)) return;
     try {
       const res = await fetch(`/api/admin/products/${id}`, { method: 'DELETE' });
-      if (!res.ok) throw new Error('Erro ao excluir');
+      const data = await safeJson(res);
+      if (!res.ok) throw new Error((data && data.error) || `Erro ao excluir (status ${res.status})`);
       toast('Produto excluído.');
       loadProducts();
     } catch (err) {
-      toast(err.message, true);
+      toast(connectionErrorMessage(err), true);
     }
   }
 
