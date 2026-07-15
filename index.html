@@ -249,20 +249,6 @@
     .faq-q i{color:var(--gold);flex-shrink:0;transition:transform .3s}
     .faq-a{padding:0 0 1.2rem;color:var(--muted);font-size:.9rem;line-height:1.7;max-width:88%;display:none}
 
-    /* ══════════════ CALCULATOR ══════════════ */
-    .calc-box{border:1px solid var(--line);border-radius:12px;padding:2rem;max-width:900px;margin:0 auto;background:#fff}
-    .calc-section{margin-bottom:1.75rem}
-    .calc-label{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--forest);margin-bottom:.7rem}
-    .calc-opts{display:flex;flex-wrap:wrap;gap:.5rem}
-    .calc-opt{padding:.5rem 1rem;border:1px solid var(--line);border-radius:99px;font-size:.8rem;color:var(--muted);transition:all .2s;min-height:40px;background:#fff}
-    .calc-opt:hover,.calc-opt.active,.calc-opt.selected{border-color:var(--gold);color:var(--forest);background:var(--cream)}
-    .calc-result{margin-top:1.75rem;padding:1.5rem;border-radius:10px;background:var(--cream);text-align:center}
-    .calc-result-val{font-family:'Bodoni Moda',serif;font-size:2.1rem;color:var(--forest)}
-    .calc-result-note{font-size:.78rem;color:var(--muted);margin-top:.4rem}
-    #calcNote{display:none;margin-top:1rem}
-    .calc-wa{display:inline-flex;align-items:center;gap:.55rem;padding:.75rem 1.5rem;background:#25D366;color:#fff;font-weight:600;font-size:.85rem;border-radius:6px;transition:opacity .2s;min-height:44px}
-    .calc-wa:hover{opacity:.9}
-
     /* ══════════════ CONSULT FORM ══════════════ */
     .consult-box{border:1px solid var(--line);border-radius:12px;padding:2rem;max-width:640px;margin:0 auto;background:#fff}
     .step-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem}
@@ -389,7 +375,6 @@
     <li><a href="#catalogo" onclick="closeMobileNav();goCat('pulseira')">Pulseiras</a></li>
     <li><a href="#catalogo" onclick="closeMobileNav();goCat('anel')">Alianças</a></li>
     <li><a href="#catalogo" onclick="closeMobileNav();goCat('pingente')">Pingentes</a></li>
-    <li><a href="#calculadora" onclick="closeMobileNav()">Calculadora</a></li>
     <li><a href="#consultoria" onclick="closeMobileNav()">Consultoria</a></li>
     <li><a href="#faq" onclick="closeMobileNav()">FAQ</a></li>
   </ul>
@@ -623,63 +608,6 @@
     </div>
   </div>
 </section>
-
-<!-- CALCULATOR -->
-<section class="section" id="calculadora">
-  <div class="section-title" style="justify-content:center;text-align:center;flex-direction:column;align-items:center">
-    <h2>Simule seu orçamento</h2>
-  </div>
-  <div class="calc-box">
-    <div class="calc-section">
-      <p class="calc-label">Tipo de joia</p>
-      <div class="calc-opts">
-        <button class="calc-opt active" data-group="tipo" data-base="800" onclick="calcSelect(this)">Aliança</button>
-        <button class="calc-opt" data-group="tipo" data-base="1200" onclick="calcSelect(this)">Cordão</button>
-        <button class="calc-opt" data-group="tipo" data-base="600" onclick="calcSelect(this)">Brinco</button>
-        <button class="calc-opt" data-group="tipo" data-base="900" onclick="calcSelect(this)">Pulseira</button>
-        <button class="calc-opt" data-group="tipo" data-base="500" onclick="calcSelect(this)">Pingente</button>
-      </div>
-    </div>
-    <div class="calc-section">
-      <p class="calc-label">Material</p>
-      <div class="calc-opts">
-        <button class="calc-opt active" data-group="material" data-mult="1.0" onclick="calcSelect(this)">Prata 925</button>
-        <button class="calc-opt" data-group="material" data-mult="2.5" onclick="calcSelect(this)">Ouro 18k</button>
-        <button class="calc-opt" data-group="material" data-mult="3.8" onclick="calcSelect(this)">Ouro 24k</button>
-      </div>
-    </div>
-    <div class="calc-section">
-      <p class="calc-label">Pedra principal</p>
-      <div class="calc-opts">
-        <button class="calc-opt active" data-group="pedra" data-add="0" onclick="calcSelect(this)">Sem pedra</button>
-        <button class="calc-opt" data-group="pedra" data-add="300" onclick="calcSelect(this)">Zircônia</button>
-        <button class="calc-opt" data-group="pedra" data-add="800" onclick="calcSelect(this)">Safira</button>
-        <button class="calc-opt" data-group="pedra" data-add="1200" onclick="calcSelect(this)">Esmeralda</button>
-        <button class="calc-opt" data-group="pedra" data-add="1800" onclick="calcSelect(this)">Rubi</button>
-        <button class="calc-opt" data-group="pedra" data-add="2500" onclick="calcSelect(this)">Diamante</button>
-      </div>
-    </div>
-    <div class="calc-section">
-      <p class="calc-label">Serviços adicionais</p>
-      <div class="calc-opts">
-        <button class="calc-opt-check calc-opt" data-add="200" onclick="calcToggle(this)">Gravação</button>
-        <button class="calc-opt-check calc-opt" data-add="350" onclick="calcToggle(this)">Banho ouro</button>
-        <button class="calc-opt-check calc-opt" data-add="400" onclick="calcToggle(this)">Caixa premium</button>
-        <button class="calc-opt-check calc-opt" data-add="150" onclick="calcToggle(this)">Certificado GIA</button>
-      </div>
-    </div>
-    <div class="calc-result">
-      <p class="calc-result-val" id="calcResult">R$ 800</p>
-      <p class="calc-result-note" id="calcParcel">ou 12× de R$ 66,67 · Pix: R$ 760</p>
-      <div id="calcNote">
-        <a class="calc-wa" id="calcWaba" href="https://wa.me/5511999990000" target="_blank" rel="noopener">
-          <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Confirmar orçamento
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- CONSULT FORM -->
 <section class="section section-alt" id="consultoria">
   <div class="section-title" style="justify-content:center;text-align:center;flex-direction:column;align-items:center">
@@ -813,7 +741,6 @@
       <p class="footer-col-title">Serviços</p>
       <ul>
         <li><a href="#consultoria">Consultoria</a></li>
-        <li><a href="#calculadora">Calculadora</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
     </div>
@@ -1190,42 +1117,6 @@
       answer.style.display = 'block';
       icon.style.transform = 'rotate(45deg)';
     }
-  }
-
-  /* ══════════════════════════════════════════
-     MÓDULO — CALCULADORA DE ORÇAMENTO
-     ══════════════════════════════════════════ */
-  const calcState = { base: 800, mult: 1.0, add: 0, extras: 0 };
-
-  function calcSelect(btn) {
-    const group = btn.dataset.group;
-    document.querySelectorAll(`.calc-opt[data-group="${group}"]`).forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    if (group === 'tipo') calcState.base = +btn.dataset.base;
-    if (group === 'material') calcState.mult = +btn.dataset.mult;
-    if (group === 'pedra') calcState.add = +btn.dataset.add;
-    renderCalc();
-  }
-
-  function calcToggle(btn) {
-    btn.classList.toggle('selected');
-    calcState.extras = Array.from(document.querySelectorAll('.calc-opt-check.selected'))
-      .reduce((sum, b) => sum + +b.dataset.add, 0);
-    renderCalc();
-  }
-
-  function renderCalc() {
-    const total = Math.round(calcState.base * calcState.mult + calcState.add + calcState.extras);
-    const parcel = (total / 12).toFixed(2).replace('.', ',');
-    const pix = Math.round(total * 0.95);
-    document.getElementById('calcResult').textContent = `R$ ${total.toLocaleString('pt-BR')}`;
-    document.getElementById('calcParcel').textContent = `ou 12× de R$ ${parcel} · Pix: R$ ${pix.toLocaleString('pt-BR')}`;
-    const tipo  = document.querySelector('.calc-opt[data-group="tipo"].active')?.textContent || '';
-    const mat   = document.querySelector('.calc-opt[data-group="material"].active')?.textContent || '';
-    const pedra = document.querySelector('.calc-opt[data-group="pedra"].active')?.textContent || '';
-    const msg = encodeURIComponent(`Olá! Tenho interesse em um(a) ${tipo} em ${mat} com ${pedra}. Orçamento estimado: R$ ${total.toLocaleString('pt-BR')}. Poderia confirmar o valor?`);
-    document.getElementById('calcWaba').href = `https://wa.me/5511999990000?text=${msg}`;
-    document.getElementById('calcNote').style.display = 'block';
   }
 
   /* ══════════════════════════════════════════
