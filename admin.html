@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Admin — Bon Vivant Joias</title>
+<meta name="robots" content="noindex,nofollow"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
+<style>
+  :root{
+    --forest:#1A4430; --forest-deep:#122E20; --gold:#C9A020; --gold-hi:#E0B830;
+    --cream:#F7F4EC; --ink:#1A2620; --muted:#5C6B62; --line:#E4E0D4; --err:#c0392b;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Work Sans',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh}
+  h1,h2{font-family:'Bodoni Moda',serif;font-weight:500}
+  button{cursor:pointer;font-family:inherit}
+  input,select{font-family:inherit}
+  .topbar{background:var(--forest-deep);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem}
+  .topbar h1{font-size:1.3rem;color:#fff}
+  .topbar h1 em{color:var(--gold);font-style:italic}
+  .btn{padding:.6rem 1.2rem;border-radius:6px;font-weight:600;font-size:.85rem;border:none}
+  .btn-gold{background:var(--gold);color:var(--forest-deep)}
+  .btn-gold:hover{background:var(--gold-hi)}
+  .btn-outline{background:transparent;border:1px solid rgba(255,255,255,.3);color:#fff}
+  .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+  .btn-danger{background:var(--err);color:#fff}
+  .btn-danger:hover{opacity:.9}
+
+  /* login */
+  .login-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem}
+  .login-box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:2.5rem;max-width:360px;width:100%}
+  .login-box h2{margin-bottom:.5rem;color:var(--forest)}
+  .login-box p{color:var(--muted);font-size:.9rem;margin-bottom:1.5rem}
+  .field{margin-bottom:1.25rem}
+  .field label{display:block;font-size:.8rem;font-weight:600;color:var(--forest);margin-bottom:.4rem}
+  .field input,.field select{width:100%;padding:.7rem .9rem;border:1px solid var(--line);border-radius:6px;font-size:.92rem;background:#fff}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--gold)}
+  .err-msg{color:var(--err);font-size:.82rem;margin-top:.6rem;display:none}
+  .err-msg.show{display:block}
+
+  /* app */
+  #app{display:none;padding:2rem;max-width:1100px;margin:0 auto}
+  .panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.75rem;margin-bottom:1.75rem}
+  .panel h2{font-size:1.3rem;margin-bottom:1.25rem;color:var(--forest)}
+  .form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem 1.25rem}
+  @media(max-width:640px){.form-grid{grid-template-columns:1fr}}
+  .form-actions{display:flex;gap:.75rem;margin-top:1.5rem;align-items:center}
+  .upload-preview{width:80px;height:80px;border-radius:8px;object-fit:cover;border:1px solid var(--line);background:var(--cream)}
+
+  table{width:100%;border-collapse:collapse}
+  th,td{text-align:left;padding:.75rem;border-bottom:1px solid var(--line);font-size:.88rem;vertical-align:middle}
+  th{color:var(--muted);font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:.03em}
+  td img{width:44px;height:44px;object-fit:cover;border-radius:6px;background:var(--cream)}
+  .thumb-empty{width:44px;height:44px;border-radius:6px;background:var(--forest);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Bodoni Moda',serif;font-style:italic}
+  .row-actions{display:flex;gap:.5rem}
+  .icon-btn{width:34px;height:34px;border-radius:6px;border:1px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;color:var(--forest)}
+  .icon-btn:hover{border-color:var(--gold);color:var(--gold)}
+  .icon-btn.danger:hover{border-color:var(--err);color:var(--err)}
+  .badge-featured{background:var(--gold);color:var(--forest-deep);font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:99px}
+  .toast{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--forest-deep);color:#fff;padding:.9rem 1.4rem;border-radius:8px;font-size:.88rem;opacity:0;transform:translateY(10px);transition:all .3s;pointer-events:none;z-index:50}
+  .toast.show{opacity:1;transform:none}
+  .toast.error{background:var(--err)}
+</style>
+</head>
+<body>
+
+<div class="login-screen" id="loginScreen">
+  <div class="login-box">
+    <h2>Painel Admin</h2>
+    <p>Bon Vivant Joias — acesso restrito</p>
+    <div class="field">
+      <label for="password">Senha</label>
+      <input type="password" id="password" placeholder="••••••••" autocomplete="current-password"/>
+    </div>
+    <button class="btn btn-gold" style="width:100%" onclick="login()">Entrar</button>
+    <p class="err-msg" id="loginErr">Senha incorreta.</p>
+  </div>
+</div>
+
+<div id="app">
+  <header class="topbar" style="margin:-2rem -2rem 2rem;border-radius:0">
+    <h1>Bon Vivant <em>Joias</em> — Admin</h1>
+    <div style="display:flex;gap:.75rem">
+      <a class="btn btn-outline" href="/" target="_blank">Ver site</a>
+      <button class="btn btn-outline" onclick="logout()">Sair</button>
+    </div>
+  </header>
+
+  <section class="panel">
+    <h2 id="formTitle">Adicionar produto</h2>
+    <form id="productForm" onsubmit="return submitProduct(event)">
+      <input type="hidden" id="editId" value=""/>
+      <div class="form-grid">
+        <div class="field">
+          <label for="name">Nome</label>
+          <input type="text" id="name" required placeholder="Ex: Cordão Cartier"/>
+        </div>
+        <div class="field">
+          <label for="material">Material / descrição</label>
+          <input type="text" id="material" required placeholder="Ex: Ouro 18k · Elos maciços"/>
+        </div>
+        <div class="field">
+          <label for="category">Categoria</label>
+          <select id="category">
+            <option value="cordao">Cordão</option>
+            <option value="anel">Aliança</option>
+            <option value="brinco">Brinco</option>
+            <option value="pulseira">Pulseira</option>
+            <option value="pingente">Pingente</option>
+          </select>
+        </div>
+        <div class="field">
+          <label><input type="checkbox" id="featured" style="width:auto;margin-right:.4rem"/> Destacar em "Mais vendidos"</label>
+        </div>
+        <div class="field">
+          <label for="price">Preço no Pix (R$)</label>
+          <input type="number" id="price" required min="0" step="0.01" placeholder="Ex: 990"/>
+        </div>
+        <div class="field">
+          <label for="originalPrice">Preço original / "de" (R$)</label>
+          <input type="number" id="originalPrice" min="0" step="0.01" placeholder="Ex: 1190"/>
+        </div>
+        <div class="field" style="grid-column:1/-1">
+          <label for="imageFile">Foto do produto</label>
+          <input type="file" id="imageFile" accept="image/jpeg,image/png,image/webp" onchange="previewImage(this)"/>
+          <img id="imgPreview" class="upload-preview" style="display:none;margin-top:.6rem"/>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-gold" id="submitBtn">Adicionar produto</button>
+        <button type="button" class="btn btn-outline" style="border-color:var(--line);color:var(--ink)" onclick="resetForm()" id="cancelBtn" style="display:none">Cancelar edição</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="panel">
+    <h2>Produtos (<span id="productCount">0</span>)</h2>
+    <div style="overflow-x:auto">
+      <table>
+        <thead>
+          <tr><th>Foto</th><th>Nome</th><th>Categoria</th><th>Preço</th><th>Destaque</th><th>Ações</th></tr>
+        </thead>
+        <tbody id="productsTable"></tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  let products = [];
+
+  function toast(msg, isError) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.className = 'toast show' + (isError ? ' error' : '');
+    setTimeout(() => { t.className = 'toast'; }, 2800);
+  }
+
+  async function checkAuth() {
+    const res = await fetch('/api/admin/check');
+    const data = await res.json();
+    if (data.authenticated) {
+      document.getElementById('loginScreen').style.display = 'none';
+      document.getElementById('app').style.display = 'block';
+      loadProducts();
+    }
+  }
+
+  async function login() {
+    const password = document.getElementById('password').value;
+    const res = await fetch('/api/admin/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password }),
+    });
+    if (res.ok) {
+      document.getElementById('loginErr').classList.remove('show');
+      document.getElementById('loginScreen').style.display = 'none';
+      document.getElementById('app').style.display = 'block';
+      loadProducts();
+    } else {
+      document.getElementById('loginErr').classList.add('show');
+    }
+  }
+
+  async function logout() {
+    await fetch('/api/admin/logout', { method: 'POST' });
+    location.reload();
+  }
+
+  async function loadProducts() {
+    const res = await fetch('/api/products');
+    products = await res.json();
+    renderTable();
+  }
+
+  function renderTable() {
+    const catLabels = { cordao: 'Cordão', anel: 'Aliança', brinco: 'Brinco', pulseira: 'Pulseira', pingente: 'Pingente' };
+    document.getElementById('productCount').textContent = products.length;
+    document.getElementById('productsTable').innerHTML = products.map(p => `
+      <tr>
+        <td>${p.image ? `<img src="${p.image}" alt="${p.name}"/>` : `<div class="thumb-empty">${p.letter || '?'}</div>`}</td>
+        <td>${p.name}</td>
+        <td>${catLabels[p.category] || p.category}</td>
+        <td>R$ ${Number(p.price).toLocaleString('pt-BR')}</td>
+        <td>${p.featured ? '<span class="badge-featured">Destaque</span>' : ''}</td>
+        <td>
+          <div class="row-actions">
+            <button class="icon-btn" onclick="editProduct('${p.id}')" aria-label="Editar"><i class="ti ti-pencil"></i></button>
+            <button class="icon-btn danger" onclick="deleteProduct('${p.id}')" aria-label="Excluir"><i class="ti ti-trash"></i></button>
+          </div>
+        </td>
+      </tr>
+    `).join('') || '<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:2rem">Nenhum produto cadastrado.</td></tr>';
+  }
+
+  function previewImage(input) {
+    const preview = document.getElementById('imgPreview');
+    if (input.files && input.files[0]) {
+      preview.src = URL.createObjectURL(input.files[0]);
+      preview.style.display = 'block';
+    }
+  }
+
+  function editProduct(id) {
+    const p = products.find(x => x.id === id);
+    if (!p) return;
+    document.getElementById('editId').value = p.id;
+    document.getElementById('name').value = p.name;
+    document.getElementById('material').value = p.material;
+    document.getElementById('category').value = p.category;
+    document.getElementById('featured').checked = !!p.featured;
+    document.getElementById('price').value = p.price;
+    document.getElementById('originalPrice').value = p.originalPrice;
+    const preview = document.getElementById('imgPreview');
+    if (p.image) { preview.src = '/' + p.image; preview.style.display = 'block'; }
+    else { preview.style.display = 'none'; }
+    document.getElementById('formTitle').textContent = 'Editar produto — ' + p.name;
+    document.getElementById('submitBtn').textContent = 'Salvar alterações';
+    document.getElementById('cancelBtn').style.display = 'inline-block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function resetForm() {
+    document.getElementById('productForm').reset();
+    document.getElementById('editId').value = '';
+    document.getElementById('imgPreview').style.display = 'none';
+    document.getElementById('formTitle').textContent = 'Adicionar produto';
+    document.getElementById('submitBtn').textContent = 'Adicionar produto';
+    document.getElementById('cancelBtn').style.display = 'none';
+  }
+
+  async function submitProduct(e) {
+    e.preventDefault();
+    const id = document.getElementById('editId').value;
+    const fd = new FormData();
+    fd.append('name', document.getElementById('name').value.trim());
+    fd.append('material', document.getElementById('material').value.trim());
+    fd.append('category', document.getElementById('category').value);
+    fd.append('featured', document.getElementById('featured').checked);
+    fd.append('price', document.getElementById('price').value);
+    fd.append('originalPrice', document.getElementById('originalPrice').value || document.getElementById('price').value);
+    const file = document.getElementById('imageFile').files[0];
+    if (file) fd.append('imageFile', file);
+
+    const url = id ? `/api/admin/products/${id}` : '/api/admin/products';
+    const method = id ? 'PUT' : 'POST';
+    try {
+      const res = await fetch(url, { method, body: fd });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Erro ao salvar');
+      toast(id ? 'Produto atualizado!' : 'Produto adicionado!');
+      resetForm();
+      loadProducts();
+    } catch (err) {
+      toast(err.message, true);
+    }
+    return false;
+  }
+
+  async function deleteProduct(id) {
+    const p = products.find(x => x.id === id);
+    if (!confirm(`Excluir "${p ? p.name : id}"? Essa ação não pode ser desfeita.`)) return;
+    try {
+      const res = await fetch(`/api/admin/products/${id}`, { method: 'DELETE' });
+      if (!res.ok) throw new Error('Erro ao excluir');
+      toast('Produto excluído.');
+      loadProducts();
+    } catch (err) {
+      toast(err.message, true);
+    }
+  }
+
+  document.getElementById('password').addEventListener('keydown', (e) => { if (e.key === 'Enter') login(); });
+  checkAuth();
+</script>
+</body>
+</html>

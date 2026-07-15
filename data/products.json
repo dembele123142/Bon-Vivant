@@ -1,0 +1,156 @@
+[
+  {
+    "id": "cordao-cartier",
+    "name": "Cordão Cartier",
+    "material": "Ouro 18k · Elos maciços",
+    "category": "cordao",
+    "price": 3890,
+    "originalPrice": 4590,
+    "image": null,
+    "letter": "C",
+    "featured": true
+  },
+  {
+    "id": "alianca-solstice",
+    "name": "Aliança Solstice",
+    "material": "Prata 925 · Fosco",
+    "category": "anel",
+    "price": 1290,
+    "originalPrice": 1590,
+    "image": null,
+    "letter": "A",
+    "featured": true
+  },
+  {
+    "id": "brinco-etoile",
+    "name": "Brinco Étoile",
+    "material": "Ouro 18k · Diamante",
+    "category": "brinco",
+    "price": 5200,
+    "originalPrice": 6200,
+    "image": null,
+    "letter": "B",
+    "featured": true
+  },
+  {
+    "id": "pulseira-elo-cubano",
+    "name": "Pulseira Elo Cubano",
+    "material": "Ouro 18k · Fecho reforçado",
+    "category": "pulseira",
+    "price": 2680,
+    "originalPrice": 3180,
+    "image": null,
+    "letter": "P",
+    "featured": true
+  },
+  {
+    "id": "pulseira-veneziana",
+    "name": "Pulseira Veneziana",
+    "material": "Prata 925 · Elos finos",
+    "category": "pulseira",
+    "price": 1580,
+    "originalPrice": 1890,
+    "image": null,
+    "letter": "P",
+    "featured": true
+  },
+  {
+    "id": "cordao-grumet",
+    "name": "Cordão Grumet",
+    "material": "Ouro 18k · Elo grumet",
+    "category": "cordao",
+    "price": 4100,
+    "originalPrice": 4890,
+    "image": null,
+    "letter": "C",
+    "featured": false
+  },
+  {
+    "id": "alianca-cosmos",
+    "name": "Aliança Cosmos",
+    "material": "Prata 925 · Zircônia",
+    "category": "anel",
+    "price": 890,
+    "originalPrice": 1090,
+    "image": null,
+    "letter": "A",
+    "featured": false
+  },
+  {
+    "id": "brinco-cascade",
+    "name": "Brinco Cascade",
+    "material": "Ouro 18k · Safira azul",
+    "category": "brinco",
+    "price": 6350,
+    "originalPrice": 7490,
+    "image": null,
+    "letter": "B",
+    "featured": false
+  },
+  {
+    "id": "pingente-stella",
+    "name": "Pingente Stella",
+    "material": "Ouro 18k · Diamante",
+    "category": "pingente",
+    "price": 7900,
+    "originalPrice": 9200,
+    "image": null,
+    "letter": "P",
+    "featured": false
+  },
+  {
+    "id": "alianca-lattice",
+    "name": "Aliança Lattice",
+    "material": "Ouro 18k · Rubi",
+    "category": "anel",
+    "price": 3200,
+    "originalPrice": 3790,
+    "image": null,
+    "letter": "A",
+    "featured": false
+  },
+  {
+    "id": "brinco-argola",
+    "name": "Brinco Argola",
+    "material": "Prata 925 · Argola lisa",
+    "category": "brinco",
+    "price": 690,
+    "originalPrice": 820,
+    "image": null,
+    "letter": "B",
+    "featured": false
+  },
+  {
+    "id": "colar-cruz-cravejada",
+    "name": "Colar Cruz Cravejada",
+    "material": "Prata 925 · Zircônia",
+    "category": "cordao",
+    "price": 990,
+    "originalPrice": 1190,
+    "image": "images/colar-cruz-cravejada.jpg",
+    "letter": "C",
+    "featured": false
+  },
+  {
+    "id": "brinco-argola-cravejada",
+    "name": "Brinco Argola Cravejada",
+    "material": "Prata 925 · Zircônia",
+    "category": "brinco",
+    "price": 590,
+    "originalPrice": 720,
+    "image": "images/brinco-argola-cravejada.jpg",
+    "letter": "B",
+    "featured": false
+  },
+  {
+    "id": "colar-medalhao-cruz",
+    "name": "Colar Medalhão Cruz",
+    "material": "Prata 925 · Zircônia",
+    "category": "pingente",
+    "price": 890,
+    "originalPrice": 1090,
+    "image": "images/colar-medalhao-cruz.jpg",
+    "letter": "P",
+    "featured": false
+  }
+]

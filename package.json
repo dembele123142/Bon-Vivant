@@ -1,0 +1,18 @@
+{
+  "name": "bon-vivant-joias",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site da Bon Vivant Joias com painel de administração de produtos",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.19.2",
+    "multer": "^2.2.0"
+  }
+}
