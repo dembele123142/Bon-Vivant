@@ -179,6 +179,43 @@
     </form>
   </section>
 
+  <!-- CONFIGURAÇÕES DO SITE -->
+  <section class="panel">
+    <h2>Configurações do site</h2>
+    <form id="settingsForm" onsubmit="return saveSettings(event)">
+      <div class="form-grid">
+        <div class="field">
+          <label for="sWhatsapp">WhatsApp (só números, com DDD)</label>
+          <input type="tel" id="sWhatsapp" inputmode="numeric" placeholder="Ex: 5511999990000"/>
+          <small style="color:var(--muted);font-size:.78rem;margin-top:.3rem;display:block">Usado nos botões do site e no link wa.me</small>
+        </div>
+        <div class="field">
+          <label for="sStoreName">Nome da loja</label>
+          <input type="text" id="sStoreName" placeholder="Ex: Bon Vivant Joias"/>
+        </div>
+        <div class="field">
+          <label for="sStoreCity">Cidade / localização</label>
+          <input type="text" id="sStoreCity" placeholder="Ex: São Paulo · SP"/>
+        </div>
+        <div class="field">
+          <label for="sStoreHours">Horário de atendimento</label>
+          <input type="text" id="sStoreHours" placeholder="Ex: Seg–Sex: 9h às 18h"/>
+        </div>
+        <div class="field">
+          <label for="sStoreEmail">E-mail de contato</label>
+          <input type="email" id="sStoreEmail" placeholder="Ex: contato@bonvivant.com.br"/>
+        </div>
+        <div class="field">
+          <label for="sInstagram">Link do Instagram (URL completa)</label>
+          <input type="url" id="sInstagram" placeholder="Ex: https://instagram.com/bonvivantjoias"/>
+        </div>
+      </div>
+      <div class="form-actions" style="margin-top:1.25rem">
+        <button type="submit" class="btn btn-gold" id="settingsSubmitBtn">Salvar configurações</button>
+      </div>
+    </form>
+  </section>
+
   <!-- LISTA -->
   <section class="panel">
     <h2>Produtos (<span id="productCount">0</span>)</h2>
@@ -224,6 +261,7 @@
     document.getElementById('loginScreen').style.display = 'none';
     document.getElementById('app').style.display = 'block';
     loadProducts();
+    loadSettings();
   }
 
   async function login() {
@@ -408,6 +446,51 @@
     } catch (err) {
       toast(connectionErrorMessage(err), true);
     }
+  }
+
+  // ── configurações ──
+  async function loadSettings() {
+    try {
+      const res = await fetch('/api/settings');
+      const s = await res.json();
+      document.getElementById('sWhatsapp').value    = s.whatsapp    || '';
+      document.getElementById('sStoreName').value   = s.store_name  || '';
+      document.getElementById('sStoreCity').value   = s.store_city  || '';
+      document.getElementById('sStoreHours').value  = s.store_hours || '';
+      document.getElementById('sStoreEmail').value  = s.store_email || '';
+      document.getElementById('sInstagram').value   = s.instagram_url || '';
+    } catch {
+      toast('Não foi possível carregar as configurações.', true);
+    }
+  }
+
+  async function saveSettings(e) {
+    e.preventDefault();
+    const btn = document.getElementById('settingsSubmitBtn');
+    btn.disabled = true; btn.textContent = 'Salvando…';
+    try {
+      const body = {
+        whatsapp:      document.getElementById('sWhatsapp').value.replace(/\D/g, ''),
+        store_name:    document.getElementById('sStoreName').value.trim(),
+        store_city:    document.getElementById('sStoreCity').value.trim(),
+        store_hours:   document.getElementById('sStoreHours').value.trim(),
+        store_email:   document.getElementById('sStoreEmail').value.trim(),
+        instagram_url: document.getElementById('sInstagram').value.trim(),
+      };
+      const res = await fetch('/api/admin/settings', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+      const data = await safeJson(res);
+      if (!res.ok) throw new Error((data && data.error) || 'Erro ao salvar');
+      toast('Configurações salvas! O site será atualizado em instantes.');
+    } catch (err) {
+      toast(connectionErrorMessage(err), true);
+    } finally {
+      btn.disabled = false; btn.textContent = 'Salvar configurações';
+    }
+    return false;
   }
 
   document.getElementById('password').addEventListener('keydown', (e) => { if (e.key === 'Enter') login(); });

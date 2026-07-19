@@ -791,7 +791,7 @@
       <ul>
         <li><a href="https://wa.me/5511999990000" target="_blank" rel="noopener">WhatsApp</a></li>
         <li><a href="mailto:contato@bonvivant.com.br">E-mail</a></li>
-        <li>São Paulo · SP</li>
+        <li class="footer-city">São Paulo · SP</li>
       </ul>
     </div>
   </div>
@@ -988,7 +988,7 @@
           <p class="shop-installment">ou 12x de R$ ${installment} sem juros</p>
           <div class="shop-actions">
             <button class="shop-add" onclick="addToCart(this,'${escapeAttr(p.name)}',${p.price})">Adicionar à seleção</button>
-            <a class="shop-wa" href="https://wa.me/5511999990000?text=${waMsg}" target="_blank" rel="noopener" aria-label="Consultar no WhatsApp"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></a>
+            <a class="shop-wa" href="https://wa.me/${window._WA||'5511999990000'}?text=${waMsg}" target="_blank" rel="noopener" aria-label="Consultar no WhatsApp"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></a>
           </div>
         </div>
       </article>
@@ -1173,7 +1173,7 @@
     const lines = cart.map(item => `• ${item.name} — R$ ${item.price.toLocaleString('pt-BR')}`).join('\n');
     const total = cart.reduce((sum, item) => sum + item.price, 0);
     const msg = encodeURIComponent(`Olá! Tenho interesse nas seguintes peças:\n\n${lines}\n\nTotal estimado: R$ ${total.toLocaleString('pt-BR')}\n\nPoderia me ajudar a fechar o pedido?`);
-    window.open(`https://wa.me/5511999990000?text=${msg}`, '_blank');
+    window.open(`https://wa.me/${window._WA || '5511999990000'}?text=${msg}`, '_blank');
   }
 
   renderCart();
@@ -1293,7 +1293,7 @@
     const extra = document.getElementById('mensagem').value.trim();
     const waMsg = encodeURIComponent(`Olá! Me chamo ${nome} (${tel}).\nInteresse: ${interests}.\nOrçamento: ${orc}.\n${extra?'Obs: '+extra+'\n':''}Gostaria de uma consultoria gratuita.`);
     setTimeout(() => {
-      window.open(`https://wa.me/5511999990000?text=${waMsg}`, '_blank');
+      window.open(`https://wa.me/${window._WA || '5511999990000'}?text=${waMsg}`, '_blank');
       document.getElementById('step3').classList.remove('active');
       document.getElementById('stepSuccess').classList.add('active');
       document.getElementById('stepLabel').textContent = 'Solicitação enviada!';
@@ -1321,6 +1321,43 @@
   document.querySelectorAll('.interest-card').forEach(card => {
     card.addEventListener('click', () => card.classList.toggle('checked', card.querySelector('input').checked));
   });
+
+  // ── Configurações dinâmicas do site ──
+  window._WA = '5511999990000'; // fallback padrão
+  (async function applySiteSettings() {
+    try {
+      const res = await fetch('/api/settings');
+      if (!res.ok) return;
+      const s = await res.json();
+      const wa = (s.whatsapp || '5511999990000').replace(/\D/g, '');
+      window._WA = wa;
+
+      // Todos os links wa.me
+      document.querySelectorAll('a[href*="wa.me"]').forEach(a => {
+        a.href = a.href.replace(/wa\.me\/\d+/, 'wa.me/' + wa);
+      });
+
+      // Footer — cidade
+      if (s.store_city) {
+        document.querySelectorAll('.footer-city').forEach(el => { el.textContent = s.store_city; });
+      }
+      // Footer — email
+      if (s.store_email) {
+        document.querySelectorAll('a[href^="mailto:"]').forEach(a => {
+          a.href = 'mailto:' + s.store_email;
+          if (a.textContent.includes('@')) a.textContent = s.store_email;
+        });
+      }
+      // Footer — horário
+      if (s.store_hours) {
+        document.querySelectorAll('.footer-hours').forEach(el => { el.textContent = s.store_hours; });
+      }
+      // Instagram
+      if (s.instagram_url) {
+        document.querySelectorAll('a[aria-label="Instagram"]').forEach(a => { a.href = s.instagram_url; });
+      }
+    } catch {}
+  })();
 </script>
 </body>
 </html>

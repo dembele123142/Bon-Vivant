@@ -119,6 +119,36 @@ app.get('/api/admin/check', (req, res) => {
   res.json({ authenticated: !!(token && sessions.has(token)) });
 });
 
+// ---------- configurações do site ----------
+const DEFAULT_SETTINGS = {
+  whatsapp: '5511999990000',
+  store_name: 'Bon Vivant Joias',
+  store_city: 'São Paulo · SP',
+  store_hours: 'Seg–Sex: 9h às 18h',
+  store_email: 'contato@bonvivant.com.br',
+  instagram_url: '',
+  pinterest_url: '',
+};
+
+app.get('/api/settings', async (req, res) => {
+  const { data, error } = await supabase.from('settings').select('*').eq('id', 1).single();
+  if (error || !data) return res.json(DEFAULT_SETTINGS);
+  res.json({ ...DEFAULT_SETTINGS, ...data });
+});
+
+app.put('/api/admin/settings', requireAuth, async (req, res) => {
+  try {
+    const allowed = ['whatsapp', 'store_name', 'store_city', 'store_hours', 'store_email', 'instagram_url', 'pinterest_url'];
+    const update = {};
+    allowed.forEach(k => { if (req.body[k] !== undefined) update[k] = req.body[k]; });
+    const { data, error } = await supabase.from('settings').upsert({ id: 1, ...update }, { onConflict: 'id' }).select().single();
+    if (error) throw error;
+    res.json({ ...DEFAULT_SETTINGS, ...data });
+  } catch (err) {
+    res.status(400).json({ error: err.message || 'Erro ao salvar configurações' });
+  }
+});
+
 // ---------- CRUD de produtos (protegido) ----------
 app.post('/api/admin/products', requireAuth, upload.single('imageFile'), async (req, res) => {
   try {
