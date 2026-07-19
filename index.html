@@ -268,58 +268,6 @@
     .faq-q i{color:var(--gold);flex-shrink:0;transition:transform .3s}
     .faq-a{padding:0 0 1.2rem;color:var(--muted);font-size:.9rem;line-height:1.7;max-width:88%;display:none}
 
-    /* ══════════════ CONSULT FORM ══════════════ */
-    .consult-box{border:1px solid var(--line);border-radius:12px;padding:2rem;max-width:640px;margin:0 auto;background:#fff}
-    .step-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem}
-    .step-label-txt{font-size:.78rem;font-weight:600;color:var(--muted)}
-    .step-pct-txt{font-size:.78rem;font-weight:700;color:var(--forest)}
-    .step-bar-bg{height:5px;background:var(--line);border-radius:3px;margin-bottom:1.6rem;overflow:hidden}
-    .step-bar-fill{height:100%;width:33%;background:var(--gold);transition:width .4s var(--ease)}
-    .step-dots{display:flex;gap:.5rem;margin-bottom:1.75rem}
-    .step-dot{width:8px;height:8px;border-radius:50%;border:1px solid var(--line);background:#fff;transition:all .3s}
-    .step-dot.active{border-color:var(--gold);background:var(--gold)}
-    .step-dot.done{border-color:var(--gold);background:#fff}
-    .step-panel{display:none}
-    .step-panel.active{display:block}
-    .form-label{font-size:.8rem;font-weight:700;color:var(--forest);margin-bottom:.5rem;display:block}
-    .form-input{width:100%;padding:.75rem .9rem;background:#fff;border:1px solid var(--line);border-radius:6px;color:var(--ink);font-family:'Work Sans',sans-serif;font-size:.92rem;margin-bottom:.25rem;min-height:44px}
-    .form-input:focus{outline:none;border-color:var(--gold)}
-    .form-input.error{border-color:#c0392b}
-    .form-select{width:100%;padding:.75rem .9rem;background:#fff;border:1px solid var(--line);border-radius:6px;color:var(--ink);font-family:'Work Sans',sans-serif;font-size:.92rem;margin-bottom:.25rem;cursor:pointer;min-height:44px}
-    .form-select:focus{outline:none;border-color:var(--gold)}
-    .form-textarea{width:100%;padding:.75rem .9rem;background:#fff;border:1px solid var(--line);border-radius:6px;color:var(--ink);font-family:'Work Sans',sans-serif;font-size:.92rem;resize:vertical;min-height:90px}
-    .form-textarea:focus{outline:none;border-color:var(--gold)}
-    .form-group{margin-bottom:1.25rem}
-    .err-msg{font-size:.72rem;color:#c0392b;display:none;margin-top:.25rem}
-    .err-msg.show{display:block}
-    .interest-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:.55rem;margin-top:.5rem}
-    .interest-card{border:1px solid var(--line);border-radius:8px;padding:.8rem;display:flex;flex-direction:column;align-items:center;gap:.4rem;cursor:pointer;transition:border-color .2s,background .2s;min-height:44px}
-    .interest-card:hover{border-color:var(--gold)}
-    .interest-card.checked{border-color:var(--gold);background:var(--cream)}
-    .interest-card input{display:none}
-    .interest-card i{font-size:1.15rem;color:var(--forest)}
-    .interest-card span{font-size:.72rem;font-weight:600;color:var(--ink);text-align:center}
-    .form-nav{display:flex;justify-content:space-between;margin-top:2rem;gap:1rem}
-    .btn-step-next{padding:.75rem 1.6rem;background:var(--forest);color:#fff;font-weight:600;font-size:.85rem;border-radius:6px;transition:background .2s;min-height:44px}
-    .btn-step-next:hover{background:var(--forest-deep)}
-    .btn-step-back{padding:.75rem 1.6rem;border:1px solid var(--line);color:var(--muted);font-weight:600;font-size:.85rem;border-radius:6px;transition:all .2s;min-height:44px}
-    .btn-step-back:hover{border-color:var(--forest);color:var(--forest)}
-    .summary-box{border:1px solid var(--line);border-radius:8px;padding:1.2rem;margin-bottom:1.5rem;background:var(--cream)}
-    .summary-row{display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--line);font-size:.85rem;gap:1rem}
-    .summary-row:last-child{border-bottom:none}
-    .summary-row span:first-child{color:var(--muted);font-weight:600;flex-shrink:0}
-    .lgpd-row{display:flex;align-items:flex-start;gap:.7rem;margin-bottom:.5rem}
-    .lgpd-row input[type=checkbox]{accent-color:var(--gold);width:18px;height:18px;flex-shrink:0;margin-top:.1rem;cursor:pointer}
-    .lgpd-row label{font-size:.8rem;color:var(--muted);line-height:1.5}
-    .submit-btn{width:100%;padding:.95rem;background:#25D366;color:#fff;font-weight:700;font-size:.88rem;border-radius:6px;display:flex;align-items:center;justify-content:center;gap:.55rem;transition:opacity .2s;min-height:48px}
-    .submit-btn:hover:not(:disabled){opacity:.9}
-    .submit-btn:disabled{opacity:.5;cursor:default}
-    .step-success{text-align:center;padding:2.5rem 1rem}
-    .step-success i{font-size:2.4rem;color:var(--gold);margin-bottom:1rem}
-    .step-success h3{font-size:1.5rem;margin-bottom:.75rem}
-    .step-success p{color:var(--muted)}
-    .step-success button{margin-top:1.75rem;padding:.7rem 1.6rem;border:1px solid var(--line);color:var(--muted);font-weight:600;font-size:.85rem;border-radius:6px;transition:all .2s;min-height:44px}
-    .step-success button:hover{border-color:var(--forest);color:var(--forest)}
 
     /* ══════════════ FOOTER ══════════════ */
     footer{background:var(--forest-deep);color:rgba(255,255,255,.8);padding:3.5rem 6vw 1.75rem}
@@ -367,7 +315,6 @@
       <a href="#catalogo" onclick="return goCat('pulseira')">Pulseiras</a>
       <a href="#catalogo" onclick="return goCat('anel')">Alianças</a>
       <a href="#catalogo" onclick="return goCat('pingente')">Pingentes</a>
-      <a href="#consultoria">Consultoria</a>
     </nav>
     <div class="header-actions">
       <a class="icon-btn" href="https://wa.me/5511999990000" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></a>
@@ -394,7 +341,6 @@
     <li><a href="#catalogo" onclick="closeMobileNav();goCat('pulseira')">Pulseiras</a></li>
     <li><a href="#catalogo" onclick="closeMobileNav();goCat('anel')">Alianças</a></li>
     <li><a href="#catalogo" onclick="closeMobileNav();goCat('pingente')">Pingentes</a></li>
-    <li><a href="#consultoria" onclick="closeMobileNav()">Consultoria</a></li>
     <li><a href="#faq" onclick="closeMobileNav()">FAQ</a></li>
   </ul>
 </div>
@@ -454,7 +400,6 @@
     <p>Peças feitas à mão, um a um. Parcelamento em até 12x e consultoria gratuita para você escolher com segurança.</p>
     <div class="hero-actions">
       <a class="btn-gold" href="#catalogo">Ver coleção <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
-      <a class="btn-outline-white" href="#consultoria">Consultoria gratuita</a>
     </div>
   </div>
 </section>
@@ -650,106 +595,6 @@
     </div>
   </div>
 </section>
-<!-- CONSULT FORM -->
-<section class="section section-alt" id="consultoria">
-  <div class="section-title" style="justify-content:center;text-align:center;flex-direction:column;align-items:center">
-    <h2>Vamos criar algo especial?</h2>
-  </div>
-  <div class="consult-box">
-    <form id="consultForm" novalidate>
-      <div class="step-header">
-        <span class="step-label-txt" id="stepLabel">Passo 1 de 3 — Interesse</span>
-        <span class="step-pct-txt" id="stepPct">33%</span>
-      </div>
-      <div class="step-bar-bg"><div class="step-bar-fill" id="stepBar"></div></div>
-      <div class="step-dots">
-        <button type="button" class="step-dot active" data-step="1" aria-label="Passo 1"></button>
-        <button type="button" class="step-dot" data-step="2" aria-label="Passo 2"></button>
-        <button type="button" class="step-dot" data-step="3" aria-label="Passo 3"></button>
-      </div>
-
-      <div class="step-panel active" id="step1">
-        <div class="form-group">
-          <label class="form-label">O que você procura?</label>
-          <div class="interest-grid">
-            <label class="interest-card"><input type="checkbox" name="interest" value="anel"/><i class="ti ti-circle" aria-hidden="true"></i><span>Aliança</span></label>
-            <label class="interest-card"><input type="checkbox" name="interest" value="cordao"/><i class="ti ti-diamond" aria-hidden="true"></i><span>Cordão</span></label>
-            <label class="interest-card"><input type="checkbox" name="interest" value="brinco"/><i class="ti ti-star" aria-hidden="true"></i><span>Brinco</span></label>
-            <label class="interest-card"><input type="checkbox" name="interest" value="pulseira"/><i class="ti ti-link" aria-hidden="true"></i><span>Pulseira</span></label>
-            <label class="interest-card"><input type="checkbox" name="interest" value="presente"/><i class="ti ti-gift" aria-hidden="true"></i><span>Presente</span></label>
-            <label class="interest-card"><input type="checkbox" name="interest" value="encomenda"/><i class="ti ti-pencil" aria-hidden="true"></i><span>Sob encomenda</span></label>
-          </div>
-          <p class="err-msg" id="err-interest">Selecione pelo menos uma opção.</p>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="orcamento">Faixa de orçamento</label>
-          <select class="form-select" id="orcamento" name="orcamento">
-            <option value="">Selecione…</option>
-            <option value="ate1k">Até R$ 1.000</option>
-            <option value="1k3k">R$ 1.000 – R$ 3.000</option>
-            <option value="3k8k">R$ 3.000 – R$ 8.000</option>
-            <option value="acima8k">Acima de R$ 8.000</option>
-          </select>
-          <p class="err-msg" id="err-orcamento">Selecione sua faixa de orçamento.</p>
-        </div>
-        <div class="form-nav" style="justify-content:flex-end">
-          <button type="button" class="btn-step-next" onclick="goStep(2)">Continuar →</button>
-        </div>
-      </div>
-
-      <div class="step-panel" id="step2">
-        <div class="form-group">
-          <label class="form-label" for="nome">Nome completo</label>
-          <input class="form-input" type="text" id="nome" name="nome" placeholder="Seu nome" autocomplete="name"/>
-          <p class="err-msg" id="err-nome">Informe seu nome.</p>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="telefone">WhatsApp</label>
-          <input class="form-input" type="tel" id="telefone" name="telefone" placeholder="(11) 99999-0000" autocomplete="tel" oninput="maskPhone(this)"/>
-          <p class="err-msg" id="err-telefone">Informe um número válido.</p>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="email2">E-mail</label>
-          <input class="form-input" type="email" id="email2" name="email2" placeholder="seu@email.com" autocomplete="email"/>
-          <p class="err-msg" id="err-email2">Informe um e-mail válido.</p>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="mensagem">Mensagem (opcional)</label>
-          <textarea class="form-textarea" id="mensagem" name="mensagem" placeholder="Detalhes adicionais…"></textarea>
-        </div>
-        <div class="form-nav">
-          <button type="button" class="btn-step-back" onclick="goStep(1)">← Voltar</button>
-          <button type="button" class="btn-step-next" onclick="goStep(3)">Revisar →</button>
-        </div>
-      </div>
-
-      <div class="step-panel" id="step3">
-        <div class="summary-box" id="summaryContent"></div>
-        <div class="form-group">
-          <div class="lgpd-row">
-            <input type="checkbox" id="lgpdCheck" name="lgpdCheck"/>
-            <label for="lgpdCheck">Concordo com o tratamento dos meus dados para fins de atendimento, conforme a LGPD.</label>
-          </div>
-          <p class="err-msg" id="err-lgpd">Aceite os termos para continuar.</p>
-        </div>
-        <button type="button" class="submit-btn" id="submitBtn" onclick="submitForm()">
-          <span id="submitText" style="display:inline-flex;align-items:center;gap:.5rem"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Enviar pelo WhatsApp</span>
-          <span id="submitLoading" style="display:none;align-items:center;gap:.5rem"><i class="ti ti-loader-2" style="animation:spin .8s linear infinite" aria-hidden="true"></i> Enviando…</span>
-        </button>
-        <div class="form-nav" style="justify-content:flex-start;margin-top:1rem">
-          <button type="button" class="btn-step-back" onclick="goStep(2)">← Voltar</button>
-        </div>
-      </div>
-
-      <div class="step-panel step-success" id="stepSuccess">
-        <i class="ti ti-circle-check" aria-hidden="true"></i>
-        <h3>Solicitação enviada!</h3>
-        <p>Você será redirecionado(a) ao WhatsApp. Responderemos em breve.</p>
-        <button type="button" onclick="resetForm()">Nova consulta</button>
-      </div>
-    </form>
-  </div>
-</section>
 
 <div class="section-divider on-dark" aria-hidden="true" style="background:var(--forest-deep);padding-top:0">
   <span class="divider-line"></span>
@@ -782,7 +627,6 @@
     <div class="footer-col">
       <p class="footer-col-title">Serviços</p>
       <ul>
-        <li><a href="#consultoria">Consultoria</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
     </div>
@@ -1194,133 +1038,6 @@
       icon.style.transform = 'rotate(45deg)';
     }
   }
-
-  /* ══════════════════════════════════════════
-     MÓDULO — FORMULÁRIO MULTI-STEP
-     ══════════════════════════════════════════ */
-  let currentStep = 1;
-  const stepMeta = {
-    1: { label: 'Passo 1 de 3 — Interesse', pct: '33%', width: '33%' },
-    2: { label: 'Passo 2 de 3 — Seus dados', pct: '66%', width: '66%' },
-    3: { label: 'Passo 3 de 3 — Confirmação', pct: '100%', width: '100%' },
-  };
-
-  function goStep(n) {
-    if (n > currentStep && !validateStep(currentStep)) return;
-    if (n === 3) buildSummary();
-    document.querySelector(`#step${currentStep}`)?.classList.remove('active');
-    currentStep = n;
-    document.querySelector(`#step${n}`)?.classList.add('active');
-    const meta = stepMeta[n];
-    document.getElementById('stepLabel').textContent = meta.label;
-    document.getElementById('stepPct').textContent = meta.pct;
-    document.getElementById('stepBar').style.width = meta.width;
-    document.querySelectorAll('.step-dot').forEach(dot => {
-      const s = +dot.dataset.step;
-      dot.classList.toggle('active', s === n);
-      dot.classList.toggle('done', s < n);
-    });
-  }
-
-  function validateStep(step) {
-    let valid = true;
-    if (step === 1) {
-      const checked = document.querySelectorAll('input[name="interest"]:checked').length > 0;
-      const orc = document.getElementById('orcamento').value;
-      showErr('err-interest', !checked);
-      showErr('err-orcamento', !orc);
-      valid = checked && !!orc;
-    }
-    if (step === 2) {
-      const nome = document.getElementById('nome').value.trim();
-      const tel  = document.getElementById('telefone').value.replace(/\D/g,'');
-      const email = document.getElementById('email2').value.trim();
-      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-      showErr('err-nome', !nome);
-      showErr('err-telefone', tel.length < 10);
-      showErr('err-email2', !emailOk);
-      setInputError('nome', !nome);
-      setInputError('telefone', tel.length < 10);
-      setInputError('email2', !emailOk);
-      valid = !!nome && tel.length >= 10 && emailOk;
-    }
-    return valid;
-  }
-
-  function showErr(id, show) { document.getElementById(id)?.classList.toggle('show', show); }
-  function setInputError(id, has) { document.getElementById(id)?.classList.toggle('error', has); }
-
-  function buildSummary() {
-    const interests = Array.from(document.querySelectorAll('input[name="interest"]:checked'))
-      .map(i => i.parentElement.textContent.trim()).join(', ');
-    const orcMap = { ate1k:'Até R$ 1.000','1k3k':'R$ 1.000–3.000','3k8k':'R$ 3.000–8.000',acima8k:'Acima de R$ 8.000' };
-    const orc = orcMap[document.getElementById('orcamento').value] || '—';
-    const nome  = document.getElementById('nome').value.trim();
-    const tel   = document.getElementById('telefone').value.trim();
-    const email = document.getElementById('email2').value.trim();
-    const msg   = document.getElementById('mensagem').value.trim();
-    document.getElementById('summaryContent').innerHTML = `
-      <div class="summary-row"><span>Interesse</span><span>${interests||'—'}</span></div>
-      <div class="summary-row"><span>Orçamento</span><span>${orc}</span></div>
-      <div class="summary-row"><span>Nome</span><span>${nome}</span></div>
-      <div class="summary-row"><span>WhatsApp</span><span>${tel}</span></div>
-      <div class="summary-row"><span>E-mail</span><span>${email}</span></div>
-      ${msg?`<div class="summary-row"><span>Mensagem</span><span style="max-width:240px;text-align:right">${msg}</span></div>`:''}
-    `;
-  }
-
-  function maskPhone(input) {
-    let v = input.value.replace(/\D/g,'').slice(0,11);
-    if (v.length > 10) v = v.replace(/^(\d{2})(\d{5})(\d{4})$/,'($1) $2-$3');
-    else if (v.length > 6) v = v.replace(/^(\d{2})(\d{4})(\d*)$/,'($1) $2-$3');
-    else if (v.length > 2) v = v.replace(/^(\d{2})(\d*)$/,'($1) $2');
-    input.value = v;
-  }
-
-  function submitForm() {
-    if (!document.getElementById('lgpdCheck').checked) { showErr('err-lgpd', true); return; }
-    showErr('err-lgpd', false);
-    const btn = document.getElementById('submitBtn');
-    btn.disabled = true;
-    document.getElementById('submitText').style.display = 'none';
-    document.getElementById('submitLoading').style.display = 'inline-flex';
-    const nome = document.getElementById('nome').value.trim();
-    const tel  = document.getElementById('telefone').value.trim();
-    const interests = Array.from(document.querySelectorAll('input[name="interest"]:checked'))
-      .map(i => i.parentElement.textContent.trim()).join(', ');
-    const orcMap = { ate1k:'Até R$ 1.000','1k3k':'R$ 1.000–3.000','3k8k':'R$ 3.000–8.000',acima8k:'Acima de R$ 8.000' };
-    const orc   = orcMap[document.getElementById('orcamento').value] || '';
-    const extra = document.getElementById('mensagem').value.trim();
-    const waMsg = encodeURIComponent(`Olá! Me chamo ${nome} (${tel}).\nInteresse: ${interests}.\nOrçamento: ${orc}.\n${extra?'Obs: '+extra+'\n':''}Gostaria de uma consultoria gratuita.`);
-    setTimeout(() => {
-      window.open(`https://wa.me/${window._WA || '5511999990000'}?text=${waMsg}`, '_blank');
-      document.getElementById('step3').classList.remove('active');
-      document.getElementById('stepSuccess').classList.add('active');
-      document.getElementById('stepLabel').textContent = 'Solicitação enviada!';
-    }, 1200);
-  }
-
-  function resetForm() {
-    document.getElementById('consultForm').reset();
-    document.querySelectorAll('.interest-card').forEach(c => c.classList.remove('checked'));
-    document.getElementById('stepSuccess').classList.remove('active');
-    currentStep = 1;
-    document.getElementById('step1').classList.add('active');
-    document.getElementById('stepLabel').textContent = stepMeta[1].label;
-    document.getElementById('stepPct').textContent = stepMeta[1].pct;
-    document.getElementById('stepBar').style.width = stepMeta[1].width;
-    document.querySelectorAll('.step-dot').forEach(dot => {
-      dot.classList.toggle('active', +dot.dataset.step === 1);
-      dot.classList.remove('done');
-    });
-    document.getElementById('submitBtn').disabled = false;
-    document.getElementById('submitText').style.display = 'inline-flex';
-    document.getElementById('submitLoading').style.display = 'none';
-  }
-
-  document.querySelectorAll('.interest-card').forEach(card => {
-    card.addEventListener('click', () => card.classList.toggle('checked', card.querySelector('input').checked));
-  });
 
   // ── Configurações dinâmicas do site ──
   window._WA = '5511999990000'; // fallback padrão
