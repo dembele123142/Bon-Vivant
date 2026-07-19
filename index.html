@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Bon Vivant Joias — Cordões, Brincos e Pulseiras em Ouro e Prata</title>
-  <meta name="description" content="Cordões, brincos, pulseiras e alianças em ouro 18k e prata 925. Até 12x sem juros e consultoria gratuita."/>
+  <meta name="description" content="Cordões, brincos e pulseiras em ouro 18k e prata 925. Até 12x sem juros. Peças feitas à mão com entrega para todo o Brasil."/>
   <meta property="og:title" content="Bon Vivant Joias"/>
   <meta property="og:description" content="Cordões, brincos e pulseiras em ouro 18k e prata 925."/>
   <meta property="og:type" content="website"/>
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
   <link rel="icon" type="image/png" href="images/logo.png"/>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"JewelryStore","name":"Bon Vivant Joias","url":"https://bon-vivant.onrender.com","description":"Cordões, brincos, pulseiras e alianças em ouro 18k e prata 925","telephone":"+5511999990000","priceRange":"R$690 - R$7900"}
+  {"@context":"https://schema.org","@type":"JewelryStore","name":"Bon Vivant Joias","url":"https://bon-vivant-joias.onrender.com","description":"Cordões, brincos e pulseiras em ouro 18k e prata 925","telephone":"+5511999990000","priceRange":"R$690 - R$7900"}
   </script>
   <style>
     :root{
@@ -313,8 +313,6 @@
       <a href="#catalogo" onclick="return goCat('cordao')">Cordões</a>
       <a href="#catalogo" onclick="return goCat('brinco')">Brincos</a>
       <a href="#catalogo" onclick="return goCat('pulseira')">Pulseiras</a>
-      <a href="#catalogo" onclick="return goCat('anel')">Alianças</a>
-      <a href="#catalogo" onclick="return goCat('pingente')">Pingentes</a>
     </nav>
     <div class="header-actions">
       <a class="icon-btn" href="https://wa.me/5511999990000" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></a>
@@ -339,8 +337,6 @@
     <li><a href="#catalogo" onclick="closeMobileNav();goCat('cordao')">Cordões</a></li>
     <li><a href="#catalogo" onclick="closeMobileNav();goCat('brinco')">Brincos</a></li>
     <li><a href="#catalogo" onclick="closeMobileNav();goCat('pulseira')">Pulseiras</a></li>
-    <li><a href="#catalogo" onclick="closeMobileNav();goCat('anel')">Alianças</a></li>
-    <li><a href="#catalogo" onclick="closeMobileNav();goCat('pingente')">Pingentes</a></li>
     <li><a href="#faq" onclick="closeMobileNav()">FAQ</a></li>
   </ul>
 </div>
@@ -422,18 +418,6 @@
       <span class="cat-tile-img"><i class="ti ti-wave-sine" aria-hidden="true"></i></span>
       <span class="cat-tile-label">Pulseiras</span>
     </a>
-    <a class="cat-tile" href="#catalogo" onclick="return goCat('anel')">
-      <span class="cat-tile-img"><i class="ti ti-circle" aria-hidden="true"></i></span>
-      <span class="cat-tile-label">Alianças</span>
-    </a>
-    <a class="cat-tile" href="#catalogo" onclick="return goCat('pingente')">
-      <span class="cat-tile-img"><i class="ti ti-tag" aria-hidden="true"></i></span>
-      <span class="cat-tile-label">Pingentes</span>
-    </a>
-    <a class="cat-tile" href="#catalogo" onclick="return goCat('todos')">
-      <span class="cat-tile-img"><i class="ti ti-gift" aria-hidden="true"></i></span>
-      <span class="cat-tile-label">Kits</span>
-    </a>
   </div>
 </section>
 
@@ -487,10 +471,8 @@
   <div class="catalog-controls">
     <button class="filter-btn active" data-filter="todos" onclick="filterCatalog(this,'todos')">Todos</button>
     <button class="filter-btn" data-filter="cordao" onclick="filterCatalog(this,'cordao')">Cordões</button>
-    <button class="filter-btn" data-filter="anel" onclick="filterCatalog(this,'anel')">Alianças</button>
     <button class="filter-btn" data-filter="brinco" onclick="filterCatalog(this,'brinco')">Brincos</button>
     <button class="filter-btn" data-filter="pulseira" onclick="filterCatalog(this,'pulseira')">Pulseiras</button>
-    <button class="filter-btn" data-filter="pingente" onclick="filterCatalog(this,'pingente')">Pingentes</button>
     <select class="sort-select" onchange="sortCatalog(this.value)" aria-label="Ordenar por">
       <option value="">Ordenar</option>
       <option value="price-asc">Menor preço</option>
@@ -532,10 +514,10 @@
     </div>
     <div class="testi-card">
       <div class="testi-stars" role="img" aria-label="Avaliação 5 de 5 estrelas">★★★★★</div>
-      <p class="testi-text">"Peça sob encomenda entregue no prazo. O acabamento é digno de joalheria europeia."</p>
+      <p class="testi-text">"O brinco chegou na caixinha mais linda e o acabamento é impecável. Vou comprar mais!"</p>
       <div class="testi-who">
         <span class="testi-avatar">F</span>
-        <div><p class="testi-name">Fernanda L.</p><p class="testi-prod">Aliança personalizada</p></div>
+        <div><p class="testi-name">Fernanda L.</p><p class="testi-prod">Brinco Argola</p></div>
       </div>
     </div>
     <div class="testi-card">
@@ -562,10 +544,6 @@
   </div>
   <div class="faq-list">
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Vocês fazem peças sob encomenda? <i class="ti ti-plus" aria-hidden="true"></i></button>
-      <p class="faq-a">Sim! Esse é um dos nossos serviços mais especiais. Entre em contato pelo WhatsApp ou preencha o formulário de consultoria para começarmos.</p>
-    </div>
-    <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Qual a garantia das peças? <i class="ti ti-plus" aria-hidden="true"></i></button>
       <p class="faq-a">Todas as nossas peças têm garantia vitalícia contra defeitos de fabricação e manutenção gratuita por 1 ano.</p>
     </div>
@@ -580,10 +558,6 @@
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">As pedras preciosas são naturais? <i class="ti ti-plus" aria-hidden="true"></i></button>
       <p class="faq-a">Sim, trabalhamos exclusivamente com pedras naturais certificadas. Cada peça vem com laudo de autenticidade.</p>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Qual o prazo para peças sob encomenda? <i class="ti ti-plus" aria-hidden="true"></i></button>
-      <p class="faq-a">Em média 15 a 30 dias úteis, dependendo da complexidade da peça. Informamos o prazo exato na consultoria.</p>
     </div>
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Como cuido das minhas joias? <i class="ti ti-plus" aria-hidden="true"></i></button>
@@ -619,7 +593,6 @@
       <p class="footer-col-title">Categorias</p>
       <ul>
         <li><a href="#catalogo" onclick="goCat('cordao')">Cordões</a></li>
-        <li><a href="#catalogo" onclick="goCat('anel')">Alianças</a></li>
         <li><a href="#catalogo" onclick="goCat('brinco')">Brincos</a></li>
         <li><a href="#catalogo" onclick="goCat('pulseira')">Pulseiras</a></li>
       </ul>

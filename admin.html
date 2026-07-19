@@ -148,10 +148,8 @@
           <label for="pCategory">Categoria</label>
           <select id="pCategory">
             <option value="cordao">Cordão</option>
-            <option value="anel">Aliança</option>
             <option value="brinco">Brinco</option>
             <option value="pulseira">Pulseira</option>
-            <option value="pingente">Pingente</option>
           </select>
         </div>
         <div class="field-check">
@@ -240,7 +238,7 @@
 
 <script>
   let products = [];
-  const CAT = { cordao:'Cordão', anel:'Aliança', brinco:'Brinco', pulseira:'Pulseira', pingente:'Pingente' };
+  const CAT = { cordao:'Cordão', brinco:'Brinco', pulseira:'Pulseira' };
 
   function toast(msg, isError) {
     const t = document.getElementById('toast');
