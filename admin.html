@@ -16,56 +16,97 @@
   body{font-family:'Work Sans',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh}
   h1,h2{font-family:'Bodoni Moda',serif;font-weight:500}
   button{cursor:pointer;font-family:inherit}
-  input,select{font-family:inherit}
-  .topbar{background:var(--forest-deep);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem}
-  .topbar h1{font-size:1.3rem;color:#fff}
+  input,select,textarea{font-family:inherit}
+
+  /* ── topbar ── */
+  .topbar{background:var(--forest-deep);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.25rem;gap:.75rem;flex-wrap:wrap}
+  .topbar h1{font-size:1.1rem;color:#fff;white-space:nowrap}
   .topbar h1 em{color:var(--gold);font-style:italic}
-  .btn{padding:.6rem 1.2rem;border-radius:6px;font-weight:600;font-size:.85rem;border:none}
+  .topbar-actions{display:flex;gap:.5rem;flex-shrink:0}
+
+  /* ── buttons ── */
+  .btn{padding:.65rem 1.1rem;border-radius:6px;font-weight:600;font-size:.85rem;border:none;line-height:1;white-space:nowrap;touch-action:manipulation}
   .btn-gold{background:var(--gold);color:var(--forest-deep)}
   .btn-gold:hover{background:var(--gold-hi)}
-  .btn-outline{background:transparent;border:1px solid rgba(255,255,255,.3);color:#fff}
+  .btn-outline{background:transparent;border:1px solid rgba(255,255,255,.35);color:#fff}
   .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
-  .btn-danger{background:var(--err);color:#fff}
-  .btn-danger:hover{opacity:.9}
+  .btn-ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--forest);color:var(--forest)}
 
-  /* login */
-  .login-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem}
-  .login-box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:2.5rem;max-width:360px;width:100%}
-  .login-box h2{margin-bottom:.5rem;color:var(--forest)}
+  /* ── login ── */
+  .login-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:1.5rem}
+  .login-box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:2.25rem 1.75rem;max-width:360px;width:100%}
+  .login-box h2{margin-bottom:.4rem;color:var(--forest)}
   .login-box p{color:var(--muted);font-size:.9rem;margin-bottom:1.5rem}
-  .field{margin-bottom:1.25rem}
-  .field label{display:block;font-size:.8rem;font-weight:600;color:var(--forest);margin-bottom:.4rem}
-  .field input,.field select{width:100%;padding:.7rem .9rem;border:1px solid var(--line);border-radius:6px;font-size:.92rem;background:#fff}
-  .field input:focus,.field select:focus{outline:none;border-color:var(--gold)}
   .err-msg{color:var(--err);font-size:.82rem;margin-top:.6rem;display:none}
   .err-msg.show{display:block}
 
-  /* app */
-  #app{display:none;padding:2rem;max-width:1100px;margin:0 auto}
-  .panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.75rem;margin-bottom:1.75rem}
-  .panel h2{font-size:1.3rem;margin-bottom:1.25rem;color:var(--forest)}
-  .form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem 1.25rem}
-  @media(max-width:640px){.form-grid{grid-template-columns:1fr}}
-  .form-actions{display:flex;gap:.75rem;margin-top:1.5rem;align-items:center}
-  .upload-preview{width:80px;height:80px;border-radius:8px;object-fit:cover;border:1px solid var(--line);background:var(--cream)}
+  /* ── app layout ── */
+  #app{display:none;padding:1.25rem;max-width:1100px;margin:0 auto}
+  @media(min-width:640px){#app{padding:2rem}}
 
+  .panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.25rem;margin-bottom:1.25rem}
+  @media(min-width:640px){.panel{padding:1.75rem;margin-bottom:1.75rem}}
+  .panel h2{font-size:1.2rem;margin-bottom:1.1rem;color:var(--forest)}
+  @media(min-width:640px){.panel h2{font-size:1.3rem;margin-bottom:1.25rem}}
+
+  /* ── form ── */
+  .field{margin-bottom:1rem}
+  .field label{display:block;font-size:.8rem;font-weight:600;color:var(--forest);margin-bottom:.4rem}
+  .field input,.field select{width:100%;padding:.75rem .9rem;border:1px solid var(--line);border-radius:6px;font-size:1rem;background:#fff;-webkit-appearance:none}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--gold)}
+  .field-check{display:flex;align-items:center;gap:.5rem;padding:.75rem 0}
+  .field-check input[type=checkbox]{width:18px;height:18px;accent-color:var(--forest);flex-shrink:0;cursor:pointer}
+  .field-check label{font-size:.9rem;cursor:pointer;user-select:none}
+  .form-grid{display:grid;grid-template-columns:1fr;gap:.75rem}
+  @media(min-width:560px){.form-grid{grid-template-columns:repeat(2,1fr);gap:1rem 1.25rem}}
+  .form-actions{display:flex;gap:.75rem;margin-top:1.25rem;flex-wrap:wrap}
+  .form-actions .btn{flex:1 1 auto;text-align:center;min-width:130px}
+  @media(min-width:420px){.form-actions .btn{flex:0 0 auto}}
+  .upload-preview{width:80px;height:80px;border-radius:8px;object-fit:cover;border:1px solid var(--line);background:var(--cream);margin-top:.6rem}
+  #cancelBtn{display:none}
+
+  /* ── product list — desktop table ── */
+  .products-table-wrap{overflow-x:auto;display:none}
+  @media(min-width:640px){.products-table-wrap{display:block}}
   table{width:100%;border-collapse:collapse}
   th,td{text-align:left;padding:.75rem;border-bottom:1px solid var(--line);font-size:.88rem;vertical-align:middle}
   th{color:var(--muted);font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:.03em}
   td img{width:44px;height:44px;object-fit:cover;border-radius:6px;background:var(--cream)}
-  .thumb-empty{width:44px;height:44px;border-radius:6px;background:var(--forest);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Bodoni Moda',serif;font-style:italic}
+  .thumb-empty{width:44px;height:44px;border-radius:6px;background:var(--forest);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Bodoni Moda',serif;font-style:italic;font-size:1.1rem}
   .row-actions{display:flex;gap:.5rem}
-  .icon-btn{width:34px;height:34px;border-radius:6px;border:1px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;color:var(--forest)}
+  .icon-btn{width:36px;height:36px;border-radius:6px;border:1px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;color:var(--forest);font-size:.95rem;touch-action:manipulation}
   .icon-btn:hover{border-color:var(--gold);color:var(--gold)}
   .icon-btn.danger:hover{border-color:var(--err);color:var(--err)}
-  .badge-featured{background:var(--gold);color:var(--forest-deep);font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:99px}
-  .toast{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--forest-deep);color:#fff;padding:.9rem 1.4rem;border-radius:8px;font-size:.88rem;opacity:0;transform:translateY(10px);transition:all .3s;pointer-events:none;z-index:50}
-  .toast.show{opacity:1;transform:none}
+  .badge-featured{background:var(--gold);color:var(--forest-deep);font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:99px;white-space:nowrap}
+
+  /* ── product list — mobile cards ── */
+  .products-cards{display:flex;flex-direction:column;gap:.75rem}
+  @media(min-width:640px){.products-cards{display:none}}
+  .product-card{display:flex;align-items:flex-start;gap:.9rem;padding:.9rem;border:1px solid var(--line);border-radius:10px;background:#fff}
+  .product-card + .product-card{border-top:none;margin-top:0}
+  .product-card-thumb{flex-shrink:0;width:56px;height:56px;border-radius:8px;object-fit:cover;background:var(--cream)}
+  .product-card-thumb-empty{flex-shrink:0;width:56px;height:56px;border-radius:8px;background:var(--forest);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Bodoni Moda',serif;font-style:italic;font-size:1.3rem}
+  .product-card-info{flex:1;min-width:0}
+  .product-card-name{font-weight:600;font-size:.95rem;line-height:1.3;margin-bottom:.2rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .product-card-meta{font-size:.8rem;color:var(--muted);margin-bottom:.45rem}
+  .product-card-price{font-size:.88rem;font-weight:600;color:var(--forest);margin-bottom:.5rem}
+  .product-card-actions{display:flex;gap:.5rem;align-items:center}
+  .card-action-btn{height:36px;padding:0 .85rem;border-radius:6px;border:1px solid var(--line);background:#fff;display:flex;align-items:center;gap:.35rem;font-size:.8rem;font-weight:600;color:var(--forest);touch-action:manipulation;white-space:nowrap}
+  .card-action-btn:hover{border-color:var(--gold);color:var(--gold)}
+  .card-action-btn.danger:hover{border-color:var(--err);color:var(--err)}
+  .card-action-btn i{font-size:.9rem}
+  #productsEmpty{text-align:center;color:var(--muted);padding:2rem;display:none}
+
+  /* ── toast ── */
+  .toast{position:fixed;bottom:1.25rem;left:50%;transform:translateX(-50%) translateY(10px);background:var(--forest-deep);color:#fff;padding:.85rem 1.35rem;border-radius:8px;font-size:.88rem;opacity:0;transition:all .3s;pointer-events:none;z-index:200;white-space:nowrap;max-width:90vw;text-align:center}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
   .toast.error{background:var(--err)}
 </style>
 </head>
 <body>
 
+<!-- LOGIN -->
 <div class="login-screen" id="loginScreen">
   <div class="login-box">
     <h2>Painel Admin</h2>
@@ -79,31 +120,33 @@
   </div>
 </div>
 
+<!-- APP -->
 <div id="app">
-  <header class="topbar" style="margin:-2rem -2rem 2rem;border-radius:0">
+  <header class="topbar" style="margin-bottom:1.25rem">
     <h1>Bon Vivant <em>Joias</em> — Admin</h1>
-    <div style="display:flex;gap:.75rem">
+    <div class="topbar-actions">
       <a class="btn btn-outline" href="/" target="_blank">Ver site</a>
       <button class="btn btn-outline" onclick="logout()">Sair</button>
     </div>
   </header>
 
+  <!-- FORM -->
   <section class="panel">
     <h2 id="formTitle">Adicionar produto</h2>
     <form id="productForm" onsubmit="return submitProduct(event)">
       <input type="hidden" id="editId" value=""/>
       <div class="form-grid">
         <div class="field">
-          <label for="name">Nome</label>
-          <input type="text" id="name" required placeholder="Ex: Cordão Cartier"/>
+          <label for="pName">Nome</label>
+          <input type="text" id="pName" required placeholder="Ex: Cordão Cartier"/>
         </div>
         <div class="field">
-          <label for="material">Material / descrição</label>
-          <input type="text" id="material" required placeholder="Ex: Ouro 18k · Elos maciços"/>
+          <label for="pMaterial">Material / descrição</label>
+          <input type="text" id="pMaterial" required placeholder="Ex: Ouro 18k · Elos maciços"/>
         </div>
         <div class="field">
-          <label for="category">Categoria</label>
-          <select id="category">
+          <label for="pCategory">Categoria</label>
+          <select id="pCategory">
             <option value="cordao">Cordão</option>
             <option value="anel">Aliança</option>
             <option value="brinco">Brinco</option>
@@ -111,33 +154,41 @@
             <option value="pingente">Pingente</option>
           </select>
         </div>
-        <div class="field">
-          <label><input type="checkbox" id="featured" style="width:auto;margin-right:.4rem"/> Destacar em "Mais vendidos"</label>
+        <div class="field-check">
+          <input type="checkbox" id="pFeatured"/>
+          <label for="pFeatured">Destacar em "Mais vendidos"</label>
         </div>
         <div class="field">
-          <label for="price">Preço no Pix (R$)</label>
-          <input type="number" id="price" required min="0" step="0.01" placeholder="Ex: 990"/>
+          <label for="pPrice">Preço no Pix (R$)</label>
+          <input type="number" id="pPrice" required min="0" step="0.01" placeholder="Ex: 990" inputmode="decimal"/>
         </div>
         <div class="field">
-          <label for="originalPrice">Preço original / "de" (R$)</label>
-          <input type="number" id="originalPrice" min="0" step="0.01" placeholder="Ex: 1190"/>
+          <label for="pOriginalPrice">Preço original / "de" (R$)</label>
+          <input type="number" id="pOriginalPrice" min="0" step="0.01" placeholder="Ex: 1190" inputmode="decimal"/>
         </div>
         <div class="field" style="grid-column:1/-1">
-          <label for="imageFile">Foto do produto</label>
-          <input type="file" id="imageFile" accept="image/jpeg,image/png,image/webp" onchange="previewImage(this)"/>
-          <img id="imgPreview" class="upload-preview" style="display:none;margin-top:.6rem"/>
+          <label for="pImageFile">Foto do produto</label>
+          <input type="file" id="pImageFile" accept="image/jpeg,image/png,image/webp" onchange="previewImage(this)" style="width:100%;padding:.5rem 0"/>
+          <img id="imgPreview" class="upload-preview" style="display:none"/>
         </div>
       </div>
       <div class="form-actions">
         <button type="submit" class="btn btn-gold" id="submitBtn">Adicionar produto</button>
-        <button type="button" class="btn btn-outline" style="border-color:var(--line);color:var(--ink)" onclick="resetForm()" id="cancelBtn" style="display:none">Cancelar edição</button>
+        <button type="button" class="btn btn-ghost" onclick="resetForm()" id="cancelBtn">Cancelar edição</button>
       </div>
     </form>
   </section>
 
+  <!-- LISTA -->
   <section class="panel">
     <h2>Produtos (<span id="productCount">0</span>)</h2>
-    <div style="overflow-x:auto">
+
+    <!-- Mobile cards -->
+    <div class="products-cards" id="productsCards"></div>
+    <p id="productsEmpty">Nenhum produto cadastrado.</p>
+
+    <!-- Desktop table -->
+    <div class="products-table-wrap">
       <table>
         <thead>
           <tr><th>Foto</th><th>Nome</th><th>Categoria</th><th>Preço</th><th>Destaque</th><th>Ações</th></tr>
@@ -152,22 +203,27 @@
 
 <script>
   let products = [];
+  const CAT = { cordao:'Cordão', anel:'Aliança', brinco:'Brinco', pulseira:'Pulseira', pingente:'Pingente' };
 
   function toast(msg, isError) {
     const t = document.getElementById('toast');
     t.textContent = msg;
     t.className = 'toast show' + (isError ? ' error' : '');
-    setTimeout(() => { t.className = 'toast'; }, 2800);
+    setTimeout(() => { t.className = 'toast'; }, 3000);
   }
 
   async function checkAuth() {
-    const res = await fetch('/api/admin/check');
-    const data = await res.json();
-    if (data.authenticated) {
-      document.getElementById('loginScreen').style.display = 'none';
-      document.getElementById('app').style.display = 'block';
-      loadProducts();
-    }
+    try {
+      const res = await fetch('/api/admin/check');
+      const data = await res.json();
+      if (data.authenticated) showApp();
+    } catch {}
+  }
+
+  function showApp() {
+    document.getElementById('loginScreen').style.display = 'none';
+    document.getElementById('app').style.display = 'block';
+    loadProducts();
   }
 
   async function login() {
@@ -181,14 +237,12 @@
       });
       if (res.ok) {
         loginErr.classList.remove('show');
-        document.getElementById('loginScreen').style.display = 'none';
-        document.getElementById('app').style.display = 'block';
-        loadProducts();
+        showApp();
       } else {
         loginErr.textContent = 'Senha incorreta.';
         loginErr.classList.add('show');
       }
-    } catch (err) {
+    } catch {
       loginErr.textContent = 'Não foi possível conectar ao servidor. Tente novamente em instantes.';
       loginErr.classList.add('show');
     }
@@ -202,22 +256,49 @@
   async function loadProducts() {
     try {
       const res = await fetch('/api/products');
-      if (!res.ok) throw new Error('Erro ao carregar produtos (status ' + res.status + ')');
+      if (!res.ok) throw new Error('status ' + res.status);
       products = await res.json();
-      renderTable();
-    } catch (err) {
-      toast('Não foi possível carregar os produtos. Verifique sua conexão e recarregue a página.', true);
+      renderList();
+    } catch {
+      toast('Não foi possível carregar os produtos. Recarregue a página.', true);
     }
   }
 
-  function renderTable() {
-    const catLabels = { cordao: 'Cordão', anel: 'Aliança', brinco: 'Brinco', pulseira: 'Pulseira', pingente: 'Pingente' };
-    document.getElementById('productCount').textContent = products.length;
+  function thumb(p, size) {
+    const s = size || 44;
+    if (p.image) return `<img src="${p.image}" alt="${p.name}" style="width:${s}px;height:${s}px;object-fit:cover;border-radius:${size?8:6}px"/>`;
+    return `<div class="${size ? 'product-card-thumb-empty' : 'thumb-empty'}">${p.letter || '?'}</div>`;
+  }
+
+  function renderList() {
+    const count = products.length;
+    document.getElementById('productCount').textContent = count;
+    document.getElementById('productsEmpty').style.display = count ? 'none' : 'block';
+
+    // Mobile cards
+    document.getElementById('productsCards').innerHTML = products.map(p => `
+      <div class="product-card">
+        ${thumb(p, 56)}
+        <div class="product-card-info">
+          <div class="product-card-name">${p.name}</div>
+          <div class="product-card-meta">${CAT[p.category] || p.category} · ${p.material || ''}</div>
+          <div class="product-card-price">R$ ${Number(p.price).toLocaleString('pt-BR')}
+            ${p.featured ? '<span class="badge-featured" style="margin-left:.4rem">Destaque</span>' : ''}
+          </div>
+          <div class="product-card-actions">
+            <button class="card-action-btn" onclick="editProduct('${p.id}')"><i class="ti ti-pencil"></i> Editar</button>
+            <button class="card-action-btn danger" onclick="deleteProduct('${p.id}')"><i class="ti ti-trash"></i> Excluir</button>
+          </div>
+        </div>
+      </div>
+    `).join('');
+
+    // Desktop table
     document.getElementById('productsTable').innerHTML = products.map(p => `
       <tr>
-        <td>${p.image ? `<img src="${p.image}" alt="${p.name}"/>` : `<div class="thumb-empty">${p.letter || '?'}</div>`}</td>
+        <td>${thumb(p)}</td>
         <td>${p.name}</td>
-        <td>${catLabels[p.category] || p.category}</td>
+        <td>${CAT[p.category] || p.category}</td>
         <td>R$ ${Number(p.price).toLocaleString('pt-BR')}</td>
         <td>${p.featured ? '<span class="badge-featured">Destaque</span>' : ''}</td>
         <td>
@@ -227,7 +308,7 @@
           </div>
         </td>
       </tr>
-    `).join('') || '<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:2rem">Nenhum produto cadastrado.</td></tr>';
+    `).join('');
   }
 
   function previewImage(input) {
@@ -239,21 +320,22 @@
   }
 
   function editProduct(id) {
-    const p = products.find(x => x.id === id);
-    if (!p) return;
+    // FIX: comparação por string para evitar falha de tipo (number vs string)
+    const p = products.find(x => String(x.id) === String(id));
+    if (!p) { toast('Produto não encontrado.', true); return; }
     document.getElementById('editId').value = p.id;
-    document.getElementById('name').value = p.name;
-    document.getElementById('material').value = p.material;
-    document.getElementById('category').value = p.category;
-    document.getElementById('featured').checked = !!p.featured;
-    document.getElementById('price').value = p.price;
-    document.getElementById('originalPrice').value = p.originalPrice;
+    document.getElementById('pName').value = p.name;
+    document.getElementById('pMaterial').value = p.material || '';
+    document.getElementById('pCategory').value = p.category;
+    document.getElementById('pFeatured').checked = !!p.featured;
+    document.getElementById('pPrice').value = p.price;
+    document.getElementById('pOriginalPrice').value = p.originalPrice || '';
     const preview = document.getElementById('imgPreview');
-    if (p.image) { preview.src = '/' + p.image; preview.style.display = 'block'; }
+    if (p.image) { preview.src = p.image.startsWith('/') ? p.image : '/' + p.image; preview.style.display = 'block'; }
     else { preview.style.display = 'none'; }
     document.getElementById('formTitle').textContent = 'Editar produto — ' + p.name;
     document.getElementById('submitBtn').textContent = 'Salvar alterações';
-    document.getElementById('cancelBtn').style.display = 'inline-block';
+    document.getElementById('cancelBtn').style.display = 'inline-flex';
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
@@ -270,13 +352,13 @@
     e.preventDefault();
     const id = document.getElementById('editId').value;
     const fd = new FormData();
-    fd.append('name', document.getElementById('name').value.trim());
-    fd.append('material', document.getElementById('material').value.trim());
-    fd.append('category', document.getElementById('category').value);
-    fd.append('featured', document.getElementById('featured').checked);
-    fd.append('price', document.getElementById('price').value);
-    fd.append('originalPrice', document.getElementById('originalPrice').value || document.getElementById('price').value);
-    const file = document.getElementById('imageFile').files[0];
+    fd.append('name', document.getElementById('pName').value.trim());
+    fd.append('material', document.getElementById('pMaterial').value.trim());
+    fd.append('category', document.getElementById('pCategory').value);
+    fd.append('featured', document.getElementById('pFeatured').checked);
+    fd.append('price', document.getElementById('pPrice').value);
+    fd.append('originalPrice', document.getElementById('pOriginalPrice').value || document.getElementById('pPrice').value);
+    const file = document.getElementById('pImageFile').files[0];
     if (file) fd.append('imageFile', file);
 
     const url = id ? `/api/admin/products/${id}` : '/api/admin/products';
@@ -284,7 +366,7 @@
     const submitBtn = document.getElementById('submitBtn');
     const originalLabel = submitBtn.textContent;
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Enviando… (pode levar até 1 minuto se o servidor estiver "acordando")';
+    submitBtn.textContent = 'Enviando…';
     try {
       const res = await fetch(url, { method, body: fd });
       const data = await safeJson(res);
@@ -301,8 +383,6 @@
     return false;
   }
 
-  // lê a resposta como JSON sem quebrar se o corpo vier vazio/incompleto
-  // (ex: timeout do servidor gratuito "acordando" cortando a resposta no meio)
   async function safeJson(res) {
     const text = await res.text();
     if (!text) return null;
@@ -311,13 +391,13 @@
 
   function connectionErrorMessage(err) {
     if (err instanceof TypeError || /unexpected end of json|failed to fetch/i.test(err.message || '')) {
-      return 'O servidor demorou pra responder (comum quando ele estava "dormindo"). Espere um instante e tente novamente.';
+      return 'Servidor demorou pra responder (acordando). Aguarde e tente novamente.';
     }
     return err.message || 'Erro inesperado. Tente novamente.';
   }
 
   async function deleteProduct(id) {
-    const p = products.find(x => x.id === id);
+    const p = products.find(x => String(x.id) === String(id));
     if (!confirm(`Excluir "${p ? p.name : id}"? Essa ação não pode ser desfeita.`)) return;
     try {
       const res = await fetch(`/api/admin/products/${id}`, { method: 'DELETE' });
